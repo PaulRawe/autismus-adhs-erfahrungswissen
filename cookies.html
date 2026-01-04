@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Cookie-Einstellungen - Autismus & ADHS Erfahrungswissen</title>
+    <style>
+        :root {
+            --bg-main: #f4f6f8;
+            --bg-card: #ffffff;
+            --color-primary: #2f6f8f;
+            --color-secondary: #5fa8c9;
+            --color-text: #2b2b2b;
+            --color-muted: #6b6b6b;
+            --color-accent: #d97706;
+            --color-success: #10b981;
+            --color-danger: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--color-text);
+            line-height: 1.7;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .content-box {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 50px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--color-primary);
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: var(--color-primary);
+            font-size: 1.6em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        h2:first-of-type {
+            margin-top: 20px;
+            border-top: none;
+            padding-top: 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--color-text);
+        }
+
+        .cookie-category {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .cookie-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .cookie-header h3 {
+            color: var(--color-primary);
+            font-size: 1.3em;
+            margin: 0;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.3s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--color-success);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        input:disabled + .slider {
+            background-color: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        .cookie-description {
+            color: var(--color-muted);
+            margin-bottom: 15px;
+        }
+
+        .cookie-details {
+            font-size: 0.9em;
+            color: var(--color-muted);
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .cookie-details strong {
+            color: var(--color-text);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(47, 111, 143, 0.3);
+        }
+
+        .btn-success {
+            background: var(--color-success);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #059669;
+        }
+
+        .btn-danger {
+            background: var(--color-danger);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #dc2626;
+        }
+
+        .btn-secondary {
+            background: #6b7280;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+
+        .back-link {
+            display: inline-block;
+            background: var(--color-primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .back-link:hover {
+            background: var(--color-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(47, 111, 143, 0.3);
+        }
+
+        .status-message {
+            background: #d1fae5;
+            border-left: 4px solid var(--color-success);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .status-message.show {
+            display: block;
+        }
+
+        .current-status {
+            background: #e0f2fe;
+            border-left: 4px solid var(--color-primary);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .content-box {
+                padding: 30px 25px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            .cookie-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .button-group {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content-box">
+            <h1>Cookie-Einstellungen</h1>
+            
+            <div id="statusMessage" class="status-message">
+                <strong>✓ Einstellungen gespeichert!</strong> Ihre Cookie-Präferenzen wurden aktualisiert.
+            </div>
+
+            <div class="current-status">
+                <strong>Aktueller Status:</strong> <span id="currentStatus">Wird geladen...</span>
+            </div>
+
+            <p>
+                Wir verwenden Cookies und ähnliche Technologien, um Ihnen die bestmögliche Nutzererfahrung zu bieten.
+                Sie können hier Ihre persönlichen Cookie-Einstellungen verwalten und jederzeit ändern.
+            </p>
+
+            <h2>Cookie-Kategorien</h2>
+
+            <div class="cookie-category">
+                <div class="cookie-header">
+                    <h3>🔒 Technisch notwendige Cookies</h3>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="essentialCookies" checked disabled>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-description">
+                    Diese Cookies sind für den Betrieb der Website unbedingt erforderlich und können nicht deaktiviert werden.
+                </p>
+                <div class="cookie-details">
+                    <strong>Verwendete Cookies:</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>cookieConsent</strong> (Local Storage) – Speichert Ihre Cookie-Einwilligung</li>
+                    </ul>
+                    <p style="margin-top: 10px;"><strong>Speicherdauer:</strong> Bis zum Widerruf bzw. 12 Monate</p>
+                    <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)</p>
+                </div>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-header">
+                    <h3>📊 Statistik-Cookies (GoatCounter)</h3>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="analyticsCookies" checked disabled>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-description">
+                    GoatCounter wird zur anonymen Reichweitenmessung verwendet und ist datenschutzfreundlich konzipiert.
+                    Diese Funktion arbeitet ohne personenbezogene Cookies und kann daher nicht deaktiviert werden.
+                </p>
+                <div class="cookie-details">
+                    <strong>Verarbeitete Daten:</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Anonymisierte Seitenaufrufe</li>
+                        <li>Referrer (woher Sie kommen)</li>
+                        <li>Browsertyp und Bildschirmauflösung</li>
+                        <li>Keine IP-Adressen, keine persistenten Cookies</li>
+                    </ul>
+                    <p style="margin-top: 10px;"><strong>Anbieter:</strong> GoatCounter</p>
+                    <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)</p>
+                    <p><strong>Weitere Infos:</strong> <a href="https://www.goatcounter.com/help/gdpr" target="_blank" rel="noopener">GoatCounter GDPR</a></p>
+                </div>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-header">
+                    <h3>📢 Marketing & Werbe-Cookies (Google AdSense)</h3>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="marketingCookies">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-description">
+                    Diese Cookies werden von Google AdSense verwendet, um personalisierte oder nicht-personalisierte Werbung anzuzeigen.
+                    Sie können diese Cookies jederzeit deaktivieren.
+                </p>
+                <div class="cookie-details">
+                    <strong>Verarbeitete Daten:</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>IP-Adresse</li>
+                        <li>Browserinformationen und Geräteinformationen</li>
+                        <li>Besuchte Seiten und Verweildauer</li>
+                        <li>Interaktionen mit Werbeanzeigen</li>
+                    </ul>
+                    <p style="margin-top: 10px;"><strong>Speicherdauer:</strong> Bis zu 24 Monate</p>
+                    <p><strong>Anbieter:</strong> Google Ireland Limited, Dublin, Irland</p>
+                    <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG (Einwilligung)</p>
+                    <p><strong>Weitere Infos:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Datenschutz</a></p>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-success" onclick="acceptAll()">✓ Alle akzeptieren</button>
+                <button class="btn btn-primary" onclick="savePreferences()">💾 Auswahl speichern</button>
+                <button class="btn btn-danger" onclick="declineAll()">✗ Nur notwendige Cookies</button>
+                <button class="btn btn-secondary" onclick="resetCookies()">🔄 Zurücksetzen</button>
+            </div>
+
+            <h2>Weitere Informationen</h2>
+            <p>
+                Detaillierte Informationen zur Datenverarbeitung finden Sie in unserer 
+                <a href="datenschutz.html">Datenschutzerklärung</a>.
+            </p>
+            <p>
+                Sie können Cookies auch direkt in Ihrem Browser verwalten und löschen. 
+                Beachten Sie, dass das Deaktivieren bestimmter Cookies die Funktionalität der Website beeinträchtigen kann.
+            </p>
+
+            <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+        </div>
+    </div>
+
+    <script>
+        // Cookie-Einstellungen laden und anzeigen
+        function loadCurrentSettings() {
+            const consent = localStorage.getItem('cookieConsent');
+            const statusEl = document.getElementById('currentStatus');
+            const marketingCheckbox = document.getElementById('marketingCookies');
+            
+            if (consent === 'all') {
+                statusEl.textContent = 'Alle Cookies aktiviert';
+                marketingCheckbox.checked = true;
+            } else if (consent === 'essential') {
+                statusEl.textContent = 'Nur notwendige Cookies aktiviert';
+                marketingCheckbox.checked = false;
+            } else {
+                statusEl.textContent = 'Noch keine Einstellungen vorgenommen';
+                marketingCheckbox.checked = false;
+            }
+        }
+
+        // Alle Cookies akzeptieren
+        function acceptAll() {
+            localStorage.setItem('cookieConsent', 'all');
+            document.getElementById('marketingCookies').checked = true;
+            showStatusMessage();
+            loadCurrentSettings();
+            // AdSense laden, wenn noch nicht geladen
+            if (typeof loadAdSense === 'function') {
+                loadAdSense();
+            }
+        }
+
+        // Nur notwendige Cookies
+        function declineAll() {
+            localStorage.setItem('cookieConsent', 'essential');
+            document.getElementById('marketingCookies').checked = false;
+            showStatusMessage();
+            loadCurrentSettings();
+        }
+
+        // Individuelle Auswahl speichern
+        function savePreferences() {
+            const marketingEnabled = document.getElementById('marketingCookies').checked;
+            
+            if (marketingEnabled) {
+                localStorage.setItem('cookieConsent', 'all');
+                if (typeof loadAdSense === 'function') {
+                    loadAdSense();
+                }
+            } else {
+                localStorage.setItem('cookieConsent', 'essential');
+            }
+            
+            showStatusMessage();
+            loadCurrentSettings();
+        }
+
+        // Einstellungen zurücksetzen
+        function resetCookies() {
+            if (confirm('Möchten Sie Ihre Cookie-Einstellungen wirklich zurücksetzen? Die Seite wird neu geladen.')) {
+                localStorage.removeItem('cookieConsent');
+                location.reload();
+            }
+        }
+
+        // Statusmeldung anzeigen
+        function showStatusMessage() {
+            const msg = document.getElementById('statusMessage');
+            msg.classList.add('show');
+            setTimeout(() => {
+                msg.classList.remove('show');
+            }, 3000);
+        }
+
+        // Bei Seitenladung aktuelle Einstellungen anzeigen
+        window.addEventListener('DOMContentLoaded', loadCurrentSettings);
+    </script>
+
+</body>
+</html>

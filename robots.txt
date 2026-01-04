@@ -1,0 +1,39 @@
+# robots.txt für Autismus & ADHS Familienwebsite
+
+User-agent: *
+Allow: /
+
+# Seiten ausschließen
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /*.pdf$ # PDFs nur über Shop
+
+# Rechtliche Seiten von Indizierung ausschließen
+Disallow: /impressum.html
+Disallow: /datenschutz.html
+Disallow: /agb.html
+Disallow: /cookies.html
+
+# Sitemap
+Sitemap: https://deine-domain.de/sitemap.xml
+
+# Spezielle Bots
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Crawl-Delay für höfliche Bots
+User-agent: *
+Crawl-delay: 1

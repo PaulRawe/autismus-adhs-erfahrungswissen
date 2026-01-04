@@ -1,0 +1,90 @@
+<!-- Cookie Banner und Modal - In jede Seite vor </body> einbinden -->
+
+<!-- CSS einbinden -->
+<link rel="stylesheet" href="consent.css">
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="display: none;">
+    <div class="banner-content">
+        <p>
+            Diese Website verwendet Cookies, um Ihnen die bestmögliche Nutzererfahrung zu bieten. 
+            Wir nutzen GoatCounter für datenschutzfreundliche Statistiken. 
+            Weitere Informationen finden Sie in unserer 
+            <a href="datenschutz.html">Datenschutzerklärung</a> und den 
+            <a href="cookies.html">Cookie-Einstellungen</a>.
+        </p>
+        <div class="button-group">
+            <button class="btn-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+            <button class="btn-decline" onclick="declineCookies()">Nur notwendige</button>
+            <button class="btn-settings" onclick="openCookieSettings()">Einstellungen</button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Settings Modal -->
+<div id="cookie-settings-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Cookie-Einstellungen</h2>
+        </div>
+        
+        <div class="modal-body">
+            <!-- Notwendige Cookies -->
+            <div class="cookie-category">
+                <h3>Notwendige Cookies</h3>
+                <p>
+                    Diese Cookies sind für die Grundfunktionen der Website erforderlich 
+                    und können nicht deaktiviert werden.
+                </p>
+                <div class="cookie-toggle">
+                    <label>Status: Immer aktiv</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked disabled>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Analytics Cookies -->
+            <div class="cookie-category">
+                <h3>Analyse & Statistik</h3>
+                <p>
+                    Diese Cookies helfen uns zu verstehen, wie Besucher unsere Website nutzen. 
+                    Wir verwenden GoatCounter – ein datenschutzfreundliches, DSGVO-konformes 
+                    Analytics-Tool.
+                </p>
+                <div class="cookie-toggle">
+                    <label>Analytics erlauben</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="cookie-analytics">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Marketing Cookies -->
+            <div class="cookie-category">
+                <h3>Marketing & Werbung</h3>
+                <p>
+                    Derzeit verwenden wir keine Marketing-Cookies. Diese Kategorie ist 
+                    für zukünftige Partner reserviert.
+                </p>
+                <div class="cookie-toggle">
+                    <label>Marketing erlauben</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="cookie-marketing" disabled>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal-footer">
+            <button class="btn-cancel" onclick="closeCookieSettings()">Abbrechen</button>
+            <button class="btn-save" onclick="saveCookieSettings()">Speichern</button>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript einbinden -->
+<script src="cookies.js"></script>
