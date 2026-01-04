@@ -546,16 +546,220 @@
     </div>
 </div>
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produktempfehlungen - Affiliate Section</title>
+    <style>
+        /* Dieser Code wird in die index.html eingefügt */
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .product-card {
+            background: #fafafa;
+            border: 1px solid #dde3e8;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-card:hover {
+            background: #f0f7fb;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .product-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .product-card p {
+            font-size: 0.9rem;
+            color: var(--color-muted);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .amazon-button {
+            display: inline-block;
+            background: #FF9900;
+            color: #ffffff;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background 0.2s ease;
+            margin-top: auto;
+        }
+
+        .amazon-button:hover {
+            background: #e88c00;
+        }
+
+        .amazon-button:focus {
+            outline: 3px solid var(--color-secondary);
+        }
+
+        .affiliate-notice {
+            background: #fff5e6;
+            border-left: 4px solid #FF9900;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--color-muted);
+        }
+
+        .affiliate-notice strong {
+            color: var(--color-text);
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- DIESER ABSCHNITT ERSETZT DEN AKTUELLEN "Produktempfehlungen"-BEREICH IN index.html -->
+
 <section id="ressourcen">
-    <h2>Produktempfehlungen</h2>
-    <p>Empfehlungen aus unserem Alltag (Affiliate-Links):</p>
-    <ul>
-        <li>Noise-Cancelling Kopfhörer</li>
-        <li>Visuelle Timer</li>
-        <li>Gewichtete Decken</li>
-        <li>Sitzhilfen & Fidget-Material</li>
-    </ul>
+    <h2>Produktempfehlungen aus unserem Alltag</h2>
+    <p>Diese Produkte nutzen wir täglich mit Sam und können sie aus eigener Erfahrung empfehlen:</p>
+    
+    <div class="product-grid">
+        
+        <!-- Produkt 1: Visueller Timer -->
+        <div class="product-card">
+            <div class="product-icon">⏰</div>
+            <h3>Visueller Timer für Kinder</h3>
+            <p>
+                Zeigt die verbleibende Zeit visuell an. Hilft Sam, Übergänge besser zu verstehen 
+                und reduziert Stress bei Zeitlimits (z.B. Medienzeit, Aufgaben).
+            </p>
+            <a href="https://www.amazon.de/s?k=visueller+timer+kinder&tag=prawe-21" 
+               class="amazon-button" 
+               target="_blank" 
+               rel="nofollow noopener">
+               Bei Amazon ansehen
+            </a>
+        </div>
+
+        <!-- Produkt 2: Trinkflasche -->
+        <div class="product-card">
+            <div class="product-icon">🧃</div>
+            <h3>Contigo Trinkflasche</h3>
+            <p>
+                Auslaufsicher, leicht zu öffnen und robust. Perfekt für Schule und unterwegs. 
+                Sam kommt damit selbstständig zurecht.
+            </p>
+            <a href="https://www.amazon.de/s?k=contigo+trinkflasche+kinder&tag=prawe-21" 
+               class="amazon-button" 
+               target="_blank" 
+               rel="nofollow noopener">
+               Bei Amazon ansehen
+            </a>
+        </div>
+
+        <!-- Produkt 3: Noise-Cancelling Kopfhörer -->
+        <div class="product-card">
+            <div class="product-icon">🎧</div>
+            <h3>Noise-Cancelling Kopfhörer</h3>
+            <p>
+                Reduziert Umgebungsgeräusche deutlich. Unverzichtbar bei Reizüberflutung, 
+                in der Schule oder an lauten Orten. Wir nutzen kindgerechte Modelle.
+            </p>
+            <a href="https://www.amazon.de/s?k=noise+cancelling+kopfh%C3%B6rer+kinder&tag=prawe-21" 
+               class="amazon-button" 
+               target="_blank" 
+               rel="nofollow noopener">
+               Bei Amazon ansehen
+            </a>
+        </div>
+
+        <!-- Produkt 4: Gewichtsdecke -->
+        <div class="product-card">
+            <div class="product-icon">🛏️</div>
+            <h3>Gewichtsdecke (Weighted Blanket)</h3>
+            <p>
+                Beruhigender Druck hilft beim Einschlafen und bei Unruhe. 
+                Sam nutzt sie abends zur Regulation. Wichtig: Gewicht passend zum Körpergewicht wählen.
+            </p>
+            <a href="https://www.amazon.de/s?k=gewichtsdecke+kinder&tag=prawe-21" 
+               class="amazon-button" 
+               target="_blank" 
+               rel="nofollow noopener">
+               Bei Amazon ansehen
+            </a>
+        </div>
+
+        <!-- Produkt 5: Fidget Tools -->
+        <div class="product-card">
+            <div class="product-icon">🔄</div>
+            <h3>Fidget Tools & Knetmaterial</h3>
+            <p>
+                Kleine Hilfsmittel für unruhige Hände. Helfen Sam, sich zu konzentrieren 
+                und überschüssige Energie abzubauen – besonders in der Schule nützlich.
+            </p>
+            <a href="https://www.amazon.de/s?k=fidget+toys+kinder&tag=prawe-21" 
+               class="amazon-button" 
+               target="_blank" 
+               rel="nofollow noopener">
+               Bei Amazon ansehen
+            </a>
+        </div>
+
+        <!-- Produkt 6: Sitzball / Sitzkissen -->
+        <div class="product-card">
+            <div class="product-icon">⚽</div>
+            <h3>Dynamisches Sitzkissen</h3>
+            <p>
+                Ermöglicht Bewegung beim Sitzen ohne vom Stuhl aufzustehen. 
+                Hilft Sam bei den Hausaufgaben, länger konzentriert zu bleiben.
+            </p>
+            <a href="https://www.amazon.de/s?k=dynamisches+sitzkissen+kinder&tag=prawe-21" 
+               class="amazon-button" 
+               target="_blank" 
+               rel="nofollow noopener">
+               Bei Amazon ansehen
+            </a>
+        </div>
+
+    </div>
+
+    <div class="affiliate-notice">
+        <strong>📌 Transparenzhinweis:</strong> 
+        Die Links zu Amazon sind Affiliate-Links (Partner-ID: prawe-21). 
+        Wenn Sie über diese Links einkaufen, erhalten wir eine kleine Provision – 
+        <strong>ohne zusätzliche Kosten für Sie</strong>. 
+        Der Preis bleibt gleich. Wir empfehlen nur Produkte, die wir selbst nutzen und für sinnvoll halten. 
+        Mehr Infos: <a href="transparenz.html" style="color: var(--color-primary); text-decoration: underline;">Transparenz & Werbung</a>
+    </div>
 </section>
+
+</body>
+</html>
 
 <section id="kontakt">
     <h2>Kontakt</h2>
