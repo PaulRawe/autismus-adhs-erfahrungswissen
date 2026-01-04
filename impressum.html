@@ -281,5 +281,78 @@
         </div>
     </div>
 
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="display: none;">
+    <div class="banner-content">
+        <p>
+            Diese Website verwendet Cookies, um Ihnen die bestmögliche Nutzererfahrung zu bieten. 
+            Weitere Informationen finden Sie in unserer 
+            <a href="datenschutz.html">Datenschutzerklärung</a>.
+        </p>
+        <div class="button-group">
+            <button class="btn-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+            <button class="btn-decline" onclick="declineCookies()">Nur notwendige</button>
+            <button class="btn-settings" onclick="openCookieSettings()">Einstellungen</button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Settings Modal -->
+<div id="cookie-settings-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Cookie-Einstellungen</h2>
+        </div>
+        <div class="modal-body">
+            <div class="cookie-category">
+                <h3>Notwendige Cookies</h3>
+                <p>Diese Cookies sind für die Grundfunktionen der Website erforderlich.</p>
+                <div class="cookie-toggle">
+                    <label>Notwendig</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" checked disabled>
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cookie-category">
+                <h3>Analyse-Cookies</h3>
+                <p>
+                    Diese Cookies helfen uns, die Nutzung der Website zu verstehen 
+                    (GoatCounter – datenschutzfreundlich).
+                </p>
+                <div class="cookie-toggle">
+                    <label>Analyse</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="cookie-analytics">
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cookie-category">
+                <h3>Marketing-Cookies</h3>
+                <p>Diese Cookies werden für zukünftige Werbezwecke verwendet.</p>
+                <div class="cookie-toggle">
+                    <label>Marketing</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="cookie-marketing">
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel" onclick="closeCookieSettings()">Abbrechen</button>
+            <button class="btn-save" onclick="saveCookieSettings()">Speichern</button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Consent Script -->
+<link rel="stylesheet" href="consent.css">
+<script src="cookies.js"></script>
+
 </body>
 </html>
