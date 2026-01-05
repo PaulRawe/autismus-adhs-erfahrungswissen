@@ -1,12 +1,11 @@
 // Cookie Consent Management mit GoatCounter Integration
 // DSGVO-konform: Opt-in, localStorage statt Cookies, klare Nutzerführung
+// Version 1.1 - Fix: Banner wird nur einmal beim ersten Besuch angezeigt
 (function() {
     'use strict';
 
     const COOKIE_CONSENT_KEY = 'cookieConsent';
     const COOKIE_SETTINGS_KEY = 'cookieSettings';
-    const CONSENT_VERSION = '1.0'; // Version der Consent-Einstellungen
-    const CONSENT_VERSION_KEY = 'cookieConsentVersion';
     
     // Standard-Einstellungen (alle optional deaktiviert)
     const defaultSettings = {
@@ -18,15 +17,12 @@
     // Cookie Banner initialisieren
     function initCookieBanner() {
         const consent = getConsent();
-        const version = localStorage.getItem(CONSENT_VERSION_KEY);
         
-        // Banner anzeigen wenn:
-        // - Kein Consent vorhanden ODER
-        // - Consent-Version veraltet
-        if (consent === null || version !== CONSENT_VERSION) {
+        // Banner NUR anzeigen wenn noch NIE eine Entscheidung getroffen wurde
+        if (consent === null) {
             showBanner();
         } else {
-            // Consent vorhanden und aktuell
+            // Consent vorhanden -> Analytics laden falls zugestimmt
             const settings = getSettings();
             if (settings.analytics) {
                 loadAnalytics();
@@ -59,7 +55,6 @@
     function saveSettings(settings) {
         try {
             localStorage.setItem(COOKIE_SETTINGS_KEY, JSON.stringify(settings));
-            localStorage.setItem(CONSENT_VERSION_KEY, CONSENT_VERSION);
         } catch (e) {
             console.error('Fehler beim Speichern der Einstellungen:', e);
         }
@@ -97,9 +92,9 @@
             hideBanner();
             loadAnalytics();
             
-            console.log('Cookie-Einstellungen gespeichert: Alle akzeptiert');
+            console.log('✅ Cookie-Einstellungen gespeichert: Alle akzeptiert');
         } catch (e) {
-            console.error('Fehler beim Speichern der Zustimmung:', e);
+            console.error('❌ Fehler beim Speichern der Zustimmung:', e);
         }
     };
 
@@ -117,9 +112,9 @@
             hideBanner();
             removeAnalytics();
             
-            console.log('Cookie-Einstellungen gespeichert: Nur notwendige');
+            console.log('✅ Cookie-Einstellungen gespeichert: Nur notwendige');
         } catch (e) {
-            console.error('Fehler beim Speichern der Ablehnung:', e);
+            console.error('❌ Fehler beim Speichern der Ablehnung:', e);
         }
     };
 
@@ -131,8 +126,8 @@
             modal.setAttribute('aria-hidden', 'false');
             loadCurrentSettings();
             
-            // Focus auf erstes interaktives Element
-            const firstToggle = modal.querySelector('input[type="checkbox"]');
+            // Focus auf erstes interaktives Element (Barrierefreiheit)
+            const firstToggle = modal.querySelector('input[type="checkbox"]:not([disabled])');
             if (firstToggle) {
                 setTimeout(() => firstToggle.focus(), 100);
             }
@@ -176,7 +171,11 @@
         
         try {
             saveSettings(settings);
-            localStorage.setItem(COOKIE_CONSENT_KEY, 'custom');
+            
+            // Wenn noch kein Consent vorhanden war, jetzt setzen
+            if (!getConsent()) {
+                localStorage.setItem(COOKIE_CONSENT_KEY, 'custom');
+            }
             
             closeCookieSettings();
             hideBanner();
@@ -188,9 +187,9 @@
                 removeAnalytics();
             }
             
-            console.log('Cookie-Einstellungen gespeichert:', settings);
+            console.log('✅ Cookie-Einstellungen gespeichert:', settings);
         } catch (e) {
-            console.error('Fehler beim Speichern der benutzerdefinierten Einstellungen:', e);
+            console.error('❌ Fehler beim Speichern der benutzerdefinierten Einstellungen:', e);
         }
     };
 
@@ -200,13 +199,13 @@
         
         // Doppelprüfung: Nur laden wenn explizit zugestimmt
         if (!settings.analytics) {
-            console.log('Analytics deaktiviert - wird nicht geladen');
+            console.log('⛔ Analytics deaktiviert - wird nicht geladen');
             return;
         }
         
         // Prüfen ob GoatCounter bereits geladen wurde
         if (window.goatcounter && document.querySelector('script[data-goatcounter]')) {
-            console.log('GoatCounter bereits geladen');
+            console.log('ℹ️ GoatCounter bereits geladen');
             return;
         }
         
@@ -218,11 +217,11 @@
         
         // Fehlerbehandlung
         script.onerror = function() {
-            console.error('Fehler beim Laden von GoatCounter');
+            console.error('❌ Fehler beim Laden von GoatCounter');
         };
         
         script.onload = function() {
-            console.log('GoatCounter Analytics erfolgreich geladen');
+            console.log('✅ GoatCounter Analytics erfolgreich geladen');
         };
         
         document.head.appendChild(script);
@@ -234,36 +233,35 @@
         const scripts = document.querySelectorAll('script[data-goatcounter]');
         scripts.forEach(script => {
             script.remove();
-            console.log('GoatCounter Script entfernt');
         });
         
         // GoatCounter Objekt entfernen
         if (window.goatcounter) {
             delete window.goatcounter;
-            console.log('GoatCounter Objekt entfernt');
         }
+        
+        console.log('🗑️ Analytics entfernt');
     }
 
-    // Consent zurücksetzen (für Entwicklung/Testing oder wenn User neu entscheiden will)
+    // Consent zurücksetzen (für Testing oder wenn User neu entscheiden will)
+    // Kann über Browser-Konsole aufgerufen werden: resetCookieConsent()
     window.resetCookieConsent = function() {
         try {
             localStorage.removeItem(COOKIE_CONSENT_KEY);
             localStorage.removeItem(COOKIE_SETTINGS_KEY);
-            localStorage.removeItem(CONSENT_VERSION_KEY);
             removeAnalytics();
-            console.log('Cookie-Consent zurückgesetzt');
-            location.reload();
+            console.log('🔄 Cookie-Consent zurückgesetzt - Seite wird neu geladen');
+            setTimeout(() => location.reload(), 500);
         } catch (e) {
-            console.error('Fehler beim Zurücksetzen:', e);
+            console.error('❌ Fehler beim Zurücksetzen:', e);
         }
     };
 
-    // Consent-Status abfragen (für externe Nutzung)
+    // Consent-Status abfragen (für externe Nutzung oder Debugging)
     window.getCookieConsent = function() {
         return {
             consent: getConsent(),
-            settings: getSettings(),
-            version: localStorage.getItem(CONSENT_VERSION_KEY)
+            settings: getSettings()
         };
     };
 
@@ -274,7 +272,7 @@
         initCookieBanner();
     }
 
-    // Sicherstellen dass Banner bei Navigation angezeigt wird (für SPAs)
+    // Sicherstellen dass Banner bei Navigation angezeigt wird (wichtig für SPAs)
     window.addEventListener('pageshow', function(event) {
         if (event.persisted) {
             initCookieBanner();
@@ -283,19 +281,24 @@
 
 })();
 
-// Hilfsfunktion: Manuelles Event-Tracking mit GoatCounter
+// ============================================================================
+// HILFSFUNKTIONEN FÜR EXTERNES EVENT-TRACKING
+// ============================================================================
+
+// Manuelles Event-Tracking mit GoatCounter
 // Nur wenn Analytics aktiviert ist
+// Beispiel: trackEvent('button-click', {title: 'Download PDF'})
 window.trackEvent = function(eventName, eventData = {}) {
     try {
         const settings = JSON.parse(localStorage.getItem('cookieSettings') || '{}');
         
         if (!settings.analytics) {
-            console.log('Analytics deaktiviert - Event nicht getrackt:', eventName);
+            console.log('⛔ Analytics deaktiviert - Event nicht getrackt:', eventName);
             return false;
         }
         
         if (!window.goatcounter || typeof window.goatcounter.count !== 'function') {
-            console.warn('GoatCounter nicht verfügbar - Event nicht getrackt:', eventName);
+            console.warn('⚠️ GoatCounter nicht verfügbar - Event nicht getrackt:', eventName);
             return false;
         }
         
@@ -305,10 +308,10 @@ window.trackEvent = function(eventName, eventData = {}) {
             event: true
         });
         
-        console.log('Event getrackt:', eventName);
+        console.log('📊 Event getrackt:', eventName);
         return true;
     } catch (e) {
-        console.error('Fehler beim Event-Tracking:', e);
+        console.error('❌ Fehler beim Event-Tracking:', e);
         return false;
     }
 };
