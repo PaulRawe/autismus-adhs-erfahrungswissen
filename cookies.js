@@ -1,42 +1,68 @@
 // Cookie Consent Management mit GoatCounter Integration
+// DSGVO-konform: Opt-in, localStorage statt Cookies, klare Nutzerführung
 (function() {
     'use strict';
 
     const COOKIE_CONSENT_KEY = 'cookieConsent';
     const COOKIE_SETTINGS_KEY = 'cookieSettings';
+    const CONSENT_VERSION = '1.0'; // Version der Consent-Einstellungen
+    const CONSENT_VERSION_KEY = 'cookieConsentVersion';
     
-    // Standard-Einstellungen
+    // Standard-Einstellungen (alle optional deaktiviert)
     const defaultSettings = {
-        necessary: true,      // Immer aktiv
-        analytics: false,     // GoatCounter
+        necessary: true,      // Immer aktiv (localStorage für Consent)
+        analytics: false,     // GoatCounter - muss explizit aktiviert werden
         marketing: false      // Zukünftige Marketing-Cookies
     };
 
     // Cookie Banner initialisieren
     function initCookieBanner() {
         const consent = getConsent();
+        const version = localStorage.getItem(CONSENT_VERSION_KEY);
         
-        if (consent === null) {
+        // Banner anzeigen wenn:
+        // - Kein Consent vorhanden ODER
+        // - Consent-Version veraltet
+        if (consent === null || version !== CONSENT_VERSION) {
             showBanner();
-        } else if (consent === 'accepted') {
-            loadAnalytics();
+        } else {
+            // Consent vorhanden und aktuell
+            const settings = getSettings();
+            if (settings.analytics) {
+                loadAnalytics();
+            }
         }
     }
 
     // Consent Status abrufen
     function getConsent() {
-        return localStorage.getItem(COOKIE_CONSENT_KEY);
+        try {
+            return localStorage.getItem(COOKIE_CONSENT_KEY);
+        } catch (e) {
+            console.warn('LocalStorage nicht verfügbar:', e);
+            return null;
+        }
     }
 
     // Cookie-Einstellungen abrufen
     function getSettings() {
-        const saved = localStorage.getItem(COOKIE_SETTINGS_KEY);
-        return saved ? JSON.parse(saved) : defaultSettings;
+        try {
+            const saved = localStorage.getItem(COOKIE_SETTINGS_KEY);
+            return saved ? JSON.parse(saved) : defaultSettings;
+        } catch (e) {
+            console.warn('Fehler beim Laden der Einstellungen:', e);
+            return defaultSettings;
+        }
     }
 
     // Cookie-Einstellungen speichern
     function saveSettings(settings) {
-        localStorage.setItem(COOKIE_SETTINGS_KEY, JSON.stringify(settings));
+        try {
+            localStorage.setItem(COOKIE_SETTINGS_KEY, JSON.stringify(settings));
+            localStorage.setItem(CONSENT_VERSION_KEY, CONSENT_VERSION);
+        } catch (e) {
+            console.error('Fehler beim Speichern der Einstellungen:', e);
+        }
     }
 
     // Banner anzeigen
@@ -44,6 +70,7 @@
         const banner = document.getElementById('cookie-banner');
         if (banner) {
             banner.style.display = 'block';
+            banner.setAttribute('aria-hidden', 'false');
         }
     }
 
@@ -52,6 +79,7 @@
         const banner = document.getElementById('cookie-banner');
         if (banner) {
             banner.style.display = 'none';
+            banner.setAttribute('aria-hidden', 'true');
         }
     }
 
@@ -63,10 +91,16 @@
             marketing: false
         };
         
-        localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
-        saveSettings(settings);
-        hideBanner();
-        loadAnalytics();
+        try {
+            localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
+            saveSettings(settings);
+            hideBanner();
+            loadAnalytics();
+            
+            console.log('Cookie-Einstellungen gespeichert: Alle akzeptiert');
+        } catch (e) {
+            console.error('Fehler beim Speichern der Zustimmung:', e);
+        }
     };
 
     // Nur notwendige Cookies
@@ -77,9 +111,16 @@
             marketing: false
         };
         
-        localStorage.setItem(COOKIE_CONSENT_KEY, 'declined');
-        saveSettings(settings);
-        hideBanner();
+        try {
+            localStorage.setItem(COOKIE_CONSENT_KEY, 'declined');
+            saveSettings(settings);
+            hideBanner();
+            removeAnalytics();
+            
+            console.log('Cookie-Einstellungen gespeichert: Nur notwendige');
+        } catch (e) {
+            console.error('Fehler beim Speichern der Ablehnung:', e);
+        }
     };
 
     // Einstellungen öffnen
@@ -87,15 +128,23 @@
         const modal = document.getElementById('cookie-settings-modal');
         if (modal) {
             modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
             loadCurrentSettings();
+            
+            // Focus auf erstes interaktives Element
+            const firstToggle = modal.querySelector('input[type="checkbox"]');
+            if (firstToggle) {
+                setTimeout(() => firstToggle.focus(), 100);
+            }
         }
     };
 
-    // Einstellungen schließen
+    // Einstellungen schließen (ohne zu speichern)
     window.closeCookieSettings = function() {
         const modal = document.getElementById('cookie-settings-modal');
         if (modal) {
             modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
         }
     };
 
@@ -106,8 +155,12 @@
         const analyticsToggle = document.getElementById('cookie-analytics');
         const marketingToggle = document.getElementById('cookie-marketing');
         
-        if (analyticsToggle) analyticsToggle.checked = settings.analytics;
-        if (marketingToggle) marketingToggle.checked = settings.marketing;
+        if (analyticsToggle) {
+            analyticsToggle.checked = settings.analytics;
+        }
+        if (marketingToggle) {
+            marketingToggle.checked = settings.marketing;
+        }
     }
 
     // Einstellungen speichern
@@ -121,30 +174,39 @@
             marketing: marketingToggle ? marketingToggle.checked : false
         };
         
-        saveSettings(settings);
-        localStorage.setItem(COOKIE_CONSENT_KEY, 'custom');
-        
-        closeCookieSettings();
-        hideBanner();
-        
-        // Analytics aktivieren/deaktivieren
-        if (settings.analytics) {
-            loadAnalytics();
-        } else {
-            removeAnalytics();
+        try {
+            saveSettings(settings);
+            localStorage.setItem(COOKIE_CONSENT_KEY, 'custom');
+            
+            closeCookieSettings();
+            hideBanner();
+            
+            // Analytics aktivieren/deaktivieren basierend auf Einstellungen
+            if (settings.analytics) {
+                loadAnalytics();
+            } else {
+                removeAnalytics();
+            }
+            
+            console.log('Cookie-Einstellungen gespeichert:', settings);
+        } catch (e) {
+            console.error('Fehler beim Speichern der benutzerdefinierten Einstellungen:', e);
         }
     };
 
-    // GoatCounter Analytics laden
+    // GoatCounter Analytics laden (nur wenn Zustimmung vorliegt)
     function loadAnalytics() {
         const settings = getSettings();
         
+        // Doppelprüfung: Nur laden wenn explizit zugestimmt
         if (!settings.analytics) {
+            console.log('Analytics deaktiviert - wird nicht geladen');
             return;
         }
         
         // Prüfen ob GoatCounter bereits geladen wurde
-        if (window.goatcounter) {
+        if (window.goatcounter && document.querySelector('script[data-goatcounter]')) {
+            console.log('GoatCounter bereits geladen');
             return;
         }
         
@@ -154,33 +216,55 @@
         script.src = '//gc.zgo.at/count.js';
         script.setAttribute('data-goatcounter', 'https://pauleheissta.goatcounter.com/count');
         
-        // Optional: Kein automatisches Tracking, nur manuelle Events
-        // script.setAttribute('data-goatcounter-settings', '{"no_onload": true}');
+        // Fehlerbehandlung
+        script.onerror = function() {
+            console.error('Fehler beim Laden von GoatCounter');
+        };
+        
+        script.onload = function() {
+            console.log('GoatCounter Analytics erfolgreich geladen');
+        };
         
         document.head.appendChild(script);
-        
-        console.log('GoatCounter Analytics geladen');
     }
 
     // Analytics entfernen
     function removeAnalytics() {
         // GoatCounter Script entfernen falls vorhanden
         const scripts = document.querySelectorAll('script[data-goatcounter]');
-        scripts.forEach(script => script.remove());
+        scripts.forEach(script => {
+            script.remove();
+            console.log('GoatCounter Script entfernt');
+        });
         
         // GoatCounter Objekt entfernen
         if (window.goatcounter) {
             delete window.goatcounter;
+            console.log('GoatCounter Objekt entfernt');
         }
-        
-        console.log('GoatCounter Analytics entfernt');
     }
 
-    // Consent zurücksetzen (für Entwicklung/Testing)
+    // Consent zurücksetzen (für Entwicklung/Testing oder wenn User neu entscheiden will)
     window.resetCookieConsent = function() {
-        localStorage.removeItem(COOKIE_CONSENT_KEY);
-        localStorage.removeItem(COOKIE_SETTINGS_KEY);
-        location.reload();
+        try {
+            localStorage.removeItem(COOKIE_CONSENT_KEY);
+            localStorage.removeItem(COOKIE_SETTINGS_KEY);
+            localStorage.removeItem(CONSENT_VERSION_KEY);
+            removeAnalytics();
+            console.log('Cookie-Consent zurückgesetzt');
+            location.reload();
+        } catch (e) {
+            console.error('Fehler beim Zurücksetzen:', e);
+        }
+    };
+
+    // Consent-Status abfragen (für externe Nutzung)
+    window.getCookieConsent = function() {
+        return {
+            consent: getConsent(),
+            settings: getSettings(),
+            version: localStorage.getItem(CONSENT_VERSION_KEY)
+        };
     };
 
     // Bei Seitenladen initialisieren
@@ -190,20 +274,41 @@
         initCookieBanner();
     }
 
+    // Sicherstellen dass Banner bei Navigation angezeigt wird (für SPAs)
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            initCookieBanner();
+        }
+    });
+
 })();
 
 // Hilfsfunktion: Manuelles Event-Tracking mit GoatCounter
+// Nur wenn Analytics aktiviert ist
 window.trackEvent = function(eventName, eventData = {}) {
-    const settings = JSON.parse(localStorage.getItem('cookieSettings') || '{}');
-    
-    if (!settings.analytics || !window.goatcounter) {
-        console.log('Analytics deaktiviert oder nicht geladen');
-        return;
+    try {
+        const settings = JSON.parse(localStorage.getItem('cookieSettings') || '{}');
+        
+        if (!settings.analytics) {
+            console.log('Analytics deaktiviert - Event nicht getrackt:', eventName);
+            return false;
+        }
+        
+        if (!window.goatcounter || typeof window.goatcounter.count !== 'function') {
+            console.warn('GoatCounter nicht verfügbar - Event nicht getrackt:', eventName);
+            return false;
+        }
+        
+        window.goatcounter.count({
+            path: eventName,
+            title: eventData.title || eventName,
+            event: true
+        });
+        
+        console.log('Event getrackt:', eventName);
+        return true;
+    } catch (e) {
+        console.error('Fehler beim Event-Tracking:', e);
+        return false;
     }
-    
-    window.goatcounter.count({
-        path: eventName,
-        title: eventData.title || eventName,
-        event: true
-    });
 };
