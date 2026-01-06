@@ -1,0 +1,199 @@
+<!-- kontaktformular.html -->
+<div id="contact-form-container" style="
+    background: #ffffff;
+    border: 1px solid #dde3e8;
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+">
+    <form id="contact-form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID" style="
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    ">
+        <div class="form-group">
+            <label for="name" style="
+                display: block;
+                margin-bottom: 0.5rem;
+                font-weight: bold;
+                color: #2f6f8f;
+            ">Name *</label>
+            <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required
+                style="
+                    width: 100%;
+                    padding: 0.8rem;
+                    border: 2px solid #dde3e8;
+                    border-radius: 4px;
+                    font-size: 1rem;
+                    font-family: Arial, sans-serif;
+                "
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="email" style="
+                display: block;
+                margin-bottom: 0.5rem;
+                font-weight: bold;
+                color: #2f6f8f;
+            ">E-Mail *</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required
+                style="
+                    width: 100%;
+                    padding: 0.8rem;
+                    border: 2px solid #dde3e8;
+                    border-radius: 4px;
+                    font-size: 1rem;
+                    font-family: Arial, sans-serif;
+                "
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="subject" style="
+                display: block;
+                margin-bottom: 0.5rem;
+                font-weight: bold;
+                color: #2f6f8f;
+            ">Betreff</label>
+            <input 
+                type="text" 
+                id="subject" 
+                name="subject"
+                style="
+                    width: 100%;
+                    padding: 0.8rem;
+                    border: 2px solid #dde3e8;
+                    border-radius: 4px;
+                    font-size: 1rem;
+                    font-family: Arial, sans-serif;
+                "
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="message" style="
+                display: block;
+                margin-bottom: 0.5rem;
+                font-weight: bold;
+                color: #2f6f8f;
+            ">Nachricht *</label>
+            <textarea 
+                id="message" 
+                name="message" 
+                rows="6" 
+                required
+                style="
+                    width: 100%;
+                    padding: 0.8rem;
+                    border: 2px solid #dde3e8;
+                    border-radius: 4px;
+                    font-size: 1rem;
+                    font-family: Arial, sans-serif;
+                    resize: vertical;
+                "
+            ></textarea>
+        </div>
+
+        <div class="form-group" style="
+            background: #f9fafb;
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: #6b6b6b;
+        ">
+            <label style="display: flex; align-items: start; gap: 0.5rem; cursor: pointer;">
+                <input 
+                    type="checkbox" 
+                    name="privacy" 
+                    required
+                    style="margin-top: 0.2rem; flex-shrink: 0;"
+                >
+                <span>Ich habe die <a href="datenschutz.html" style="color: #2f6f8f; text-decoration: underline;">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *</span>
+            </label>
+        </div>
+
+        <button 
+            type="submit"
+            style="
+                background: #2f6f8f;
+                color: #ffffff;
+                padding: 1rem 2rem;
+                border: none;
+                border-radius: 4px;
+                font-size: 1.05rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.2s ease;
+            "
+            onmouseover="this.style.background='#5fa8c9'"
+            onmouseout="this.style.background='#2f6f8f'"
+        >
+            Nachricht senden
+        </button>
+
+        <p style="
+            font-size: 0.85rem;
+            color: #6b6b6b;
+            margin: 0;
+            text-align: center;
+        ">
+            * Pflichtfelder
+        </p>
+    </form>
+
+    <div id="form-status" style="
+        display: none;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 4px;
+        text-align: center;
+    "></div>
+</div>
+
+<script>
+// Formular-Handling
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const formData = new FormData(form);
+    const statusDiv = document.getElementById('form-status');
+    
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            statusDiv.style.display = 'block';
+            statusDiv.style.background = '#d4edda';
+            statusDiv.style.color = '#155724';
+            statusDiv.style.border = '1px solid #c3e6cb';
+            statusDiv.textContent = '✓ Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.';
+            form.reset();
+        } else {
+            throw new Error('Formular-Fehler');
+        }
+    } catch (error) {
+        statusDiv.style.display = 'block';
+        statusDiv.style.background = '#f8d7da';
+        statusDiv.style.color = '#721c24';
+        statusDiv.style.border = '1px solid #f5c6cb';
+        statusDiv.textContent = '✗ Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut oder nutzen Sie die E-Mail-Adresse.';
+    }
+});
+</script>
