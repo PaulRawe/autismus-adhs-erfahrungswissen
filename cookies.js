@@ -166,3 +166,69 @@
     }
     
 })();
+
+// ==================================================
+// STICKY DOWNLOAD BUTTON - Automatisch auf allen Seiten
+// ==================================================
+(function() {
+    'use strict';
+    
+    function loadStickyButton() {
+        // Prüfen ob Button bereits existiert
+        if (document.getElementById('sticky-download-button')) {
+            return;
+        }
+        
+        // Button HTML erstellen und einfügen
+        const buttonHTML = `
+            <div id="sticky-download-button">
+                <a href="downloads.html" class="sticky-btn" aria-label="Zu unseren Hilfsmaterialien">
+                    <span class="sticky-btn-icon">📚</span>
+                    <span class="sticky-btn-text">
+                        <strong>Hilfsmaterialien</strong>
+                        <small>für Autismus & ADHS</small>
+                    </span>
+                </a>
+            </div>
+        `;
+        
+        // Am Ende des Body einfügen
+        const container = document.createElement('div');
+        container.innerHTML = buttonHTML.trim();
+        document.body.appendChild(container.firstElementChild);
+        
+        // Cookie-Banner Überwachung für Button-Position
+        checkCookieBanner();
+    }
+    
+    function checkCookieBanner() {
+        const banner = document.getElementById('cookie-banner');
+        if (banner) {
+            // Initial prüfen
+            updateBodyClass();
+            
+            // Bei Änderungen am Banner reagieren
+            const observer = new MutationObserver(function() {
+                updateBodyClass();
+            });
+            
+            observer.observe(banner, { attributes: true, attributeFilter: ['style'] });
+        }
+    }
+    
+    function updateBodyClass() {
+        const banner = document.getElementById('cookie-banner');
+        if (banner && banner.style.display !== 'none') {
+            document.body.classList.add('cookie-banner-visible');
+        } else {
+            document.body.classList.remove('cookie-banner-visible');
+        }
+    }
+    
+    // Button laden wenn DOM bereit ist
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadStickyButton);
+    } else {
+        loadStickyButton();
+    }
+})();
