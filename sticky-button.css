@@ -1,0 +1,107 @@
+/* Sticky Download Button - Autismusfreundlich */
+
+#sticky-download-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9998;
+    /* Unterhalb des Cookie-Banners (9999) */
+}
+
+.sticky-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, #2f6f8f 0%, #5fa8c9 100%);
+    color: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(47, 111, 143, 0.4);
+    transition: all 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 3px solid #ffffff;
+}
+
+.sticky-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(47, 111, 143, 0.5);
+    background: linear-gradient(135deg, #1e4d68 0%, #2f6f8f 100%);
+}
+
+.sticky-btn:focus {
+    outline: 4px solid #d97706;
+    outline-offset: 2px;
+}
+
+.sticky-btn-icon {
+    font-size: 2rem;
+    line-height: 1;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.sticky-btn-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.3;
+}
+
+.sticky-btn-text strong {
+    font-size: 1.05rem;
+    font-weight: bold;
+    display: block;
+}
+
+.sticky-btn-text small {
+    font-size: 0.8rem;
+    opacity: 0.95;
+    display: block;
+}
+
+/* Mobile Anpassung */
+@media (max-width: 768px) {
+    #sticky-download-button {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+    }
+    
+    .sticky-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.9rem 1.2rem;
+    }
+    
+    .sticky-btn-icon {
+        font-size: 1.8rem;
+    }
+    
+    .sticky-btn-text strong {
+        font-size: 0.95rem;
+    }
+    
+    .sticky-btn-text small {
+        font-size: 0.75rem;
+    }
+}
+
+/* Wenn Cookie-Banner aktiv ist, Button nach oben verschieben */
+body.cookie-banner-visible #sticky-download-button {
+    bottom: 120px;
+}
+
+@media (max-width: 768px) {
+    body.cookie-banner-visible #sticky-download-button {
+        bottom: 180px;
+    }
+}

@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Hilfsmaterialien für Autismus & ADHS - Praxiserprobt von Lehrerin Katharina</title>
+    <meta name="description" content="Sofort einsetzbare Materialien für Schule & Alltag. Von Lehrerin Katharina entwickelt und mit Sam erprobt. PDFs & Vorlagen zum Download.">
+    <meta name="keywords" content="Autismus Schulmaterial, ADHS Hilfsmittel, visuelle Strukturhilfen Download, Tagesplan Autismus, Lehrerin Autismus Materialien">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hilfsmaterialien für Autismus & ADHS">
+    <meta property="og:description" content="Praxiserprobte Materialien von Lehrerin Katharina - sofort einsetzbar">
+    <meta property="og:url" content="https://autismus-adhs-alltag.de/downloads.html">
+    
+    <!-- Cookie Consent CSS -->
+    <link rel="stylesheet" href="consent.css">
+    
+    <style>
+        :root {
+            --bg-main: #f4f6f8;
+            --bg-card: #ffffff;
+            --color-primary: #2f6f8f;
+            --color-secondary: #5fa8c9;
+            --color-text: #2b2b2b;
+            --color-muted: #6b6b6b;
+            --color-hover: #e6f1f6;
+            --color-accent: #d97706;
+            --color-success: #059669;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: #ffffff;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        nav {
+            background-color: #e9edf1;
+            padding: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        nav a:focus {
+            outline: 3px solid var(--color-secondary);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem 4rem;
+        }
+
+        section {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        section h2 {
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        section h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Problem-Lösung Bereich */
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .problem-box,
+        .solution-box {
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .problem-box {
+            background: #fff5f5;
+            border-left: 4px solid #dc2626;
+        }
+
+        .problem-box h3 {
+            color: #dc2626;
+        }
+
+        .solution-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--color-success);
+        }
+
+        .solution-box h3 {
+            color: var(--color-success);
+        }
+
+        .problem-box ul,
+        .solution-box ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .problem-box li,
+        .solution-box li {
+            padding: 0.5rem 0 0.5rem 1.8rem;
+            position: relative;
+        }
+
+        .problem-box li:before {
+            content: "❌";
+            position: absolute;
+            left: 0;
+        }
+
+        .solution-box li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Produkte */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: #fafafa;
+            border: 2px solid #dde3e8;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 6px 20px rgba(47, 111, 143, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .product-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .product-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .product-card .subtitle {
+            color: var(--color-muted);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .product-description {
+            margin: 1.5rem 0;
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        .product-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .product-features li {
+            padding: 0.6rem 0 0.6rem 2rem;
+            position: relative;
+            color: var(--color-text);
+        }
+
+        .product-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-success);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .product-footer {
+            margin-top: auto;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e9edf1;
+        }
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+
+        .price-currency {
+            font-size: 1.2rem;
+            color: var(--color-muted);
+        }
+
+        .buy-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--color-accent) 0%, #b45309 100%);
+            color: #ffffff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+        }
+
+        .buy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(217, 119, 6, 0.4);
+            background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+        }
+
+        .buy-button:focus {
+            outline: 3px solid var(--color-secondary);
+            outline-offset: 2px;
+        }
+
+        /* Vertrauenselemente */
+        .trust-section {
+            background: #f0f7fb;
+            border: 2px solid var(--color-secondary);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .trust-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .trust-text h4 {
+            color: var(--color-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .trust-text p {
+            color: var(--color-muted);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: #fafafa;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .faq-item h4 {
+            color: var(--color-primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-item p {
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+        }
+
+        .cta-section h2 {
+            color: #ffffff;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ffffff;
+            color: var(--color-primary);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Garantie Badge */
+        .guarantee {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #fffbeb;
+            border: 2px solid #fbbf24;
+            border-radius: 8px;
+        }
+
+        .guarantee-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guarantee h3 {
+            color: #d97706;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: #2e2e2e;
+            color: #ffffff;
+            padding: 2rem 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .legal {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #cccccc;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .problem-solution {
+                grid-template-columns: 1fr;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 1.5rem 1rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📚 Hilfsmaterialien für den Alltag mit Autismus & ADHS</h1>
+    <p class="subtitle">Praxiserprobte Vorlagen, Pläne und Strukturhilfen – entwickelt von Lehrerin Katharina und täglich mit Sam getestet</p>
+    <div class="trust-badge">
+        <span>✓</span> Von Eltern für Eltern
+    </div>
+    <div class="trust-badge">
+        <span>✓</span> Sofort als PDF verfügbar
+    </div>
+</header>
+
+<nav aria-label="Hauptnavigation">
+    <ul>
+        <li><a href="index.html">← Zurück zur Startseite</a></li>
+        <li><a href="ueberuns.html">Über uns</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+</nav>
+
+<main>
+
+<!-- Problem & Lösung -->
+<section>
+    <h2>Kennst du das auch?</h2>
+    
+    <div class="problem-solution">
+        <div class="problem-box">
+            <h3>🚨 Die Herausforderung</h3>
+            <ul>
+                <li>Jeden Morgen Stress beim Anziehen</li>
+                <li>Übergänge führen zu Meltdowns</li>
+                <li>Schule überfordert dein Kind</li>
+                <li>Hausaufgaben enden in Tränen</li>
+                <li>Struktur fehlt, aber du weißt nicht wo anfangen</li>
+                <li>Therapeuten geben wenig konkrete Alltagshilfen</li>
+            </ul>
+        </div>
+        
+        <div class="solution-box">
+            <h3>✨ Die Lösung</h3>
+            <ul>
+                <li>Fertige visuelle Pläne zum Ausdrucken</li>
+                <li>Schritt-für-Schritt Anleitungen</li>
+                <li>Erprobte Strukturhilfen für Schule & Zuhause</li>
+                <li>Sofort einsetzbar ohne Vorbereitung</li>
+                <li>Von Lehrerin entwickelt & mit Sam getestet</li>
+                <li>Spart dir Stunden an Recherche und Bastelei</li>
+            </ul>
+        </div>
+    </div>
+    
+    <p style="text-align: center; font-size: 1.1rem; margin-top: 2rem;">
+        <strong>Katharina ist Lehrerin und Mutter von Sam (7, Autismus & ADHS).</strong><br>
+        Sie kennt beide Seiten: Die Anforderungen der Schule UND die Überforderung zu Hause.<br>
+        Deshalb funktionieren diese Materialien wirklich.
+    </p>
+</section>
+
+<!-- Vertrauen aufbauen -->
+<div class="trust-section">
+    <h3 style="text-align: center; color: var(--color-primary); margin-bottom: 1rem;">Warum du uns vertrauen kannst</h3>
+    <div class="trust-grid">
+        <div class="trust-item">
+            <div class="trust-icon">👩‍🏫</div>
+            <div class="trust-text">
+                <h4>Lehrerin mit Expertise</h4>
+                <p>Katharina weiß, was in der Schule funktioniert und was Kinder wirklich brauchen</p>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">💙</div>
+            <div class="trust-text">
+                <h4>Täglich erprobt</h4>
+                <p>Alles wurde mit Sam getestet und funktioniert im echten Familienalltag</p>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">📥</div>
+            <div class="trust-text">
+                <h4>Sofort verfügbar</h4>
+                <p>Nach dem Kauf direkt als PDF herunterladen und nutzen</p>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">🎯</div>
+            <div class="trust-text">
+                <h4>Praxisnah & konkret</h4>
+                <p>Keine Theorie – nur das, was wirklich hilft</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Produkte -->
+<section>
+    <h2>Unsere Hilfsmaterialien</h2>
+    <p>Alle Materialien sind als PDF zum Download verfügbar und können sofort ausgedruckt werden.</p>
+    
+    <div class="product-grid">
+        
+        <!-- Produkt 1: Morgenroutine -->
+        <div class="product-card">
+            <div class="product-header">
+                <span class="product-icon">🌅</span>
+                <h3>Morgenroutine Visualisiert</h3>
+                <p class="subtitle">Der entspannte Start in den Tag</p>
+            </div>
+            
+            <div class="product-description">
+                Ein komplettes Set mit visuellen Schritt-für-Schritt-Plänen für die Morgenroutine. 
+                Reduziert Stress, gibt Sicherheit und macht selbstständiges Handeln möglich.
+            </div>
+            
+            <ul class="product-features">
+                <li>3 verschiedene Visualisierungsstufen (Bilder, Bilder+Text, nur Text)</li>
+                <li>Blanko-Vorlage zum individuellen Anpassen</li>
+                <li>Druckfertige PDFs in Farbe und Schwarz-Weiß</li>
+                <li>Anleitung für die Einführung zu Hause</li>
+            </ul>
+            
+            <div class="product-footer">
+                <div class="price">
+                    <span class="price-amount">12,90</span>
+                    <span class="price-currency">€</span>
+                </div>
+                <a href="https://prawe.gumroad.com/l/morgenroutine" class="buy-button" target="_blank" rel="noopener">
+                    Jetzt kaufen bei Gumroad →
+                </a>
+            </div>
+        </div>
+        
+        <!-- Produkt 2: Tagesstruktur -->
+        <div class="product-card">
+            <div class="product-header">
+                <span class="product-icon">📅</span>
+                <h3>Tagesplan & Wochenübersicht</h3>
+                <p class="subtitle">Struktur und Vorhersehbarkeit</p>
+            </div>
+            
+            <div class="product-description">
+                Visuelle Tagespläne und Wochenübersichten, die deinem Kind Orientierung geben. 
+                Übergänge werden vorhersehbar, Meltdowns seltener.
+            </div>
+            
+            <ul class="product-features">
+                <li>Tagesplan mit Uhrzeiten und Icons</li>
+                <li>Wochenübersicht für die ganze Familie</li>
+                <li>Editierbare Versionen (anpassbar am PC)</li>
+                <li>Icon-Sammlung mit 50+ Symbolen</li>
+            </ul>
+            
+            <div class="product-footer">
+                <div class="price">
+                    <span class="price-amount">14,90</span>
+                    <span class="price-currency">€</span>
+                </div>
+                <a href="https://prawe.gumroad.com/l/tagesplan" class="buy-button" target="_blank" rel="noopener">
+                    Jetzt kaufen bei Gumroad →
+                </a>
+            </div>
+        </div>
+        
+        <!-- Produkt 3: Gefühle -->
+        <div class="product-card">
+            <div class="product-header">
+                <span class="product-icon">😊</span>
+                <h3>Gefühlskarten & Emotionsregulation</h3>
+                <p class="subtitle">Gefühle verstehen und ausdrücken</p>
+            </div>
+            
+            <div class="product-description">
+                Hilft deinem Kind, Gefühle zu benennen und zu regulieren. 
+                Inklusive Strategiekarten für schwierige Momente.
+            </div>
+            
+            <ul class="product-features">
+                <li>20 Gefühlskarten zum Ausschneiden</li>
+                <li>Gefühlsthermometer für Intensitäten</li>
+                <li>Beruhigungsstrategien-Karten</li>
+                <li>Poster: "Was hilft mir, wenn ich wütend bin?"</li>
+            </ul>
+            
+            <div class="product-footer">
+                <div class="price">
+                    <span class="price-amount">9,90</span>
+                    <span class="price-currency">€</span>
+                </div>
+                <a href="https://prawe.gumroad.com/l/gefuehlskarten" class="buy-button" target="_blank" rel="noopener">
+                    Jetzt kaufen bei Gumroad →
+                </a>
+            </div>
+        </div>
+        
+        <!-- Produkt 4: Schulpaket -->
+        <div class="product-card">
+            <div class="product-header">
+                <span class="product-icon">🎒</span>
+                <h3>Schulpaket für Autismus & ADHS</h3>
+                <p class="subtitle">Von Lehrerin Katharina entwickelt</p>
+            </div>
+            
+            <div class="product-description">
+                Das Komplettpaket für die Schule: Strukturhilfen, Pausenkarten, 
+                Hausaufgabenpläne und Kommunikationshilfen zwischen Schule und Eltern.
+            </div>
+            
+            <ul class="product-features">
+                <li>Stundenplan mit visuellen Symbolen</li>
+                <li>Pausenkarten ("Ich brauche Ruhe", "Kann ich helfen?")</li>
+                <li>Hausaufgabenplan mit Abbruchmöglichkeit</li>
+                <li>Eltern-Lehrer-Kommunikationsbogen</li>
+                <li>Notfallkarten für schwierige Momente</li>
+            </ul>
+            
+            <div class="product-footer">
+                <div class="price">
+                    <span class="price-amount">19,90</span>
+                    <span class="price-currency">€</span>
+                </div>
+                <a href="https://prawe.gumroad.com/l/schulpaket" class="buy-button" target="_blank" rel="noopener">
+                    Jetzt kaufen bei Gumroad →
+                </a>
+            </div>
+        </div>
+        
+        <!-- Produkt 5: Komplett-Bundle -->
+        <div class="product-card" style="border: 3px solid var(--color-accent); position: relative;">
+            <div style="position: absolute; top: -15px; right: 20px; background: var(--color-accent); color: white; padding: 0.4rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.9rem;">
+                🔥 Bestseller
+            </div>
+            <div class="product-header">
+                <span class="product-icon">🎁</span>
+                <h3>Komplett-Bundle</h3>
+                <p class="subtitle">Alle Materialien zum Sparpreis</p>
+            </div>
+            
+            <div class="product-description">
+                Spare über 30%! Alle 4 Materialpakete in einem Bundle – 
+                der komplette Werkzeugkasten für Alltag und Schule.
+            </div>
+            
+            <ul class="product-features">
+                <li>Morgenroutine Visualisiert</li>
+                <li>Tagesplan & Wochenübersicht</li>
+                <li>Gefühlskarten & Emotionsregulation</li>
+                <li>Schulpaket für Autismus & ADHS</li>
+                <li><strong>+ BONUS: E-Book "Unser Weg mit Sam"</strong></li>
+            </ul>
+            
+            <div class="product-footer">
+                <div class="price">
+                    <span style="text-decoration: line-through; color: var(--color-muted); font-size: 1.3rem;">57,60 €</span>
+                </div>
+                <div class="price">
+                    <span class="price-amount">39,90</span>
+                    <span class="price-currency">€</span>
+                </div>
+                <a href="https://prawe.gumroad.com/l/komplett-bundle" class="buy-button" target="_blank" rel="noopener">
+                    Bundle kaufen & sparen →
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<!-- Garantie -->
+<div class="guarantee">
+    <div class="guarantee-icon">🛡️</div>
+    <h3>100% Zufriedenheitsgarantie</h3>
+    <p>
+        Sollten die Materialien nicht zu euch passen, erhältst du innerhalb von 30 Tagen 
+        dein Geld zurück – ohne Wenn und Aber. Schreib uns einfach eine E-Mail.
+    </p>
+</div>
+
+<!-- FAQ -->
+<section>
+    <h2>Häufige Fragen</h2>
+    
+    <div class="faq-item">
+        <h4>Wie erhalte ich die Materialien?</h4>
+        <p>
+            Nach dem Kauf erhältst du sofort einen Download-Link per E-Mail. 
+            Die Dateien sind im PDF-Format und können beliebig oft ausgedruckt werden.
+        </p>
+    </div>
+    
+    <div class="faq-item">
+        <h4>Kann ich die Materialien anpassen?</h4>
+        <p>
+            Ja! Bei vielen Produkten sind editierbare Versionen dabei (PDF mit Formularfeldern), 
+            die du am Computer anpassen kannst. Blanko-Vorlagen sind ebenfalls enthalten.
+        </p>
+    </div>
+    
+    <div class="faq-item">
+        <h4>Funktioniert das auch bei meinem Kind?</h4>
+        <p>
+            Die Materialien sind bewusst flexibel gestaltet. Was bei Sam funktioniert, 
+            muss nicht bei jedem Kind passen – aber die Grundstruktur hilft den meisten. 
+            Deshalb gibt es verschiedene Visualisierungsstufen und Blanko-Vorlagen.
+        </p>
+    </div>
+    
+    <div class="faq-item">
+        <h4>Ist das nur für autistische Kinder?</h4>
+        <p>
+            Nein! Struktur und Vorhersehbarkeit helfen allen Kindern – besonders 
+            bei ADHS, Angststörungen oder einfach sehr sensiblen Kindern.
+        </p>
+    </div>
+    
+    <div class="faq-item">
+        <h4>Welche Bezahlmethoden gibt es?</h4>
+        <p>
+            Die Materialien werden über Gumroad verkauft. Dort kannst du per Kreditkarte, 
+            PayPal oder Apple/Google Pay bezahlen. Der Checkout ist sicher und einfach.
+        </p>
+    </div>
+    
+    <div class="faq-item">
+        <h4>Kann ich eine Rechnung erhalten?</h4>
+        <p>
+            Ja, Gumroad sendet dir automatisch eine Rechnung per E-Mail. 
+            Diese kannst du auch bei der Krankenkasse oder in deiner Steuererklärung einreichen.
+        </p>
+    </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+    <h2>Bereit für mehr Struktur und weniger Stress?</h2>
+    <p>
+        Hol dir jetzt die Materialien, die Sam und unsere Familie jeden Tag nutzen.<br>
+        Sofort als PDF verfügbar – keine Wartezeit.
+    </p>
+    <a href="#" onclick="window.scrollTo({top: document.querySelector('.product-grid').offsetTop - 100, behavior: 'smooth'}); return false;" class="cta-button">
+        Zu den Produkten ↑
+    </a>
+</div>
+
+<section style="text-align: center;">
+    <h2>Noch Fragen?</h2>
+    <p style="margin-bottom: 1.5rem;">
+        Schreib uns gerne eine E-Mail oder nutze das Kontaktformular auf der Startseite.
+    </p>
+    <a href="index.html#kontakt" style="color: var(--color-primary); text-decoration: underline; font-size: 1.1rem; font-weight: bold;">
+        → Zum Kontaktformular
+    </a>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Autismus & ADHS – Erfahrungswissen für Eltern</p>
+    <div class="legal">
+        <a href="impressum.html">Impressum</a> | 
+        <a href="datenschutz.html">Datenschutz</a> | 
+        <a href="cookies.html" onclick="openCookieSettingsFromFooter(); return false;">Cookie-Einstellungen</a> | 
+        <a href="ueberuns.html">Über Uns</a> |
+        <a href="transparenz.html">Transparenz & Werbung</a> | 
+        <a href="agb.html">AGB</a>
+    </div>
+</footer>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner">
+    <div class="banner-content">
+        <p>
+            Wir verwenden Cookies, um die Nutzung unserer Website zu analysieren und zu verbessern. 
+            <a href="cookies.html">Mehr erfahren</a>
+        </p>
+        <div class="button-group">
+            <button class="btn-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+            <button class="btn-decline" onclick="declineCookies()">Nur notwendige</button>
+            <button class="btn-settings" onclick="openCookieSettings()">Einstellungen</button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Settings Modal -->
+<div id="cookie-settings-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Cookie-Einstellungen</h2>
+        </div>
+        <div class="modal-body">
+            <div class="cookie-category">
+                <h3>Notwendige Cookies</h3>
+                <p>Diese Cookies sind für die Grundfunktionen der Website erforderlich.</p>
+                <div class="cookie-toggle">
+                    <label>Notwendig</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" checked disabled>
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cookie-category">
+                <h3>Analyse-Cookies</h3>
+                <p>
+                    Diese Cookies helfen uns, die Nutzung der Website zu verstehen 
+                    (GoatCounter – datenschutzfreundlich).
+                </p>
+                <div class="cookie-toggle">
+                    <label>Analyse</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="cookie-analytics">
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cookie-category">
+                <h3>Marketing-Cookies</h3>
+                <p>Diese Cookies werden für zukünftige Werbezwecke verwendet.</p>
+                <div class="cookie-toggle">
+                    <label>Marketing</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="cookie-marketing">
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel" onclick="closeCookieSettings()">Abbrechen</button>
+            <button class="btn-save" onclick="saveCookieSettings()">Speichern</button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Consent Script -->
+<script src="cookies.js"></script>
+<script src="sticky-button-loader.js"></script>
+
+</body>
+</html>
