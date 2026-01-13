@@ -233,33 +233,42 @@
     }
 })();
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     const sticky = document.getElementById("sticky-download-button");
     const footer = document.querySelector("footer");
 
     if (!sticky || !footer) return;
 
-    function updateStickyPosition() {
-        const footerRect = footer.getBoundingClientRect();
-        const stickyRect = sticky.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
+    const baseOffset = 32; // entspricht deinem bottom: 2rem
 
-        const overlap = viewportHeight - footerRect.top;
+    function updateSticky() {
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
 
-        if (overlap > 0) {
-            // Button würde in den Footer laufen → stoppen
-            sticky.classList.add("footer-stop");
-            sticky.style.bottom = overlap + 32 + "px";
+        const footerTop = footer.offsetTop;
+        const stickyHeight = sticky.offsetHeight;
+
+        // Wo wäre die Unterkante des Sticky Buttons?
+        const stickyBottom = scrollY + windowHeight - baseOffset;
+
+        // Wo beginnt der Footer?
+        const footerTrigger = footerTop;
+
+        if (stickyBottom >= footerTrigger) {
+            // Button trifft Footer → fixieren
+            sticky.style.position = "absolute";
+            sticky.style.bottom = "auto";
+            sticky.style.top = (footerTrigger - stickyHeight - baseOffset) + "px";
         } else {
             // Normalzustand
-            sticky.classList.remove("footer-stop");
-            sticky.style.bottom = "";
+            sticky.style.position = "fixed";
+            sticky.style.top = "auto";
+            sticky.style.bottom = baseOffset + "px";
         }
     }
 
-    window.addEventListener("scroll", updateStickyPosition);
-    window.addEventListener("resize", updateStickyPosition);
-    updateStickyPosition();
+    window.addEventListener("scroll", updateSticky);
+    window.addEventListener("resize", updateSticky);
+    updateSticky();
 });
-</script>
+                
