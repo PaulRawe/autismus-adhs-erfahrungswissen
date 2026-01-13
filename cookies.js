@@ -232,3 +232,34 @@
         loadStickyButton();
     }
 })();
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const sticky = document.getElementById("sticky-download-button");
+    const footer = document.querySelector("footer");
+
+    if (!sticky || !footer) return;
+
+    function updateStickyPosition() {
+        const footerRect = footer.getBoundingClientRect();
+        const stickyRect = sticky.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        const overlap = viewportHeight - footerRect.top;
+
+        if (overlap > 0) {
+            // Button würde in den Footer laufen → stoppen
+            sticky.classList.add("footer-stop");
+            sticky.style.bottom = overlap + 32 + "px";
+        } else {
+            // Normalzustand
+            sticky.classList.remove("footer-stop");
+            sticky.style.bottom = "";
+        }
+    }
+
+    window.addEventListener("scroll", updateStickyPosition);
+    window.addEventListener("resize", updateStickyPosition);
+    updateStickyPosition();
+});
+</script>
