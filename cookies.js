@@ -1,317 +1,168 @@
-// Cookie Consent Management mit GoatCounter Integration
-// DSGVO-konform: Opt-in, localStorage statt Cookies, klare Nutzerführung
-// Version 1.1 - Fix: Banner wird nur einmal beim ersten Besuch angezeigt
+// Cookie Consent Management
+// Speichert Einstellungen in localStorage, damit sie nicht immer wieder abgefragt werden
+
 (function() {
     'use strict';
-
-    const COOKIE_CONSENT_KEY = 'cookieConsent';
-    const COOKIE_SETTINGS_KEY = 'cookieSettings';
     
-    // Standard-Einstellungen (alle optional deaktiviert)
-    const defaultSettings = {
-        necessary: true,      // Immer aktiv (localStorage für Consent)
-        analytics: false,     // GoatCounter - muss explizit aktiviert werden
-        marketing: false      // Zukünftige Marketing-Cookies
-    };
-
-    // Cookie Banner initialisieren
-    function initCookieBanner() {
-        const consent = getConsent();
-        
-        // Banner NUR anzeigen wenn noch NIE eine Entscheidung getroffen wurde
-        if (consent === null) {
-            showBanner();
-        } else {
-            // Consent vorhanden -> Analytics laden falls zugestimmt
-            const settings = getSettings();
-            if (settings.analytics) {
-                loadAnalytics();
-            }
+    const COOKIE_CONSENT_KEY = 'autismus-adhs-cookie-consent';
+    const COOKIE_CONSENT_VERSION = '1.0';
+    
+    // Prüfen ob Consent bereits gegeben wurde
+    function hasConsent() {
+        try {
+            const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+            if (!consent) return false;
+            
+            const data = JSON.parse(consent);
+            return data.version === COOKIE_CONSENT_VERSION && data.timestamp;
+        } catch (e) {
+            return false;
         }
     }
-
-    // Consent Status abrufen
-    function getConsent() {
+    
+    // Consent speichern
+    function saveConsent(analytics, marketing) {
+        const consent = {
+            version: COOKIE_CONSENT_VERSION,
+            timestamp: Date.now(),
+            analytics: analytics,
+            marketing: marketing,
+            necessary: true
+        };
+        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
+        loadAnalytics(analytics);
+    }
+    
+    // Consent laden
+    function loadConsent() {
         try {
-            return localStorage.getItem(COOKIE_CONSENT_KEY);
+            const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+            if (!consent) return null;
+            return JSON.parse(consent);
         } catch (e) {
-            console.warn('LocalStorage nicht verfügbar:', e);
             return null;
         }
     }
-
-    // Cookie-Einstellungen abrufen
-    function getSettings() {
-        try {
-            const saved = localStorage.getItem(COOKIE_SETTINGS_KEY);
-            return saved ? JSON.parse(saved) : defaultSettings;
-        } catch (e) {
-            console.warn('Fehler beim Laden der Einstellungen:', e);
-            return defaultSettings;
+    
+    // Analytics laden (GoatCounter)
+    function loadAnalytics(enabled) {
+        if (enabled) {
+            // GoatCounter Script laden wenn Analyse-Cookies akzeptiert
+            if (!document.querySelector('script[data-goatcounter]')) {
+                const script = document.createElement('script');
+                script.setAttribute('data-goatcounter', 'https://autismus-adhs.goatcounter.com/count');
+                script.async = true;
+                script.src = '//gc.zgo.at/count.js';
+                document.head.appendChild(script);
+            }
         }
     }
-
-    // Cookie-Einstellungen speichern
-    function saveSettings(settings) {
-        try {
-            localStorage.setItem(COOKIE_SETTINGS_KEY, JSON.stringify(settings));
-        } catch (e) {
-            console.error('Fehler beim Speichern der Einstellungen:', e);
+    
+    // Google AdSense laden
+    function loadAdSense(enabled) {
+        if (enabled) {
+            // AdSense ist bereits im HTML eingebunden
+            // Hier könnten zusätzliche Marketing-Scripte geladen werden
         }
     }
-
-    // Banner anzeigen
+    
+    // Banner anzeigen/verstecken
     function showBanner() {
         const banner = document.getElementById('cookie-banner');
         if (banner) {
             banner.style.display = 'block';
-            banner.setAttribute('aria-hidden', 'false');
+            // Accessibility: Focus auf ersten Button setzen
+            setTimeout(() => {
+                const firstButton = banner.querySelector('button');
+                if (firstButton) firstButton.focus();
+            }, 100);
         }
     }
-
-    // Banner ausblenden
+    
     function hideBanner() {
         const banner = document.getElementById('cookie-banner');
         if (banner) {
             banner.style.display = 'none';
-            banner.setAttribute('aria-hidden', 'true');
         }
     }
-
-    // Alle Cookies akzeptieren
+    
+    // Modal anzeigen/verstecken
+    function showModal() {
+        const modal = document.getElementById('cookie-settings-modal');
+        if (modal) {
+            modal.style.display = 'flex';
+            // Bestehende Einstellungen laden
+            const consent = loadConsent();
+            if (consent) {
+                document.getElementById('cookie-analytics').checked = consent.analytics;
+                document.getElementById('cookie-marketing').checked = consent.marketing;
+            }
+        }
+    }
+    
+    function hideModal() {
+        const modal = document.getElementById('cookie-settings-modal');
+        if (modal) {
+            modal.style.display = 'none';
+        }
+    }
+    
+    // Globale Funktionen für Buttons
     window.acceptCookies = function() {
-        const settings = {
-            necessary: true,
-            analytics: true,
-            marketing: false
-        };
-        
-        try {
-            localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
-            saveSettings(settings);
-            hideBanner();
-            loadAnalytics();
-            
-            console.log('✅ Cookie-Einstellungen gespeichert: Alle akzeptiert');
-        } catch (e) {
-            console.error('❌ Fehler beim Speichern der Zustimmung:', e);
-        }
+        saveConsent(true, true);
+        hideBanner();
     };
-
-    // Nur notwendige Cookies
+    
     window.declineCookies = function() {
-        const settings = {
-            necessary: true,
-            analytics: false,
-            marketing: false
-        };
-        
-        try {
-            localStorage.setItem(COOKIE_CONSENT_KEY, 'declined');
-            saveSettings(settings);
-            hideBanner();
-            removeAnalytics();
-            
-            console.log('✅ Cookie-Einstellungen gespeichert: Nur notwendige');
-        } catch (e) {
-            console.error('❌ Fehler beim Speichern der Ablehnung:', e);
-        }
+        saveConsent(false, false);
+        hideBanner();
     };
-
-    // Einstellungen öffnen
+    
     window.openCookieSettings = function() {
-        const modal = document.getElementById('cookie-settings-modal');
-        if (modal) {
-            modal.classList.add('active');
-            modal.setAttribute('aria-hidden', 'false');
-            loadCurrentSettings();
-            
-            // Focus auf erstes interaktives Element (Barrierefreiheit)
-            const firstToggle = modal.querySelector('input[type="checkbox"]:not([disabled])');
-            if (firstToggle) {
-                setTimeout(() => firstToggle.focus(), 100);
-            }
-        }
+        hideBanner();
+        showModal();
     };
-
-    // Einstellungen schließen (ohne zu speichern)
+    
     window.closeCookieSettings = function() {
-        const modal = document.getElementById('cookie-settings-modal');
-        if (modal) {
-            modal.classList.remove('active');
-            modal.setAttribute('aria-hidden', 'true');
+        hideModal();
+        // Banner wieder anzeigen wenn kein Consent vorhanden
+        if (!hasConsent()) {
+            showBanner();
         }
     };
-
-    // Aktuelle Einstellungen in Modal laden
-    function loadCurrentSettings() {
-        const settings = getSettings();
-        
-        const analyticsToggle = document.getElementById('cookie-analytics');
-        const marketingToggle = document.getElementById('cookie-marketing');
-        
-        if (analyticsToggle) {
-            analyticsToggle.checked = settings.analytics;
-        }
-        if (marketingToggle) {
-            marketingToggle.checked = settings.marketing;
-        }
-    }
-
-    // Einstellungen speichern
+    
     window.saveCookieSettings = function() {
-        const analyticsToggle = document.getElementById('cookie-analytics');
-        const marketingToggle = document.getElementById('cookie-marketing');
-        
-        const settings = {
-            necessary: true,
-            analytics: analyticsToggle ? analyticsToggle.checked : false,
-            marketing: marketingToggle ? marketingToggle.checked : false
-        };
-        
-        try {
-            saveSettings(settings);
-            
-            // Wenn noch kein Consent vorhanden war, jetzt setzen
-            if (!getConsent()) {
-                localStorage.setItem(COOKIE_CONSENT_KEY, 'custom');
-            }
-            
-            closeCookieSettings();
+        const analytics = document.getElementById('cookie-analytics').checked;
+        const marketing = document.getElementById('cookie-marketing').checked;
+        saveConsent(analytics, marketing);
+        hideModal();
+    };
+    
+    // Cookie-Einstellungen aus Footer öffnen
+    window.openCookieSettingsFromFooter = function() {
+        showModal();
+    };
+    
+    // Initialisierung beim Laden der Seite
+    function init() {
+        // Prüfen ob Consent bereits gegeben wurde
+        if (hasConsent()) {
             hideBanner();
-            
-            // Analytics aktivieren/deaktivieren basierend auf Einstellungen
-            if (settings.analytics) {
-                loadAnalytics();
-            } else {
-                removeAnalytics();
+            const consent = loadConsent();
+            if (consent) {
+                loadAnalytics(consent.analytics);
+                loadAdSense(consent.marketing);
             }
-            
-            console.log('✅ Cookie-Einstellungen gespeichert:', settings);
-        } catch (e) {
-            console.error('❌ Fehler beim Speichern der benutzerdefinierten Einstellungen:', e);
+        } else {
+            showBanner();
         }
-    };
-
-    // GoatCounter Analytics laden (nur wenn Zustimmung vorliegt)
-    function loadAnalytics() {
-        const settings = getSettings();
-        
-        // Doppelprüfung: Nur laden wenn explizit zugestimmt
-        if (!settings.analytics) {
-            console.log('⛔ Analytics deaktiviert - wird nicht geladen');
-            return;
-        }
-        
-        // Prüfen ob GoatCounter bereits geladen wurde
-        if (window.goatcounter && document.querySelector('script[data-goatcounter]')) {
-            console.log('ℹ️ GoatCounter bereits geladen');
-            return;
-        }
-        
-        // GoatCounter Script laden
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = '//gc.zgo.at/count.js';
-        script.setAttribute('data-goatcounter', 'https://pauleheissta.goatcounter.com/count');
-        
-        // Fehlerbehandlung
-        script.onerror = function() {
-            console.error('❌ Fehler beim Laden von GoatCounter');
-        };
-        
-        script.onload = function() {
-            console.log('✅ GoatCounter Analytics erfolgreich geladen');
-        };
-        
-        document.head.appendChild(script);
     }
-
-    // Analytics entfernen
-    function removeAnalytics() {
-        // GoatCounter Script entfernen falls vorhanden
-        const scripts = document.querySelectorAll('script[data-goatcounter]');
-        scripts.forEach(script => {
-            script.remove();
-        });
-        
-        // GoatCounter Objekt entfernen
-        if (window.goatcounter) {
-            delete window.goatcounter;
-        }
-        
-        console.log('🗑️ Analytics entfernt');
-    }
-
-    // Consent zurücksetzen (für Testing oder wenn User neu entscheiden will)
-    // Kann über Browser-Konsole aufgerufen werden: resetCookieConsent()
-    window.resetCookieConsent = function() {
-        try {
-            localStorage.removeItem(COOKIE_CONSENT_KEY);
-            localStorage.removeItem(COOKIE_SETTINGS_KEY);
-            removeAnalytics();
-            console.log('🔄 Cookie-Consent zurückgesetzt - Seite wird neu geladen');
-            setTimeout(() => location.reload(), 500);
-        } catch (e) {
-            console.error('❌ Fehler beim Zurücksetzen:', e);
-        }
-    };
-
-    // Consent-Status abfragen (für externe Nutzung oder Debugging)
-    window.getCookieConsent = function() {
-        return {
-            consent: getConsent(),
-            settings: getSettings()
-        };
-    };
-
-    // Bei Seitenladen initialisieren
+    
+    // Warten bis DOM geladen ist
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initCookieBanner);
+        document.addEventListener('DOMContentLoaded', init);
     } else {
-        initCookieBanner();
+        init();
     }
-
-    // Sicherstellen dass Banner bei Navigation angezeigt wird (wichtig für SPAs)
-    window.addEventListener('pageshow', function(event) {
-        if (event.persisted) {
-            initCookieBanner();
-        }
-    });
-
+    
 })();
-
-// ============================================================================
-// HILFSFUNKTIONEN FÜR EXTERNES EVENT-TRACKING
-// ============================================================================
-
-// Manuelles Event-Tracking mit GoatCounter
-// Nur wenn Analytics aktiviert ist
-// Beispiel: trackEvent('button-click', {title: 'Download PDF'})
-window.trackEvent = function(eventName, eventData = {}) {
-    try {
-        const settings = JSON.parse(localStorage.getItem('cookieSettings') || '{}');
-        
-        if (!settings.analytics) {
-            console.log('⛔ Analytics deaktiviert - Event nicht getrackt:', eventName);
-            return false;
-        }
-        
-        if (!window.goatcounter || typeof window.goatcounter.count !== 'function') {
-            console.warn('⚠️ GoatCounter nicht verfügbar - Event nicht getrackt:', eventName);
-            return false;
-        }
-        
-        window.goatcounter.count({
-            path: eventName,
-            title: eventData.title || eventName,
-            event: true
-        });
-        
-        console.log('📊 Event getrackt:', eventName);
-        return true;
-    } catch (e) {
-        console.error('❌ Fehler beim Event-Tracking:', e);
-        return false;
-    }
-};
