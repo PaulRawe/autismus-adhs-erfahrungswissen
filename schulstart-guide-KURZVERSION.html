@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schulstart-Guide - Kostenloses Schnupper-PDF | Autismus-ADHS-Alltag</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #2D5F5D;
+            --color-secondary: #8B7355;
+            --color-accent: #D4A574;
+            --color-light: #F5F1E8;
+            --color-white: #FFFFFF;
+            --color-text: #2C2C2C;
+            --color-text-light: #6B6B6B;
+            --shadow-md: 0 4px 16px rgba(45, 95, 93, 0.12);
+            --shadow-lg: 0 8px 32px rgba(45, 95, 93, 0.16);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            line-height: 1.7;
+            color: var(--color-text);
+            background: linear-gradient(135deg, #F5F1E8 0%, #E8E3D6 100%);
+            font-size: 18px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #234745 100%);
+            color: var(--color-white);
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            position: relative;
+            z-index: 1;
+            line-height: 1.2;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .teaser-box {
+            background: linear-gradient(135deg, #FFF5E8 0%, #FFE8CC 100%);
+            border: 3px solid var(--color-accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .teaser-box h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .teaser-box p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            margin-bottom: 0;
+        }
+
+        .author-section {
+            background: var(--color-white);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--color-accent);
+        }
+
+        .author-section h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .author-section p {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .author-section strong {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        .section {
+            background: var(--color-white);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #E8E3D6;
+        }
+
+        .section h3 {
+            color: var(--color-secondary);
+            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .timeline-compact {
+            display: grid;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .timeline-item {
+            background: var(--color-light);
+            padding: 1.2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .timeline-item strong {
+            color: var(--color-primary);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item ul {
+            margin-left: 1.2rem;
+            color: var(--color-text-light);
+        }
+
+        .timeline-item li {
+            margin-bottom: 0.3rem;
+        }
+
+        .checklist-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .checklist-card {
+            background: var(--color-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .checklist-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .checklist-card h4 {
+            color: var(--color-primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .checklist-card p {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .blur-overlay {
+            position: relative;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.95) 70%, rgba(255,255,255,1) 100%);
+        }
+
+        .blur-content {
+            filter: blur(4px);
+            user-select: none;
+            opacity: 0.5;
+        }
+
+        .unlock-banner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--color-accent);
+            color: var(--color-text);
+            padding: 1.5rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .unlock-banner::before {
+            content: '🔒';
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1a4644 100%);
+            color: var(--color-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--color-white);
+            border: none;
+            padding: 0;
+        }
+
+        .cta-box p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-box ul {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            list-style: none;
+        }
+
+        .cta-box li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .cta-box li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--color-accent);
+            color: var(--color-text);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: #E8B67F;
+        }
+
+        .preview-badge {
+            display: inline-block;
+            background: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+
+        .footer {
+            background: var(--color-primary);
+            color: var(--color-white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header .subtitle {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .cta-box {
+                padding: 2rem 1.5rem;
+            }
+
+            .cta-box h2 {
+                font-size: 1.8rem;
+            }
+
+            .checklist-preview {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Schulstart-Guide für Eltern autistischer Kinder</h1>
+        <p class="subtitle">Die wichtigsten Schritte für einen erfolgreichen Schulstart – kompakt und praxisnah</p>
+        <span class="badge">KOSTENLOSE SCHNUPPER-VERSION</span>
+    </header>
+
+    <div class="container">
+        <div class="teaser-box">
+            <h2>🎯 Willkommen zur Schnupper-Version!</h2>
+            <p>Dies ist ein kompakter Einblick in den vollständigen Schulstart-Guide. Hier siehst du die wichtigsten Grundlagen – die Vollversion enthält über 70 spezifische Fragen, detaillierte Checklisten und praxiserprobte Strategien.</p>
+        </div>
+
+        <div class="author-section">
+            <h3>Über mich: Katharina</h3>
+            <p>Ich bin studierte Lehrerin und arbeite aktuell an einer Grundschule in Marl. Als Mutter eines autistischen Kindes kenne ich beide Perspektiven – die pädagogische und die elterliche.</p>
+            <p>Auf <strong>autismus-adhs-alltag.de</strong> teile ich mein Wissen und meine Erfahrungen, um anderen Familien den Weg durch den Schulalltag zu erleichtern. Dieser Guide ist aus jahrelanger Praxis entstanden.</p>
+        </div>
+
+        <section class="section">
+            <h2>⏰ Zeitplan: Wann muss was erledigt sein?</h2>
+            
+            <div class="timeline-compact">
+                <div class="timeline-item">
+                    <strong>12-18 Monate vor Schulbeginn</strong>
+                    <ul>
+                        <li>Diagnostik abschließen oder aktualisieren</li>
+                        <li>Schulen besichtigen und vergleichen</li>
+                        <li>Erste Gespräche mit Schulen führen</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>9-12 Monate vor Schulbeginn</strong>
+                    <ul>
+                        <li><strong>Schulbegleitung beantragen</strong> (Jugendamt/Sozialamt)</li>
+                        <li><strong>Förderbedarf feststellen lassen</strong> (Schulamt)</li>
+                        <li>Therapeuten in Planung einbeziehen</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>6-9 Monate vor Schulbeginn</strong>
+                    <ul>
+                        <li>Schulanmeldung durchführen</li>
+                        <li>Erstgespräch mit Schulleitung</li>
+                        <li><strong>Nachteilsausgleich beantragen</strong></li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>3-6 Monate vor Schulbeginn</strong>
+                    <ul>
+                        <li>Schnuppertage vereinbaren</li>
+                        <li>Gespräch mit künftiger Klassenleitung</li>
+                        <li>Schulmaterialien besorgen</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>1-3 Monate vor Schulbeginn</strong>
+                    <ul>
+                        <li>Schulweg mehrfach üben</li>
+                        <li>Tagesablauf langsam umstellen</li>
+                        <li>Sozialgeschichten erstellen</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>✅ Die 3 wichtigsten Anträge <span class="preview-badge">PREVIEW</span></h2>
+            
+            <div class="checklist-preview">
+                <div class="checklist-card">
+                    <h4>Schulbegleitung</h4>
+                    <p><strong>Wo?</strong> Jugendamt (§35a SGB VIII) oder Sozialamt<br>
+                    <strong>Wann?</strong> 9-12 Monate vorher<br>
+                    <strong>Dauer?</strong> Mehrere Monate Bearbeitungszeit!</p>
+                </div>
+
+                <div class="checklist-card">
+                    <h4>Sonderpädagogischer Förderbedarf</h4>
+                    <p><strong>Wo?</strong> Schulamt (über die Schule)<br>
+                    <strong>Wann?</strong> 9-12 Monate vorher<br>
+                    <strong>Wichtig:</strong> Basis für viele Unterstützungsmaßnahmen</p>
+                </div>
+
+                <div class="checklist-card">
+                    <h4>Nachteilsausgleich</h4>
+                    <p><strong>Wo?</strong> Direkt bei der Schule<br>
+                    <strong>Wann?</strong> 6-9 Monate vorher<br>
+                    <strong>Beispiele:</strong> Mehr Zeit, ruhiger Raum, Pausen</p>
+                </div>
+            </div>
+
+            <p style="color: var(--color-text-light); font-style: italic; margin-top: 1rem;">
+                💡 In der Vollversion: Komplette Checkliste mit allen 20+ Dokumenten und Anträgen, inkl. genauer Anleitungen und Musterschreiben.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>💬 Top 5 Fragen an die Schulleitung <span class="preview-badge">PREVIEW</span></h2>
+            
+            <ol style="padding-left: 1.5rem; color: var(--color-text-light); line-height: 2;">
+                <li><strong>Welche Erfahrungen haben Sie mit autistischen Kindern?</strong></li>
+                <li><strong>Wie stehen Sie zur Zusammenarbeit mit Schulbegleitungen?</strong></li>
+                <li><strong>Gibt es einen Raum für Rückzug und Pausen?</strong></li>
+                <li><strong>Wie groß sind die Klassen und wie ist die personelle Ausstattung?</strong></li>
+                <li><strong>Wie flexibel können Strukturen angepasst werden?</strong></li>
+            </ol>
+
+            <div class="blur-overlay">
+                <div class="blur-content">
+                    <h3>Weitere 45+ Fragen in der Vollversion:</h3>
+                    <ul style="padding-left: 1.5rem;">
+                        <li>Welche Fortbildungen haben die Lehrkräfte zum Thema Autismus?</li>
+                        <li>Wie wird die Schulbegleitung ins Klassengeschehen eingebunden?</li>
+                        <li>Welche sonderpädagogische Unterstützung steht zur Verfügung?</li>
+                        <li>Wie ist der Geräuschpegel in der Schule / in den Klassen?</li>
+                        <li>Gibt es die Möglichkeit eines angepassten Stundenplans?</li>
+                        <li>Wie häufig findet Austausch zwischen Eltern und Lehrkräften statt?</li>
+                        <li>Gibt es ein Mitteilungsheft oder eine andere Form des täglichen Austauschs?</li>
+                    </ul>
+                </div>
+                <div class="unlock-banner">
+                    Vollversion freischalten
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-box">
+            <h2>🎓 Hol dir den vollständigen Guide!</h2>
+            <p>Die Vollversion enthält alles, was du für einen erfolgreichen Schulstart brauchst:</p>
+            <ul>
+                <li>Über 70 spezifische Fragen für Schulleitung, Klassenleitung, Schulbegleitung & Co.</li>
+                <li>20+ Checklisten mit Abhak-Funktion für alle Vorbereitungsbereiche</li>
+                <li>Detaillierte Anleitungen für Sozialgeschichten und Visualisierungen</li>
+                <li>Praktische Tipps für die Vorbereitung zu Hause</li>
+                <li>Ratgeber für die ersten Schulwochen und Krisensituationen</li>
+                <li>Rechtliche Grundlagen und Anlaufstellen mit Kontaktdaten</li>
+                <li>Interaktive Akkordeons zum schnellen Nachschlagen</li>
+            </ul>
+            <a href="http://autismus-adhs-alltag.de/" class="cta-button">Jetzt zur Vollversion →</a>
+            <p style="margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.9;">Kostenlos auf autismus-adhs-alltag.de verfügbar</p>
+        </div>
+
+        <section class="section">
+            <h2>📚 Was dich noch erwartet</h2>
+            
+            <div class="checklist-preview">
+                <div class="checklist-card">
+                    <h4>📋 Fragenkatalog Klassenleitung</h4>
+                    <p>25+ spezifische Fragen zu Unterricht, Förderung und Alltagssituationen</p>
+                </div>
+
+                <div class="checklist-card">
+                    <h4>🛠️ Praktische Vorbereitung</h4>
+                    <p>Schritt-für-Schritt-Anleitungen für Sozialgeschichten, Visualisierungen & mehr</p>
+                </div>
+
+                <div class="checklist-card">
+                    <h4>✨ Erste Schulwochen</h4>
+                    <p>Detaillierte Checkliste und Tipps für die kritische Eingewöhnungsphase</p>
+                </div>
+
+                <div class="checklist-card">
+                    <h4>📞 Anlaufstellen</h4>
+                    <p>Alle wichtigen Kontakte: Beratungsstellen, Ämter, Selbsthilfegruppen</p>
+                </div>
+
+                <div class="checklist-card">
+                    <h4>⚖️ Rechtliche Grundlagen</h4>
+                    <p>UN-BRK, Schulgesetze, SGB VIII & IX verständlich erklärt</p>
+                </div>
+
+                <div class="checklist-card">
+                    <h4>💡 Profi-Tipps</h4>
+                    <p>Erfahrungswissen aus Lehrerperspektive und Elternsicht</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="author-section" style="border-left: 5px solid var(--color-primary);">
+            <h3>Du bist nicht allein!</h3>
+            <p>Der Schulstart mit einem autistischen Kind ist herausfordernd, aber mit guter Vorbereitung und dem richtigen Wissen kann er gelingen.</p>
+            <p><strong>Auf autismus-adhs-alltag.de findest du:</strong></p>
+            <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                <li>Den vollständigen Schulstart-Guide (kostenlos!)</li>
+                <li>Weitere Artikel zu Alltag, Therapie und Familie</li>
+                <li>Erfahrungsberichte und praktische Tipps</li>
+                <li>Eine Community von betroffenen Familien</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p><strong>© 2025 Katharina Rawe | autismus-adhs-alltag.de</strong></p>
+        <p>Lehrerin aus Marl • Mutter • Autorin</p>
+        <p style="margin-top: 1rem;"><a href="http://autismus-adhs-alltag.de/">→ Jetzt die Vollversion kostenlos abrufen</a></p>
+    </footer>
+
+    <script>
+        // Smooth scroll for CTA button
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            // Could add analytics tracking here
+            console.log('CTA clicked - redirecting to full version');
+        });
+
+        // Add some interactivity to cards
+        document.querySelectorAll('.checklist-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-6px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-4px)';
+            });
+        });
+    </script>
+</body>
+</html>
