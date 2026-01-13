@@ -729,27 +729,26 @@
 </section>
 
 
-<section id="kontakt">
-    <h2>Kontakt</h2>
-    <p>Fragen, Feedback oder Themenvorschläge? Nutzen Sie das Kontaktformular oder schreiben Sie uns direkt:</p>
-    
-    <!-- Kontaktformular laden -->
-    <div id="contact-form-wrapper"></div>
-    
-    <p style="text-align: center; margin-top: 2rem;">
-        <strong>Oder per E-Mail:</strong> rawe.p@freenet.de
-    </p>
+<section class="contact-section" id="kontakt">
+  <h2>Haben Sie weitere Fragen?</h2>
+  <p>Schreiben Sie mir gerne. Ich versuche, jede Nachricht persönlich zu beantworten.</p>
+
+  <p>
+    Sie können mir jederzeit eine E-Mail schreiben:
+    <a href="mailto:rawe.p@freenet.de" class="mail-link">
+      rawe.p@freenet.de
+    </a>
+  </p>
 </section>
 
-<script>
-// Kontaktformular nur auf index.html laden
-fetch('kontaktformular.html')
-    .then(response => response.text())
-    .then(html => {
-        document.getElementById('contact-form-wrapper').innerHTML = html;
-    })
-    .catch(error => console.error('Kontaktformular konnte nicht geladen werden:', error));
-</script>
+        </main>
+
+        <aside class="sidebar" id="sidebar-downloads">
+            <!-- Sidebar-Downloads per JS -->
+        </aside>
+
+    </div>
+</div>
 
 </main>
 
