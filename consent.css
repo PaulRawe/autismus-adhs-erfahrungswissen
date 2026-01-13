@@ -401,3 +401,10 @@ body.cookie-banner-visible #sticky-download-button {
         bottom: 180px;
     }
 }
+/* ============================================ */
+/* GOOGLE ADSENSE AUSBLENDEN */
+/* ============================================ */
+
+.ad-container {
+    display: none !important;
+}
