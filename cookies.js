@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!sticky || !footer) return;
 
-    const baseOffset = 32; // entspricht deinem bottom: 2rem
+    const baseOffset = 2; // entspricht deinem bottom: 2rem
 
     function updateSticky() {
         const scrollY = window.scrollY;
@@ -272,3 +272,4 @@ document.addEventListener("DOMContentLoaded", () => {
     updateSticky();
 });
                 
+
