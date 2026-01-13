@@ -758,12 +758,13 @@ fetch('kontaktformular.html')
     <div class="legal">
         <a href="impressum.html">Impressum</a> | 
         <a href="datenschutz.html">Datenschutz</a> | 
-        <a href="cookies.html">Cookie-Einstellungen</a> | 
+        <a href="cookies.html" onclick="openCookieSettingsFromFooter(); return false;">Cookie-Einstellungen</a> | 
         <a href="ueberuns.html">Über Uns</a> |
         <a href="transparenz.html">Transparenz & Werbung</a> | 
         <a href="agb.html">AGB</a>
     </div>
 </footer>
+
 <!-- Cookie Consent Banner -->
 <div id="cookie-banner">
     <div class="banner-content">
@@ -834,6 +835,8 @@ fetch('kontaktformular.html')
 
 <!-- Cookie Consent Script -->
 <script src="cookies.js"></script>
-<script src="disclaimer.js"></script>
+<!-- Sticky Download Button -->
+<script src="sticky-button-loader.js"></script>
+
 </body>
 </html>
