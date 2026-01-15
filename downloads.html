@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Downloads - Autismus & ADHS Guides und Toolkits</title>
-    <meta name="description" content="Praxiserprobte Guides und Toolkits für Autismus & ADHS - Schulstart-Guide und Regulations-Toolkit. Sofort verfügbar als Download.">
-    <meta name="keywords" content="Autismus Schulstart, ADHS Einschulung, Autismus Toolkit, visuelle Skalen, Regulations-Toolkit, Kommunikation Autismus">
+    <title>Downloads - Autismus Alltags-Hilfen | Tagesstruktur & Regulations-Toolkit</title>
+    <meta name="description" content="Visueller Tagesstrukturplan und Regulations-Toolkit für autistische Kinder. Sofort verfügbar.">
+    <meta name="keywords" content="Autismus Tagesplan, visueller Wochenplan, Regulations-Toolkit, visuelle Skalen">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Downloads - Autismus & ADHS Guides">
-    <meta property="og:description" content="Praxiserprobte Guides und Toolkits für den Alltag mit Autismus & ADHS">
+    <meta property="og:title" content="Downloads - Autismus Alltags-Hilfen">
+    <meta property="og:description" content="Tagesstrukturplan & Regulations-Toolkit für autistische Kinder">
     <meta property="og:url" content="https://autismus-adhs-alltag.de/downloads.html">
     
     <!-- Cookie Consent CSS -->
@@ -24,9 +24,9 @@
             --color-secondary: #5fa8c9;
             --color-text: #2b2b2b;
             --color-muted: #6b6b6b;
-            --color-hover: #e6f1f6;
             --color-accent: #d97706;
             --color-success: #059669;
+            --color-bundle: #7c3aed;
         }
 
         * {
@@ -52,9 +52,6 @@
         header h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         header .subtitle {
@@ -94,48 +91,76 @@
             font-weight: bold;
         }
 
-        nav a:focus {
-            outline: 3px solid var(--color-secondary);
-        }
-
         main {
             max-width: 1100px;
             margin: 0 auto;
             padding: 2rem 1rem 4rem;
         }
 
-        section {
+        /* Produkt-Container */
+        .product {
             background-color: var(--bg-card);
-            border-radius: 8px;
-            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .product.bundle {
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+            border: 3px solid var(--color-bundle);
+            position: relative;
+        }
+
+        .bundle-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--color-bundle);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+        }
+
+        .product-header {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            align-items: center;
             margin-bottom: 2rem;
         }
 
-        section h2 {
-            color: var(--color-primary);
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
+        .product-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
-        section h3 {
+        .product-title h2 {
             color: var(--color-primary);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .bundle .product-title h2 {
+            color: var(--color-bundle);
+        }
+
+        .product-subtitle {
+            color: var(--color-muted);
+            font-size: 1.1rem;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
         }
 
-        /* Produkt-Trenner */
-        .product-divider {
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--color-secondary), transparent);
-            margin: 4rem 0;
-        }
-
-        /* Problem-Lösung Bereich */
+        /* Problem-Lösung nebeneinander */
         .problem-solution {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
 
         .problem-box,
@@ -151,6 +176,8 @@
 
         .problem-box h3 {
             color: #dc2626;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
         }
 
         .solution-box {
@@ -160,17 +187,19 @@
 
         .solution-box h3 {
             color: var(--color-success);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
         }
 
         .problem-box ul,
         .solution-box ul {
             list-style: none;
-            margin-top: 1rem;
+            font-size: 0.95rem;
         }
 
         .problem-box li,
         .solution-box li {
-            padding: 0.5rem 0 0.5rem 1.8rem;
+            padding: 0.4rem 0 0.4rem 1.5rem;
             position: relative;
         }
 
@@ -186,180 +215,148 @@
             left: 0;
         }
 
-        /* Haupt-Produkt */
-        .hero-product {
-            background: linear-gradient(135deg, #fafafa 0%, #f0f7fb 100%);
-            border: 3px solid var(--color-primary);
-            border-radius: 16px;
-            padding: 3rem 2.5rem;
-            margin: 2rem 0;
-            box-shadow: 0 8px 24px rgba(47, 111, 143, 0.15);
-        }
-
-        .product-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .product-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .product-header h2 {
-            color: var(--color-primary);
-            font-size: 2.2rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .product-subtitle {
-            color: var(--color-muted);
-            font-size: 1.2rem;
-            font-style: italic;
-        }
-
-        .product-description {
-            margin: 2rem 0;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .features-grid {
+        /* Features */
+        .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
         }
 
-        .feature-card {
-            background: #ffffff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--color-accent);
+        .feature-item {
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 6px;
+            font-size: 0.9rem;
         }
 
-        .feature-card h4 {
+        .feature-item strong {
             color: var(--color-primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.3rem;
         }
 
-        .feature-card p {
-            color: var(--color-text);
-            font-size: 0.95rem;
-        }
-
-        .price-box {
+        /* Preis & Button */
+        .price-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             background: #fffbeb;
             border: 2px solid var(--color-accent);
             border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            margin: 2rem 0;
+            padding: 1.5rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .bundle .price-section {
+            background: #faf5ff;
+            border-color: var(--color-bundle);
+        }
+
+        .price-info {
+            flex: 1;
         }
 
         .price-label {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             color: var(--color-muted);
-            margin-bottom: 0.5rem;
         }
 
         .price {
             display: flex;
             align-items: baseline;
-            justify-content: center;
             gap: 0.5rem;
-            margin: 1rem 0;
+            margin: 0.5rem 0;
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: var(--color-muted);
+            font-size: 1.3rem;
         }
 
         .price-amount {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: bold;
             color: var(--color-primary);
         }
 
+        .bundle .price-amount {
+            color: var(--color-bundle);
+        }
+
         .price-currency {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: var(--color-muted);
+        }
+
+        .price-savings {
+            color: var(--color-success);
+            font-weight: bold;
+            font-size: 0.95rem;
         }
 
         .buy-button {
             display: inline-block;
             background: linear-gradient(135deg, var(--color-accent) 0%, #b45309 100%);
             color: #ffffff;
-            padding: 1.2rem 3rem;
+            padding: 1rem 2.5rem;
             border: none;
             border-radius: 50px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
             text-decoration: none;
-            text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 16px rgba(217, 119, 6, 0.4);
-            margin: 1rem 0;
+            white-space: nowrap;
+        }
+
+        .bundle .buy-button {
+            background: linear-gradient(135deg, var(--color-bundle) 0%, #6d28d9 100%);
+            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);
         }
 
         .buy-button:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(217, 119, 6, 0.5);
-            background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
         }
 
-        .buy-button:focus {
-            outline: 3px solid var(--color-secondary);
-            outline-offset: 2px;
+        .bundle .buy-button:hover {
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
         }
 
-        .money-back {
-            margin-top: 1rem;
-            color: var(--color-success);
-            font-weight: bold;
-            font-size: 1.05rem;
-        }
-
-        /* Vertrauenselemente */
-        .trust-section {
-            background: #f0f7fb;
-            border: 2px solid var(--color-secondary);
+        /* Crosslink Box */
+        .crosslink {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid var(--color-accent);
             border-radius: 8px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            padding: 1.2rem;
             margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.95rem;
         }
 
-        .trust-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .trust-icon {
-            font-size: 2rem;
-            flex-shrink: 0;
-        }
-
-        .trust-text h4 {
-            color: var(--color-primary);
-            margin-bottom: 0.3rem;
-        }
-
-        .trust-text p {
-            color: var(--color-muted);
-            font-size: 0.9rem;
+        .crosslink strong {
+            color: var(--color-accent);
         }
 
         /* FAQ */
+        section.faq {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        section.faq h2 {
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+        }
+
         .faq-item {
             margin-bottom: 1.5rem;
-            padding: 1.5rem;
+            padding: 1.2rem;
             background: #fafafa;
             border-radius: 8px;
             border-left: 4px solid var(--color-primary);
@@ -367,33 +364,13 @@
 
         .faq-item h4 {
             color: var(--color-primary);
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
         }
 
         .faq-item p {
-            color: var(--color-text);
+            font-size: 0.95rem;
             line-height: 1.6;
-        }
-
-        /* Garantie Badge */
-        .guarantee {
-            text-align: center;
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: #fffbeb;
-            border: 2px solid #fbbf24;
-            border-radius: 8px;
-        }
-
-        .guarantee-icon {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .guarantee h3 {
-            color: #d97706;
-            margin-bottom: 0.5rem;
         }
 
         footer {
@@ -420,32 +397,34 @@
                 font-size: 1.8rem;
             }
 
-            header .subtitle {
-                font-size: 1.1rem;
+            .product-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .product-image {
+                max-width: 200px;
+                margin: 0 auto;
             }
 
             .problem-solution {
                 grid-template-columns: 1fr;
             }
 
-            .features-grid {
+            .features {
                 grid-template-columns: 1fr;
             }
 
-            .trust-grid {
-                grid-template-columns: 1fr;
+            .price-section {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
             }
 
-            section {
-                padding: 1.5rem 1rem;
-            }
-
-            section h2 {
-                font-size: 1.5rem;
-            }
-
-            .hero-product {
-                padding: 2rem 1.5rem;
+            .bundle-badge {
+                position: static;
+                display: inline-block;
+                margin-bottom: 1rem;
             }
         }
     </style>
@@ -453,17 +432,11 @@
 <body>
 
 <header>
-    <h1>📚 Downloads - Praktische Guides & Toolkits</h1>
-    <p class="subtitle">Praxiserprobte Unterstützung für den Alltag mit Autismus & ADHS</p>
-    <div class="trust-badge">
-        <span>✓</span> Von Betroffenen entwickelt
-    </div>
-    <div class="trust-badge">
-        <span>✓</span> Sofort verfügbar
-    </div>
-    <div class="trust-badge">
-        <span>✓</span> 30 Tage Geld-zurück
-    </div>
+    <h1>📚 Alltags-Hilfen für autistische Kinder</h1>
+    <p class="subtitle">Tagesstruktur & Regulation – praxiserprobt und sofort einsetzbar</p>
+    <div class="trust-badge">✓ Praxiserprobt</div>
+    <div class="trust-badge">✓ Sofort verfügbar</div>
+    <div class="trust-badge">✓ 30 Tage Geld-zurück</div>
 </header>
 
 <nav aria-label="Hauptnavigation">
@@ -476,434 +449,255 @@
 
 <main>
 
-<!-- Intro-Sektion -->
-<section style="text-align: center;">
-    <h2>Unsere Produkte für dich</h2>
-    <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">
-        Alle unsere Guides und Toolkits sind aus echter Erfahrung entstanden – 
-        nicht aus der Theorie, sondern aus dem gelebten Alltag mit Autismus und ADHS. 
-        <strong>Praxiserprobt, sofort einsetzbar und mit Geld-zurück-Garantie.</strong>
-    </p>
-</section>
-
-<!-- ===================== PRODUKT 1: REGULATIONS-TOOLKIT ===================== -->
-
-<section>
-    <h2>🎯 Autismus Regulations- & Kommunikations-Toolkit</h2>
+<!-- ===================== BUNDLE ===================== -->
+<div class="product bundle">
+    <div class="bundle-badge">💎 SPARE 12€</div>
     
+    <div class="product-header">
+        <div>
+            <img src="bundle-cover.png" alt="Bundle: Tagesplan + Toolkit" class="product-image">
+        </div>
+        <div class="product-title">
+            <h2>🎁 Komplettpaket: Tagesstruktur + Regulation</h2>
+            <p class="product-subtitle">Beide Systeme perfekt aufeinander abgestimmt</p>
+        </div>
+    </div>
+
+    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+        <strong>Der Tagesplan zeigt WAS passiert – das Toolkit zeigt WIE es sich anfühlt.</strong>
+        Zusammen schaffen sie maximale Orientierung und helfen, Überforderung frühzeitig zu erkennen.
+    </p>
+
+    <div class="features">
+        <div class="feature-item">
+            <strong>📅 Tagesstrukturplan</strong>
+            135+ Bildkarten | 3 Größen | 15 Themen
+        </div>
+        <div class="feature-item">
+            <strong>🎯 Regulations-Toolkit</strong>
+            6 Skalen | Notfallkarten | Präventionsplan
+        </div>
+        <div class="feature-item">
+            <strong>✨ Perfekte Ergänzung</strong>
+            Orientierung + Selbstwahrnehmung
+        </div>
+    </div>
+
+    <div class="price-section">
+        <div class="price-info">
+            <p class="price-label">Einzeln: 54,98€</p>
+            <div class="price">
+                <span class="price-amount">42,99</span>
+                <span class="price-currency">€</span>
+            </div>
+            <p class="price-savings">✨ Du sparst 11,99€ (22%)</p>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/bmomt" class="buy-button" target="_blank" rel="noopener">
+            Jetzt Bundle kaufen
+        </a>
+    </div>
+</div>
+
+<!-- ===================== PRODUKT 1: TAGESPLAN ===================== -->
+<div class="product">
+    <div class="product-header">
+        <div>
+            <img src="Cover.png" alt="Visueller Tagesstrukturplan" class="product-image">
+        </div>
+        <div class="product-title">
+            <h2>📅 Visueller Tages- und Wochenplan</h2>
+            <p class="product-subtitle">135+ Bildkarten für klare Alltagsstruktur</p>
+        </div>
+    </div>
+
     <div class="problem-solution">
         <div class="problem-box">
-            <h3>🚨 Kennst du das?</h3>
+            <h3>🚨 Das Problem</h3>
             <ul>
-                <li>Dein Kind kann nicht sagen, wenn es überfordert ist</li>
-                <li>Meltdowns kommen "aus dem Nichts"</li>
-                <li>Kommunikation fällt schwer oder bricht zusammen</li>
-                <li>Überforderung wird zu spät erkannt</li>
-                <li>Grenzen können nicht gezeigt werden</li>
+                <li>Ständige Fragen "Was machen wir?"</li>
                 <li>Übergänge führen zu Konflikten</li>
+                <li>Änderungen überfordern</li>
+                <li>Routinen sind chaotisch</li>
             </ul>
         </div>
         
         <div class="solution-box">
-            <h3>✨ Das Toolkit hilft dir dabei</h3>
+            <h3>✅ Die Lösung</h3>
             <ul>
-                <li>Innere Zustände ohne Worte sichtbar machen</li>
-                <li>Überforderung frühzeitig erkennen</li>
-                <li>Kommunikation erleichtern mit 6 visuellen Skalen</li>
-                <li>Meltdowns präventiv verhindern</li>
-                <li>Grenzen klar kommunizieren</li>
-                <li>Sicherheit im Alltag schaffen</li>
+                <li>Tagesablauf visuell darstellen</li>
+                <li>Übergänge vorhersehbar machen</li>
+                <li>Änderungen ankündigen</li>
+                <li>Routinen etablieren</li>
             </ul>
         </div>
     </div>
-    
-    <p style="text-align: center; font-size: 1.1rem; margin-top: 2rem; line-height: 1.8;">
-        <strong>Entwickelt mit Fokus auf Neurodiversität – wissenschaftlich fundiert & praxiserprobt.</strong><br>
-        Reizarmes Design, wertfreie Kommunikation, ohne Erwartungsdruck.
-    </p>
-</section>
 
-<div class="trust-section">
-    <h3 style="text-align: center; color: var(--color-primary); margin-bottom: 1rem;">Warum dieses Toolkit anders ist</h3>
-    <div class="trust-grid">
-        <div class="trust-item">
-            <div class="trust-icon">🧠</div>
-            <div class="trust-text">
-                <h4>Wissenschaftlich fundiert</h4>
-                <p>Basiert auf aktuellen Erkenntnissen zum autistischen Erleben</p>
-            </div>
+    <div class="features">
+        <div class="feature-item">
+            <strong>🎨 3 Bildvarianten</strong>
+            Detailliert, symbolisch, minimalistisch
         </div>
-        <div class="trust-item">
-            <div class="trust-icon">♿</div>
-            <div class="trust-text">
-                <h4>Autismusfreundlich</h4>
-                <p>Reizarmes, klares Design – ohne Bewertung oder Leistungsdruck</p>
-            </div>
+        <div class="feature-item">
+            <strong>📏 3 Größen</strong>
+            4×4 cm | 6×6 cm | 8×8 cm
         </div>
-        <div class="trust-item">
-            <div class="trust-icon">📚</div>
-            <div class="trust-text">
-                <h4>Sofort nutzbar</h4>
-                <p>Keine Vorkenntnisse erforderlich – ausdrucken, laminieren, loslegen</p>
-            </div>
+        <div class="feature-item">
+            <strong>📚 15 Alltagsthemen</strong>
+            Morgen, Schule, Freizeit, Abend
         </div>
-        <div class="trust-item">
-            <div class="trust-icon">🏠</div>
-            <div class="trust-text">
-                <h4>Vielseitig einsetzbar</h4>
-                <p>Für Zuhause, Schule, Kita, unterwegs – digital oder gedruckt</p>
-            </div>
+        <div class="feature-item">
+            <strong>🎈 Sonderfälle</strong>
+            Arzt, Geburtstag, Urlaub, Feier
         </div>
-    </div>
-</div>
-
-<div class="hero-product">
-    <div class="product-header">
-        <span class="product-icon">📦</span>
-        <h2>Vollständiges Bundle – 3 PDFs (69 Seiten)</h2>
-        <p class="product-subtitle">6 visuelle Skalen + Notfallkarten + Präventionsplan</p>
-    </div>
-    
-    <div class="product-description">
-        <p>
-            <strong>Dieses professionelle Toolkit enthält 3 aufeinander abgestimmte PDF-Dokumente</strong> 
-            zur Unterstützung autistischer Kinder und ihrer Begleitpersonen.
-        </p>
-        <p style="margin-top: 1rem;">
-            Visuelles Unterstützungssystem für Selbstwahrnehmung, Kommunikation und Überlastungsprävention. 
-            <strong>Alle Materialien sind sofort druckbar, laminierbar und einsetzbar.</strong>
-        </p>
-    </div>
-
-    <h3 style="color: var(--color-primary); margin: 2rem 0 1rem;">Das bekommst du:</h3>
-    
-    <div class="features-grid">
-        <div class="feature-card">
-            <h4>📘 Handbuch (43 Seiten)</h4>
-            <p>Theoretische Grundlagen, alle 6 Skalen detailliert erklärt, Anwendungshinweise für Erwachsene, kindgerechte Erklärungen & Social Stories</p>
+        <div class="feature-item">
+            <strong>📅 Wochentage</strong>
+            Alle 7 Tage visualisiert
         </div>
-        
-        <div class="feature-card">
-            <h4>📄 Arbeitsheft (18 Seiten)</h4>
-            <p>Alle 6 Skalen in kindgerechter Darstellung – sofort druckbar & laminierbar. Reizarmes, klares Design für den täglichen Einsatz</p>
-        </div>
-        
-        <div class="feature-card">
-            <h4>📋 Präventionsplan (8 Seiten)</h4>
-            <p>Früherkennung von Überforderungssignalen – Version für Eltern + Version für Schule/Betreuung</p>
-        </div>
-        
-        <div class="feature-card">
-            <h4>🔋 Energie-Skala</h4>
-            <p>Zeigt, wie viel Kraft noch vorhanden ist. Perfekt nach Schule oder bei Erschöpfung</p>
-        </div>
-        
-        <div class="feature-card">
-            <h4>🌊 Reiz-Level-Skala</h4>
-            <p>Macht sichtbar, wie überwältigend die Umgebung gerade wirkt. Ideal für laute Situationen</p>
-        </div>
-        
-        <div class="feature-card">
-            <h4>👥 Nähe- & Distanz-Skala</h4>
-            <p>Kommuniziert Bedürfnis nach Nähe oder Abstand – ohne Worte, ohne Erklärungen</p>
-        </div>
-        
-        <div class="feature-card">
-            <h4>💬 Kommunikations-Skala</h4>
-            <p>Zeigt an, ob und wie viel Sprechen gerade möglich ist. Entlastend bei Sprachverlust</p>
-        </div>
-        
-        <div class="feature-card">
-            <h4>🫀 Körperwahrnehmungs-Skala</h4>
-            <p>Hilft, körperliche Anspannung oder Unwohlsein auszudrücken, wenn Worte fehlen</p>
-        </div>
-        
-        <div class="feature-card">
-            <h4>🔄 Übergangs-Skala</h4>
-            <p>Signalisiert, ob ein Aktivitätswechsel gerade möglich ist. Reduziert Konflikte</p>
-        </div>
-        
-        <div class="feature-card">
-            <h4>🚨 Notfallkarten-System</h4>
-            <p>4 Varianten zur Auswahl – für akute Überforderung, wenn Kommunikation nicht mehr möglich ist</p>
-        </div>
-        
-        <div class="feature-card">
-            <h4>⚡ Schnellstart-Guide</h4>
-            <p>In 5 Minuten startklar – konkrete Erste-Schritte-Anleitung</p>
-        </div>
-        
-        <div class="feature-card">
-            <h4>❓ Umfangreiche FAQ</h4>
-            <p>Antworten auf alle häufigen Fragen + Tipps zur Vermeidung typischer Fehler</p>
+        <div class="feature-item">
+            <strong>📘 Anleitung</strong>
+            Schritt-für-Schritt Einführung
         </div>
     </div>
 
-    <div class="price-box">
-        <p class="price-label">Einmalige Investition – lebenslang verfügbar</p>
-        <div class="price">
-            <span class="price-amount">29</span>
-            <span class="price-currency">€</span>
+    <div class="crosslink">
+        <strong>💡 Tipp:</strong> Kombiniere mit dem Regulations-Toolkit und spare 12€ im Bundle!
+    </div>
+
+    <div class="price-section">
+        <div class="price-info">
+            <p class="price-label">Einzelpreis</p>
+            <div class="price">
+                <span class="price-amount">29,99</span>
+                <span class="price-currency">€</span>
+            </div>
         </div>
-       
-        <a href="https://paulrawe.gumroad.com/l/mjuyu" class="buy-button" target="_blank" rel="noopener">
-            Zum Regulations-Toolkit →
+        <a href="https://paulrawe.gumroad.com/l/ynkyw" class="buy-button" target="_blank" rel="noopener">
+            Jetzt kaufen
         </a>
-    
-        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--color-muted);">
-            Kauf über Gumroad – sicher & einfach
-        </p>
     </div>
 </div>
 
-<section style="background: #f0fdf4; border-left: 5px solid var(--color-success);">
-    <h3 style="color: var(--color-success);">Für wen ist dieses Toolkit?</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+<!-- ===================== PRODUKT 2: TOOLKIT ===================== -->
+<div class="product">
+    <div class="product-header">
         <div>
-            <h4 style="color: var(--color-primary); margin-bottom: 0.5rem;">✅ Eltern & Familien</h4>
-            <p>Begleite dein autistisches Kind im Alltag mit besseren Kommunikationswegen</p>
+            <img src="skalende.png" alt="Regulations-Toolkit" class="product-image">
         </div>
-        <div>
-            <h4 style="color: var(--color-primary); margin-bottom: 0.5rem;">✅ Pädagogische Fachkräfte</h4>
-            <p>Lehrer:innen, Erzieher:innen, Therapeut:innen in Schule, Kita oder Therapie</p>
-        </div>
-        <div>
-            <h4 style="color: var(--color-primary); margin-bottom: 0.5rem;">✅ Schulbegleitung</h4>
-            <p>Integrationshelfer:innen und Assistenzkräfte</p>
-        </div>
-        <div>
-            <h4 style="color: var(--color-primary); margin-bottom: 0.5rem;">✅ Bei Kindern mit:</h4>
-            <p>Eingeschränkter Sprache, Reizempfindlichkeit, Shutdown- oder Meltdown-Tendenz</p>
+        <div class="product-title">
+            <h2>🎯 Autismus Regulations- & Kommunikations-Toolkit</h2>
+            <p class="product-subtitle">6 visuelle Skalen für Selbstwahrnehmung & Kommunikation</p>
         </div>
     </div>
-</section>
 
-<div class="product-divider"></div>
-
-<!-- ===================== PRODUKT 2: SCHULSTART-GUIDE ===================== -->
-
-<section>
-    <h2>Der Schulstart steht bevor – und du weißt nicht, wo du anfangen sollst?</h2>
-    
     <div class="problem-solution">
         <div class="problem-box">
-            <h3>🚨 Diese Fragen kennst du sicherlich</h3>
+            <h3>🚨 Das Problem</h3>
             <ul>
-                <li>Welche Schule ist die richtige?</li>
-                <li>Wann muss ich welchen Antrag stellen?</li>
-                <li>Wie finde ich eine gute Schulbegleitung?</li>
-                <li>Was ist ein Nachteilsausgleich und wie bekomme ich den?</li>
-                <li>Welche Fragen muss ich der Schulleitung stellen?</li>
-                <li>Wie bereite ich mein Kind auf die Schule vor?</li>
+                <li>Kind kann nicht sagen, wenn überfordert</li>
+                <li>Meltdowns kommen "aus dem Nichts"</li>
+                <li>Kommunikation bricht zusammen</li>
+                <li>Grenzen können nicht gezeigt werden</li>
             </ul>
         </div>
         
         <div class="solution-box">
-            <h3>✨ Dieser Guide gibt dir Antworten</h3>
+            <h3>✅ Die Lösung</h3>
             <ul>
-                <li>Über 70 konkrete Fragen für alle Gespräche</li>
-                <li>Exakter Zeitplan: Was muss wann erledigt sein</li>
-                <li>20+ Checklisten zum Abhaken</li>
-                <li>Schritt-für-Schritt durch alle Anträge</li>
-                <li>Praxistipps für die Vorbereitung zu Hause</li>
-                <li>Krisenplan für die ersten Schulwochen</li>
+                <li>Zustände ohne Worte zeigen</li>
+                <li>Überforderung früh erkennen</li>
+                <li>Kommunikation ohne Sprache</li>
+                <li>Grenzen klar machen</li>
             </ul>
         </div>
     </div>
-    
-    <p style="text-align: center; font-size: 1.1rem; margin-top: 2rem; line-height: 1.8;">
-        <strong>Katharina ist Grundschullehrerin und Mutter von Sam (7, Autismus & ADHS).</strong><br>
-        Sie weiß aus beiden Perspektiven, worauf es wirklich ankommt.<br>
-        Dieser Guide ist aus jahrelanger Praxis entstanden – <strong>keine Theorie, sondern gelebte Erfahrung.</strong>
-    </p>
-</section>
 
-<div class="trust-section">
-    <h3 style="text-align: center; color: var(--color-primary); margin-bottom: 1rem;">Warum du diesem Guide vertrauen kannst</h3>
-    <div class="trust-grid">
-        <div class="trust-item">
-            <div class="trust-icon">👩‍🏫</div>
-            <div class="trust-text">
-                <h4>Lehrerin mit Expertise</h4>
-                <p>Katharina ist Grundschullehrerin und kennt das Schulsystem von innen</p>
-            </div>
+    <div class="features">
+        <div class="feature-item">
+            <strong>🔋 Energie-Skala</strong>
+            Wie viel Kraft ist noch da?
         </div>
-        <div class="trust-item">
-            <div class="trust-icon">💙</div>
-            <div class="trust-text">
-                <h4>Selbst betroffen</h4>
-                <p>Als Mutter von Sam kennt sie alle Ängste und Herausforderungen</p>
-            </div>
+        <div class="feature-item">
+            <strong>🌊 Reiz-Level</strong>
+            Wie überwältigend ist es gerade?
         </div>
-        <div class="trust-item">
-            <div class="trust-icon">📚</div>
-            <div class="trust-text">
-                <h4>Praxiserprobt</h4>
-                <p>Alles wurde mit Sam durchlebt und funktioniert im echten Alltag</p>
-            </div>
+        <div class="feature-item">
+            <strong>👥 Nähe & Distanz</strong>
+            Kuscheln oder Abstand?
         </div>
-        <div class="trust-item">
-            <div class="trust-icon">⏰</div>
-            <div class="trust-text">
-                <h4>Spart dir Monate</h4>
-                <p>Komprimiertes Wissen aus Jahren Recherche und Erfahrung</p>
-            </div>
+        <div class="feature-item">
+            <strong>💬 Kommunikation</strong>
+            Sprechen möglich oder nicht?
         </div>
-    </div>
-</div>
-
-<div class="hero-product">
-    <div class="product-header">
-        <span class="product-icon">📖</span>
-        <h2>Schulstart-Guide für Autismus & ADHS</h2>
-        <p class="product-subtitle">Der ultimative Begleiter durch den Schulstart – von der Schulwahl bis zu den ersten Wochen</p>
-    </div>
-    
-    <div class="product-description">
-        <p>
-            <strong>Dieser interaktive HTML-Guide ist dein Fahrplan durch den gesamten Schulstart-Prozess.</strong>
-            Keine PDF-Wüste zum Durchblättern, sondern eine übersichtliche, interaktive Website, 
-            die du jederzeit auf Handy, Tablet oder PC aufrufen kannst.
-        </p>
-        <p style="margin-top: 1rem;">
-            Katharina hat all ihr Wissen als Lehrerin UND als Mutter in diesen Guide gepackt. 
-            Du bekommst nicht nur Listen, sondern <strong>konkrete Fragen, die du wirklich stellen musst</strong> – 
-            und Checklisten, die du Punkt für Punkt abhaken kannst.
-        </p>
-    </div>
-
-    <h3 style="color: var(--color-primary); margin: 2rem 0 1rem;">Das ist alles drin:</h3>
-    
-    <div class="features-grid">
-        <div class="feature-card">
-            <h4>⏰ Zeitplan</h4>
-            <p>Genau aufgeschlüsselt: Was muss wann erledigt sein – von 18 Monaten vor Schulbeginn bis zum ersten Schultag</p>
+        <div class="feature-item">
+            <strong>🫀 Körperwahrnehmung</strong>
+            Wie fühlt sich mein Körper an?
         </div>
-        
-        <div class="feature-card">
-            <h4>❓ Über 70 Fragen</h4>
-            <p>Konkrete Fragen für Schulleitung, Klassenleitung, Schulbegleitung, Therapeuten und mehr</p>
+        <div class="feature-item">
+            <strong>🔄 Übergänge</strong>
+            Wechsel gerade möglich?
         </div>
-        
-        <div class="feature-card">
-            <h4>✅ 20+ Checklisten</h4>
-            <p>Interaktive Checklisten mit Abhak-Funktion für jeden Bereich: Anträge, Material, Vorbereitung, etc.</p>
+        <div class="feature-item">
+            <strong>🚨 Notfallkarten</strong>
+            4 Varianten für akute Überforderung
         </div>
-        
-        <div class="feature-card">
-            <h4>📋 Antrags-Guide</h4>
-            <p>Schritt-für-Schritt durch alle wichtigen Anträge: Schulbegleitung, Förderbedarf, Nachteilsausgleich</p>
+        <div class="feature-item">
+            <strong>📋 Präventionsplan</strong>
+            Früherkennung von Warnsignalen
         </div>
-        
-        <div class="feature-card">
-            <h4>🏠 Vorbereitung zu Hause</h4>
-            <p>Konkrete Anleitungen für Sozialgeschichten, Visualisierungen und Tagesablauf-Anpassungen</p>
-        </div>
-        
-        <div class="feature-card">
-            <h4>🚨 Krisenplan</h4>
-            <p>Was tun bei Überforderung, Verweigerung oder Meltdowns in den ersten Wochen?</p>
-        </div>
-        
-        <div class="feature-card">
-            <h4>📞 Anlaufstellen</h4>
-            <p>Alle wichtigen Kontakte: Beratungsstellen, Ämter, Selbsthilfegruppen mit direkten Links</p>
-        </div>
-        
-        <div class="feature-card">
-            <h4>⚖️ Rechtliche Grundlagen</h4>
-            <p>UN-BRK, Schulgesetze, SGB VIII & IX – verständlich erklärt und auf deine Situation bezogen</p>
+        <div class="feature-item">
+            <strong>📚 Social Stories</strong>
+            Für jede Skala enthalten
         </div>
     </div>
 
-    <div class="price-box">
-        <p class="price-label">Einmalige Investition – lebenslang verfügbar</p>
-        <div class="price">
-            <span class="price-amount">12,90</span>
-            <span class="price-currency">€</span>
+    <div class="crosslink">
+        <strong>💡 Tipp:</strong> Kombiniere mit dem Tagesstrukturplan und spare 12€ im Bundle!
+    </div>
+
+    <div class="price-section">
+        <div class="price-info">
+            <p class="price-label">Einzelpreis</p>
+            <div class="price">
+                <span class="price-amount">24,99</span>
+                <span class="price-currency">€</span>
+            </div>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/autismus-schulstart-guide" class="buy-button" target="_blank" rel="noopener">
-            Zum Schulstart-Guide →
+        <a href="https://paulrawe.gumroad.com/l/mjuyu" class="buy-button" target="_blank" rel="noopener">
+            Jetzt kaufen
         </a>
-      
-        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--color-muted);">
-            Kauf über Gumroad – sicher & einfach
-        </p>
     </div>
 </div>
 
-<section style="background: #f0f7fb; border-left: 5px solid var(--color-success);">
-    <h3 style="color: var(--color-success);">Sams Schulstart – Katharinas Erfahrung</h3>
-    <p style="font-size: 1.05rem; line-height: 1.8;">
-        <em>"Als Sam eingeschult wurde, hatte ich schon jahrelange Erfahrung als Lehrerin. 
-        Trotzdem war ich überfordert mit den ganzen Anträgen, Fristen und Fragen. 
-        Ich wusste nicht, wo ich anfangen sollte.</em>
-    </p>
-    <p style="font-size: 1.05rem; line-height: 1.8; margin-top: 1rem;">
-        <em>Heute, mit all dem Wissen, das ich mir mühsam zusammengesucht habe, läuft es rund. 
-        Sam hat eine tolle Schulbegleitung, seine Lehrkraft versteht ihn, und wir haben 
-        alle wichtigen Anpassungen durchgesetzt.</em>
-    </p>
-    <p style="font-size: 1.05rem; line-height: 1.8; margin-top: 1rem;">
-        <em><strong>Diesen Guide habe ich geschrieben, damit du nicht die gleichen Monate 
-        der Recherche und Unsicherheit durchmachen musst wie ich."</strong></em>
-    </p>
-    <p style="text-align: right; margin-top: 1.5rem; color: var(--color-primary); font-weight: bold;">
-        – Katharina, Grundschullehrerin & Mama von Sam
-    </p>
-</section>
-
-<div class="product-divider"></div>
-
-
-
-<!-- FAQ -->
-<section>
+<!-- ===================== FAQ ===================== -->
+<section class="faq">
     <h2>Häufige Fragen</h2>
     
     <div class="faq-item">
         <h4>Wie erhalte ich die Produkte?</h4>
-        <p>
-            Nach dem Kauf über Gumroad erhältst du sofort einen Download-Link per E-Mail. 
-            Alle Dateien kannst du auf jedem Gerät öffnen – offline und ohne Installation.
-        </p>
+        <p>Sofort nach Kauf per E-Mail als Download-Link. Alle Dateien offline nutzbar.</p>
     </div>
     
     <div class="faq-item">
         <h4>Kann ich eine Rechnung bekommen?</h4>
-        <p>
-            Ja, Gumroad sendet dir automatisch eine Rechnung per E-Mail. 
-            Diese kannst du auch bei der Krankenkasse oder in deiner Steuererklärung einreichen.
-        </p>
+        <p>Ja, Gumroad sendet automatisch eine Rechnung per E-Mail.</p>
     </div>
     
     <div class="faq-item">
         <h4>Bekomme ich Updates?</h4>
-        <p>
-            Ja! Wenn wir ein Produkt erweitern oder aktualisieren, bekommst du die neue Version 
-            kostenlos per E-Mail. Einmal kaufen, immer profitieren.
-        </p>
+        <p>Ja! Alle zukünftigen Updates sind kostenlos. Einmal kaufen, immer profitieren.</p>
     </div>
     
     <div class="faq-item">
         <h4>Darf ich die Materialien vervielfältigen?</h4>
-        <p>
-            Ja, für den persönlichen Gebrauch und in deiner Einrichtung (Schule, Kita) darfst du 
-            die Materialien ausdrucken und vervielfältigen. Keine kommerzielle Weitergabe.
-        </p>
+        <p>Ja, für persönlichen Gebrauch und in deiner Einrichtung (Schule, Kita) unbegrenzt ausdrucken.</p>
     </div>
-    
-  
-</section>
 
-<section style="text-align: center;">
-    <h2>Noch Fragen?</h2>
-    <p style="margin-bottom: 1.5rem;">
-        Schreib uns gerne eine E-Mail oder nutze das Kontaktformular auf der Startseite.
-    </p>
-    <a href="index.html#kontakt" style="color: var(--color-primary); text-decoration: underline; font-size: 1.1rem; font-weight: bold;">
-        → Zum Kontaktformular
-    </a>
+    <div class="faq-item">
+        <h4>Welches Produkt ist das richtige?</h4>
+        <p><strong>Tagesplan:</strong> Für Orientierung im Alltag.<br>
+        <strong>Toolkit:</strong> Für Kommunikation innerer Zustände.<br>
+        <strong>Bundle:</strong> Beide ergänzen sich perfekt – spare 12€!</p>
+    </div>
 </section>
 
 </main>
@@ -913,7 +707,7 @@
     <div class="legal">
         <a href="impressum.html">Impressum</a> | 
         <a href="datenschutz.html">Datenschutz</a> | 
-        <a href="cookies.html" onclick="openCookieSettingsFromFooter(); return false;">Cookie-Einstellungen</a> | 
+        <a href="cookies.html">Cookie-Einstellungen</a> | 
         <a href="ueberuns.html">Über Uns</a> |
         <a href="transparenz.html">Transparenz & Werbung</a> | 
         <a href="agb.html">AGB</a>
@@ -924,7 +718,7 @@
 <div id="cookie-banner">
     <div class="banner-content">
         <p>
-            Wir verwenden Cookies, um die Nutzung unserer Website zu analysieren und zu verbessern. 
+            Wir verwenden Cookies, um die Nutzung unserer Website zu analysieren. 
             <a href="cookies.html">Mehr erfahren</a>
         </p>
         <div class="button-group">
@@ -944,7 +738,7 @@
         <div class="modal-body">
             <div class="cookie-category">
                 <h3>Notwendige Cookies</h3>
-                <p>Diese Cookies sind für die Grundfunktionen der Website erforderlich.</p>
+                <p>Diese Cookies sind für die Grundfunktionen erforderlich.</p>
                 <div class="cookie-toggle">
                     <label>Notwendig</label>
                     <div class="toggle-switch">
@@ -956,10 +750,7 @@
             
             <div class="cookie-category">
                 <h3>Analyse-Cookies</h3>
-                <p>
-                    Diese Cookies helfen uns, die Nutzung der Website zu verstehen 
-                    (GoatCounter – datenschutzfreundlich).
-                </p>
+                <p>Helfen uns, die Nutzung zu verstehen (GoatCounter).</p>
                 <div class="cookie-toggle">
                     <label>Analyse</label>
                     <div class="toggle-switch">
@@ -971,7 +762,7 @@
             
             <div class="cookie-category">
                 <h3>Marketing-Cookies</h3>
-                <p>Diese Cookies werden für zukünftige Werbezwecke verwendet.</p>
+                <p>Für zukünftige Werbezwecke.</p>
                 <div class="cookie-toggle">
                     <label>Marketing</label>
                     <div class="toggle-switch">
