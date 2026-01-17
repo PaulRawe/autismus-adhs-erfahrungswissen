@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unser Durchbruch: Social Stories – Autismus & ADHS im Alltag</title>
+
+    <meta name="description" content="Wie Social Stories Sam geholfen haben, neue Situationen zu verstehen und zu meistern. Ein Erfahrungsbericht über unseren größten Durchbruch.">
+    <meta name="keywords" content="Social Stories Autismus, Autismus Geschichten, ADHS Vorbereitung, Social Stories Erfahrung">
+   
+    <!-- Cookie Consent CSS -->
+    <link rel="stylesheet" href="../consent.css">
+
+    <style>
+        /* AUTISMUSFREUNDLICHES DESIGN:
+           - ruhige Farben
+           - klare Abstände
+           - keine Animationen
+           - hohe Lesbarkeit
+        */
+
+        :root {
+            --bg-main: #f4f6f8;
+            --bg-card: #ffffff;
+            --color-primary: #2f6f8f;
+            --color-secondary: #5fa8c9;
+            --color-text: #2b2b2b;
+            --color-muted: #6b6b6b;
+            --color-hover: #e6f1f6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        header {
+            background-color: var(--color-primary);
+            color: #ffffff;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: #e9edf1;
+            padding: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        nav a:focus {
+            outline: 3px solid var(--color-secondary);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        section {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        section h2 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .quote {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #eef4f7;
+            border-left: 4px solid var(--color-secondary);
+            font-style: italic;
+        }
+
+        .example-box {
+            background-color: #f0f9ff;
+            border: 2px solid var(--color-secondary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .example-box h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #2f6f8f 0%, #5fa8c9 100%);
+            color: #ffffff;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ffffff;
+            color: var(--color-primary);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #f0f9ff;
+        }
+
+        footer {
+            background-color: #2e2e2e;
+            color: #ffffff;
+            padding: 2rem 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .legal {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #cccccc;
+        }
+
+        /* Downloads ausblenden */
+        nav a[href*="#downloads"] {
+            display: none;
+        }
+
+        /* Dezente Werbung */
+        .ad-container {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .ad-label {
+            font-size: 0.75rem;
+            color: var(--color-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .ad-content {
+            max-width: 728px;
+            margin: 0 auto;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            border: 1px dashed #d1d5db;
+            border-radius: 4px;
+            color: var(--color-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Unser Durchbruch: Social Stories</h1>
+    <p>Wie Geschichten Sam halfen, die Welt zu verstehen</p>
+</header>
+
+<nav aria-label="Hauptnavigation">
+    <ul>
+        <li><a href="../index.html#ich-bin-sam">Ich bin Sam</a></li>
+        <li><a href="../index.html#ueber-uns">Über uns</a></li>
+        <li><a href="../index.html#alltag">Alltag & Routinen</a></li>
+        <li><a href="../index.html#schule">Schule & Lernen</a></li>
+        <li><a href="../index.html#downloads">Downloads</a></li>
+        <li><a href="../index.html#ressourcen">Empfehlungen</a></li>
+        <li><a href="../index.html#kontakt">Kontakt</a></li>
+    </ul>
+</nav>
+
+<main>
+
+<section>
+    <h2>Sam liebt Geschichten</h2>
+
+    <p>
+        Schon als kleines Kind hatte Sam eine besondere Beziehung zu Geschichten.
+        Nicht zu beliebigen Geschichten – sondern zu <strong>seinen Geschichten</strong>.
+    </p>
+
+    <p>
+        Dieselbe Geschichte, immer wieder. Abend für Abend. Manchmal mehrmals am Tag.
+        Wort für Wort gleich. Keine Abweichung. Keine Improvisation.
+    </p>
+
+    <p>
+        Was für Außenstehende monoton wirken mag, war für Sam <em>Struktur, Sicherheit und Vorhersagbarkeit</em>.
+        In einer Welt, die oft chaotisch und unverständlich ist, waren diese Geschichten seine Konstante.
+    </p>
+
+    <p>
+        Wir haben damals nicht verstanden, warum er das braucht.
+        Wir dachten, er solle doch mal was Neues hören, sich entwickeln, mehr Abwechslung haben.
+        Aber Sam wollte keine Abwechslung. Er wollte Verlässlichkeit.
+    </p>
+
+    <div class="quote">
+        Für Sam sind Geschichten keine Unterhaltung – sie sind eine Landkarte für die Welt.
+    </div>
+</section>
+
+<section>
+    <h2>Der Moment, der alles veränderte</h2>
+
+    <p>
+        Der Durchbruch kam, als meine Frau begann, <strong>Social Stories</strong> zu entwickeln.
+    </p>
+
+    <p>
+        Social Stories sind kurze, individuell geschriebene Geschichten, die eine bestimmte Situation erklären:
+        Was passiert? Warum passiert es? Wer ist dabei? Was wird von mir erwartet?
+        Und vor allem: Was passiert danach?
+    </p>
+
+    <p>
+        Sie schrieb die erste Story für einen anstehenden Zahnarztbesuch.
+        Schritt für Schritt erklärte sie, was Sam erwarten würde.
+        Keine Überraschungen. Keine unklaren Momente. Alles vorbereitet.
+    </p>
+
+    <p>
+        Wir lasen sie ihm drei Tage vor dem Termin vor. Jeden Abend. Immer gleich.
+        Sam hörte zu, stellte Fragen, und langsam – ganz langsam – entstand Verständnis.
+    </p>
+
+    <p>
+        Und dann kam der Tag. Sam ging zum Zahnarzt.
+        Nicht entspannt, nicht ohne Anspannung – aber <strong>vorbereitet</strong>.
+        Er wusste, was kommt. Und das machte den Unterschied.
+    </p>
+
+    <p>
+        Es war das erste Mal, dass ein solcher Termin <em>ohne Zusammenbruch</em> ablief.
+        Das erste Mal, dass Sam das Gefühl hatte: <strong>Ich verstehe, was hier passiert.</strong>
+    </p>
+
+    <div class="quote">
+        Social Stories gaben Sam etwas, das wir ihm sonst nicht geben konnten: Kontrolle durch Wissen.
+    </div>
+</section>
+
+<!-- Dezente Werbung 1 -->
+<div class="ad-container">
+    <div class="ad-label">Anzeige</div>
+    <div class="ad-content">
+        <!-- Hier Google AdSense Code einfügen -->
+        Werbefläche 728x90
+    </div>
+</div>
+
+<section>
+    <h2>Wie wir Social Stories einsetzen</h2>
+
+    <p>
+        Seitdem sind Social Stories zu einem festen Bestandteil unseres Alltags geworden.
+        Meine Frau schreibt sie für alle Situationen, die neu, ungewohnt oder herausfordernd sind:
+    </p>
+
+    <ul>
+        <li>Der erste Schultag</li>
+        <li>Ein Besuch im Krankenhaus</li>
+        <li>Eine Flugreise</li>
+        <li>Ein Geburtstag</li>
+        <li>Der Friseurbesuch</li>
+        <li>Einkaufen im Supermarkt</li>
+    </ul>
+
+    <p>
+        Jede Story folgt einem klaren Aufbau:
+    </p>
+
+    <ul>
+        <li><strong>Einleitung:</strong> Was ist das Ereignis? Warum findet es statt?</li>
+        <li><strong>Ablauf:</strong> Schritt für Schritt, was passieren wird</li>
+        <li><strong>Sinneseindrücke:</strong> Was wird Sam sehen, hören, riechen?</li>
+        <li><strong>Herausforderungen:</strong> Was könnte schwierig sein – und wie geht man damit um?</li>
+        <li><strong>Ende:</strong> Was passiert danach? Wann ist es vorbei?</li>
+    </ul>
+
+    <p>
+        Wir lesen die Stories mehrmals vor dem Ereignis. Sam kann sie so oft hören, wie er will.
+        Und genau das tut er. Manchmal zehnmal am Tag.
+    </p>
+
+    <p>
+        Für uns mag das repetitiv sein – für Sam ist es <em>Vorbereitung</em>.
+    </p>
+</section>
+
+<div class="example-box">
+    <h3>📖 Beispiel: Mit dem Flugzeug fliegen</h3>
+    <p>
+        Eine vollständige Social Story über das Fliegen – von der Ankunft am Flughafen bis zur Landung.
+        Schritt für Schritt erklärt, damit Kinder im Autismus-Spektrum wissen, was sie erwartet.
+    </p>
+    <p>
+        <a href="./social-story-fliegen.html" class="cta-button" style="color: var(--color-primary);">
+            📄 Social Story "Mit dem Flugzeug fliegen" ansehen
+        </a>
+    </p>
+</div>
+
+<section>
+    <h2>Warum Social Stories funktionieren</h2>
+
+    <p>
+        Der Grund, warum Social Stories so wirksam sind, liegt in ihrer Struktur.
+        Sie reduzieren Komplexität, schaffen Vorhersagbarkeit und geben Kontrolle zurück.
+    </p>
+
+    <p>
+        Für autistische Kinder ist die Welt oft überwältigend.
+        Zu viele Reize, zu viele ungeschriebene Regeln, zu viele unerwartete Wendungen.
+    </p>
+
+    <p>
+        Eine Social Story nimmt eine einzelne Situation und macht sie <strong>verständlich</strong>.
+        Sie erklärt nicht nur, was passiert – sondern auch, <em>warum</em> es passiert.
+        Und das gibt Sam das Gefühl: <strong>Ich kann das bewältigen.</strong>
+    </p>
+
+    <div class="quote">
+        Eine Social Story ist keine Garantie, dass alles glatt läuft.
+        Aber sie gibt dem Kind eine Landkarte – und das macht den Weg begehbar.
+    </div>
+</section>
+
+<!-- Dezente Werbung 2 -->
+<div class="ad-container">
+    <div class="ad-label">Anzeige</div>
+    <div class="ad-content">
+        <!-- Hier Google AdSense Code einfügen -->
+        Werbefläche 728x90
+    </div>
+</div>
+
+<section>
+    <h2>Das sagt die Wissenschaft (kurz & verständlich)</h2>
+
+    <p>
+        Social Stories wurden von Carol Gray in den 1990er Jahren entwickelt
+        und sind heute eine wissenschaftlich anerkannte Methode zur Unterstützung autistischer Kinder.
+    </p>
+
+    <p>
+        Studien zeigen, dass Social Stories dabei helfen können:
+    </p>
+
+    <ul>
+        <li>Angst vor neuen Situationen zu reduzieren</li>
+        <li>Soziale Interaktionen besser zu verstehen</li>
+        <li>Herausforderndes Verhalten zu verringern</li>
+        <li>Selbstständigkeit zu fördern</li>
+    </ul>
+
+    <p>
+        Der Schlüssel liegt in der <strong>Wiederholung</strong> und der <strong>individuellen Anpassung</strong>.
+        Jede Story muss auf das einzelne Kind zugeschnitten sein – nicht generisch, sondern persönlich.
+    </p>
+
+    <p>
+        <strong>Quellen (Auswahl):</strong><br>
+        Gray, C. (1998): Social Stories and Comic Strip Conversations<br>
+        Kokina & Kern (2010): Meta-Analysis on Social Stories for Children with ASD<br>
+        National Autism Center (2015): Evidence-Based Practice and Autism
+    </p>
+</section>
+
+<div class="cta-box">
+    <h3>📚 Professionelle Social Stories für zu Hause</h3>
+    <p style="margin-bottom: 1.5rem;">
+        Meine Frau hat ein komplettes Bundle mit <strong>5+1 Social Stories</strong> entwickelt –
+        professionell gestaltet, praxiserprobt und sofort einsetzbar.
+    </p>
+    <p style="margin-bottom: 1.5rem;">
+        <strong>Themen:</strong> Zahnarzt, Arzt/Impfung, Krankenhaus, Friseur, Restaurant, Supermarkt<br>
+        <strong>Umfang:</strong> 85 Seiten, druckfertig als PDF<br>
+        <strong>Inklusive:</strong> Emoji-Legende, Checklisten, Notizseiten, Elterninfos
+    </p>
+    <a href="../downloads.html" class="cta-button">
+        🛒 Zum Download-Bereich
+    </a>
+</div>
+
+<section>
+    <h2>Was wir daraus gelernt haben</h2>
+
+    <p>
+        Social Stories sind keine Wundermittel. Sie garantieren keinen perfekten Ablauf.
+        Aber sie geben Sam etwas, das unbezahlbar ist: <strong>Orientierung</strong>.
+    </p>
+
+    <p>
+        Seit wir Social Stories nutzen, sind viele Situationen einfacher geworden.
+        Nicht, weil Sam plötzlich anders ist – sondern weil er <em>vorbereitet</em> ist.
+    </p>
+
+    <p>
+        Und das ist vielleicht die wichtigste Erkenntnis:
+        Wir können die Welt nicht einfacher machen.
+        Aber wir können sie <strong>verständlicher</strong> machen.
+    </p>
+
+    <div class="quote">
+        Wenn unsere Erfahrungen mit Social Stories euch helfen,
+        dann hat dieser Text seinen Zweck erfüllt.
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Autismus & ADHS – Erfahrungswissen für Eltern</p>
+    <div class="legal">
+        <a href="../impressum.html">Impressum</a> | 
+        <a href="../datenschutz.html">Datenschutz</a> | 
+        <a href="../cookies.html">Cookie-Einstellungen</a> | 
+        <a href="../transparenz.html">Transparenz & Werbung</a> | 
+        <a href="../agb.html">AGB</a>
+    </div>
+</footer>
+
+<!-- Cookie Consent Banner - wird von cookies.js gesteuert -->
+<div id="cookie-banner">
+    <div class="banner-content">
+        <p>
+            Wir verwenden Cookies, um die Nutzung unserer Website zu analysieren und zu verbessern. 
+            <a href="../cookies.html">Mehr erfahren</a>
+        </p>
+        <div class="button-group">
+            <button class="btn-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+            <button class="btn-decline" onclick="declineCookies()">Nur notwendige</button>
+            <button class="btn-settings" onclick="openCookieSettings()">Einstellungen</button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Settings Modal -->
+<div id="cookie-settings-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Cookie-Einstellungen</h2>
+        </div>
+        <div class="modal-body">
+            <div class="cookie-category">
+                <h3>Notwendige Cookies</h3>
+                <p>Diese Cookies sind für die Grundfunktionen der Website erforderlich.</p>
+                <div class="cookie-toggle">
+                    <label>Notwendig</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" checked disabled>
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cookie-category">
+                <h3>Analyse-Cookies</h3>
+                <p>Diese Cookies helfen uns, die Nutzung der Website zu verstehen (GoatCounter - datenschutzfreundlich).</p>
+                <div class="cookie-toggle">
+                    <label>Analyse</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="cookie-analytics">
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cookie-category">
+                <h3>Marketing-Cookies</h3>
+                <p>Diese Cookies werden für zukünftige Werbezwecke verwendet.</p>
+                <div class="cookie-toggle">
+                    <label>Marketing</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="cookie-marketing">
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel" onclick="closeCookieSettings()">Abbrechen</button>
+            <button class="btn-save" onclick="saveCookieSettings()">Speichern</button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Consent Script -->
+<script src="../cookies.js" defer></script>
+
+</body>
+</html>
