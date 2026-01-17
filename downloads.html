@@ -10,7 +10,7 @@
     
     <!-- Open Graph -->
     <meta property="og:title" content="Downloads - Autismus Alltags-Hilfen">
-    <meta property="og:description" content="Tagesstrukturplan & Regulations-Toolkit für autistische Kinder">
+    <meta property="og:description" content="Tagesstruktur & Regulations-Toolkit für autistische Kinder">
     <meta property="og:url" content="https://autismus-adhs-alltag.de/downloads.html">
     
     <!-- Cookie Consent CSS -->
@@ -27,6 +27,7 @@
             --color-accent: #d97706;
             --color-success: #059669;
             --color-bundle: #7c3aed;
+            --color-social: #ec4899;
         }
 
         * {
@@ -42,6 +43,9 @@
             line-height: 1.7;
         }
 
+        /* ============================================
+           HEADER
+        ============================================ */
         header {
             background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
             color: #ffffff;
@@ -72,6 +76,61 @@
             margin: 0.5rem;
         }
 
+        /* ============================================
+           STICKY QUICK NAVIGATION
+        ============================================ */
+        .quick-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: linear-gradient(135deg, #1e5773 0%, #2f6f8f 100%);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .quick-nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0.8rem 1rem;
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .quick-nav-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .quick-nav-item {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .quick-nav-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .quick-nav-item.active {
+            background: #ffffff;
+            color: var(--color-primary);
+        }
+
+        /* ============================================
+           MAIN NAVIGATION
+        ============================================ */
         nav {
             background-color: #e9edf1;
             padding: 1rem;
@@ -91,24 +150,57 @@
             font-weight: bold;
         }
 
+        /* ============================================
+           MAIN CONTENT
+        ============================================ */
         main {
             max-width: 1100px;
             margin: 0 auto;
             padding: 2rem 1rem 4rem;
         }
 
-        /* Produkt-Container */
+        /* Kategorie-Header */
+        .category-header {
+            text-align: center;
+            margin: 3rem 0 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 12px;
+            border-left: 5px solid var(--color-primary);
+        }
+
+        .category-header h2 {
+            color: var(--color-primary);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-header p {
+            color: var(--color-muted);
+            font-size: 1.1rem;
+        }
+
+        /* ============================================
+           PRODUKT-CONTAINER
+        ============================================ */
         .product {
             background-color: var(--bg-card);
             border-radius: 12px;
             padding: 2.5rem;
             margin-bottom: 3rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            scroll-margin-top: 80px;
         }
 
         .product.bundle {
             background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
             border: 3px solid var(--color-bundle);
+            position: relative;
+        }
+
+        .product.social-stories {
+            background: linear-gradient(135deg, #fef1f7 0%, #fce7f3 100%);
+            border: 3px solid var(--color-social);
             position: relative;
         }
 
@@ -123,6 +215,25 @@
             font-weight: bold;
             font-size: 0.9rem;
             box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+        }
+
+        .new-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--color-social);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .product-header {
@@ -149,13 +260,19 @@
             color: var(--color-bundle);
         }
 
+        .social-stories .product-title h2 {
+            color: var(--color-social);
+        }
+
         .product-subtitle {
             color: var(--color-muted);
             font-size: 1.1rem;
             margin-bottom: 1rem;
         }
 
-        /* Problem-Lösung nebeneinander */
+        /* ============================================
+           PROBLEM-LÖSUNG
+        ============================================ */
         .problem-solution {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -215,7 +332,9 @@
             left: 0;
         }
 
-        /* Features */
+        /* ============================================
+           FEATURES
+        ============================================ */
         .features {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -236,7 +355,54 @@
             margin-bottom: 0.3rem;
         }
 
-        /* Preis & Button */
+        /* Social Stories Features - 2 Spalten */
+        .features.two-col {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        /* ============================================
+           CONTENT SECTIONS
+        ============================================ */
+        .content-section {
+            margin: 2rem 0;
+        }
+
+        .content-section h3 {
+            color: var(--color-primary);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .content-section ul,
+        .content-section ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .disclaimer {
+            font-size: 0.85rem;
+            color: var(--color-muted);
+            font-style: italic;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #fafafa;
+            border-radius: 6px;
+            border-left: 3px solid var(--color-muted);
+        }
+
+        /* ============================================
+           PREIS & BUTTON
+        ============================================ */
         .price-section {
             display: flex;
             align-items: center;
@@ -251,6 +417,11 @@
         .bundle .price-section {
             background: #faf5ff;
             border-color: var(--color-bundle);
+        }
+
+        .social-stories .price-section {
+            background: #fef1f7;
+            border-color: var(--color-social);
         }
 
         .price-info {
@@ -285,6 +456,10 @@
             color: var(--color-bundle);
         }
 
+        .social-stories .price-amount {
+            color: var(--color-social);
+        }
+
         .price-currency {
             font-size: 1.2rem;
             color: var(--color-muted);
@@ -317,6 +492,11 @@
             box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);
         }
 
+        .social-stories .buy-button {
+            background: linear-gradient(135deg, var(--color-social) 0%, #db2777 100%);
+            box-shadow: 0 4px 16px rgba(236, 72, 153, 0.4);
+        }
+
         .buy-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(217, 119, 6, 0.5);
@@ -326,7 +506,13 @@
             box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
         }
 
-        /* Crosslink Box */
+        .social-stories .buy-button:hover {
+            box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5);
+        }
+
+        /* ============================================
+           CROSSLINK BOX
+        ============================================ */
         .crosslink {
             background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
             border: 2px solid var(--color-accent);
@@ -341,12 +527,15 @@
             color: var(--color-accent);
         }
 
-        /* FAQ */
+        /* ============================================
+           FAQ
+        ============================================ */
         section.faq {
             background-color: var(--bg-card);
             border-radius: 12px;
             padding: 2.5rem;
             margin-bottom: 3rem;
+            scroll-margin-top: 80px;
         }
 
         section.faq h2 {
@@ -373,6 +562,9 @@
             line-height: 1.6;
         }
 
+        /* ============================================
+           FOOTER
+        ============================================ */
         footer {
             background-color: #2e2e2e;
             color: #ffffff;
@@ -392,9 +584,17 @@
             color: #cccccc;
         }
 
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.8rem;
+            }
+
+            .quick-nav-item {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
             }
 
             .product-header {
@@ -415,16 +615,25 @@
                 grid-template-columns: 1fr;
             }
 
+            .features.two-col {
+                grid-template-columns: 1fr;
+            }
+
             .price-section {
                 flex-direction: column;
                 gap: 1rem;
                 text-align: center;
             }
 
-            .bundle-badge {
+            .bundle-badge,
+            .new-badge {
                 position: static;
                 display: inline-block;
                 margin-bottom: 1rem;
+            }
+
+            .category-header h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -436,7 +645,18 @@
     <p class="subtitle">Tagesstruktur & Regulation – praxiserprobt und sofort einsetzbar</p>
     <div class="trust-badge">✓ Praxiserprobt</div>
     <div class="trust-badge">✓ Sofort verfügbar</div>
-  </header>
+</header>
+
+<!-- STICKY QUICK NAVIGATION -->
+<div class="quick-nav">
+    <div class="quick-nav-container">
+        <a href="#bundle" class="quick-nav-item">💎 Bundle-Angebot</a>
+        <a href="#visuelle-hilfen" class="quick-nav-item">📅 Visuelle Hilfen</a>
+        <a href="#social-stories" class="quick-nav-item">📖 Social Stories</a>
+        <a href="#guides" class="quick-nav-item">📘 Guides</a>
+        <a href="#faq" class="quick-nav-item">❓ FAQ</a>
+    </div>
+</div>
 
 <nav aria-label="Hauptnavigation">
     <ul>
@@ -448,7 +668,12 @@
 
 <main>
 
-<!-- ===================== BUNDLE ===================== -->
+<!-- ===================== BUNDLE SECTION ===================== -->
+<div id="bundle" class="category-header">
+    <h2>💎 Bundle-Angebote</h2>
+    <p>Kombiniere mehrere Produkte und spare bares Geld</p>
+</div>
+
 <div class="product bundle">
     <div class="bundle-badge">💎 SPARE 14€</div>
     
@@ -497,7 +722,13 @@
     </div>
 </div>
 
-<!-- ===================== PRODUKT 1: TAGESPLAN ===================== -->
+<!-- ===================== VISUELLE HILFEN SECTION ===================== -->
+<div id="visuelle-hilfen" class="category-header">
+    <h2>📅 Visuelle Alltagshilfen</h2>
+    <p>Bildkarten und Skalen für Struktur und Orientierung</p>
+</div>
+
+<!-- PRODUKT 1: TAGESPLAN -->
 <div class="product">
     <div class="product-header">
         <div>
@@ -576,7 +807,7 @@
     </div>
 </div>
 
-<!-- ===================== PRODUKT 2: TOOLKIT ===================== -->
+<!-- PRODUKT 2: TOOLKIT -->
 <div class="product">
     <div class="product-header">
         <div>
@@ -650,7 +881,7 @@
     </div>
 
     <div class="crosslink">
-        <strong>💡 Tipp:</strong> Kombiniere mit dem Tagesstrukturplan und spare 15€ im Bundle!
+        <strong>💡 Tipp:</strong> Kombiniere mit dem Tagesstrukturplan und spare 14€ im Bundle!
     </div>
 
     <div class="price-section">
@@ -666,21 +897,197 @@
         </a>
     </div>
 </div>
-<!-- ===================== PRODUKT 3: SCHULSTART GUIDE ===================== -->
-<div class="product">
+
+<!-- ===================== SOCIAL STORIES SECTION ===================== -->
+<div id="social-stories" class="category-header">
+    <h2>📖 Social Stories</h2>
+    <p>Wissenschaftlich fundierte Geschichten für neue Situationen</p>
+</div>
+
+<!-- PRODUKT 3: SOCIAL STORIES -->
+<div class="product social-stories">
+    <div class="new-badge">✨ NEU</div>
+    
     <div class="product-header">
-        <img src="schulstart.png" alt="Autismus Schulstart Guide" class="product-image">
+        <div>
+            <img src="medizinundalltag.png" alt="Social Stories: Medizin & Alltag" class="product-image">
+        </div>
         <div class="product-title">
-            <h2>📘 Schulstart-Guide für Eltern autistischer Kinder</h2>
-            <p class="product-subtitle">Der ultimative Praxis-Guide für einen erfolgreichen Schulstart – geschrieben von einer Lehrerin, die selbst Mutter eines autistischen Kindes ist.</p>
+            <h2>📖 5+1 Social Stories: Medizin & Alltag</h2>
+            <p class="product-subtitle">6 vollständige Social Stories für herausfordernde Alltagssituationen (85 Seiten PDF)</p>
         </div>
     </div>
 
+    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+        <strong>Hilf deinem Kind, neue Situationen zu verstehen und zu meistern.</strong> 
+        Wissenschaftlich fundierte Social Stories (nach Carol Gray) für typische Herausforderungen im Alltag autistischer Kinder.
+    </p>
+
+    <div class="problem-solution">
+        <div class="problem-box">
+            <h3>🚨 Das Problem</h3>
+            <ul>
+                <li>Neue Situationen überfordern</li>
+                <li>Arztbesuche enden in Panik</li>
+                <li>Unerwartete Abläufe stressen</li>
+                <li>Verbale Erklärungen reichen nicht</li>
+            </ul>
+        </div>
+        
+        <div class="solution-box">
+            <h3>✅ Die Lösung</h3>
+            <ul>
+                <li>Situationen vorher "durchspielen"</li>
+                <li>Abläufe verständlich machen</li>
+                <li>Vorhersagbarkeit schaffen</li>
+                <li>Ängste abbauen</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="features two-col">
+        <div class="feature-item">
+            <strong>🦷 Beim Zahnarzt</strong>
+            Untersuchung, Zahnreinigung & Kontrolle verstehen
+        </div>
+        <div class="feature-item">
+            <strong>💉 Beim Arzt: Impfung</strong>
+            Arztbesuch und Impfungen ohne Angst
+        </div>
+        <div class="feature-item">
+            <strong>🏥 Krankenhaus-Besuch</strong>
+            Jemanden im Krankenhaus besuchen
+        </div>
+        <div class="feature-item">
+            <strong>✂️ Beim Friseur</strong>
+            Haarschnitt ohne sensorische Überlastung
+        </div>
+        <div class="feature-item">
+            <strong>🍽️ Im Restaurant</strong>
+            Auswärts essen mit der Familie meistern
+        </div>
+        <div class="feature-item">
+            <strong>🛒 Einkaufen</strong>
+            Selbstständig im Supermarkt einkaufen lernen
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h3>✨ Was macht diese Social Stories besonders?</h3>
+        <ul>
+            <li><strong>30 Emojis für Orientierung</strong> – Konsistente visuelle Symbole in allen Stories</li>
+            <li><strong>Schritt-für-Schritt-Abläufe</strong> – Keine Überraschungen, alles wird erklärt</li>
+            <li><strong>Sinneseindrücke beschrieben</strong> – Was wird das Kind sehen, hören, riechen, fühlen?</li>
+            <li><strong>Herausforderungen + Lösungen</strong> – Konkrete Hilfestellung bei Schwierigkeiten</li>
+            <li><strong>Personalisierbar</strong> – Notizseiten zum Ausfüllen für individuelle Anpassungen</li>
+            <li><strong>Wissenschaftlich fundiert</strong> – Nach Carol Gray's Social Stories™ Methode</li>
+            <li><strong>Praxiserprobt</strong> – Von Eltern für Eltern entwickelt</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h3>📦 Das ist enthalten</h3>
+        <p><strong>Einführung & Legende (15 Seiten):</strong></p>
+        <ul>
+            <li>Was sind Social Stories und wie funktionieren sie?</li>
+            <li>Vollständige Emoji-Legende (30 Symbole erklärt)</li>
+            <li>Wissenschaftliche Fundierung</li>
+            <li>Anwendungstipps für Eltern</li>
+        </ul>
+        
+        <p style="margin-top: 1.5rem;"><strong>6 vollständige Social Stories (je 10-15 Seiten):</strong></p>
+        <ul>
+            <li>Einleitung zur Situation</li>
+            <li>Vorbereitung (Datum, Uhrzeit, Begleitpersonen)</li>
+            <li>Detaillierter Schritt-für-Schritt-Ablauf</li>
+            <li>Beschreibung aller Sinneseindrücke</li>
+            <li>Mögliche Herausforderungen mit konkreten Lösungen</li>
+            <li>Hilfestellungen (Atemtechniken, Sicherheitsobjekte)</li>
+            <li>Checklisten zum Abhaken</li>
+            <li>Personalisierbare Notizseiten</li>
+            <li>Informationen für Eltern</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h3>🎯 Für wen ist das geeignet?</h3>
+        <ul>
+            <li>✅ Eltern autistischer Kinder (3-12 Jahre)</li>
+            <li>✅ Therapeut:innen & Ergotherapeut:innen</li>
+            <li>✅ Lehrer:innen & Integrationskräfte</li>
+            <li>✅ Großeltern & Betreuungspersonen</li>
+            <li>✅ Familien mit ADHS-Kindern (ebenfalls hilfreich!)</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h3>🌟 So nutzt du die Social Stories</h3>
+        <ol>
+            <li><strong>Story ausdrucken</strong> (oder auf Tablet lesen)</li>
+            <li><strong>3-7 Tage vorher</strong> täglich gemeinsam lesen</li>
+            <li><strong>Personalisieren</strong> – Notizseiten individuell ausfüllen</li>
+            <li><strong>Am Tag selbst</strong> nochmal zusammen durchgehen</li>
+            <li><strong>Nach der Situation</strong> besprechen: Was lief gut?</li>
+        </ol>
+        <p><strong>💡 Tipp:</strong> Wiederholung ist der Schlüssel! Autistische Kinder brauchen oft mehrmaliges Lesen, um sich sicher zu fühlen.</p>
+    </div>
+
+    <div class="price-section">
+        <div class="price-info">
+            <p class="price-label">Launch-Special</p>
+            <div class="price">
+                <span class="price-old">9,99€</span>
+                <span class="price-amount">6,99</span>
+                <span class="price-currency">€</span>
+            </div>
+            <p class="price-savings">🎉 Das sind nur 1,17€ pro Story!</p>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/mdwldd" class="buy-button" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- ===================== GUIDES SECTION ===================== -->
+<div id="guides" class="category-header">
+    <h2>📘 Guides & Ratgeber</h2>
+    <p>Praxiswissen für wichtige Lebensphasen</p>
+</div>
+
+<!-- PRODUKT 4: SCHULSTART GUIDE -->
+<div class="product">
+    <div class="product-header">
+        <div>
+            <img src="schulstart.png" alt="Autismus Schulstart Guide" class="product-image">
+        </div>
+        <div class="product-title">
+            <h2>📘 Schulstart-Guide für Eltern autistischer Kinder</h2>
+            <p class="product-subtitle">Der ultimative Praxis-Guide für einen erfolgreichen Schulstart</p>
+        </div>
+    </div>
+
+    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+        <strong>Geschrieben von einer Lehrerin, die selbst Mutter eines autistischen Kindes ist.</strong>
+        Professionelle Perspektive + persönliche Erfahrung = Praxiserprobt, pädagogisch fundiert und einfühlsam.
+    </p>
+
     <div class="features">
-        <div class="feature-item">✅ 6 umfassende Kapitel</div>
-        <div class="feature-item">✅ Interaktive Checklisten</div>
-        <div class="feature-item">✅ Druckfunktion</div>
-        <div class="feature-item">✅ Sofort verfügbar</div>
+        <div class="feature-item">
+            <strong>📚 6 Kapitel</strong>
+            Umfassend & strukturiert
+        </div>
+        <div class="feature-item">
+            <strong>✅ Checklisten</strong>
+            Interaktiv zum Abhaken
+        </div>
+        <div class="feature-item">
+            <strong>🖨️ Druckfunktion</strong>
+            Einzelne Kapitel drucken
+        </div>
+        <div class="feature-item">
+            <strong>⚡ Sofort verfügbar</strong>
+            HTML-Datei, kein Abo
+        </div>
     </div>
 
     <div class="content-section">
@@ -720,12 +1127,6 @@
     </div>
 
     <div class="content-section">
-        <h3>💪 Praxisnah & fundiert</h3>
-        <p><strong>Professionelle Perspektive</strong> als studierte Lehrerin (Grundschule Marl) + <strong>Persönliche Erfahrung</strong> als Mutter eines autistischen Kindes</p>
-        <p>= Praxiserprobt + Pädagogisch fundiert + Einfühlsam</p>
-    </div>
-
-    <div class="content-section">
         <h3>📦 Was bekomme ich?</h3>
         <ul>
             <li>1 HTML-Datei (öffnet in jedem Browser)</li>
@@ -745,12 +1146,13 @@
 
     <div class="price-section">
         <div class="price-info">
-            <p class="price-label">Einzelpreis</p>
+            <p class="price-label">Launch-Special</p>
             <div class="price">
+                <span class="price-old">16,90€</span>
                 <span class="price-amount">12,90</span>
                 <span class="price-currency">€</span>
             </div>
-            <p class="price-savings">🎉 Launch-Special: regulär 16,90€</p>
+            <p class="price-savings">🎉 Spare 4€ beim Launch-Preis</p>
         </div>
         <a href="https://paulrawe.gumroad.com/l/autismus-schulstart-guide" class="buy-button" target="_blank" rel="noopener">
             Jetzt kaufen
@@ -759,7 +1161,7 @@
 </div>
     
 <!-- ===================== FAQ ===================== -->
-<section class="faq">
+<section id="faq" class="faq">
     <h2>Häufige Fragen</h2>
     
     <div class="faq-item">
@@ -779,14 +1181,32 @@
     
     <div class="faq-item">
         <h4>Darf ich die Materialien vervielfältigen?</h4>
-        <p>Ja, für persönlichen Gebrauch und in deiner Einrichtung (Schule, Kita) unbegrenzt ausdrucken.</p>
+        <p>Ja, für persönlichen Gebrauch und in deiner Einrichtung (Schule, Kita) unbegrenzt ausdrucken. Social Stories dürfen auch in der Therapiepraxis genutzt werden. Keine Weitergabe oder Weiterverkauf gestattet.</p>
     </div>
 
     <div class="faq-item">
         <h4>Welches Produkt ist das richtige?</h4>
-        <p><strong>Tagesplan:</strong> Für Orientierung im Alltag.<br>
-        <strong>Toolkit:</strong> Für Kommunikation innerer Zustände.<br>
-        <strong>Bundle:</strong> Beide ergänzen sich perfekt – spare 12€!</p>
+        <p>
+            <strong>Tagesplan:</strong> Für Orientierung im Alltag.<br>
+            <strong>Toolkit:</strong> Für Kommunikation innerer Zustände.<br>
+            <strong>Social Stories:</strong> Für neue/herausfordernde Situationen.<br>
+            <strong>Schulstart-Guide:</strong> Für die Einschulung.<br>
+            <strong>Bundle:</strong> Tagesplan + Toolkit perfekt kombiniert – spare 14€!
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h4>Funktionieren Social Stories auch bei ADHS?</h4>
+        <p>Ja! Viele Kinder mit ADHS profitieren ebenfalls von der Struktur und Vorhersagbarkeit, die Social Stories bieten.</p>
+    </div>
+
+    <div class="faq-item">
+        <h4>Für welches Alter sind die Produkte geeignet?</h4>
+        <p>
+            <strong>Tagesplan & Toolkit:</strong> Ca. 3-12 Jahre<br>
+            <strong>Social Stories:</strong> Ca. 3-12 Jahre (auch ältere Kinder profitieren oft)<br>
+            <strong>Schulstart-Guide:</strong> Für Eltern von Kindern vor/bei der Einschulung
+        </p>
     </div>
 </section>
 
@@ -872,6 +1292,58 @@
 <!-- Scripts -->
 <script src="cookies.js"></script>
 <script src="sticky-button-loader.js"></script>
+
+<!-- Smooth Scroll für Quick-Nav -->
+<script>
+document.querySelectorAll('.quick-nav-item').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            const offset = 80; // Höhe der Sticky-Nav
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+            
+            // Active State
+            document.querySelectorAll('.quick-nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            this.classList.add('active');
+        }
+    });
+});
+
+// Scroll Spy für Quick-Nav
+window.addEventListener('scroll', function() {
+    const sections = ['bundle', 'visuelle-hilfen', 'social-stories', 'guides', 'faq'];
+    const navItems = document.querySelectorAll('.quick-nav-item');
+    
+    let current = '';
+    sections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            const sectionTop = section.offsetTop - 100;
+            if (window.pageYOffset >= sectionTop) {
+                current = sectionId;
+            }
+        }
+    });
+    
+    navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === '#' + current) {
+            item.classList.add('active');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
