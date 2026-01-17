@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Mit dem Flugzeug fliegen - Social Story</title>
+    <style>
+        @page { size: A4; margin: 20mm; }
+        body { font-family: Arial, Verdana, sans-serif; font-size: 14pt; line-height: 1.7; color: #333; background: #FAFAFA; max-width: 210mm; margin: 0 auto; padding: 20px; }
+        .page-break { page-break-after: always; }
+        .title-page { text-align: center; padding: 80px 20px; min-height: 250mm; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(135deg, #87CEEB30 0%, #87CEEB10 100%); border-radius: 20px; }
+        h1 { font-size: 36pt; color: #87CEEB; margin: 30px 0 10px; font-weight: bold; }
+        h2 { font-size: 24pt; color: #87CEEB; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 3px solid #87CEEB; page-break-after: avoid; }
+        h3 { font-size: 18pt; color: #87CEEB; margin: 30px 0 15px; }
+        p { margin: 1em 0; text-align: left; }
+        .info-box { background: #E8F4FF; border-left: 5px solid #87CEEB; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .warning-box { background: #FFF4E6; border-left: 5px solid #F9A03F; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .success-box { background: #E8F8F0; border-left: 5px solid #52C1A6; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .step-list { counter-reset: step-counter; list-style: none; padding-left: 0; }
+        .step-list li { counter-increment: step-counter; margin: 20px 0; padding-left: 60px; position: relative; min-height: 40px; }
+        .step-list li::before { content: counter(step-counter); position: absolute; left: 0; top: 0; background: #87CEEB; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18pt; font-weight: bold; }
+        .checklist { list-style: none; padding-left: 0; }
+        .checklist li { padding: 10px 0 10px 40px; position: relative; border-bottom: 1px solid #EEEEEE; }
+        .checklist li::before { content: "☐"; position: absolute; left: 0; font-size: 20pt; color: #87CEEB; }
+        .fillable-field { border-bottom: 2px solid #87CEEB; min-width: 200px; display: inline-block; padding: 5px; margin: 0 10px; }
+        .notes-section { background: #FFFEF7; border: 2px dashed #F9A03F; padding: 30px; margin: 30px 0; border-radius: 10px; }
+        .footer { text-align: center; margin-top: 50px; padding-top: 20px; border-top: 2px solid #DDDDDD; color: #666; font-size: 12pt; }
+        img { max-width: 120mm; max-height: 120mm; width: auto; height: auto; display: block; margin: 0 auto; }
+        @media print { body { background: white; } .page-break { page-break-after: always; } }
+    </style>
+</head>
+<body>
+
+<div class="title-page page-break">
+    <img src="flugzeug.png" alt="Flugzeug">
+    <h1>Mit dem Flugzeug fliegen</h1>
+    <p style="font-size: 20pt; color: #666;">Eine Social Story</p>
+    <p style="font-size: 14pt; color: #999; margin-top: 50px;">Entwickelt von Paul Rawe</p>
+    <div class="footer"><p>autismus-adhs-alltag.de</p></div>
+</div>
+
+<div class="page-break">
+    <h2>📖 Was bedeutet: Mit dem Flugzeug fliegen?</h2>
+    
+    <p>Mit dem Flugzeug fliegen bedeutet, dass ich mit einem großen Flugzeug von einem Ort zu einem anderen Ort reise. Das Flugzeug fliegt hoch in der Luft, über Wolken und Länder hinweg.</p>
+    
+    <p>Ein Flugzeug ist wie ein großer Bus – nur dass es fliegt statt auf der Straße zu fahren.</p>
+    
+    <div class="info-box">
+        <strong>✈️ Warum fliegen Menschen?</strong>
+        <ul style="margin-top: 10px;">
+            <li>Um weit entfernte Orte schnell zu erreichen</li>
+            <li>Um in den Urlaub zu fahren</li>
+            <li>Um Familie oder Freunde zu besuchen</li>
+            <li>Weil Fliegen schneller ist als Auto oder Zug</li>
+        </ul>
+    </div>
+    
+    <p>Viele Millionen Menschen fliegen jeden Tag. Fliegen ist sicher und normal.</p>
+    
+    <p>Ein Flug kann kurz sein (1-2 Stunden) oder lang (5-10 Stunden oder mehr).</p>
+</div>
+
+<div class="page-break">
+    <h2>📅 Vorbereitung auf den Flug</h2>
+    
+    <div class="info-box">
+        <p><strong>Mein Flug:</strong></p>
+        <p><strong>Von:</strong> <span class="fillable-field">_______________</span> <strong>Nach:</strong> <span class="fillable-field">_______________</span></p>
+        <p><strong>Datum:</strong> <span class="fillable-field">_______________</span></p>
+        <p><strong>Abflugzeit:</strong> <span class="fillable-field">_______________</span></p>
+        <p><strong>Flugnummer:</strong> <span class="fillable-field">_______________</span></p>
+        <p><strong>Wer kommt mit:</strong> <span class="fillable-field">_______________</span></p>
+    </div>
+    
+    <h3>⏱️ Wie lange dauert alles?</h3>
+    <p>Ein Flugtag besteht aus mehreren Teilen:</p>
+    <ul>
+        <li><strong>Ankunft am Flughafen:</strong> 2-3 Stunden vor Abflug</li>
+        <li><strong>Check-in & Sicherheit:</strong> 30-60 Minuten</li>
+        <li><strong>Warten am Gate:</strong> 15-45 Minuten</li>
+        <li><strong>Boarding:</strong> 20-30 Minuten</li>
+        <li><strong>Der Flug selbst:</strong> unterschiedlich (z.B. 2 Stunden)</li>
+        <li><strong>Aussteigen & Gepäck:</strong> 20-40 Minuten</li>
+    </ul>
+    
+    <h3>🎒 Was soll ich mitbringen?</h3>
+    <ul class="checklist">
+        <li>Reisepass oder Personalausweis</li>
+        <li>Boardingkarte (oft digital auf dem Handy)</li>
+        <li>Kleines Handgepäck (Rucksack oder Tasche)</li>
+        <li>Kopfhörer (um Geräusche zu dämpfen)</li>
+        <li>Buch, Tablet oder etwas zum Lesen/Spielen</li>
+        <li>Snacks (falls erlaubt) und leere Wasserflasche</li>
+        <li>Optional: Kaugummi (hilft bei Ohrendruck)</li>
+        <li>Optional: Kuscheltier oder Sicherheitsobjekt</li>
+    </ul>
+</div>
+
+<div class="page-break">
+    <h2>👣 Schritt für Schritt: Was passiert am Flugtag?</h2>
+    
+    <ol class="step-list">
+        <li><strong>Ankunft am Flughafen</strong><br>
+        Wir kommen 2-3 Stunden vor Abflug am Flughafen an. Der Flughafen ist ein großes Gebäude mit vielen Menschen. Es gibt Schilder, die den Weg zeigen.</li>
+        
+        <li><strong>Check-in</strong><br>
+        Zuerst gehen wir zum Check-in. Dort geben wir unsere großen Koffer ab (falls wir welche haben). Wir bekommen unsere Bordkarten. Manchmal ist das schon online gemacht und wir überspringen diesen Schritt.</li>
+        
+        <li><strong>Sicherheitskontrolle</strong><br>
+        Danach gehen wir zur Sicherheitskontrolle. Hier müssen wir durch einen Metalldetektor gehen. Wir legen Handy, Schlüssel und Jacke in eine Box. Das Gepäck wird durchleuchtet. Das ist normal und dient der Sicherheit aller.</li>
+        
+        <li><strong>Im Terminal warten</strong><br>
+        Nach der Sicherheit sind wir im "Terminal" – das ist der Wartebereich. Hier gibt es Geschäfte, Restaurants und Sitzbänke. Wir schauen auf unserer Bordkarte nach, welches Gate wir brauchen (z.B. "Gate A12").</li>
+        
+        <li><strong>Zum Gate gehen</strong><br>
+        Etwa 30-45 Minuten vor Abflug gehen wir zu unserem Gate. Das Gate ist der Wartebereich direkt vor dem Flugzeug. Hier setzen wir uns hin und warten.</li>
+        
+        <li><strong>Boarding (Einsteigen)</strong><br>
+        Wenn das Boarding beginnt, wird unser Name oder unsere Sitzplatznummer aufgerufen. Wir zeigen die Bordkarte und gehen durch einen langen Gang (Jet-Bridge) direkt ins Flugzeug.</li>
+        
+        <li><strong>Platz finden und hinsetzen</strong><br>
+        Im Flugzeug suchen wir unseren Sitzplatz. Die Nummer steht über dem Sitz (z.B. "15A"). Wir setzen uns hin, legen unser Handgepäck unter den Sitz oder in die Ablage oben. Wir schnallen uns an.</li>
+        
+        <li><strong>Sicherheitsansage</strong><br>
+        Die Flugbegleiter zeigen, was im Notfall zu tun ist. Das ist eine Routine, die bei jedem Flug gemacht wird. Es bedeutet nicht, dass etwas Schlimmes passiert.</li>
+        
+        <li><strong>Start (Takeoff)</strong><br>
+        Das Flugzeug rollt zur Startbahn. Es wird schneller und schneller, bis es abhebt. Dabei fühlt man einen leichten Druck im Bauch (wie bei einer Achterbahn). Nach 5-10 Minuten ist das Flugzeug in der Luft und es wird ruhiger.</li>
+        
+        <li><strong>Während des Fluges</strong><br>
+        Jetzt können wir den Gurt lockern (aber nicht abnehmen). Wir können lesen, Musik hören, schlafen oder aus dem Fenster schauen. Bei längeren Flügen gibt es Essen und Trinken. Ich darf aufstehen und zur Toilette gehen.</li>
+        
+        <li><strong>Landung</strong><br>
+        Vor der Landung wird gesagt: "Bitte anschnallen". Das Flugzeug sinkt langsam. Es gibt einen kleinen Ruck, wenn die Räder den Boden berühren. Danach rollt das Flugzeug zur Parkposition.</li>
+        
+        <li><strong>Aussteigen</strong><br>
+        Wenn das Flugzeug steht, dürfen wir aufstehen. Wir nehmen unser Handgepäck und gehen in einer Reihe aus dem Flugzeug. Wir folgen den Schildern zur Gepäckausgabe (falls wir Koffer haben).</li>
+        
+        <li><strong>Gepäck abholen</strong><br>
+        Bei der Gepäckausgabe (Baggage Claim) warten wir, bis unsere Koffer auf dem Förderband erscheinen. Wir nehmen sie und gehen zum Ausgang.</li>
+        
+        <li><strong>Am Zielort angekommen</strong><br>
+        Wir sind da! Der Flug ist vorbei. Alles ist gut gelaufen.</li>
+    </ol>
+</div>
+
+<div class="page-break">
+    <h2>👀 Was werde ich sehen, hören und fühlen?</h2>
+    
+    <div class="info-box">
+        <h3>👁️ Sehen</h3>
+        <ul>
+            <li>Viele Menschen im Flughafen</li>
+            <li>Große Anzeigetafeln mit Flugnummern und Zeiten</li>
+            <li>Lange Gänge und Rolltreppen</li>
+            <li>Das Flugzeug von außen (groß und mit Flügeln)</li>
+            <li>Sitze im Flugzeug in Reihen</li>
+            <li>Wolken und Himmel aus dem Fenster</li>
+        </ul>
+    </div>
+    
+    <div class="warning-box">
+        <h3>👂 Hören</h3>
+        <ul>
+            <li>Viele Stimmen und Durchsagen im Flughafen</li>
+            <li>Das Rattern des Gepäckbands</li>
+            <li>Motorengeräusche beim Start (sehr laut!)</li>
+            <li>Ein konstantes Brummen während des Fluges</li>
+            <li>Pieptöne (z.B. wenn man sich anschnallen soll)</li>
+        </ul>
+        <p><strong>💡 Tipp:</strong> Kopfhörer helfen, die Geräusche leiser zu machen!</p>
+    </div>
+    
+    <div class="info-box">
+        <h3>✋ Fühlen</h3>
+        <ul>
+            <li>Ein leichter Druck in den Ohren beim Start und bei der Landung</li>
+            <li>Ein "Kribbeln im Bauch" beim Abheben</li>
+            <li>Leichtes Ruckeln (Turbulenzen) – das ist normal und nicht gefährlich</li>
+            <li>Klimaanlage (es kann kühl sein im Flugzeug)</li>
+        </ul>
+    </div>
+</div>
+
+<div class="page-break">
+    <h2>⚠️ Was könnte schwierig sein?</h2>
+    
+    <div class="warning-box">
+        <h3>Herausforderung 1: Viele Menschen und Lärm</h3>
+        <p><strong>Problem:</strong> Der Flughafen ist voll, laut und unübersichtlich. Das kann überfordernd sein.</p>
+        <p><strong>Lösung:</strong></p>
+        <ul>
+            <li>Kopfhörer tragen (mit oder ohne Musik)</li>
+            <li>In der Nähe von Mama/Papa bleiben</li>
+            <li>Augen schließen oder auf den Boden schauen, wenn es zu viel wird</li>
+            <li>Wissen, dass es bald ruhiger wird (im Flugzeug ist es leiser)</li>
+        </ul>
+    </div>
+    
+    <div class="warning-box">
+        <h3>Herausforderung 2: Lange Wartezeiten</h3>
+        <p><strong>Problem:</strong> Warten am Gate oder im Flugzeug kann langweilig sein.</p>
+        <p><strong>Lösung:</strong></p>
+        <ul>
+            <li>Ein Buch, Tablet oder Spiel mitbringen</li>
+            <li>Musik hören</li>
+            <li>Snacks essen (falls erlaubt)</li>
+            <li>Mit Mama/Papa über die Reise sprechen</li>
+        </ul>
+    </div>
+    
+    <div class="warning-box">
+        <h3>Herausforderung 3: Ohrendruck</h3>
+        <p><strong>Problem:</strong> Beim Start und bei der Landung fühlen sich die Ohren komisch an oder tun weh.</p>
+        <p><strong>Lösung:</strong></p>
+        <ul>
+            <li>Kaugummi kauen oder etwas trinken</li>
+            <li>Gähnen oder Schlucken</li>
+            <li>Nase zuhalten und vorsichtig pusten (Druckausgleich)</li>
+            <li>Das Gefühl geht nach 5-10 Minuten wieder weg</li>
+        </ul>
+    </div>
+    
+    <div class="warning-box">
+        <h3>Herausforderung 4: Angst vor dem Fliegen</h3>
+        <p><strong>Problem:</strong> Das Flugzeug ist groß und hoch in der Luft. Das kann Angst machen.</p>
+        <p><strong>Lösung:</strong></p>
+        <ul>
+            <li>Wissen, dass Fliegen sehr sicher ist (sicherer als Autofahren)</li>
+            <li>Tief ein- und ausatmen (Atemtechnik)</li>
+            <li>An etwas Schönes denken (z.B. das Urlaubsziel)</li>
+            <li>Mit Mama/Papa reden</li>
+            <li>Ein Kuscheltier oder Sicherheitsobjekt halten</li>
+        </ul>
+    </div>
+</div>
+
+<div class="page-break">
+    <h2>🛠️ Was kann mir helfen?</h2>
+    
+    <div class="success-box">
+        <h3>✋ Ich darf jederzeit Bescheid sagen</h3>
+        <p>Wenn mir etwas zu viel wird, darf ich es sagen:</p>
+        <ul>
+            <li>"Mir ist es zu laut."</li>
+            <li>"Ich brauche eine Pause."</li>
+            <li>"Mir ist unwohl."</li>
+        </ul>
+        <p>Mama oder Papa werden mir helfen.</p>
+    </div>
+    
+    <div class="success-box">
+        <h3>😤 Atemtechnik</h3>
+        <p>Wenn ich nervös bin:</p>
+        <ol>
+            <li>Langsam durch die Nase einatmen (1-2-3-4)</li>
+            <li>Kurz die Luft anhalten (1-2)</li>
+            <li>Langsam durch den Mund ausatmen (1-2-3-4-5-6)</li>
+            <li>Dreimal wiederholen</li>
+        </ol>
+    </div>
+    
+    <div class="success-box">
+        <h3>🧸 Sicherheitsobjekt</h3>
+        <p>Ich darf etwas Beruhigendes mitbringen:</p>
+        <ul>
+            <li>Ein kleines Kuscheltier</li>
+            <li>Einen Fidget-Spinner</li>
+            <li>Einen Stein oder ein anderes kleines Objekt</li>
+        </ul>
+        <p>Ich kann das während des Fluges in der Hand halten.</p>
+    </div>
+    
+    <div class="success-box">
+        <h3>💬 Fragen stellen</h3>
+        <p>Ich darf Fragen stellen:</p>
+        <ul>
+            <li>"Wie lange dauert der Flug noch?"</li>
+            <li>"Was war das für ein Geräusch?"</li>
+            <li>"Wann können wir aufstehen?"</li>
+        </ul>
+    </div>
+    
+    <div class="info-box">
+        <h3>👨‍👩‍👧 Mama/Papa ist bei mir</h3>
+        <p>Mama oder Papa sitzt direkt neben mir im Flugzeug. Sie passen auf mich auf. Ich bin nicht alleine.</p>
+    </div>
+</div>
+
+<div class="page-break">
+    <h2>🎉 Nach der Landung</h2>
+    
+    <div class="success-box">
+        <h3>✅ Ich habe es geschafft!</h3>
+        <p>Die Landung ist vorbei. Ich bin geflogen! Das war mutig und toll.</p>
+        <p>Jetzt bin ich am Zielort und kann mich freuen.</p>
+    </div>
+    
+    <h3>🏠 Am Zielort</h3>
+    <p>Nach dem Flug können wir:</p>
+    <ul>
+        <li>Zum Hotel oder zur Unterkunft fahren</li>
+        <li>Etwas essen und trinken</li>
+        <li>Uns ausruhen</li>
+        <li>Den Urlaub oder Besuch genießen</li>
+    </ul>
+    
+    <div class="success-box">
+        <h3>⭐ Ich bin stolz auf mich!</h3>
+        <p>Fliegen ist für viele Menschen aufregend – auch für Erwachsene.</p>
+        <p>Ich habe eine große Herausforderung gemeistert!</p>
+        <p>Beim nächsten Flug wird es leichter sein, weil ich jetzt weiß, wie es abläuft.</p>
+    </div>
+</div>
+
+<div class="page-break">
+    <h2>📝 Meine persönlichen Notizen</h2>
+    
+    <div class="notes-section">
+        <h3>Wohin fliegen wir und warum?</h3>
+        <p class="fillable-field" style="width: 80%; min-height: 60px;"></p>
+        
+        <h3 style="margin-top: 30px;">Was nehme ich mit ins Handgepäck?</h3>
+        <p class="fillable-field" style="width: 80%; min-height: 60px;"></p>
+        
+        <h3 style="margin-top: 30px;">Was macht mir am meisten Sorgen?</h3>
+        <p class="fillable-field" style="width: 80%; min-height: 60px;"></p>
+        
+        <h3 style="margin-top: 30px;">Was hilft mir, ruhig zu bleiben?</h3>
+        <p class="fillable-field" style="width: 80%; min-height: 60px;"></p>
+        
+        <h3 style="margin-top: 30px;">Worauf freue ich mich am Zielort?</h3>
+        <p class="fillable-field" style="width: 80%; min-height: 60px;"></p>
+    </div>
+</div>
+
+<div class="page-break">
+    <h2>👨‍👩‍👧 Informationen für Eltern</h2>
+    
+    <div class="info-box">
+        <h3>Vorbereitung zu Hause</h3>
+        <ul>
+            <li>Diese Story 5-7 Tage vor dem Flug täglich gemeinsam lesen</li>
+            <li>YouTube-Videos von Flughäfen und Flügen anschauen</li>
+            <li>Spielerisch "Fliegen" nachspielen (Stühle als Sitze arrangieren)</li>
+            <li>Über das Reiseziel sprechen und Vorfreude wecken</li>
+        </ul>
+    </div>
+    
+    <div class="warning-box">
+        <h3>Am Flughafen</h3>
+        <ul>
+            <li>Früh genug da sein (Zeitdruck vermeiden)</li>
+            <li>Ruhigen Wartebereich suchen (abseits von lauten Bereichen)</li>
+            <li>Snacks und Beschäftigung griffbereit haben</li>
+            <li>Bei der Airline nach Unterstützung fragen (z.B. Priority Boarding)</li>
+        </ul>
+    </div>
+    
+    <div class="success-box">
+        <h3>Während des Fluges</h3>
+        <ul>
+            <li>Ruhig bleiben – Ihre Ruhe überträgt sich aufs Kind</li>
+            <li>Kleine Schritte loben ("Du sitzt schon super auf deinem Platz!")</li>
+            <li>Ablenkung anbieten, aber nicht erzwingen</li>
+            <li>Bei Bedarf Flugbegleiter um Hilfe bitten</li>
+        </ul>
+    </div>
+    
+    <div class="info-box">
+        <h3>💡 Zusätzliche Tipps</h3>
+        <ul>
+            <li>Manche Fluggesellschaften bieten spezielle Unterstützung für Familien mit autistischen Kindern</li>
+            <li>Fensterplatz kann beruhigend sein (Blick nach draußen)</li>
+            <li>Gangplatz ermöglicht leichteres Aufstehen</li>
+            <li>Nachtflüge können ruhiger sein (weniger Menschen, Kind ist müde)</li>
+        </ul>
+    </div>
+</div>
+
+<div class="footer">
+    <p><strong>Mit dem Flugzeug fliegen - Social Story</strong></p>
+    <p>Entwickelt von Paul Rawe</p>
+    <p>autismus-adhs-alltag.de</p>
+    <p style="margin-top: 20px; font-size: 10pt;">© 2026 | Alle Rechte vorbehalten</p>
+</div>
+
+</body>
+</html>
