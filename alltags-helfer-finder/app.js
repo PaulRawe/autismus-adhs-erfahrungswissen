@@ -286,31 +286,64 @@ class AlltagsHelferFinder {
         // Score products based on priority areas
         const scoredProducts = this.products.map(product => {
             let score = 0;
+            let relevanceCount = 0; // Zählt wie viele Top-Kategorien matchen
             
             topCategories.forEach((category, index) => {
-                const weight = 3 - index; // Higher weight for top priorities
+                // Exponentiell abnehmende Gewichtung: 1. = 5x, 2. = 3x, 3. = 1x
+                const weight = index === 0 ? 5 : index === 1 ? 3 : 1;
+                
                 if (product.priority_score && product.priority_score[category]) {
-                    score += product.priority_score[category] * weight;
+                    const categoryScore = product.priority_score[category];
+                    score += categoryScore * weight;
+                    
+                    // Bonus für hohe Relevanz (Score >= 8)
+                    if (categoryScore >= 8) {
+                        score += 10;
+                        relevanceCount++;
+                    }
                 }
             });
             
-            return { ...product, matchScore: score };
+            // Bonus für Produkte die mehrere Top-Kategorien abdecken
+            if (relevanceCount >= 2) {
+                score += 20;
+            }
+            
+            return { ...product, matchScore: score, relevanceCount };
         });
         
-        // Sort by score
-        scoredProducts.sort((a, b) => b.matchScore - a.matchScore);
+        // Sort by score (höchster zuerst)
+        scoredProducts.sort((a, b) => {
+            // Bei gleichem Score: Produkt mit mehr Relevanz bevorzugen
+            if (b.matchScore === a.matchScore) {
+                return b.relevanceCount - a.relevanceCount;
+            }
+            return b.matchScore - a.matchScore;
+        });
         
-        // Check if bundle makes sense
+        // Check if bundle makes sense (beide Hauptprodukte in Top 2)
         const shouldRecommendBundle = topCategories.includes('tagesstruktur') && 
-                                       topCategories.includes('regulation');
+                                       topCategories.includes('regulation') &&
+                                       (topCategories.indexOf('tagesstruktur') < 2 || 
+                                        topCategories.indexOf('regulation') < 2);
         
         // Return top recommendations
         if (shouldRecommendBundle) {
             const bundle = scoredProducts.find(p => p.is_bundle);
-            const others = scoredProducts.filter(p => !p.is_bundle).slice(0, 2);
+            const others = scoredProducts.filter(p => !p.is_bundle && !p.is_bundle).slice(0, 2);
             return [bundle, ...others].filter(Boolean);
         } else {
-            return scoredProducts.slice(0, 3);
+            // Stelle sicher, dass nicht nur Bundle empfohlen wird
+            const nonBundleProducts = scoredProducts.filter(p => !p.is_bundle);
+            const topProduct = scoredProducts[0];
+            
+            if (topProduct && topProduct.is_bundle) {
+                // Wenn Bundle top ist, zeige es + 2 Einzelprodukte
+                return [topProduct, ...nonBundleProducts.slice(0, 2)].filter(Boolean);
+            } else {
+                // Sonst zeige Top 3 (ohne Bundle wenn es nicht passt)
+                return nonBundleProducts.slice(0, 3);
+            }
         }
     }
     
@@ -359,6 +392,26 @@ class AlltagsHelferFinder {
             ${this.renderProductRecommendations(recommendedProducts)}
             ${this.renderLeadMagnet()}
             ${relevantAffiliates.length > 0 ? this.renderAffiliates(relevantAffiliates) : ''}
+            
+            <div style="text-align: center; margin: 3rem 0; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h3 style="margin-bottom: 1rem; color: var(--text-dark);">
+                    📚 Alle Produkte ansehen
+                </h3>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem;">
+                    Möchtest du dir lieber alle verfügbaren Hilfsmaterialien ansehen?
+                </p>
+                <a href="../downloads.html" 
+                   style="display: inline-block; 
+                          background: var(--primary-color); 
+                          color: white; 
+                          padding: 1rem 2rem; 
+                          border-radius: 10px; 
+                          text-decoration: none; 
+                          font-weight: 600;
+                          transition: all 0.2s ease;">
+                    Zur Produktübersicht →
+                </a>
+            </div>
             
             <div class="back-to-top">
                 <a href="../index.html">← Zurück zur Startseite</a>
@@ -443,9 +496,13 @@ class AlltagsHelferFinder {
             <div class="lead-magnet">
                 <h3>🎁 Bonus für dich</h3>
                 <p>${this.leadMagnet.description}</p>
-                <button class="btn" onclick="window.open('data/${this.leadMagnet.file}', '_blank')">
+                <a href="data/${this.leadMagnet.file}" 
+                   class="btn" 
+                   target="_blank" 
+                   rel="noopener"
+                   style="background: white; color: var(--primary-color);">
                     Kostenlos herunterladen
-                </button>
+                </a>
             </div>
         `;
     }
