@@ -168,54 +168,45 @@
 })();
 
 // ==================================================
-// STICKY DOWNLOAD BUTTON - Automatisch auf allen Seiten
+// STICKY FUNNEL BUTTON MIT DOWNLOAD-MENÜ
 // ==================================================
 (function() {
     'use strict';
-    
+
     function loadStickyButton() {
         // Prüfen ob Button bereits existiert
-        if (document.getElementById('sticky-download-button')) {
-            return;
-        }
-        
-        // Button HTML erstellen und einfügen
+        if (document.getElementById('sticky-download-button')) return;
+
+        // Button HTML erstellen
         const buttonHTML = `
             <div id="sticky-download-button">
-      <a href="alltags-helfer-finder/index.html" class="sticky-btn">
-        <span class="sticky-btn-icon">🎯</span>
-        <span class="sticky-btn-text">
-        <strong>Finde deine Hilfen</strong>
-        <small>in 2 Minuten</small>
-                </span>
-       </a>
+                <a href="/alltags-helfer-finder/index.html" class="sticky-btn">
+                    <span class="sticky-btn-icon">🎯</span>
+                    <span class="sticky-btn-text">
+                        <strong>Finde deine Hilfen</strong>
+                        <small>in 2 Minuten</small>
+                    </span>
+                </a>
             </div>
         `;
-        
-        // Am Ende des Body einfügen
+
         const container = document.createElement('div');
         container.innerHTML = buttonHTML.trim();
         document.body.appendChild(container.firstElementChild);
-        
-        // Cookie-Banner Überwachung für Button-Position
+
         checkCookieBanner();
     }
-    
+
     function checkCookieBanner() {
         const banner = document.getElementById('cookie-banner');
-        if (banner) {
-            // Initial prüfen
-            updateBodyClass();
-            
-            // Bei Änderungen am Banner reagieren
-            const observer = new MutationObserver(function() {
-                updateBodyClass();
-            });
-            
-            observer.observe(banner, { attributes: true, attributeFilter: ['style'] });
-        }
+        if (!banner) return;
+
+        updateBodyClass();
+
+        const observer = new MutationObserver(updateBodyClass);
+        observer.observe(banner, { attributes: true, attributeFilter: ['style'] });
     }
-    
+
     function updateBodyClass() {
         const banner = document.getElementById('cookie-banner');
         if (banner && banner.style.display !== 'none') {
@@ -224,8 +215,8 @@
             document.body.classList.remove('cookie-banner-visible');
         }
     }
-    
-    // Button laden wenn DOM bereit ist
+
+    // DOM ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', loadStickyButton);
     } else {
@@ -233,34 +224,30 @@
     }
 })();
 
+// ==================================================
+// STICKY BUTTON POSITION AN FOOTER ANPASSEN
+// ==================================================
 document.addEventListener("DOMContentLoaded", () => {
     const sticky = document.getElementById("sticky-download-button");
     const footer = document.querySelector("footer");
 
     if (!sticky || !footer) return;
 
-    const baseOffset = 2; // entspricht deinem bottom: 2rem
+    const baseOffset = 2;
 
     function updateSticky() {
         const scrollY = window.scrollY;
         const windowHeight = window.innerHeight;
-
         const footerTop = footer.offsetTop;
         const stickyHeight = sticky.offsetHeight;
 
-        // Wo wäre die Unterkante des Sticky Buttons?
         const stickyBottom = scrollY + windowHeight - baseOffset;
 
-        // Wo beginnt der Footer?
-        const footerTrigger = footerTop;
-
-        if (stickyBottom >= footerTrigger) {
-            // Button trifft Footer → fixieren
+        if (stickyBottom >= footerTop) {
             sticky.style.position = "absolute";
             sticky.style.bottom = "auto";
-            sticky.style.top = (footerTrigger - stickyHeight - baseOffset) + "px";
+            sticky.style.top = (footerTop - stickyHeight - baseOffset) + "px";
         } else {
-            // Normalzustand
             sticky.style.position = "fixed";
             sticky.style.top = "auto";
             sticky.style.bottom = baseOffset + "px";
@@ -271,40 +258,38 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", updateSticky);
     updateSticky();
 });
+
 // ==================================================
-// EXPANDABLE MENU FOR STICKY BUTTON
+// AUSKLAPP-MENÜ (DOWNLOADS) FÜR STICKY BUTTON
 // ==================================================
 (function() {
     'use strict';
 
-    // Wird ausgeführt, sobald Sticky-Button existiert
     function initExpandableMenu() {
         const sticky = document.getElementById('sticky-download-button');
         if (!sticky) return;
 
-        // Verhindern, dass der Code mehrfach läuft
         if (document.getElementById('sticky-expanded-menu')) return;
 
-        // Mini-Menü einfügen
         const menuHTML = `
             <div id="sticky-expanded-menu" style="
-                display: none;
-                position: fixed;
-                right: 1.2rem;
-                bottom: 4.8rem;
-                background: #1b1b1b;
-                border-radius: 14px;
-                padding: 0.9rem 1.2rem;
-                box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-                z-index: 9999;
-                width: max-content;
+                display:none;
+                position:fixed;
+                right:1.2rem;
+                bottom:4.8rem;
+                background:#1b1b1b;
+                border-radius:14px;
+                padding:0.9rem 1.2rem;
+                box-shadow:0 4px 14px rgba(0,0,0,0.25);
+                z-index:9999;
+                width:max-content;
             ">
                 <a href="/downloads.html" style="
-                    color: white;
-                    text-decoration: none;
-                    font-size: 1rem;
-                    font-weight: 500;
-                    display: block;
+                    color:white;
+                    text-decoration:none;
+                    font-size:1rem;
+                    font-weight:500;
+                    display:block;
                 ">
                     📂 Alle Downloads & Materialien
                 </a>
@@ -317,25 +302,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const menu = document.getElementById('sticky-expanded-menu');
         const btn = sticky.querySelector('.sticky-btn');
-
         let isOpen = false;
 
-        // Menü togglen
         btn.addEventListener('click', function(e) {
-            // Wenn Nutzer eigentlich in den Funnel will → zuerst Funnel-Link prüfen
             const linkClicked = e.target.closest('a');
-            if (linkClicked && !isOpen) {
-                // Normaler Funnel-Link → nicht blockieren
-                return;
-            }
+            if (linkClicked && !isOpen) return; // Funnel normal öffnen
 
-            e.preventDefault(); // Öffnet erst Menü
-
+            e.preventDefault();
             isOpen = !isOpen;
             menu.style.display = isOpen ? 'block' : 'none';
         });
 
-        // Klick außerhalb schließt das Menü
         document.addEventListener('click', function(e) {
             if (!isOpen) return;
             if (!sticky.contains(e.target) && !menu.contains(e.target)) {
@@ -345,7 +322,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Warten bis der Sticky-Button sicher existiert
     function waitForSticky() {
         const interval = setInterval(() => {
             if (document.getElementById('sticky-download-button')) {
@@ -361,57 +337,3 @@ document.addEventListener("DOMContentLoaded", () => {
         waitForSticky();
     }
 })();
- // ==================================================
-// FUNNEL: QUICK ACCESS TO DOWNLOADS
-// ==================================================
-(function () {
-    'use strict';
-
-    function injectDownloadButton() {
-        // Nur im Funnel ausführen
-        if (!window.location.pathname.includes('/alltags-helfer-finder')) return;
-
-        // Doppelte Einbindung verhindern
-        if (document.getElementById('funnel-download-button')) return;
-
-        const btn = document.createElement('a');
-        btn.id = 'funnel-download-button';
-        btn.href = '/downloads.html';
-        btn.innerHTML = '📂 Downloads';
-        btn.setAttribute('aria-label', 'Direkt zu den Downloads');
-        
-        document.body.appendChild(btn);
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', injectDownloadButton);
-    } else {
-        injectDownloadButton();
-    }
-})();
-    #funnel-download-direct {
-    position: fixed;
-    right: 1.2rem;
-    bottom: 1.2rem;
-    background: #ffffff;
-    border: 2px solid #e0ddd9;
-    border-radius: 50px;
-    padding: 0.7rem 1rem;
-    font-size: 0.9rem;
-    color: #2c3e50;
-    font-weight: 600;
-    text-decoration: none;
-    z-index: 9999999; /* über allem */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-#funnel-download-direct:hover {
-    background: #f8f8f8;
-    border-color: #4a7c59;
-}
-           
-
-
-
-
-
