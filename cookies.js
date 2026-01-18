@@ -361,7 +361,36 @@ document.addEventListener("DOMContentLoaded", () => {
         waitForSticky();
     }
 })();
-                
+ // ==================================================
+// FUNNEL: QUICK ACCESS TO DOWNLOADS
+// ==================================================
+(function () {
+    'use strict';
+
+    function injectDownloadButton() {
+        // Nur im Funnel ausführen
+        if (!window.location.pathname.includes('/alltags-helfer-finder')) return;
+
+        // Doppelte Einbindung verhindern
+        if (document.getElementById('funnel-download-button')) return;
+
+        const btn = document.createElement('a');
+        btn.id = 'funnel-download-button';
+        btn.href = '/downloads.html';
+        btn.innerHTML = '📂 Downloads';
+        btn.setAttribute('aria-label', 'Direkt zu den Downloads');
+        
+        document.body.appendChild(btn);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', injectDownloadButton);
+    } else {
+        injectDownloadButton();
+    }
+})();
+               
+
 
 
 
