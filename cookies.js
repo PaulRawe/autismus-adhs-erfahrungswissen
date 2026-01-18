@@ -280,7 +280,46 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==================================================
-// HILFE-HINWEIS direkt nach Header einfügen (ALLE SEITEN)
+// MEDIZINISCHER DISCLAIMER – Automatisch unter Header einfügen
+// ==================================================
+(function() {
+    'use strict';
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // Prüfe, ob Disclaimer bereits existiert
+        if (document.getElementById('medical-disclaimer')) return;
+
+        // Header finden
+        const header = document.querySelector('header');
+        if (!header) return; // Falls Seite keinen Header hat – Abbruch
+
+        // Disclaimer-HTML
+        const disclaimerHTML = `
+            <div id="medical-disclaimer" style="
+                background: #fff3cd;
+                color: #5c4700;
+                padding: 1rem;
+                margin-top: 0;
+                border-bottom: 2px solid #f0d98c;
+                font-size: 0.9rem;
+                line-height: 1.5;
+                text-align: center;
+            ">
+                <strong>Wichtiger Hinweis:</strong> 
+                Diese Seite ersetzt keine medizinische oder therapeutische Beratung. 
+                Alle Inhalte basieren auf unseren persönlichen Erfahrungen als Familie.
+            </div>
+        `;
+
+        // Disclaimer direkt nach dem Header einfügen
+        header.insertAdjacentHTML('afterend', disclaimerHTML);
+    });
+
+})();
+
+// ==================================================
+// HILFE-HINWEIS nach Navigation einfügen (ALLE SEITEN)
 // ==================================================
 (function() {
     'use strict';
@@ -289,9 +328,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // Prüfen ob bereits vorhanden
         if (document.getElementById('help-box-orientierung')) return;
 
-        // Header finden
-        const header = document.querySelector('header');
-        if (!header) return; // Kein Header, keine Box
+        // Navigation finden
+        const nav = document.querySelector('nav');
+        if (!nav) return; // Keine Navigation, keine Box
 
         // Relativen Pfad berechnen basierend auf aktueller URL
         const currentPath = window.location.pathname;
@@ -325,8 +364,8 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `;
 
-        // Box DIREKT nach dem Header einfügen (VOR Disclaimer)
-        header.insertAdjacentHTML('afterend', boxHTML);
+        // Box direkt NACH der Navigation einfügen
+        nav.insertAdjacentHTML('afterend', boxHTML);
     }
 
     // Laden nach DOM Ready
@@ -335,49 +374,4 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         insertHelpBox();
     }
-})();
-
-// ==================================================
-// MEDIZINISCHER DISCLAIMER – Automatisch nach Hilfe-Box einfügen
-// ==================================================
-(function() {
-    'use strict';
-
-    document.addEventListener('DOMContentLoaded', function () {
-
-        // Prüfe, ob Disclaimer bereits existiert
-        if (document.getElementById('medical-disclaimer')) return;
-
-        // Hilfe-Box finden (wird VOR dem Disclaimer eingefügt)
-        let anchor = document.getElementById('help-box-orientierung');
-        
-        // Fallback: Header verwenden
-        if (!anchor) {
-            anchor = document.querySelector('header');
-        }
-        
-        if (!anchor) return; // Falls nichts gefunden
-
-        // Disclaimer-HTML
-        const disclaimerHTML = `
-            <div id="medical-disclaimer" style="
-                background: #fff3cd;
-                color: #5c4700;
-                padding: 1rem;
-                margin-top: 0;
-                border-bottom: 2px solid #f0d98c;
-                font-size: 0.9rem;
-                line-height: 1.5;
-                text-align: center;
-            ">
-                <strong>Wichtiger Hinweis:</strong> 
-                Diese Seite ersetzt keine medizinische oder therapeutische Beratung. 
-                Alle Inhalte basieren auf unseren persönlichen Erfahrungen als Familie.
-            </div>
-        `;
-
-        // Disclaimer nach der Hilfe-Box einfügen
-        anchor.insertAdjacentHTML('afterend', disclaimerHTML);
-    });
-
 })();
