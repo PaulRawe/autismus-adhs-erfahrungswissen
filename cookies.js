@@ -182,13 +182,13 @@
         // Button HTML erstellen und einfügen
         const buttonHTML = `
             <div id="sticky-download-button">
-                <a href="downloads.html" class="sticky-btn" aria-label="Zu unseren Hilfsmaterialien">
-                    <span class="sticky-btn-icon">📚</span>
-                    <span class="sticky-btn-text">
-                        <strong>Hilfsmaterialien</strong>
-                        <small>für Autismus & ADHS</small>
-                    </span>
-                </a>
+      <a href="alltags-helfer-finder/index.html" class="sticky-btn">
+        <span class="sticky-btn-icon">🎯</span>
+        <span class="sticky-btn-text">
+        <strong>Finde deine Hilfen</strong>
+        <small>in 2 Minuten</small>
+                </span>
+       </a>
             </div>
         `;
         
@@ -272,4 +272,5 @@ document.addEventListener("DOMContentLoaded", () => {
     updateSticky();
 });
                 
+
 
