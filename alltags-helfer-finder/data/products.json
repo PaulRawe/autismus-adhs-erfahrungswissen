@@ -152,7 +152,7 @@
     "id": "notfall_checkliste",
     "name": "Notfall-Checkliste: Meltdown-Prävention",
     "description": "Kostenlose PDF mit 5 konkreten Strategien zur Früherkennung und Deeskalation",
-    "file": "notfall-checkliste.pdf",
+    "file": "notfall-checkliste.html",
     "available": true
   }
 }
