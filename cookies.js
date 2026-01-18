@@ -233,6 +233,9 @@
     }
 })();
 
+// ==================================================
+// STICKY BUTTON POSITION (Footer-Kollision vermeiden)
+// ==================================================
 document.addEventListener("DOMContentLoaded", () => {
     const sticky = document.getElementById("sticky-download-button");
     const footer = document.querySelector("footer");
@@ -271,7 +274,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", updateSticky);
     updateSticky();
 });
-     // ==================================================
+
+// ==================================================
 // MEDIZINISCHER DISCLAIMER – Automatisch unter Header einfügen
 // ==================================================
 (function() {
@@ -308,9 +312,10 @@ document.addEventListener("DOMContentLoaded", () => {
         header.insertAdjacentHTML('afterend', disclaimerHTML);
     });
 
-})();           
+})();
+
 // ==================================================
-// HILFE-HINWEIS unter dem Disclaimer einfügen
+// HILFE-HINWEIS unter Disclaimer einfügen (ALLE SEITEN)
 // ==================================================
 (function() {
     'use strict';
@@ -319,11 +324,39 @@ document.addEventListener("DOMContentLoaded", () => {
         // Prüfen ob bereits vorhanden
         if (document.getElementById('help-box-orientierung')) return;
 
-        // Disclaimer suchen (steht direkt unter <header>)
-        const disclaimer = document.getElementById('medical-disclaimer');
-        if (!disclaimer) return;
+        // 1. Disclaimer finden (wird von obigem Code erstellt)
+        let anchor = document.getElementById('medical-disclaimer');
 
-        // Box HTML
+        // 2. Fallback: Header verwenden
+        if (!anchor) {
+            anchor = document.querySelector('header');
+        }
+
+        // Wenn beides nicht existiert, abbrechen
+        if (!anchor) return;
+
+        // WICHTIG: Relativen Pfad berechnen basierend auf aktueller URL
+        const currentPath = window.location.pathname;
+        let relativePathToFinder = '';
+        
+        // Zähle wie viele Ordner-Ebenen wir tief sind
+        const depth = (currentPath.match(/\//g) || []).length - 1;
+        
+        if (depth === 0) {
+            // Auf Root-Ebene (z.B. /index.html)
+            relativePathToFinder = 'alltags-helfer-finder/index.html';
+        } else if (depth === 1) {
+            // Eine Ebene tief (z.B. /alltag/medien.html)
+            relativePathToFinder = '../alltags-helfer-finder/index.html';
+        } else if (depth === 2) {
+            // Zwei Ebenen tief
+            relativePathToFinder = '../../alltags-helfer-finder/index.html';
+        } else {
+            // Für tiefere Ebenen
+            relativePathToFinder = '../'.repeat(depth) + 'alltags-helfer-finder/index.html';
+        }
+
+        // Box HTML mit berechnetem relativen Pfad
         const boxHTML = `
             <div id="help-box-orientierung" style="
                 max-width: 900px;
@@ -336,16 +369,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 line-height: 1.5;
                 color: #2b2b2b;
             ">
-                Braucht ihr gerade Orientierung?
-                <a href="/alltags-helfer-finder/index.html"
+                💡 Braucht ihr gerade Orientierung?
+                <a href="${relativePathToFinder}"
                     style="color:#2f6f8f;font-weight:bold;text-decoration:underline;">
-                    → Kurze Fragen, direkte Hilfe
+                    → Kurze Fragen, direkte Hilfe (2 Min.)
                 </a>
             </div>
         `;
 
-        // Box nach dem Disclaimer einfügen
-        disclaimer.insertAdjacentHTML('afterend', boxHTML);
+        // Box nach dem Anchor einfügen
+        anchor.insertAdjacentHTML('afterend', boxHTML);
     }
 
     // Laden nach DOM Ready
@@ -355,55 +388,3 @@ document.addEventListener("DOMContentLoaded", () => {
         insertHelpBox();
     }
 })();
-// ==================================================
-// HILFE-HINWEIS unter Disclaimer ODER Header einfügen
-// ==================================================
-(function() {
-    'use strict';
-
-    function insertHelpBox() {
-        if (document.getElementById('help-box-orientierung')) return;
-
-        // 1️⃣ Erst versuchen: Disclaimer finden
-        let anchor = document.getElementById('medical-disclaimer');
-
-        // 2️⃣ Wenn nicht vorhanden → Header verwenden
-        if (!anchor) {
-            anchor = document.querySelector('header');
-        }
-
-        // Wenn beides nicht existiert, abbrechen
-        if (!anchor) return;
-
-        const boxHTML = `
-            <div id="help-box-orientierung" style="
-                max-width: 900px;
-                margin: 1rem auto;
-                padding: 0.8rem 1rem;
-                background: #f4f6f8;
-                border-left: 4px solid #2f6f8f;
-                border-radius: 6px;
-                font-size: 0.95rem;
-                line-height: 1.5;
-                color: #2b2b2b;
-            ">
-                Braucht ihr gerade Orientierung?
-                <a href="/alltags-helfer-finder/index.html"
-                    style="color:#2f6f8f;font-weight:bold;text-decoration:underline;">
-                    → Kurze Fragen, direkte Hilfe
-                </a>
-            </div>
-        `;
-
-        anchor.insertAdjacentHTML('afterend', boxHTML);
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', insertHelpBox);
-    } else {
-        insertHelpBox();
-    }
-})();
-
-
-
