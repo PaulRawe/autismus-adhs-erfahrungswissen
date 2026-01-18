@@ -389,7 +389,28 @@ document.addEventListener("DOMContentLoaded", () => {
         injectDownloadButton();
     }
 })();
-               
+    #funnel-download-direct {
+    position: fixed;
+    right: 1.2rem;
+    bottom: 1.2rem;
+    background: #ffffff;
+    border: 2px solid #e0ddd9;
+    border-radius: 50px;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    color: #2c3e50;
+    font-weight: 600;
+    text-decoration: none;
+    z-index: 9999999; /* über allem */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+#funnel-download-direct:hover {
+    background: #f8f8f8;
+    border-color: #4a7c59;
+}
+           
+
 
 
 
