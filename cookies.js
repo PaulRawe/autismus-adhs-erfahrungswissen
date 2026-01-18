@@ -179,22 +179,22 @@
             return;
         }
         
-       // Relativen Pfad zu downloads.html berechnen
-const depth = (window.location.pathname.match(/\//g) || []).length - 1;
-const pathToDownloads = depth > 0 ? '../'.repeat(depth) + 'downloads.html' : 'downloads.html';
+        // Relativen Pfad zu downloads.html berechnen
+        const depth = (window.location.pathname.match(/\//g) || []).length - 1;
+        const pathToDownloads = depth > 0 ? '../'.repeat(depth) + 'downloads.html' : 'downloads.html';
 
-// Button HTML erstellen und einfügen
-const buttonHTML = `
-    <div id="sticky-download-button">
-        <a href="${pathToDownloads}" class="sticky-btn" aria-label="Zu unseren Hilfsmaterialien">
-            <span class="sticky-btn-icon">📚</span>
-            <span class="sticky-btn-text">
-                <strong>Hilfsmaterialien</strong>
-                <small>für Autismus & ADHS</small>
-            </span>
-        </a>
-    </div>
-`;
+        // Button HTML erstellen und einfügen
+        const buttonHTML = `
+            <div id="sticky-download-button">
+                <a href="${pathToDownloads}" class="sticky-btn" aria-label="Zu unseren Hilfsmaterialien">
+                    <span class="sticky-btn-icon">📚</span>
+                    <span class="sticky-btn-text">
+                        <strong>Hilfsmaterialien</strong>
+                        <small>für Autismus & ADHS</small>
+                    </span>
+                </a>
+            </div>
+        `;
         
         // Am Ende des Body einfügen
         const container = document.createElement('div');
@@ -280,46 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==================================================
-// MEDIZINISCHER DISCLAIMER – Automatisch unter Header einfügen
-// ==================================================
-(function() {
-    'use strict';
-
-    document.addEventListener('DOMContentLoaded', function () {
-
-        // Prüfe, ob Disclaimer bereits existiert
-        if (document.getElementById('medical-disclaimer')) return;
-
-        // Header finden
-        const header = document.querySelector('header');
-        if (!header) return; // Falls Seite keinen Header hat – Abbruch
-
-        // Disclaimer-HTML
-        const disclaimerHTML = `
-            <div id="medical-disclaimer" style="
-                background: #fff3cd;
-                color: #5c4700;
-                padding: 1rem;
-                margin-top: 0;
-                border-bottom: 2px solid #f0d98c;
-                font-size: 0.9rem;
-                line-height: 1.5;
-                text-align: center;
-            ">
-                <strong>Wichtiger Hinweis:</strong> 
-                Diese Seite ersetzt keine medizinische oder therapeutische Beratung. 
-                Alle Inhalte basieren auf unseren persönlichen Erfahrungen als Familie.
-            </div>
-        `;
-
-        // Disclaimer direkt nach dem Header einfügen
-        header.insertAdjacentHTML('afterend', disclaimerHTML);
-    });
-
-})();
-
-// ==================================================
-// HILFE-HINWEIS unter Disclaimer einfügen (ALLE SEITEN)
+// HILFE-HINWEIS direkt nach Header einfügen (ALLE SEITEN)
 // ==================================================
 (function() {
     'use strict';
@@ -328,35 +289,18 @@ document.addEventListener("DOMContentLoaded", () => {
         // Prüfen ob bereits vorhanden
         if (document.getElementById('help-box-orientierung')) return;
 
-        // 1. Disclaimer finden (wird von obigem Code erstellt)
-        let anchor = document.getElementById('medical-disclaimer');
+        // Header finden
+        const header = document.querySelector('header');
+        if (!header) return; // Kein Header, keine Box
 
-        // 2. Fallback: Header verwenden
-        if (!anchor) {
-            anchor = document.querySelector('header');
-        }
-
-        // Wenn beides nicht existiert, abbrechen
-        if (!anchor) return;
-
-        // WICHTIG: Relativen Pfad berechnen basierend auf aktueller URL
+        // Relativen Pfad berechnen basierend auf aktueller URL
         const currentPath = window.location.pathname;
-        let relativePathToFinder = '';
-        
-        // Zähle wie viele Ordner-Ebenen wir tief sind
         const depth = (currentPath.match(/\//g) || []).length - 1;
         
+        let relativePathToFinder = '';
         if (depth === 0) {
-            // Auf Root-Ebene (z.B. /index.html)
             relativePathToFinder = 'alltags-helfer-finder/index.html';
-        } else if (depth === 1) {
-            // Eine Ebene tief (z.B. /alltag/medien.html)
-            relativePathToFinder = '../alltags-helfer-finder/index.html';
-        } else if (depth === 2) {
-            // Zwei Ebenen tief
-            relativePathToFinder = '../../alltags-helfer-finder/index.html';
         } else {
-            // Für tiefere Ebenen
             relativePathToFinder = '../'.repeat(depth) + 'alltags-helfer-finder/index.html';
         }
 
@@ -381,8 +325,8 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `;
 
-        // Box nach dem Anchor einfügen
-        anchor.insertAdjacentHTML('afterend', boxHTML);
+        // Box DIREKT nach dem Header einfügen (VOR Disclaimer)
+        header.insertAdjacentHTML('afterend', boxHTML);
     }
 
     // Laden nach DOM Ready
@@ -393,3 +337,47 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })();
 
+// ==================================================
+// MEDIZINISCHER DISCLAIMER – Automatisch nach Hilfe-Box einfügen
+// ==================================================
+(function() {
+    'use strict';
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // Prüfe, ob Disclaimer bereits existiert
+        if (document.getElementById('medical-disclaimer')) return;
+
+        // Hilfe-Box finden (wird VOR dem Disclaimer eingefügt)
+        let anchor = document.getElementById('help-box-orientierung');
+        
+        // Fallback: Header verwenden
+        if (!anchor) {
+            anchor = document.querySelector('header');
+        }
+        
+        if (!anchor) return; // Falls nichts gefunden
+
+        // Disclaimer-HTML
+        const disclaimerHTML = `
+            <div id="medical-disclaimer" style="
+                background: #fff3cd;
+                color: #5c4700;
+                padding: 1rem;
+                margin-top: 0;
+                border-bottom: 2px solid #f0d98c;
+                font-size: 0.9rem;
+                line-height: 1.5;
+                text-align: center;
+            ">
+                <strong>Wichtiger Hinweis:</strong> 
+                Diese Seite ersetzt keine medizinische oder therapeutische Beratung. 
+                Alle Inhalte basieren auf unseren persönlichen Erfahrungen als Familie.
+            </div>
+        `;
+
+        // Disclaimer nach der Hilfe-Box einfügen
+        anchor.insertAdjacentHTML('afterend', disclaimerHTML);
+    });
+
+})();
