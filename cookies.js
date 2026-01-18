@@ -271,4 +271,42 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", updateSticky);
     updateSticky();
 });
-                
+     // ==================================================
+// MEDIZINISCHER DISCLAIMER – Automatisch unter Header einfügen
+// ==================================================
+(function() {
+    'use strict';
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // Prüfe, ob Disclaimer bereits existiert
+        if (document.getElementById('medical-disclaimer')) return;
+
+        // Header finden
+        const header = document.querySelector('header');
+        if (!header) return; // Falls Seite keinen Header hat – Abbruch
+
+        // Disclaimer-HTML
+        const disclaimerHTML = `
+            <div id="medical-disclaimer" style="
+                background: #fff3cd;
+                color: #5c4700;
+                padding: 1rem;
+                margin-top: 0;
+                border-bottom: 2px solid #f0d98c;
+                font-size: 0.9rem;
+                line-height: 1.5;
+                text-align: center;
+            ">
+                <strong>Wichtiger Hinweis:</strong> 
+                Diese Seite ersetzt keine medizinische oder therapeutische Beratung. 
+                Alle Inhalte basieren auf unseren persönlichen Erfahrungen als Familie.
+            </div>
+        `;
+
+        // Disclaimer direkt nach dem Header einfügen
+        header.insertAdjacentHTML('afterend', disclaimerHTML);
+    });
+
+})();           
+
