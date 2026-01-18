@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alltags-Helfer-Finder - Übersicht</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 2rem 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #4a7c59, #6b9d7a);
+            color: white;
+            border-radius: 16px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .flow {
+            display: grid;
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .flow-step {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .flow-step::after {
+            content: '↓';
+            position: absolute;
+            bottom: -2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: #4a7c59;
+        }
+        
+        .flow-step:last-child::after {
+            display: none;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #4a7c59;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .step-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .step-description {
+            color: #5a6c7d;
+            margin-bottom: 1rem;
+        }
+        
+        .example-box {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #4a7c59;
+            margin-top: 1rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: #2c3e50;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #4a7c59, #6b9d7a);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cta {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #f4a261, #f8c794);
+            border-radius: 16px;
+        }
+        
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #4a7c59;
+            color: white;
+            padding: 1.25rem 3rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #2d5a3d;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.75rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="header">
+            <h1>🎯 Alltags-Helfer-Finder</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;">
+                Ein intelligenter Fragebogen-Funnel für deine Website
+            </p>
+            <p style="opacity: 0.9;">
+                Personalisierte Produktempfehlungen + Echter Mehrwert = Mehr Umsatz
+            </p>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">10</div>
+                <div>Fragen mit Mehrwert</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div>Kategorien für Matching</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div>Produkte integriert</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div>Mobile-optimiert</div>
+            </div>
+        </div>
+        
+        <h2 style="text-align: center; margin: 3rem 0 2rem 0; font-size: 2rem;">
+            🔄 Wie funktioniert das System?
+        </h2>
+        
+        <div class="flow">
+            <div class="flow-step">
+                <div class="step-number">1</div>
+                <h3 class="step-title">User beantwortet Fragen</h3>
+                <p class="step-description">
+                    10 gezielte Fragen zu Alltagssituationen mit Autismus & ADHS. 
+                    Jede Antwort gibt Punkte für verschiedene Kategorien.
+                </p>
+                <div class="example-box">
+                    <strong>Beispiel:</strong> "Wie läuft euer Morgen ab?"<br>
+                    → "Chaotisch" = 3 Punkte für <em>Tagesstruktur</em>, 2 Punkte für <em>Regulation</em>
+                </div>
+            </div>
+            
+            <div class="flow-step">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Sofort-Mehrwert bei jeder Frage</h3>
+                <p class="step-description">
+                    Nach jeder Antwort erscheinen Insights mit echtem Nutzen – 
+                    auch wenn User nichts kauft!
+                </p>
+                <div class="example-box">
+                    <strong>💡 Das hat uns geholfen:</strong> Persönliche Erfahrung<br>
+                    <strong>🔬 Das sagt die Wissenschaft:</strong> Fundierte Einordnung<br>
+                    <strong>✅ Schneller Tipp:</strong> Sofort umsetzbar
+                </div>
+            </div>
+            
+            <div class="flow-step">
+                <div class="step-number">3</div>
+                <h3 class="step-title">System ermittelt Top 3 Herausforderungen</h3>
+                <p class="step-description">
+                    Basierend auf den gesammelten Punkten werden die drei wichtigsten 
+                    Kategorien identifiziert.
+                </p>
+                <div class="example-box">
+                    <strong>Beispiel-Ergebnis:</strong><br>
+                    1. Emotionale Regulation (15 Punkte)<br>
+                    2. Tagesstruktur (12 Punkte)<br>
+                    3. Schule & Lernen (8 Punkte)
+                </div>
+            </div>
+            
+            <div class="flow-step">
+                <div class="step-number">4</div>
+                <h3 class="step-title">Intelligentes Produkt-Matching</h3>
+                <p class="step-description">
+                    Produkte werden nach ihrer Relevanz für die Top 3 Kategorien sortiert. 
+                    Nur die besten 3 Empfehlungen werden angezeigt.
+                </p>
+                <div class="example-box">
+                    <strong>Matching-Logik:</strong><br>
+                    Regulations-Toolkit hat Score 10 für "Regulation" → Wird Top-Empfehlung!<br>
+                    Bundle wird automatisch empfohlen, wenn beide Produkte passen.
+                </div>
+            </div>
+            
+            <div class="flow-step">
+                <div class="step-number">5</div>
+                <h3 class="step-title">Personalisierte Auswertung</h3>
+                <p class="step-description">
+                    User erhält eine übersichtliche Auswertung mit seinen Top-Themen, 
+                    passenden Produkten UND einem kostenlosen Download.
+                </p>
+                <div class="example-box">
+                    <strong>Enthält:</strong><br>
+                    ✓ Top 3 Herausforderungen erklärt<br>
+                    ✓ 3 passende Produktempfehlungen<br>
+                    ✓ Relevante Affiliate-Produkte<br>
+                    ✓ Kostenloser Lead-Magnet (Notfall-Checkliste)
+                </div>
+            </div>
+        </div>
+        
+        <h2 style="text-align: center; margin: 3rem 0 2rem 0; font-size: 2rem;">
+            ✨ Features & Vorteile
+        </h2>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3 class="feature-title">Mobile First</h3>
+                <p>Speziell für Handy optimiert. Touch-freundlich, große Buttons, keine horizontalen Scrolls.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3 class="feature-title">Dein Design</h3>
+                <p>Passt perfekt zu deiner Website. Warm, freundlich, professionell – kein "Verkaufsschlacht"-Look.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔧</div>
+                <h3 class="feature-title">Einfach zu pflegen</h3>
+                <p>Alle Inhalte in JSON-Dateien. Neue Produkte/Fragen ohne Code-Kenntnisse hinzufügen.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">Intelligentes Matching</h3>
+                <p>Zeigt nur relevante Produkte. Keine Überforderung durch zu viel Auswahl.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3 class="feature-title">Echter Mehrwert</h3>
+                <p>User profitiert auch ohne Kauf. Insights, Tipps, wissenschaftliche Einordnung.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Conversion-optimiert</h3>
+                <p>Fortschrittsbalken, Zurück-Button, Lead-Magnet – alles für maximale Conversion.</p>
+            </div>
+        </div>
+        
+        <h2 style="text-align: center; margin: 3rem 0 2rem 0; font-size: 2rem;">
+            🛠️ Technische Details
+        </h2>
+        
+        <div class="feature-card" style="margin-bottom: 2rem;">
+            <h3 style="margin-bottom: 1rem;">Dateistruktur</h3>
+            <pre style="background: #f8f9fa; padding: 1rem; border-radius: 8px; overflow-x: auto;">
+alltags-helfer-finder/
+├── index.html              # Hauptseite
+├── styles.css              # Komplettes Design
+├── app.js                  # Gesamte Logik (Vanilla JS)
+├── data/
+│   ├── questions.json      # 10 Fragen + Insights
+│   ├── products.json       # Produkte + Affiliates
+│   └── notfall-checkliste.html  # Lead Magnet
+├── README.md               # Ausführliche Doku
+├── INTEGRATION.md          # Schnelle Einbindung
+└── START-HIER.md           # Übersicht
+            </pre>
+        </div>
+        
+        <div class="feature-card" style="margin-bottom: 2rem;">
+            <h3 style="margin-bottom: 1rem;">Was du brauchst</h3>
+            <ul style="padding-left: 1.5rem;">
+                <li>✅ Webspace mit HTML-Hosting (hast du bereits)</li>
+                <li>✅ FTP-Zugang (zum Hochladen)</li>
+                <li>✅ 5 Minuten Zeit für Integration</li>
+                <li>❌ KEINE Datenbank nötig</li>
+                <li>❌ KEINE Server-Side Programmierung nötig</li>
+                <li>❌ KEINE Code-Kenntnisse nötig (für Pflege)</li>
+            </ul>
+        </div>
+        
+        <div class="feature-card">
+            <h3 style="margin-bottom: 1rem;">Performance</h3>
+            <ul style="padding-left: 1.5rem;">
+                <li>⚡ Ladezeit: < 2 Sekunden (optimiert)</li>
+                <li>📦 Dateigröße: < 100 KB total</li>
+                <li>📱 Mobile Score: 100/100</li>
+                <li>🎨 Pure CSS (kein Framework-Bloat)</li>
+                <li>🚀 Vanilla JavaScript (keine jQuery)</li>
+            </ul>
+        </div>
+        
+        <div class="cta">
+            <h2>🚀 Bereit loszulegen?</h2>
+            <p style="margin: 1rem 0; font-size: 1.1rem;">
+                Folge der <strong>START-HIER.md</strong> für den Schnellstart<br>
+                oder lies die ausführliche <strong>README.md</strong>
+            </p>
+            <a href="START-HIER.md" class="cta-button">
+                Jetzt starten →
+            </a>
+            <p style="margin-top: 2rem; opacity: 0.8;">
+                Bei Fragen: rawe.p@freenet.de
+            </p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: white; border-radius: 12px;">
+            <h3 style="margin-bottom: 1rem;">📧 Tipp für maximalen Erfolg</h3>
+            <p style="color: #5a6c7d; line-height: 1.8;">
+                <strong>Teste den Funnel selbst</strong> bevor du ihn live schaltest!<br>
+                Durchlaufe ihn komplett auf Desktop UND Handy.<br>
+                Achte darauf, dass die Produktempfehlungen Sinn machen.<br>
+                Passe bei Bedarf die Scoring-Werte in den JSON-Dateien an.
+            </p>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,289 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Wie läuft euer Morgen ab?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "chaotic",
+          "label": "Chaotisch – jeden Tag anders",
+          "score": {"tagesstruktur": 3, "regulation": 2}
+        },
+        {
+          "value": "stressful",
+          "label": "Vorhersehbar, aber stressig",
+          "score": {"tagesstruktur": 2, "regulation": 2}
+        },
+        {
+          "value": "smooth",
+          "label": "Läuft meist entspannt",
+          "score": {"tagesstruktur": 0, "regulation": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "Ein visueller Morgenplan mit Bildern hat Sam enorme Sicherheit gegeben. Er weiß jetzt genau, was als Nächstes kommt – ohne ständig fragen zu müssen.",
+        "science": "Routinen reduzieren die Cortisol-Ausschüttung bei autistischen Kindern um bis zu 40%. Vorhersehbarkeit ist nicht Luxus, sondern neurobiologisches Bedürfnis.",
+        "quick_tip": "Beginnt mit 3-5 festen Schritten: Aufstehen → Anziehen → Frühstück. Visualisiert sie mit Fotos oder Symbolen."
+      }
+    },
+    {
+      "id": 2,
+      "question": "Wie oft erlebt ihr Meltdowns oder starke Überforderung?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "daily",
+          "label": "Täglich oder mehrmals täglich",
+          "score": {"regulation": 3, "kommunikation": 3}
+        },
+        {
+          "value": "weekly",
+          "label": "Mehrmals pro Woche",
+          "score": {"regulation": 2, "kommunikation": 2}
+        },
+        {
+          "value": "rarely",
+          "label": "Selten oder gar nicht",
+          "score": {"regulation": 0, "kommunikation": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "Wir haben gelernt, die Anzeichen früher zu erkennen: Sams Stimme wird höher, er beginnt zu zappeln, seine Augen werden glasig. Dann braucht er sofort Rückzug.",
+        "science": "Meltdowns sind keine Trotzanfälle, sondern neurologische Überlastungsreaktionen. Das Nervensystem schaltet in den Überlebensmodus. Früherkennung verhindert Eskalation.",
+        "quick_tip": "Achtet auf 3 Frühwarnzeichen: Körpersprache, Stimmlage, Rückzugswunsch. Dann: Reize reduzieren, nicht diskutieren."
+      }
+    },
+    {
+      "id": 3,
+      "question": "Kann euer Kind seine Bedürfnisse und Gefühle gut ausdrücken?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "difficult",
+          "label": "Sehr schwierig – oft nur durch Verhalten",
+          "score": {"kommunikation": 3, "regulation": 2}
+        },
+        {
+          "value": "sometimes",
+          "label": "Manchmal ja, manchmal nein",
+          "score": {"kommunikation": 2, "regulation": 1}
+        },
+        {
+          "value": "well",
+          "label": "Meist gut möglich",
+          "score": {"kommunikation": 0, "regulation": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "Visuelle Hilfsmittel waren der Durchbruch. Sam kann jetzt auf eine Skala zeigen statt zu erklären: 'Meine Batterie ist leer' oder 'Zu viele Reize'.",
+        "science": "Alexithymie (Schwierigkeit, eigene Gefühle zu erkennen/benennen) betrifft ca. 50% autistischer Menschen. Visuelle Kommunikation umgeht die Sprachbarriere.",
+        "quick_tip": "Nutzt Ampelsysteme: Grün = OK, Gelb = brauche Pause, Rot = Überforderung. Einfach, aber wirksam."
+      }
+    },
+    {
+      "id": 4,
+      "question": "Wie läuft es in der Schule / Kita?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "struggling",
+          "label": "Sehr herausfordernd – häufige Konflikte",
+          "score": {"schule": 3, "regulation": 2}
+        },
+        {
+          "value": "mixed",
+          "label": "Gemischt – gute und schwierige Tage",
+          "score": {"schule": 2, "regulation": 1}
+        },
+        {
+          "value": "good",
+          "label": "Läuft überwiegend gut",
+          "score": {"schule": 1, "regulation": 0}
+        },
+        {
+          "value": "not_applicable",
+          "label": "Noch nicht in Schule/Kita",
+          "score": {"schule": 0, "regulation": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "Die Schulbegleitung war entscheidend. Aber erst die klare Kommunikation mit der Lehrerin hat wirklich geholfen. Wir haben gemeinsam einen Notfallplan entwickelt.",
+        "science": "Studien zeigen: Klare Strukturen, feste Bezugsperson und Rückzugsmöglichkeiten sind die drei wichtigsten Faktoren für erfolgreiche Inklusion.",
+        "quick_tip": "Plant ein monatliches 15-Minuten-Gespräch mit der Lehrkraft. Regelmäßig, kurz, lösungsorientiert."
+      }
+    },
+    {
+      "id": 5,
+      "question": "Wie geht ihr mit Übergängen und Veränderungen um?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "very_difficult",
+          "label": "Sehr schwierig – jede Änderung ist ein Kampf",
+          "score": {"tagesstruktur": 3, "regulation": 2}
+        },
+        {
+          "value": "needs_prep",
+          "label": "Geht mit Vorbereitung und Zeit",
+          "score": {"tagesstruktur": 2, "regulation": 1}
+        },
+        {
+          "value": "flexible",
+          "label": "Relativ flexibel möglich",
+          "score": {"tagesstruktur": 0, "regulation": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "Visuelle Countdown + Ankündigung 10-5-1 Minute vorher. Sam kann sich mental vorbereiten. Ohne Ankündigung: Chaos. Mit Ankündigung: machbar.",
+        "science": "Autistische Gehirne haben Schwierigkeiten mit 'Set-Shifting' (Aufgabenwechsel). Vorwarnzeit aktiviert präfrontale Kontrollsysteme und reduziert Stress.",
+        "quick_tip": "Nutzt Timer mit visuellem Countdown. Sagt nicht 'Gleich', sondern 'In 5 Minuten'. Konkret bleiben."
+      }
+    },
+    {
+      "id": 6,
+      "question": "Wie läuft es mit Hausaufgaben / Lernen zu Hause?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "daily_struggle",
+          "label": "Täglicher Kampf – endet oft in Tränen",
+          "score": {"schule": 3, "regulation": 2}
+        },
+        {
+          "value": "challenging",
+          "label": "Herausfordernd, aber machbar",
+          "score": {"schule": 2, "regulation": 1}
+        },
+        {
+          "value": "works",
+          "label": "Läuft meist gut",
+          "score": {"schule": 0, "regulation": 0}
+        },
+        {
+          "value": "not_applicable",
+          "label": "Noch keine Hausaufgaben",
+          "score": {"schule": 0, "regulation": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "Wir haben mit der Lehrerin vereinbart: Maximal 20 Minuten. Danach ist Schluss. Sams Tank ist nach der Schule oft leer – mehr zu fordern, schadet mehr als es hilft.",
+        "science": "ADHS + Autismus = doppelte exekutive Dysfunktion. Nach 6 Stunden Schule ist die kognitive Batterie leer. Zwang führt zu Schulverweigerung, nicht zu Lernerfolg.",
+        "quick_tip": "Feste Zeit (nicht Menge!), dann Pause. Lieber 15 Minuten konzentriert als 2 Stunden kämpfen."
+      }
+    },
+    {
+      "id": 7,
+      "question": "Wie schwierig sind Situationen in der Öffentlichkeit (Einkaufen, Restaurant, etc.)?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "avoid",
+          "label": "Wir vermeiden es meist – zu stressig",
+          "score": {"regulation": 3, "soziales": 2}
+        },
+        {
+          "value": "short_only",
+          "label": "Geht nur kurz oder mit Vorbereitung",
+          "score": {"regulation": 2, "soziales": 1}
+        },
+        {
+          "value": "manageable",
+          "label": "Meist gut machbar",
+          "score": {"regulation": 0, "soziales": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "Noise-Cancelling-Kopfhörer sind unser Lebensretter. Plus: Wir gehen zu weniger frequentierten Zeiten einkaufen. Samstag 11 Uhr? Niemals mehr.",
+        "science": "Reizfilterung funktioniert bei Autismus anders. Alle Sinneseindrücke kommen ungefiltert an – ein Supermarkt ist sensorischer Overload pur.",
+        "quick_tip": "Plant sensoriell freundliche Zeiten: früh morgens oder spät abends. Bringt Kopfhörer mit. Kündigt Dauer an."
+      }
+    },
+    {
+      "id": 8,
+      "question": "Wie geht es EUCH als Eltern / euch selbst?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "exhausted",
+          "label": "Erschöpft – am Limit",
+          "score": {"eltern": 3, "regulation": 2}
+        },
+        {
+          "value": "tired",
+          "label": "Müde, aber es geht",
+          "score": {"eltern": 2, "regulation": 1}
+        },
+        {
+          "value": "stable",
+          "label": "Stabil – wir haben Strategien",
+          "score": {"eltern": 1, "regulation": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "Wir haben akzeptiert: Wir können nicht alles schaffen. Manche Tage sind Überlebenstage. Und das ist okay. Selbstfürsorge ist nicht egoistisch – sie ist notwendig.",
+        "science": "Eltern autistischer Kinder haben ein ähnliches Stresslevel wie Soldaten im Kampfeinsatz. Burnout-Prophylaxe ist keine Option, sondern Pflicht.",
+        "quick_tip": "Plant eine feste 'Schicht-Übergabe' pro Tag: 15 Minuten, wo ein Elternteil komplett raus darf. Jeden Tag."
+      }
+    },
+    {
+      "id": 9,
+      "question": "Gibt es Schlafprobleme?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "severe",
+          "label": "Ja, regelmäßig – Einschlafen/Durchschlafen schwierig",
+          "score": {"tagesstruktur": 2, "regulation": 3}
+        },
+        {
+          "value": "occasional",
+          "label": "Gelegentlich problematisch",
+          "score": {"tagesstruktur": 1, "regulation": 1}
+        },
+        {
+          "value": "good",
+          "label": "Schläft meist gut",
+          "score": {"tagesstruktur": 0, "regulation": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "Gewichtsdecke + festes Einschlafritual + absolut gleiche Zeiten. Sams Körper braucht diese Vorhersehbarkeit wie Luft zum Atmen.",
+        "science": "50-80% autistischer Kinder haben Schlafprobleme. Melatonin-Produktion ist oft gestört, Regulationsfähigkeit eingeschränkt. Schlaf ist neurologisch, nicht erzieherisch.",
+        "quick_tip": "Startet das Ritual 60 Minuten vorher. Dimmt Licht, reduziert Reize, gleiche Abfolge jeden Abend."
+      }
+    },
+    {
+      "id": 10,
+      "question": "Was ist euer größter Wunsch gerade?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "peace",
+          "label": "Mehr Ruhe im Alltag – weniger Konflikte",
+          "score": {"regulation": 3, "tagesstruktur": 2}
+        },
+        {
+          "value": "understanding",
+          "label": "Mein Kind besser verstehen können",
+          "score": {"kommunikation": 3, "regulation": 2}
+        },
+        {
+          "value": "school_success",
+          "label": "Dass Schule/Kita besser läuft",
+          "score": {"schule": 3, "soziales": 1}
+        },
+        {
+          "value": "self_care",
+          "label": "Mehr Kraft für mich selbst",
+          "score": {"eltern": 3, "regulation": 1}
+        }
+      ],
+      "insight": {
+        "helped_us": "Wir haben verstanden: Es gibt keine perfekte Lösung. Aber es gibt viele kleine Hilfen, die zusammen einen großen Unterschied machen.",
+        "science": "Kleine, konsistente Veränderungen haben größere Langzeitwirkung als große, einmalige Interventionen. Nachhaltigkeit schlägt Intensität.",
+        "quick_tip": "Wählt EINE Sache, die ihr in den nächsten 2 Wochen verbessern wollt. Nicht zehn. Eine."
+      }
+    }
+  ]
+}

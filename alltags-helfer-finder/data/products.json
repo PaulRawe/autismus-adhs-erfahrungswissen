@@ -1,0 +1,158 @@
+{
+  "products": [
+    {
+      "id": "tagesplan",
+      "name": "Visueller Tages- und Wochenplan",
+      "short_name": "Tagesstrukturplan",
+      "price": 24.99,
+      "description": "135+ Bildkarten für klare Alltagsstruktur. Macht Abläufe vorhersehbar und reduziert ständige Fragen.",
+      "image": "Cover.png",
+      "url": "https://paulrawe.gumroad.com/l/ynkyw",
+      "tags": ["tagesstruktur", "regulation", "schule"],
+      "helps_with": [
+        "Chaotische Morgen- und Abendroutinen",
+        "Ständige Fragen 'Was machen wir?'",
+        "Schwierige Übergänge zwischen Aktivitäten",
+        "Vorbereitung auf Sonderereignisse (Arzt, Geburtstag)"
+      ],
+      "priority_score": {
+        "tagesstruktur": 10,
+        "regulation": 6,
+        "schule": 4
+      }
+    },
+    {
+      "id": "toolkit",
+      "name": "Autismus Regulations- & Kommunikations-Toolkit",
+      "short_name": "Regulations-Toolkit",
+      "price": 29.00,
+      "description": "6 visuelle Skalen für Selbstwahrnehmung & Kommunikation. Hilft Kindern, ihre Bedürfnisse ohne Worte auszudrücken.",
+      "image": "skalende.png",
+      "url": "https://paulrawe.gumroad.com/l/mjuyu",
+      "tags": ["regulation", "kommunikation", "eltern"],
+      "helps_with": [
+        "Meltdowns frühzeitig erkennen und verhindern",
+        "Kommunikation ohne Sprache ermöglichen",
+        "Überforderung sichtbar machen",
+        "Körperwahrnehmung verbessern"
+      ],
+      "priority_score": {
+        "regulation": 10,
+        "kommunikation": 10,
+        "eltern": 5
+      }
+    },
+    {
+      "id": "bundle",
+      "name": "Komplettpaket: Tagesstruktur + Regulation",
+      "short_name": "Bundle",
+      "price": 39.99,
+      "original_price": 53.99,
+      "savings": 14.00,
+      "description": "Beide Systeme perfekt aufeinander abgestimmt. Der Tagesplan zeigt WAS passiert – das Toolkit zeigt WIE es sich anfühlt.",
+      "image": "skalenundtagesplan.png",
+      "url": "https://paulrawe.gumroad.com/l/bmomt",
+      "tags": ["tagesstruktur", "regulation", "kommunikation", "schule"],
+      "helps_with": [
+        "Komplettes Alltags-Management-System",
+        "Maximale Orientierung und Selbstwahrnehmung",
+        "Beste Preis-Leistung für umfassende Hilfe"
+      ],
+      "priority_score": {
+        "tagesstruktur": 10,
+        "regulation": 10,
+        "kommunikation": 8,
+        "schule": 6
+      },
+      "is_bundle": true,
+      "recommended_when_both": ["tagesstruktur", "regulation"]
+    },
+    {
+      "id": "schulstart",
+      "name": "Schulstart-Guide für Eltern autistischer Kinder",
+      "short_name": "Schulstart-Guide",
+      "price": 12.90,
+      "original_price": 16.90,
+      "description": "Der ultimative Praxis-Guide für einen erfolgreichen Schulstart – geschrieben von einer Lehrerin, die selbst Mutter eines autistischen Kindes ist.",
+      "image": "schulstart.png",
+      "url": "https://paulrawe.gumroad.com/l/autismus-schulstart-guide",
+      "tags": ["schule", "eltern"],
+      "helps_with": [
+        "Schulwahl und Schulbegleitung beantragen",
+        "Förderplan verstehen und nutzen",
+        "Kommunikation mit Lehrkräften",
+        "Rechtliche Grundlagen verstehen",
+        "Schulverweigerung und Mobbing begegnen"
+      ],
+      "priority_score": {
+        "schule": 10,
+        "eltern": 7,
+        "soziales": 4
+      }
+    }
+  ],
+  "affiliates": [
+    {
+      "id": "timer",
+      "name": "Visueller Timer für Kinder",
+      "description": "Zeigt die verbleibende Zeit visuell an. Hilft bei Übergängen und reduziert Stress bei Zeitlimits.",
+      "url": "https://www.amazon.de/s?k=visueller+timer+kinder&tag=prawe-21",
+      "tags": ["tagesstruktur", "regulation", "schule"],
+      "priority_score": {
+        "tagesstruktur": 5,
+        "regulation": 3
+      }
+    },
+    {
+      "id": "headphones",
+      "name": "Noise-Cancelling Kopfhörer",
+      "description": "Reduziert Umgebungsgeräusche deutlich. Unverzichtbar bei Reizüberflutung und an lauten Orten.",
+      "url": "https://www.amazon.de/s?k=noise+cancelling+kopfh%C3%B6rer+kinder&tag=prawe-21",
+      "tags": ["regulation", "soziales"],
+      "priority_score": {
+        "regulation": 7,
+        "soziales": 5
+      }
+    },
+    {
+      "id": "weighted_blanket",
+      "name": "Gewichtsdecke (Weighted Blanket)",
+      "description": "Beruhigender Druck hilft beim Einschlafen und bei Unruhe.",
+      "url": "https://www.amazon.de/s?k=gewichtsdecke+kinder&tag=prawe-21",
+      "tags": ["regulation", "tagesstruktur"],
+      "priority_score": {
+        "regulation": 6,
+        "tagesstruktur": 4
+      }
+    },
+    {
+      "id": "fidget",
+      "name": "Fidget Tools & Knetmaterial",
+      "description": "Kleine Hilfsmittel für unruhige Hände. Helfen bei Konzentration und Energieabbau.",
+      "url": "https://www.amazon.de/s?k=fidget+toys+kinder&tag=prawe-21",
+      "tags": ["regulation", "schule"],
+      "priority_score": {
+        "regulation": 4,
+        "schule": 3
+      }
+    },
+    {
+      "id": "sitzkissen",
+      "name": "Dynamisches Sitzkissen",
+      "description": "Ermöglicht Bewegung beim Sitzen. Hilft bei Hausaufgaben, länger konzentriert zu bleiben.",
+      "url": "https://www.amazon.de/s?k=dynamisches+sitzkissen+kinder&tag=prawe-21",
+      "tags": ["schule", "regulation"],
+      "priority_score": {
+        "schule": 5,
+        "regulation": 3
+      }
+    }
+  ],
+  "lead_magnet": {
+    "id": "notfall_checkliste",
+    "name": "Notfall-Checkliste: Meltdown-Prävention",
+    "description": "Kostenlose PDF mit 5 konkreten Strategien zur Früherkennung und Deeskalation",
+    "file": "notfall-checkliste.pdf",
+    "available": true
+  }
+}

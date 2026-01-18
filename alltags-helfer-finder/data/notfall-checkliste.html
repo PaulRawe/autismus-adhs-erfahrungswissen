@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notfall-Checkliste: Meltdown-Prävention</title>
+    <style>
+        @media print {
+            .no-print { display: none; }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #faf9f7;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #4a7c59, #6b9d7a);
+            color: white;
+            border-radius: 12px;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            opacity: 0.9;
+        }
+        
+        .intro {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .section h2 {
+            color: #4a7c59;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #e0ddd9;
+            padding-bottom: 0.5rem;
+        }
+        
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: #f8f9fa;
+            border-left: 4px solid #4a7c59;
+            border-radius: 6px;
+        }
+        
+        .checklist li::before {
+            content: '☐ ';
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+            color: #4a7c59;
+        }
+        
+        .warning-signs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .warning-sign {
+            background: #ffe6e6;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #d63031;
+        }
+        
+        .warning-sign h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #d63031;
+        }
+        
+        .emergency-box {
+            background: #fff4e6;
+            border: 2px solid #f4a261;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+        }
+        
+        .emergency-box h3 {
+            color: #e67e22;
+            margin-bottom: 1rem;
+        }
+        
+        .emergency-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #f4a261;
+            color: white;
+            border-radius: 50%;
+            line-height: 30px;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e0ddd9;
+            color: #5a6c7d;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: #4a7c59;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 2rem 0;
+            font-weight: 600;
+        }
+        
+        .download-btn:hover {
+            background: #2d5a3d;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .warning-signs {
+                grid-template-columns: 1fr;
+            }
+            
+            .emergency-steps {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="header">
+        <h1>🚨 Notfall-Checkliste</h1>
+        <p>Meltdown-Prävention & Deeskalation</p>
+        <small>Von autismus-adhs-alltag.de</small>
+    </div>
+    
+    <div class="intro">
+        <h2>Warum diese Checkliste?</h2>
+        <p>
+            Meltdowns kommen nicht "aus dem Nichts" – es gibt fast immer Frühwarnzeichen. 
+            Diese Checkliste hilft dir, Überforderung rechtzeitig zu erkennen und zu handeln, 
+            <strong>bevor</strong> die Situation eskaliert.
+        </p>
+        <p style="margin-top: 1rem;">
+            <em>Basierend auf unseren Erfahrungen mit Sam (7 Jahre, Autismus + ADHS) 
+            und wissenschaftlichen Erkenntnissen zur Regulation.</em>
+        </p>
+    </div>
+    
+    <div class="section">
+        <h2>1. Frühwarnzeichen erkennen</h2>
+        <p>Achte auf diese Signale – je früher du reagierst, desto besser:</p>
+        
+        <div class="warning-signs">
+            <div class="warning-sign">
+                <h3>🗣️ Sprache</h3>
+                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                    <li>• Stimme wird höher/lauter</li>
+                    <li>• Antwortet einsilbig</li>
+                    <li>• Wiederholt sich</li>
+                    <li>• Kann nicht mehr sprechen</li>
+                </ul>
+            </div>
+            
+            <div class="warning-sign">
+                <h3>👁️ Körpersprache</h3>
+                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                    <li>• Augen glasig/leer</li>
+                    <li>• Verkrampfte Haltung</li>
+                    <li>• Zappelt stark</li>
+                    <li>• Hände zu Fäusten</li>
+                </ul>
+            </div>
+            
+            <div class="warning-sign">
+                <h3>😤 Verhalten</h3>
+                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                    <li>• Wird aggressiv/gereizt</li>
+                    <li>• Zieht sich zurück</li>
+                    <li>• Weint leicht</li>
+                    <li>• Lehnt alles ab</li>
+                </ul>
+            </div>
+            
+            <div class="warning-sign">
+                <h3>🎯 Fokus</h3>
+                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                    <li>• Kann nicht mehr zuhören</li>
+                    <li>• Vergisst Anweisungen</li>
+                    <li>• Macht Fehler</li>
+                    <li>• Wirkt "abwesend"</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>2. Präventions-Checkliste</h2>
+        <p>Nutze diese Strategien, um Überforderung vorzubeugen:</p>
+        
+        <ul class="checklist">
+            <li><strong>Ausreichend Schlaf:</strong> Übermüdung senkt Regulationsfähigkeit dramatisch</li>
+            <li><strong>Regelmäßige Mahlzeiten:</strong> Hunger macht alles schlimmer</li>
+            <li><strong>Pausenzeiten einplanen:</strong> Nicht durchpowern – Rückzug erlauben</li>
+            <li><strong>Reize reduzieren:</strong> Noise-Cancelling, gedimmtes Licht, ruhige Umgebung</li>
+            <li><strong>Vorhersehbarkeit schaffen:</strong> Tagesplan nutzen, Änderungen ankündigen</li>
+            <li><strong>Nicht zu viel vornehmen:</strong> Weniger ist mehr bei anstrengenden Tagen</li>
+            <li><strong>Rückzugsort bereithalten:</strong> Sicherer Ort zum Regulieren</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h2>3. Notfall-Deeskalation</h2>
+        <p>Wenn du Frühwarnzeichen bemerkst – SOFORT handeln:</p>
+        
+        <div class="emergency-box">
+            <h3>🚨 Die 5-Schritte-Notfall-Routine</h3>
+            
+            <div class="emergency-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>STOPP</h4>
+                    <p>Alle Anforderungen sofort beenden. Keine Diskussion.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>RAUM</h4>
+                    <p>Physischen Abstand schaffen. Nicht anfassen, nicht folgen.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>REIZE</h4>
+                    <p>Licht dimmen, Lautstärke runter, Ablenkungen weg.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>RUHE</h4>
+                    <p>Nicht reden. Ruhige Präsenz zeigen. Atmen.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h4>ZEIT</h4>
+                    <p>Geduld haben. Regulation braucht 20-60 Minuten.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 1.5rem; padding: 1rem; background: #e6f7f1; border-radius: 8px;">
+            <strong>💡 Das Wichtigste:</strong>
+            <p style="margin-top: 0.5rem;">
+                Meltdowns sind <strong>keine Trotzanfälle</strong>. Das Nervensystem ist im Überlebensmodus. 
+                Logik, Erklärungen und Konsequenzen helfen nicht – sie verschlimmern es. 
+                Einziges Ziel: <strong>Sicherheit und Beruhigung</strong>.
+            </p>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>4. Nach dem Meltdown</h2>
+        <p>Was tun, wenn die Krise vorbei ist:</p>
+        
+        <ul class="checklist">
+            <li><strong>Nicht sofort darüber reden:</strong> Erst Regulation abwarten (1-2 Stunden)</li>
+            <li><strong>Keine Vorwürfe:</strong> "Du hast..." vermeiden, stattdessen: "Das war schwierig"</li>
+            <li><strong>Gemeinsam analysieren:</strong> Was waren die Auslöser? (ohne Schuld)</li>
+            <li><strong>Präventionsplan anpassen:</strong> Was können wir beim nächsten Mal anders machen?</li>
+            <li><strong>Selbstfürsorge:</strong> Auch du brauchst Erholung nach einem Meltdown</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h2>5. Langfristige Strategien</h2>
+        <p>Was uns nachhaltig geholfen hat:</p>
+        
+        <ul class="checklist">
+            <li><strong>Visueller Tagesplan:</strong> Gibt Sam Orientierung und reduziert Fragen</li>
+            <li><strong>Emotions-Skalen:</strong> Sam kann zeigen, wie es ihm geht, ohne zu sprechen</li>
+            <li><strong>Feste Rituale:</strong> Morgen- und Abendroutine immer gleich</li>
+            <li><strong>Rückzugsmöglichkeit:</strong> Sam darf jederzeit in sein Zimmer (ohne Diskussion)</li>
+            <li><strong>Schulbegleitung:</strong> Feste Bezugsperson, die Signale kennt</li>
+            <li><strong>Therapie:</strong> Ergotherapie hilft Sam, Körpersignale besser wahrzunehmen</li>
+            <li><strong>Eltern-Austausch:</strong> Wir teilen die Belastung und tauschen uns aus</li>
+        </ul>
+    </div>
+    
+    <div class="footer">
+        <p><strong>Diese Checkliste ist ein Geschenk von autismus-adhs-alltag.de</strong></p>
+        <p style="margin-top: 1rem;">
+            Mehr Alltagshilfen, Erfahrungsberichte und praktische Tools findest du auf unserer Website.
+        </p>
+        <a href="https://autismus-adhs-alltag.de" class="download-btn no-print">
+            Zur Website →
+        </a>
+        <p style="margin-top: 2rem; font-size: 0.9rem;">
+            💡 <strong>Tipp:</strong> Drucke diese Checkliste aus und hänge sie sichtbar auf 
+            (z.B. am Kühlschrank). Im Notfall hilft ein schneller Blick!
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.85rem; color: #7a8a9d;">
+            Hinweis: Diese Checkliste ersetzt keine professionelle therapeutische Beratung. 
+            Sie basiert auf unseren persönlichen Erfahrungen und allgemeinen wissenschaftlichen Erkenntnissen.
+        </p>
+    </div>
+    
+    <div class="no-print" style="text-align: center; margin: 2rem 0;">
+        <button onclick="window.print()" 
+                style="background: #4a7c59; color: white; border: none; padding: 1rem 2rem; 
+                       border-radius: 8px; font-size: 1rem; cursor: pointer; font-weight: 600;">
+            🖨️ Als PDF speichern / Drucken
+        </button>
+    </div>
+    
+</body>
+</html>
