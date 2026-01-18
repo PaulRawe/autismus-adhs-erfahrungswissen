@@ -179,18 +179,22 @@
             return;
         }
         
-        // Button HTML erstellen und einfügen
-        const buttonHTML = `
-            <div id="sticky-download-button">
-                <a href="downloads.html" class="sticky-btn" aria-label="Zu unseren Hilfsmaterialien">
-                    <span class="sticky-btn-icon">📚</span>
-                    <span class="sticky-btn-text">
-                        <strong>Hilfsmaterialien</strong>
-                        <small>für Autismus & ADHS</small>
-                    </span>
-                </a>
-            </div>
-        `;
+       // Relativen Pfad zu downloads.html berechnen
+const depth = (window.location.pathname.match(/\//g) || []).length - 1;
+const pathToDownloads = depth > 0 ? '../'.repeat(depth) + 'downloads.html' : 'downloads.html';
+
+// Button HTML erstellen und einfügen
+const buttonHTML = `
+    <div id="sticky-download-button">
+        <a href="${pathToDownloads}" class="sticky-btn" aria-label="Zu unseren Hilfsmaterialien">
+            <span class="sticky-btn-icon">📚</span>
+            <span class="sticky-btn-text">
+                <strong>Hilfsmaterialien</strong>
+                <small>für Autismus & ADHS</small>
+            </span>
+        </a>
+    </div>
+`;
         
         // Am Ende des Body einfügen
         const container = document.createElement('div');
@@ -388,3 +392,4 @@ document.addEventListener("DOMContentLoaded", () => {
         insertHelpBox();
     }
 })();
+
