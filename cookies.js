@@ -269,8 +269,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const sticky = document.getElementById('sticky-download-button');
         if (!sticky) return;
 
+        // Nicht doppelt einfügen
         if (document.getElementById('sticky-expanded-menu')) return;
 
+        // Menü HTML
         const menuHTML = `
             <div id="sticky-expanded-menu" style="
                 display:none;
@@ -281,7 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 border-radius:14px;
                 padding:0.9rem 1.2rem;
                 box-shadow:0 4px 14px rgba(0,0,0,0.25);
-                z-index:9999;
+                z-index:99999;
                 width:max-content;
             ">
                 <a href="/downloads.html" style="
@@ -301,22 +303,31 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.appendChild(container.firstElementChild);
 
         const menu = document.getElementById('sticky-expanded-menu');
-        const btn = sticky.querySelector('.sticky-btn');
-        let isOpen = false;
+        const mainButtonLink = sticky.querySelector('.sticky-btn');
 
-        btn.addEventListener('click', function(e) {
-            const linkClicked = e.target.closest('a');
-            if (linkClicked && !isOpen) return; // Funnel normal öffnen
+        let pressTimer = null;
 
-            e.preventDefault();
-            isOpen = !isOpen;
-            menu.style.display = isOpen ? 'block' : 'none';
+        // Long-Press → Menü öffnen
+        mainButtonLink.addEventListener('touchstart', function(e) {
+            pressTimer = setTimeout(() => {
+                e.preventDefault();
+                menu.style.display = 'block';
+            }, 550);
         });
 
+        mainButtonLink.addEventListener('touchend', function() {
+            clearTimeout(pressTimer);
+        });
+
+        // Desktop: Rechtsklick öffnet Menü
+        mainButtonLink.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            menu.style.display = 'block';
+        });
+
+        // Klick außerhalb schließt Menü
         document.addEventListener('click', function(e) {
-            if (!isOpen) return;
-            if (!sticky.contains(e.target) && !menu.contains(e.target)) {
-                isOpen = false;
+            if (!menu.contains(e.target) && !sticky.contains(e.target)) {
                 menu.style.display = 'none';
             }
         });
