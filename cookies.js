@@ -271,6 +271,97 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", updateSticky);
     updateSticky();
 });
+// ==================================================
+// EXPANDABLE MENU FOR STICKY BUTTON
+// ==================================================
+(function() {
+    'use strict';
+
+    // Wird ausgeführt, sobald Sticky-Button existiert
+    function initExpandableMenu() {
+        const sticky = document.getElementById('sticky-download-button');
+        if (!sticky) return;
+
+        // Verhindern, dass der Code mehrfach läuft
+        if (document.getElementById('sticky-expanded-menu')) return;
+
+        // Mini-Menü einfügen
+        const menuHTML = `
+            <div id="sticky-expanded-menu" style="
+                display: none;
+                position: fixed;
+                right: 1.2rem;
+                bottom: 4.8rem;
+                background: #1b1b1b;
+                border-radius: 14px;
+                padding: 0.9rem 1.2rem;
+                box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+                z-index: 9999;
+                width: max-content;
+            ">
+                <a href="/downloads.html" style="
+                    color: white;
+                    text-decoration: none;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    display: block;
+                ">
+                    📂 Alle Downloads & Materialien
+                </a>
+            </div>
+        `;
+
+        const container = document.createElement('div');
+        container.innerHTML = menuHTML.trim();
+        document.body.appendChild(container.firstElementChild);
+
+        const menu = document.getElementById('sticky-expanded-menu');
+        const btn = sticky.querySelector('.sticky-btn');
+
+        let isOpen = false;
+
+        // Menü togglen
+        btn.addEventListener('click', function(e) {
+            // Wenn Nutzer eigentlich in den Funnel will → zuerst Funnel-Link prüfen
+            const linkClicked = e.target.closest('a');
+            if (linkClicked && !isOpen) {
+                // Normaler Funnel-Link → nicht blockieren
+                return;
+            }
+
+            e.preventDefault(); // Öffnet erst Menü
+
+            isOpen = !isOpen;
+            menu.style.display = isOpen ? 'block' : 'none';
+        });
+
+        // Klick außerhalb schließt das Menü
+        document.addEventListener('click', function(e) {
+            if (!isOpen) return;
+            if (!sticky.contains(e.target) && !menu.contains(e.target)) {
+                isOpen = false;
+                menu.style.display = 'none';
+            }
+        });
+    }
+
+    // Warten bis der Sticky-Button sicher existiert
+    function waitForSticky() {
+        const interval = setInterval(() => {
+            if (document.getElementById('sticky-download-button')) {
+                clearInterval(interval);
+                initExpandableMenu();
+            }
+        }, 100);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', waitForSticky);
+    } else {
+        waitForSticky();
+    }
+})();
                 
+
 
 
