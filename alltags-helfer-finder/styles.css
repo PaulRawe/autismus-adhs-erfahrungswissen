@@ -716,3 +716,37 @@ body {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+/* ===================================
+   FUNNEL DOWNLOAD QUICK BUTTON
+   =================================== */
+
+#funnel-download-button {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    background: var(--card-bg);
+    color: var(--text-dark);
+    border: 2px solid var(--border-color);
+    border-radius: 999px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px var(--shadow);
+    z-index: 9999;
+    transition: all 0.2s ease;
+}
+
+#funnel-download-button:hover {
+    background: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px var(--shadow-hover);
+}
+
+@media (max-width: 768px) {
+    #funnel-download-button {
+        font-size: 0.85rem;
+        padding: 0.55rem 0.9rem;
+    }
+}
