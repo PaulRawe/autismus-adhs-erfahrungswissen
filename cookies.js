@@ -309,4 +309,51 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 })();           
+// ==================================================
+// HILFE-HINWEIS unter dem Disclaimer einfügen
+// ==================================================
+(function() {
+    'use strict';
+
+    function insertHelpBox() {
+        // Prüfen ob bereits vorhanden
+        if (document.getElementById('help-box-orientierung')) return;
+
+        // Disclaimer suchen (steht direkt unter <header>)
+        const disclaimer = document.getElementById('medical-disclaimer');
+        if (!disclaimer) return;
+
+        // Box HTML
+        const boxHTML = `
+            <div id="help-box-orientierung" style="
+                max-width: 900px;
+                margin: 1rem auto;
+                padding: 0.8rem 1rem;
+                background: #f4f6f8;
+                border-left: 4px solid #2f6f8f;
+                border-radius: 6px;
+                font-size: 0.95rem;
+                line-height: 1.5;
+                color: #2b2b2b;
+            ">
+                Braucht ihr gerade Orientierung?
+                <a href="/alltags-helfer-finder/index.html"
+                    style="color:#2f6f8f;font-weight:bold;text-decoration:underline;">
+                    → Kurze Fragen, direkte Hilfe
+                </a>
+            </div>
+        `;
+
+        // Box nach dem Disclaimer einfügen
+        disclaimer.insertAdjacentHTML('afterend', boxHTML);
+    }
+
+    // Laden nach DOM Ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', insertHelpBox);
+    } else {
+        insertHelpBox();
+    }
+})();
+
 
