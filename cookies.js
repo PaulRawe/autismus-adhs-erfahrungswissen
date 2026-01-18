@@ -355,5 +355,55 @@ document.addEventListener("DOMContentLoaded", () => {
         insertHelpBox();
     }
 })();
+// ==================================================
+// HILFE-HINWEIS unter Disclaimer ODER Header einfügen
+// ==================================================
+(function() {
+    'use strict';
+
+    function insertHelpBox() {
+        if (document.getElementById('help-box-orientierung')) return;
+
+        // 1️⃣ Erst versuchen: Disclaimer finden
+        let anchor = document.getElementById('medical-disclaimer');
+
+        // 2️⃣ Wenn nicht vorhanden → Header verwenden
+        if (!anchor) {
+            anchor = document.querySelector('header');
+        }
+
+        // Wenn beides nicht existiert, abbrechen
+        if (!anchor) return;
+
+        const boxHTML = `
+            <div id="help-box-orientierung" style="
+                max-width: 900px;
+                margin: 1rem auto;
+                padding: 0.8rem 1rem;
+                background: #f4f6f8;
+                border-left: 4px solid #2f6f8f;
+                border-radius: 6px;
+                font-size: 0.95rem;
+                line-height: 1.5;
+                color: #2b2b2b;
+            ">
+                Braucht ihr gerade Orientierung?
+                <a href="/alltags-helfer-finder/index.html"
+                    style="color:#2f6f8f;font-weight:bold;text-decoration:underline;">
+                    → Kurze Fragen, direkte Hilfe
+                </a>
+            </div>
+        `;
+
+        anchor.insertAdjacentHTML('afterend', boxHTML);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', insertHelpBox);
+    } else {
+        insertHelpBox();
+    }
+})();
+
 
 
