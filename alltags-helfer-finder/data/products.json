@@ -101,8 +101,32 @@
         "tagesstruktur": 2,
         "regulation": 2
       }
-    }
-    ,
+    },
+    {
+      "id": "social-stories-schule",
+      "name": "6 Social Stories: Schule & Freizeit",
+      "short_name": "Social Stories Schule",
+      "price": 6.99,
+      "description": "6 vollständige Social Stories für schulische und freizeitbezogene Alltagssituationen. Erster Schultag, Schulwechsel, Zugfahren, Familienfeier, Besuch bei Verwandten & Schwimmbad.",
+      "image": "schulefreizeit.png",
+      "url": "https://paulrawe.gumroad.com/l/mlasxz",
+      "tags": ["soziales", "kommunikation", "schule", "regulation", "eltern"],
+      "helps_with": [
+        "Schulwechsel und ersten Schultag meistern",
+        "Öffentliche Verkehrsmittel (Zug) nutzen lernen",
+        "Familienfeiern und Geburtstage ohne Überforderung",
+        "Verwandtenbesuche strukturiert angehen",
+        "Schwimmbadbesuche planen und vorbereiten"
+      ],
+      "priority_score": {
+        "schule": 10,
+        "soziales": 9,
+        "kommunikation": 7,
+        "regulation": 6,
+        "eltern": 6,
+        "tagesstruktur": 4
+      }
+    },
     {
       "id": "social-stories",
       "name": "5+1 Social Stories: Medizin & Alltag",
