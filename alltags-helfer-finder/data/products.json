@@ -103,6 +103,32 @@
       }
     },
     {
+  "id": "adhs-hausaufgaben",
+  "name": "Notfallplan gegen Hausaufgabenstress bei ADHS",
+  "short_name": "ADHS Hausaufgaben-Guide",
+  "price": 9.99,
+  "description": "43-seitiger wissenschaftlich fundierter Leitfaden für Eltern & Lehrkräfte. Mit druckbaren Checklisten, Arbeitsblättern, Notfallkarte und Vorlagen für Lehrkräfte. Basiert auf aktueller ADHS-Forschung (Barkley, Brown, Hallowell).",
+  "image": "adhscover.png",
+  "url": "https://paulrawe.gumroad.com/l/xnilzj",
+  "tags": ["schule", "regulation", "eltern", "kommunikation"],
+  "helps_with": [
+    "Hausaufgaben dauern stundenlang mit Tränen und Wutausbrüchen",
+    "Kind blockiert komplett bei Hausaufgaben",
+    "Exekutive Dysfunktion (Arbeitsgedächtnis, Zeitblindheit)",
+    "Kommunikation mit Lehrkräften über ADHS",
+    "Notfall-Interventionen bei Blockaden",
+    "Nachteilsausgleich beantragen"
+  ],
+  "priority_score": {
+    "schule": 10,
+    "regulation": 8,
+    "eltern": 9,
+    "kommunikation": 7,
+    "tagesstruktur": 5,
+    "soziales": 3
+  }
+}
+    {
       "id": "social-stories-schule",
       "name": "6 Social Stories: Schule & Freizeit",
       "short_name": "Social Stories Schule",
