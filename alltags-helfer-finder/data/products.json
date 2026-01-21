@@ -103,31 +103,31 @@
       }
     },
     {
-  "id": "adhs-hausaufgaben",
-  "name": "Notfallplan gegen Hausaufgabenstress bei ADHS",
-  "short_name": "ADHS Hausaufgaben-Guide",
-  "price": 9.99,
-  "description": "43-seitiger wissenschaftlich fundierter Leitfaden für Eltern & Lehrkräfte. Mit druckbaren Checklisten, Arbeitsblättern, Notfallkarte und Vorlagen für Lehrkräfte. Basiert auf aktueller ADHS-Forschung (Barkley, Brown, Hallowell).",
-  "image": "adhscover.png",
-  "url": "https://paulrawe.gumroad.com/l/xnilzj",
-  "tags": ["schule", "regulation", "eltern", "kommunikation"],
-  "helps_with": [
-    "Hausaufgaben dauern stundenlang mit Tränen und Wutausbrüchen",
-    "Kind blockiert komplett bei Hausaufgaben",
-    "Exekutive Dysfunktion (Arbeitsgedächtnis, Zeitblindheit)",
-    "Kommunikation mit Lehrkräften über ADHS",
-    "Notfall-Interventionen bei Blockaden",
-    "Nachteilsausgleich beantragen"
-  ],
-  "priority_score": {
-    "schule": 10,
-    "regulation": 8,
-    "eltern": 9,
-    "kommunikation": 7,
-    "tagesstruktur": 5,
-    "soziales": 3
-  }
-}
+      "id": "adhs-hausaufgaben",
+      "name": "Notfallplan gegen Hausaufgabenstress bei ADHS",
+      "short_name": "ADHS Hausaufgaben-Guide",
+      "price": 9.99,
+      "description": "43-seitiger wissenschaftlich fundierter Leitfaden für Eltern & Lehrkräfte. Mit druckbaren Checklisten, Arbeitsblättern, Notfallkarte und Vorlagen für Lehrkräfte. Basiert auf aktueller ADHS-Forschung (Barkley, Brown, Hallowell).",
+      "image": "adhscover.png",
+      "url": "https://paulrawe.gumroad.com/l/xnilzj",
+      "tags": ["schule", "regulation", "eltern", "kommunikation"],
+      "helps_with": [
+        "Hausaufgaben dauern stundenlang mit Tränen und Wutausbrüchen",
+        "Kind blockiert komplett bei Hausaufgaben",
+        "Exekutive Dysfunktion (Arbeitsgedächtnis, Zeitblindheit)",
+        "Kommunikation mit Lehrkräften über ADHS",
+        "Notfall-Interventionen bei Blockaden",
+        "Nachteilsausgleich beantragen"
+      ],
+      "priority_score": {
+        "schule": 10,
+        "regulation": 8,
+        "eltern": 9,
+        "kommunikation": 7,
+        "tagesstruktur": 5,
+        "soziales": 3
+      }
+    },
     {
       "id": "social-stories-schule",
       "name": "6 Social Stories: Schule & Freizeit",
@@ -176,6 +176,65 @@
         "tagesstruktur": 3,
         "schule": 2
       }
+    },
+    {
+      "id": "social-stories-alltag",
+      "name": "7 Social Stories: Alltag & Entwicklung",
+      "short_name": "Social Stories Alltag & Entwicklung",
+      "price": 6.99,
+      "description": "7 vollständige Social Stories für wichtige Entwicklungsmeilensteine. Fahrradfahren lernen, bei Freunden übernachten, alleine zu Hause bleiben, Geschwisterkind bekommen, Haustier-Abschied, Umzug & Verlieren lernen.",
+      "image": "alltag-entwicklung.png",
+      "url": "https://paulrawe.gumroad.com/l/clxmw",
+      "tags": ["soziales", "kommunikation", "regulation", "eltern", "tagesstruktur"],
+      "helps_with": [
+        "Fahrradfahren lernen ohne Angst",
+        "Erste Übernachtung ohne Eltern meistern",
+        "Selbstständigkeit entwickeln (alleine zu Hause)",
+        "Familienzuwachs verstehen (Geschwisterkind)",
+        "Abschied vom Haustier bewältigen",
+        "Umzug in neues Zuhause meistern",
+        "Mit Frust und Verlieren umgehen lernen"
+      ],
+      "priority_score": {
+        "soziales": 10,
+        "kommunikation": 8,
+        "regulation": 7,
+        "eltern": 8,
+        "tagesstruktur": 6,
+        "schule": 3
+      }
+    },
+    {
+      "id": "social-stories-komplettpaket",
+      "name": "Komplettpaket: 19 Social Stories – Alle 3 Sammlungen",
+      "short_name": "Social Stories Komplettpaket",
+      "price": 15.99,
+      "original_price": 20.97,
+      "savings": 4.98,
+      "description": "Alle 19 Social Stories in einem Bundle: Medizin & Alltag (6), Schule & Freizeit (6), Alltag & Entwicklung (7). Die komplette Lösung für fast alle wichtigen Alltagssituationen.",
+      "image": "social-stories-komplettpaket.png",
+      "url": "https://paulrawe.gumroad.com/l/junmcl",
+      "tags": ["soziales", "kommunikation", "regulation", "eltern", "schule", "tagesstruktur"],
+      "helps_with": [
+        "Komplette Social Stories Sammlung für alle Situationen",
+        "Medizinische Termine (Arzt, Zahnarzt, Krankenhaus)",
+        "Schulische Übergänge (erster Schultag, Schulwechsel)",
+        "Öffentliche Orte (Restaurant, Schwimmbad, Supermarkt)",
+        "Entwicklungsmeilensteine (Fahrrad, Übernachten, alleine bleiben)",
+        "Familiäre Veränderungen (Geschwister, Umzug, Haustier)",
+        "Soziale Situationen (Feiern, Verwandtenbesuche)",
+        "Beste Preis-Leistung durch Bundle-Ersparnis"
+      ],
+      "priority_score": {
+        "soziales": 10,
+        "kommunikation": 10,
+        "regulation": 8,
+        "eltern": 9,
+        "schule": 9,
+        "tagesstruktur": 7
+      },
+      "is_bundle": true,
+      "recommended_when_both": ["soziales", "kommunikation", "regulation"]
     }
   ],
   "affiliates": [
