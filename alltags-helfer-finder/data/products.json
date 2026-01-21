@@ -129,6 +129,34 @@
       }
     },
     {
+      "id": "autismus-hausaufgaben",
+      "name": "Notfallplan gegen Hausaufgabenstress bei Autismus",
+      "short_name": "Autismus Hausaufgaben-Guide",
+      "price": 9.99,
+      "description": "49-seitiger wissenschaftlich fundierter Leitfaden für Eltern & Lehrkräfte. Mit druckbaren Checklisten, visuellen Hilfen, Notfallkarte und Vorlagen für Schulzusammenarbeit. Basiert auf aktueller Autismus-Forschung (Theory of Mind, Exekutive Funktionen, sensorische Verarbeitung).",
+      "image": "anh.png",
+      "url": "https://paulrawe.gumroad.com/l/yhqug",
+      "tags": ["schule", "regulation", "eltern", "kommunikation", "tagesstruktur"],
+      "helps_with": [
+        "Tränen und Verweigerung vor Hausaufgaben",
+        "Meltdowns bei Übergängen und Veränderungen",
+        "Sensorische Überlastung verhindert Konzentration",
+        "Unklare Erwartungen führen zu Blockaden",
+        "Perfektionismus bei unwichtigen Details",
+        "Schwierigkeiten mit offenen Aufgabenstellungen",
+        "Nachteilsausgleich beantragen",
+        "Kommunikation mit Lehrkräften über Autismus"
+      ],
+      "priority_score": {
+        "schule": 10,
+        "regulation": 9,
+        "eltern": 9,
+        "kommunikation": 8,
+        "tagesstruktur": 8,
+        "soziales": 3
+      }
+    },
+    {
       "id": "social-stories-schule",
       "name": "6 Social Stories: Schule & Freizeit",
       "short_name": "Social Stories Schule",
@@ -159,7 +187,7 @@
       "short_name": "Social Stories",
       "price": 6.99,
       "description": "6 vollständige Social Stories für herausfordernde Alltagssituationen. Zahnarzt, Arzt, Krankenhaus, Friseur, Restaurant & Supermarkt.",
-      "image": "social-stories.png",
+      "image": "medizinundalltag.png",
       "url": "https://paulrawe.gumroad.com/l/mdwldd",
       "tags": ["soziales", "kommunikation", "regulation", "eltern"],
       "helps_with": [
@@ -183,7 +211,7 @@
       "short_name": "Social Stories Alltag & Entwicklung",
       "price": 6.99,
       "description": "7 vollständige Social Stories für wichtige Entwicklungsmeilensteine. Fahrradfahren lernen, bei Freunden übernachten, alleine zu Hause bleiben, Geschwisterkind bekommen, Haustier-Abschied, Umzug & Verlieren lernen.",
-      "image": "alltag-entwicklung.png",
+      "image": "alltagentwicklung.png",
       "url": "https://paulrawe.gumroad.com/l/clxmw",
       "tags": ["soziales", "kommunikation", "regulation", "eltern", "tagesstruktur"],
       "helps_with": [
@@ -212,7 +240,7 @@
       "original_price": 20.97,
       "savings": 4.98,
       "description": "Alle 19 Social Stories in einem Bundle: Medizin & Alltag (6), Schule & Freizeit (6), Alltag & Entwicklung (7). Die komplette Lösung für fast alle wichtigen Alltagssituationen.",
-      "image": "social-stories-komplettpaket.png",
+      "image": "socialstoriesnundle.png",
       "url": "https://paulrawe.gumroad.com/l/junmcl",
       "tags": ["soziales", "kommunikation", "regulation", "eltern", "schule", "tagesstruktur"],
       "helps_with": [
