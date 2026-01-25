@@ -1,5 +1,7 @@
-# robots.txt für Autismus & ADHS Familienwebsite
+# robots.txt für autismus-adhs-alltag.de
+# Letzte Aktualisierung: Januar 2025
 
+# Alle Bots erlauben
 User-agent: *
 Allow: /
 
@@ -7,18 +9,15 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
-Disallow: /*.pdf$ # PDFs nur über Shop
 
-# Rechtliche Seiten von Indizierung ausschließen
-Disallow: /impressum.html
-Disallow: /datenschutz.html
-Disallow: /agb.html
-Disallow: /cookies.html
+# WICHTIG: Impressum, Datenschutz, AGB NICHT blockieren!
+# Diese Seiten müssen rechtlich erreichbar und indexierbar sein.
+# Die niedrige Priorität wird über die Sitemap gesteuert.
 
 # Sitemap
-Sitemap: https://deine-domain.de/sitemap.xml
+Sitemap: https://autismus-adhs-alltag.de/sitemap.xml
 
-# Spezielle Bots
+# AI-Bots blockieren (falls gewünscht)
 User-agent: GPTBot
 Disallow: /
 
