@@ -172,8 +172,77 @@
         "quick_tip": "Feste Zeit (nicht Menge!), dann Pause. Lieber 15 Minuten konzentriert als 2 Stunden kämpfen."
       }
     },
-    {
+     {
       "id": 7,
+      "question": "Hat euer Kind einen Nachteilsausgleich in der Schule/Hochschule/Ausbildung?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "no_but_needed",
+          "label": "Nein, aber wir bräuchten einen – wissen aber nicht wie",
+          "score": {"schule": 3, "eltern": 3, "kommunikation": 2}
+        },
+        {
+          "value": "trying",
+          "label": "Wir versuchen es gerade – Schule blockiert ab",
+          "score": {"schule": 3, "eltern": 2, "kommunikation": 3}
+        },
+        {
+          "value": "yes_works",
+          "label": "Ja, und es funktioniert gut",
+          "score": {"schule": 0, "eltern": 0}
+        },
+        {
+          "value": "yes_not_implemented",
+          "label": "Ja auf dem Papier, aber wird nicht umgesetzt",
+          "score": {"schule": 2, "eltern": 2, "kommunikation": 2}
+        },
+        {
+          "value": "not_needed",
+          "label": "Nicht nötig oder noch nicht relevant",
+          "score": {"schule": 0, "eltern": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "Der Antrag war überwältigend – bis wir fertige Vorlagen hatten. Dann ging es plötzlich schnell. Sam hat jetzt mehr Zeit bei Klassenarbeiten und einen ruhigen Arbeitsplatz. Ein Gamechanger.",
+        "science": "Kinder mit ADHS/Autismus haben ein RECHT auf Nachteilsausgleich (Grundgesetz Art. 3, UN-Behindertenrechtskonvention). Es ist kein 'Geschenk', sondern Gleichstellung.",
+        "quick_tip": "Startet mit einem formlosen Antrag. Nutzt fertige Musteranträge. Die Schule MUSS sich damit befassen."
+      }
+    },
+    {
+      "id": 8,
+      "question": "Welche Aussage trifft am ehesten zu?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "no_idea",
+          "label": "Ich weiß nicht, welche Nachteilsausgleiche möglich sind",
+          "score": {"schule": 3, "eltern": 2}
+        },
+        {
+          "value": "school_says_no",
+          "label": "Die Schule sagt, das geht nicht / ist nicht nötig",
+          "score": {"schule": 3, "kommunikation": 3, "eltern": 2}
+        },
+        {
+          "value": "too_complicated",
+          "label": "Ich weiß, dass es möglich ist, aber der Antrag überfordert mich",
+          "score": {"schule": 2, "eltern": 3}
+        },
+        {
+          "value": "have_knowledge",
+          "label": "Ich kenne mich aus oder brauche das aktuell nicht",
+          "score": {"schule": 0, "eltern": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "Die häufigsten Einwände: 'Das wäre unfair', 'Wir haben das noch nie gemacht', 'Ihr Kind muss sich mehr anstrengen'. Mit den richtigen Argumenten konnten wir dagegen halten.",
+        "science": "Studien zeigen: Kinder mit Nachteilsausgleich haben bessere schulische Leistungen UND ein stabileres psychisches Wohlbefinden. Es hilft wirklich.",
+        "quick_tip": "Typische Einwände der Schule? 'Das wäre unfair' → Antwort: 'Ein Rollstuhlfahrer bekommt auch eine Rampe. Das ist nicht unfair, sondern Gleichstellung.'"
+      }
+    },
+    {
+      "id": 9,
       "question": "Wie schwierig sind Situationen in der Öffentlichkeit (Einkaufen, Restaurant, etc.)?",
       "type": "radio",
       "options": [
@@ -200,7 +269,7 @@
       }
     },
     {
-      "id": 8,
+      "id": 10,
       "question": "Wie geht es EUCH als Eltern / euch selbst?",
       "type": "radio",
       "options": [
@@ -227,7 +296,7 @@
       }
     },
     {
-      "id": 9,
+      "id": 11,
       "question": "Gibt es Schlafprobleme?",
       "type": "radio",
       "options": [
@@ -254,7 +323,7 @@
       }
     },
     {
-      "id": 10,
+      "id": 12,
       "question": "Was ist euer größter Wunsch gerade?",
       "type": "radio",
       "options": [
