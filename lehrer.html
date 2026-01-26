@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Praxis-Guides für Lehrkräfte | Autismus & ADHS im Unterricht</title>
+    <meta name="description" content="Professionelle Materialien für Lehrkräfte – entwickelt von Grundschullehrerin Katharina Rawe. Strukturpläne, Elterngespräche, Beobachtungsbögen, Klassenstart.">
+    <meta name="keywords" content="Autismus Unterricht, ADHS Schule, Elterngespräche, Beobachtungsbögen, Klassenstart, Nachteilsausgleich, Lehrerfortbildung">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Praxis-Guides für Lehrkräfte">
+    <meta property="og:description" content="Von Lehrerin für Lehrkräfte – wissenschaftlich fundiert, sofort einsetzbar">
+    <meta property="og:url" content="https://autismus-adhs-alltag.de/lehrer.html">
+    
+    <!-- Cookie Consent CSS -->
+    <link rel="stylesheet" href="consent.css">
+    
+    <style>
+        :root {
+            --bg-main: #f4f6f8;
+            --bg-card: #ffffff;
+            --color-primary: #2f6f8f;
+            --color-secondary: #5fa8c9;
+            --color-text: #2b2b2b;
+            --color-muted: #6b6b6b;
+            --color-accent: #d97706;
+            --color-success: #059669;
+            --color-bundle: #7c3aed;
+            --color-teacher: #059669;
+            --color-free: #ec4899;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--color-teacher) 0%, #047857 100%);
+            color: #ffffff;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .author-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            margin: 1rem 0.5rem;
+            font-weight: bold;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            margin: 0.5rem;
+        }
+
+        .quick-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: linear-gradient(135deg, #047857 0%, #059669 100%);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .quick-nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0.8rem 1rem;
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .quick-nav-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .quick-nav-item {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .quick-nav-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .quick-nav-item.eltern {
+            background: var(--color-primary);
+            border: 2px solid #fff;
+        }
+
+        .quick-nav-item.eltern:hover {
+            background: #1e5773;
+        }
+
+        nav {
+            background-color: #e9edf1;
+            padding: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color-teacher);
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem 4rem;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border: 3px solid var(--color-teacher);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0 3rem;
+            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.2);
+        }
+
+        .intro-box h2 {
+            color: var(--color-teacher);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro-box p {
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            color: #065f46;
+            line-height: 1.8;
+        }
+
+        .intro-box ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .intro-box li {
+            padding: 0.5rem 0 0.5rem 1.8rem;
+            position: relative;
+            font-size: 1.05rem;
+            color: #065f46;
+        }
+
+        .intro-box li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+
+        .category-header {
+            text-align: center;
+            margin: 3rem 0 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #d1fae5 0%, #e0f2fe 100%);
+            border-radius: 12px;
+            border-left: 5px solid var(--color-teacher);
+        }
+
+        .category-header h2 {
+            color: var(--color-teacher);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-header p {
+            color: var(--color-muted);
+            font-size: 1.1rem;
+        }
+
+        .product {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            scroll-margin-top: 80px;
+        }
+
+        .product.bundle {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border: 3px solid var(--color-teacher);
+            position: relative;
+        }
+
+        .product.free {
+            background: linear-gradient(135deg, #fef1f7 0%, #fce7f3 100%);
+            border: 3px solid var(--color-free);
+            position: relative;
+        }
+
+        .bundle-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--color-teacher);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+        }
+
+        .free-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--color-free);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .product-header {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .product-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .product-title h2 {
+            color: var(--color-teacher);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .free .product-title h2 {
+            color: var(--color-free);
+        }
+
+        .product-subtitle {
+            color: var(--color-muted);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .problem-box,
+        .solution-box {
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .problem-box {
+            background: #fff5f5;
+            border-left: 4px solid #dc2626;
+        }
+
+        .problem-box h3 {
+            color: #dc2626;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--color-success);
+        }
+
+        .solution-box h3 {
+            color: var(--color-success);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-box ul,
+        .solution-box ul {
+            list-style: none;
+            font-size: 0.95rem;
+        }
+
+        .problem-box li,
+        .solution-box li {
+            padding: 0.4rem 0 0.4rem 1.5rem;
+            position: relative;
+        }
+
+        .problem-box li:before {
+            content: "❌";
+            position: absolute;
+            left: 0;
+        }
+
+        .solution-box li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-item {
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .feature-item strong {
+            color: var(--color-teacher);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .content-section {
+            margin: 2rem 0;
+        }
+
+        .content-section h3 {
+            color: var(--color-teacher);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .content-section ul,
+        .content-section ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .price-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f0fdf4;
+            border: 2px solid var(--color-teacher);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .free .price-section {
+            background: #fef1f7;
+            border-color: var(--color-free);
+        }
+
+        .price-info {
+            flex: 1;
+        }
+
+        .price-label {
+            font-size: 0.9rem;
+            color: var(--color-muted);
+        }
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: var(--color-muted);
+            font-size: 1.3rem;
+        }
+
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--color-teacher);
+        }
+
+        .free .price-amount {
+            color: var(--color-free);
+        }
+
+        .price-currency {
+            font-size: 1.2rem;
+            color: var(--color-muted);
+        }
+
+        .price-savings {
+            color: var(--color-success);
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .buy-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-teacher) 0%, #047857 100%);
+            color: #ffffff;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(5, 150, 105, 0.4);
+            white-space: nowrap;
+        }
+
+        .buy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.5);
+        }
+
+        .free .buy-button {
+            background: linear-gradient(135deg, var(--color-free) 0%, #db2777 100%);
+            box-shadow: 0 4px 16px rgba(236, 72, 153, 0.4);
+        }
+
+        .free .buy-button:hover {
+            box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5);
+        }
+
+        section.faq {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            scroll-margin-top: 80px;
+        }
+
+        section.faq h2 {
+            color: var(--color-teacher);
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding: 1.2rem;
+            background: #fafafa;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-teacher);
+        }
+
+        .faq-item h4 {
+            color: var(--color-teacher);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #2e2e2e;
+            color: #ffffff;
+            padding: 2rem 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .legal {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #cccccc;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .author-badge {
+                font-size: 0.95rem;
+            }
+
+            .quick-nav-item {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .product-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .product-image {
+                max-width: 200px;
+                margin: 0 auto;
+            }
+
+            .problem-solution {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .price-section {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .bundle-badge,
+            .free-badge {
+                position: static;
+                display: inline-block;
+                margin-bottom: 1rem;
+            }
+
+            .category-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .intro-box h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>👩‍🏫 Praxis-Guides für Lehrkräfte</h1>
+    <p class="subtitle">Wissenschaftlich fundiert, praxiserprobt, sofort einsetzbar – von Lehrerin für Lehrkräfte</p>
+    <div class="author-badge">
+        ✨ Entwickelt von Grundschullehrerin Katharina Rawe
+    </div>
+    <div class="trust-badge">✓ Wissenschaftlich fundiert</div>
+    <div class="trust-badge">✓ Sofort einsetzbar</div>
+    <div class="trust-badge">✓ Mit Beispielen</div>
+</header>
+
+<div class="quick-nav">
+    <div class="quick-nav-container">
+        <a href="#bundle" class="quick-nav-item">💎 Bundle</a>
+        <a href="#unterricht" class="quick-nav-item">📚 Unterricht</a>
+        <a href="#hausaufgaben" class="quick-nav-item">✏️ Hausaufgaben</a>
+        <a href="#gratis" class="quick-nav-item">🎁 Gratis</a>
+        <a href="downloads.html" class="quick-nav-item eltern">🏠 Für Eltern</a>
+        <a href="#faq" class="quick-nav-item">❓ FAQ</a>
+    </div>
+</div>
+
+<nav aria-label="Hauptnavigation">
+    <ul>
+        <li><a href="index.html">← Zurück zur Startseite</a></li>
+        <li><a href="downloads.html">Für Eltern</a></li>
+        <li><a href="ueberuns.html">Über uns</a></li>
+    </ul>
+</nav>
+
+<main>
+
+<!-- INTRO BOX -->
+<div class="intro-box">
+    <h2>Für Lehrkräfte, Erzieher:innen & Sozialpädagog:innen</h2>
+    <p>
+        <strong>Sie stehen vor der Herausforderung, autistische oder ADHS-Schüler:innen professionell zu unterstützen?</strong>
+    </p>
+    <p>
+        Als Grundschullehrerin und Mutter eines autistischen Kindes kenne ich beide Seiten: die professionelle UND die persönliche. 
+        Diese Guides verbinden wissenschaftliche Fundierung mit echter Praxiserfahrung.
+    </p>
+    <ul>
+        <li><strong>Keine Theorie-Wüste:</strong> Konkrete Handlungsanleitungen für Ihren Unterricht</li>
+        <li><strong>Wissenschaftlich fundiert:</strong> Basiert auf aktueller Forschung (Theory of Mind, Exekutive Funktionen, Predictive Processing)</li>
+        <li><strong>Sofort einsetzbar:</strong> Kopiervorlagen, Checklisten, Beobachtungsbögen – alles ausdruckbar</li>
+        <li><strong>Mit ausgefüllten Beispielen:</strong> Sie sehen genau, wie es funktioniert</li>
+        <li><strong>Rechtlich abgesichert:</strong> UN-BRK, SGB IX, Schulgesetze verständlich erklärt</li>
+    </ul>
+</div>
+
+<!-- ===================== BUNDLE SECTION ===================== -->
+<div id="bundle" class="category-header">
+    <h2>💎 Bundle-Angebot für Lehrkräfte</h2>
+    <p>Alle 3 Haupt-Guides im Paket – spare 37%</p>
+</div>
+
+<div class="product bundle">
+    <div class="bundle-badge">💎 SPARE 5,80€</div>
+    
+    <div class="product-header">
+        <div>
+            <img src="bundlelehrer.png" alt="Lehrer-Bundle" class="product-image">
+        </div>
+        <div class="product-title">
+            <h2>🎁 Lehrer-Paket: Struktur + Gespräche + Klassenstart</h2>
+            <p class="product-subtitle">Komplett-Lösung für Ihren inklusiven Unterricht</p>
+        </div>
+    </div>
+
+    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+        <strong>Alles, was Sie für erfolgreiche Inklusion brauchen:</strong> Unterrichtsstruktur, professionelle Elterngespräche, erfolgreicher Klassenstart. 3 essenzielle Guides im Bundle 37% günstiger!
+    </p>
+
+    <div class="features">
+        <div class="feature-item">
+            <strong>📚 Strukturpläne (23 S.)</strong>
+            Tagesstruktur, Stundenablauf, Übergänge, Notfallplan
+        </div>
+        <div class="feature-item">
+            <strong>💬 Elterngespräche (21 S.)</strong>
+            5 Phasen, 6 Prinzipien, Muster-E-Mails
+        </div>
+        <div class="feature-item">
+            <strong>📋 Klassenstart (22 S.)</strong>
+            Timeline, Material-Checkliste, Warnsignale
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h3>✨ Das ist im Bundle enthalten:</h3>
+        <ul>
+            <li><strong>Strukturpläne für den Unterricht (23 Seiten, €4.90):</strong> Tagesstrukturplan, Stundenstrukturplan, Übergangshilfen, Notfallplan + 2 Praxisfälle (Leon & Mia)</li>
+            <li><strong>Gesprächsleitfaden Elterngespräch (21 Seiten, €5.90):</strong> 5 Gesprächsphasen, 6 Kommunikationsprinzipien, schwierige Situationen meistern + Muster-E-Mails</li>
+            <li><strong>Klassenstart-Checkliste (22 Seiten, €4.90):</strong> 4-Wochen-Timeline, Material-Checkliste, Warnsignale erkennen + 2 Erfolgsbeispiele (Tim & Sarah)</li>
+        </ul>
+    </div>
+
+    <div class="price-section">
+        <div class="price-info">
+            <p class="price-label">Einzeln: 15,70€</p>
+            <div class="price">
+                <span class="price-amount">9,90</span>
+                <span class="price-currency">€</span>
+            </div>
+            <p class="price-savings">✨ Du sparst 5,80€ (37%)</p>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/obdfvd" class="buy-button" target="_blank" rel="noopener">
+            Jetzt Bundle kaufen
+        </a>
+    </div>
+</div>
+
+<!-- ===================== UNTERRICHT SECTION ===================== -->
+<div id="unterricht" class="category-header">
+    <h2>📚 Unterricht strukturieren</h2>
+    <p>Praxiserprobte Strukturhilfen für autistische Schüler:innen</p>
+</div>
+
+<!-- PRODUKT 1: STRUKTURPLÄNE -->
+<div class="product">
+    <div class="product-header">
+        <div>
+            <img src="1struckturpläne für lehrer.png" alt="Strukturpläne für den Unterricht" class="product-image">
+        </div>
+        <div class="product-title">
+            <h2>📚 Strukturpläne für den Unterricht</h2>
+            <p class="product-subtitle">Tagesstruktur, Stundenablauf & Übergangshilfen (23 Seiten)</p>
+        </div>
+    </div>
+
+    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+        <strong>Autistische Schüler:innen brauchen Struktur – nicht Chaos.</strong> Dieser Guide zeigt Ihnen, wie Sie mit einfachen Strukturhilfen Meltdowns verhindern und Lernen ermöglichen.
+    </p>
+
+    <div class="problem-solution">
+        <div class="problem-box">
+            <h3>🚨 Typische Probleme</h3>
+            <ul>
+                <li>Übergänge führen zu Meltdowns</li>
+                <li>Stundenende ist jedes Mal Kampf</li>
+                <li>Unangekündigte Änderungen überfordern</li>
+                <li>Schüler:in versteht Aufgaben nicht</li>
+            </ul>
+        </div>
+        
+        <div class="solution-box">
+            <h3>✅ Die Lösung</h3>
+            <ul>
+                <li>Tagesstruktur visuell darstellen</li>
+                <li>5-Minuten-Regel bei Übergängen</li>
+                <li>Änderungen rechtzeitig ankündigen</li>
+                <li>Aufgaben kleinschrittig erklären</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item">
+            <strong>📅 Tagesstrukturplan</strong>
+            Visualisierung des gesamten Schultags
+        </div>
+        <div class="feature-item">
+            <strong>⏰ Stundenstrukturplan</strong>
+            Ablauf einzelner Unterrichtsstunden
+        </div>
+        <div class="feature-item">
+            <strong>🔄 Übergangshilfen</strong>
+            5-Minuten-Regel, Time Timer, visuelle Hinweise
+        </div>
+        <div class="feature-item">
+            <strong>🚨 Notfallplan</strong>
+            Was tun bei Überforderung?
+        </div>
+        <div class="feature-item">
+            <strong>📖 2 Praxisfälle</strong>
+            Leon (1. Klasse) & Mia (3. Klasse)
+        </div>
+        <div class="feature-item">
+            <strong>🧠 Wissenschaftlich</strong>
+            Theory of Mind, Exekutive Funktionen, Monotropismus
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h3>📦 Das ist enthalten:</h3>
+        <ul>
+            <li>23 Seiten professionell gestaltetes PDF</li>
+            <li>Neurobiologische Grundlagen verständlich erklärt</li>
+            <li>4 konkrete Strukturhilfen mit Umsetzung</li>
+            <li>2 ausgefüllte Praxisfälle (Leon & Mia)</li>
+            <li>Kopiervorlagen für Ihren Unterricht</li>
+            <li>8 wissenschaftliche Quellen</li>
+        </ul>
+    </div>
+
+    <div class="price-section">
+        <div class="price-info">
+            <p class="price-label">Einzelpreis</p>
+            <div class="price">
+                <span class="price-amount">4,90</span>
+                <span class="price-currency">€</span>
+            </div>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/fphky" class="buy-button" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- PRODUKT 2: ELTERNGESPRÄCHE -->
+<div class="product">
+    <div class="product-header">
+        <div>
+            <img src="2. Gesprächsleitfaden Elterngespräch.png" alt="Gesprächsleitfaden Elterngespräch" class="product-image">
+        </div>
+        <div class="product-title">
+            <h2>💬 Gesprächsleitfaden Elterngespräch</h2>
+            <p class="product-subtitle">Professionelle Elterngespräche ohne Eskalation (21 Seiten)</p>
+        </div>
+    </div>
+
+    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+        <strong>Elterngespräche, die nicht eskalieren.</strong> Von der Einladung bis zur Nachbereitung – alles, was Sie für erfolgreiche Gespräche brauchen.
+    </p>
+
+    <div class="problem-solution">
+        <div class="problem-box">
+            <h3>🚨 Typische Probleme</h3>
+            <ul>
+                <li>Eltern kommen defensiv ins Gespräch</li>
+                <li>Gespräch eskaliert emotional</li>
+                <li>Keine konkreten Vereinbarungen</li>
+                <li>Eltern fühlen sich nicht gehört</li>
+            </ul>
+        </div>
+        
+        <div class="solution-box">
+            <h3>✅ Die Lösung</h3>
+            <ul>
+                <li>Strukturierter Gesprächsaufbau (5 Phasen)</li>
+                <li>Wertschätzende Kommunikation</li>
+                <li>Konkrete Zielvereinbarungen</li>
+                <li>Aktives Zuhören & Ich-Botschaften</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item">
+            <strong>📋 5 Gesprächsphasen</strong>
+            5-10-15-10-5 Minuten Timing
+        </div>
+        <div class="feature-item">
+            <strong>💬 6 Kommunikationsprinzipien</strong>
+            Wertschätzung, Aktives Zuhören, Ich-Botschaften
+        </div>
+        <div class="feature-item">
+            <strong>🚨 Schwierige Situationen</strong>
+            Emotionale Eltern, Defensive Reaktionen
+        </div>
+        <div class="feature-item">
+            <strong>📧 Muster-E-Mails</strong>
+            Einladung, Protokoll, Nachbereitung
+        </div>
+        <div class="feature-item">
+            <strong>✅ Checklisten</strong>
+            Vor, während, nach dem Gespräch
+        </div>
+        <div class="feature-item">
+            <strong>📖 2 Praxisbeispiele</strong>
+            Leon (Überforderung) & Mia (Sozialverhalten)
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h3>📦 Das ist enthalten:</h3>
+        <ul>
+            <li>21 Seiten professionell gestaltetes PDF</li>
+            <li>5-Phasen-Modell mit Zeitangaben</li>
+            <li>6 Kommunikationsprinzipien erklärt</li>
+            <li>3 Muster-E-Mail-Vorlagen (kopieren & anpassen)</li>
+            <li>Umgang mit schwierigen Situationen</li>
+            <li>2 ausgefüllte Gesprächsprotokolle (Leon & Mia)</li>
+            <li>7 wissenschaftliche Quellen</li>
+        </ul>
+    </div>
+
+    <div class="price-section">
+        <div class="price-info">
+            <p class="price-label">Einzelpreis</p>
+            <div class="price">
+                <span class="price-amount">5,90</span>
+                <span class="price-currency">€</span>
+            </div>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/nabxk" class="buy-button" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- PRODUKT 3: KLASSENSTART -->
+<div class="product">
+    <div class="product-header">
+        <div>
+            <img src="4. Klassenstart-Checkliste.png" alt="Klassenstart-Checkliste" class="product-image">
+        </div>
+        <div class="product-title">
+            <h2>📋 Klassenstart-Checkliste</h2>
+            <p class="product-subtitle">Schuljahresbeginn ohne Meltdowns (22 Seiten)</p>
+        </div>
+    </div>
+
+    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+        <strong>Der Schulstart entscheidet über das ganze Jahr.</strong> Diese Checkliste führt Sie Schritt für Schritt durch die ersten 8 Wochen.
+    </p>
+
+    <div class="problem-solution">
+        <div class="problem-box">
+            <h3>🚨 Typische Probleme</h3>
+            <ul>
+                <li>Erste Schulwochen sind Chaos</li>
+                <li>Autistische Kinder überfordert</li>
+                <li>Keine Vorbereitung auf Neues</li>
+                <li>Meltdowns häufen sich</li>
+            </ul>
+        </div>
+        
+        <div class="solution-box">
+            <h3>✅ Die Lösung</h3>
+            <ul>
+                <li>Strukturierte 4-Wochen-Vorbereitung</li>
+                <li>Material rechtzeitig besorgen</li>
+                <li>Warnsignale früh erkennen</li>
+                <li>Erste Wochen professionell begleiten</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item">
+            <strong>⏰ 4-Wochen-Timeline</strong>
+            4 Wochen vor → 1 Monat nach Schulstart
+        </div>
+        <div class="feature-item">
+            <strong>🛒 Material-Checkliste</strong>
+            Time Timer, Kopfhörer, Fidget-Tools (inkl. Preise)
+        </div>
+        <div class="feature-item">
+            <strong>🚨 Warnsignale</strong>
+            Früherkennung von Überforderung
+        </div>
+        <div class="feature-item">
+            <strong>📖 2 Erfolgsbeispiele</strong>
+            Tim (1. Klasse) & Sarah (Schulwechsel 5. Klasse)
+        </div>
+        <div class="feature-item">
+            <strong>✅ Checklisten</strong>
+            Für jede Phase des Schulstarts
+        </div>
+        <div class="feature-item">
+            <strong>🧠 Wissenschaftlich</strong>
+            Predictive Processing, Sensorik
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h3>📦 Das ist enthalten:</h3>
+        <ul>
+            <li>22 Seiten professionell gestaltetes PDF</li>
+            <li>Timeline: 4 Wochen vor bis 1 Monat nach Schulstart</li>
+            <li>Material-Checkliste mit Preisen (Time Timer €30, Kopfhörer, etc.)</li>
+            <li>Warnsignale für Überforderung erkennen</li>
+            <li>2 ausgefüllte Erfolgsbeispiele (Tim & Sarah)</li>
+            <li>Checklisten für jede Phase</li>
+            <li>8 wissenschaftliche Quellen</li>
+        </ul>
+    </div>
+
+    <div class="price-section">
+        <div class="price-info">
+            <p class="price-label">Einzelpreis</p>
+            <div class="price">
+                <span class="price-amount">4,90</span>
+                <span class="price-currency">€</span>
+            </div>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/agenx" class="buy-button" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- ===================== HAUSAUFGABEN SECTION ===================== -->
+<div id="hausaufgaben" class="category-header">
+    <h2>✏️ Hausaufgaben-Guides</h2>
+    <p>Wissenschaftlich fundierte Notfallpläne für ADHS & Autismus</p>
+</div>
+
+<!-- PRODUKT 4: ADHS HAUSAUFGABEN -->
+<div class="product">
+    <div class="product-header">
+        <div>
+            <img src="adhscover.png" alt="ADHS Hausaufgaben Notfallplan" class="product-image">
+        </div>
+        <div class="product-title">
+            <h2>✏️ Notfallplan: Hausaufgaben bei ADHS</h2>
+            <p class="product-subtitle">Exekutive Dysfunktion verstehen & unterstützen (43 Seiten)</p>
+        </div>
+    </div>
+
+    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+        <strong>Hausaufgaben bei ADHS sind KEINE Willensfrage.</strong> Dieser Guide erklärt die neurobiologischen Grundlagen und zeigt konkrete Hilfestellungen.
+    </p>
+
+    <div class="problem-solution">
+        <div class="problem-box">
+            <h3>🚨 Typische Probleme</h3>
+            <ul>
+                <li>Kind vergisst ständig Hausaufgaben</li>
+                <li>Kann nicht anfangen (Initiierungsproblem)</li>
+                <li>Verliert nach 5 Minuten Fokus</li>
+                <li>Blockiert komplett bei Schwierigkeiten</li>
+            </ul>
+        </div>
+        
+        <div class="solution-box">
+            <h3>✅ Die Lösung</h3>
+            <ul>
+                <li>Exekutive Dysfunktion verstehen</li>
+                <li>Chunking-Methode anwenden</li>
+                <li>Body-Doubling nutzen</li>
+                <li>Notfall-Interventionen kennen</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item">
+            <strong>🧠 Wissenschaftliche Basis</strong>
+            Barkley, Brown, Hallowell – Exekutive Funktionen
+        </div>
+        <div class="feature-item">
+            <strong>✅ 6+ Checklisten</strong>
+            Arbeitsplatz, Ablauf, Notfall – druckbar
+        </div>
+        <div class="feature-item">
+            <strong>📋 3 Arbeitsblätter</strong>
+            Chunking-Planer, Timer-Tracker, Feedback
+        </div>
+        <div class="feature-item">
+            <strong>💳 Notfallkarte</strong>
+            Laminierbar (Kreditkartenformat)
+        </div>
+        <div class="feature-item">
+            <strong>📧 Eltern-Kommunikation</strong>
+            Musterbriefe & Nachteilsausgleich
+        </div>
+        <div class="feature-item">
+            <strong>⚡ Sofort umsetzbar</strong>
+            VOR, WÄHREND, NACH Hausaufgaben
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h3>📦 Das ist enthalten:</h3>
+        <ul>
+            <li>43 Seiten professionell gestaltetes PDF</li>
+            <li>Wissenschaftliche Grundlagen (Exekutive Funktionen, Arbeitsgedächtnis, Zeitblindheit)</li>
+            <li>VOR – WÄHREND – NACH Strategien</li>
+            <li>Chunking-Methode, Pomodoro ADHS-adaptiert, Body-Doubling</li>
+            <li>Notfall-Interventionen bei Blockaden</li>
+            <li>6+ druckbare Checklisten</li>
+            <li>3 Arbeitsblätter zum Ausfüllen</li>
+            <li>Laminierbare Notfallkarte (Kreditkartenformat)</li>
+            <li>Musterbriefe für Eltern (Nachteilsausgleich)</li>
+            <li>18 wissenschaftliche Quellen</li>
+        </ul>
+    </div>
+
+    <div class="price-section">
+        <div class="price-info">
+            <p class="price-label">Für Lehrkräfte & Eltern</p>
+            <div class="price">
+                <span class="price-amount">9,99</span>
+                <span class="price-currency">€</span>
+            </div>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/xnilzj" class="buy-button" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- PRODUKT 5: AUTISMUS HAUSAUFGABEN -->
+<div class="product">
+    <div class="product-header">
+        <div>
+            <img src="anh.png" alt="Autismus Hausaufgaben Notfallplan" class="product-image">
+        </div>
+        <div class="product-title">
+            <h2>✏️ Notfallplan: Hausaufgaben bei Autismus</h2>
+            <p class="product-subtitle">Theory of Mind & sensorische Verarbeitung verstehen (49 Seiten)</p>
+        </div>
+    </div>
+
+    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+        <strong>Hausaufgaben bei Autismus erfordern anderes Vorgehen.</strong> Dieser Guide erklärt die neurologischen Besonderheiten und zeigt autismus-spezifische Strategien.
+    </p>
+
+    <div class="problem-solution">
+        <div class="problem-box">
+            <h3>🚨 Typische Probleme</h3>
+            <ul>
+                <li>Tränen vor Hausaufgaben-Beginn</li>
+                <li>Meltdowns bei Übergängen</li>
+                <li>Sensorische Überlastung am Nachmittag</li>
+                <li>Perfektionismus bei unwichtigen Details</li>
+            </ul>
+        </div>
+        
+        <div class="solution-box">
+            <h3>✅ Die Lösung</h3>
+            <ul>
+                <li>Sensorisch optimierter Arbeitsplatz</li>
+                <li>Strukturierte Übergänge (5-Stufen)</li>
+                <li>Klare, eindeutige Kommunikation</li>
+                <li>Meltdown-Prävention aktiv</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item">
+            <strong>🧠 Wissenschaftliche Basis</strong>
+            Theory of Mind, Exekutive Funktionen, Sensorik
+        </div>
+        <div class="feature-item">
+            <strong>📋 Sensorische Optimierung</strong>
+            Die 8 Sinne verstehen & anpassen
+        </div>
+        <div class="feature-item">
+            <strong>🔄 Übergänge meistern</strong>
+            5-Stufen-Methode, visuelle Timer
+        </div>
+        <div class="feature-item">
+            <strong>✅ Checklisten</strong>
+            Bereitschaft, Ablauf, Sensorik
+        </div>
+        <div class="feature-item">
+            <strong>🚨 Notfallplan</strong>
+            Meltdown vs. Shutdown erkennen
+        </div>
+        <div class="feature-item">
+            <strong>📧 Schulzusammenarbeit</strong>
+            Nachteilsausgleich, Gesprächsleitfaden
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h3>📦 Das ist enthalten:</h3>
+        <ul>
+            <li>49 Seiten professionell gestaltetes PDF</li>
+            <li>Wissenschaftliche Grundlagen (Theory of Mind, Exekutive Funktionen, Predictive Processing)</li>
+            <li>Sensorische Optimierung des Arbeitsplatzes (die 8 Sinne)</li>
+            <li>Struktur & Vorhersehbarkeit etablieren</li>
+            <li>Klare, autismus-freundliche Kommunikation (3W+1H-Methode)</li>
+            <li>Übergänge meistern (5-Stufen-Methode)</li>
+            <li>Notfallplan bei Meltdown/Shutdown</li>
+            <li>Mehrere druckbare Checklisten</li>
+            <li>Laminierbare Notfallkarte (Kreditkartenformat)</li>
+            <li>Musterbriefe für Eltern (Nachteilsausgleich)</li>
+            <li>15 wissenschaftliche Quellen</li>
+        </ul>
+    </div>
+
+    <div class="price-section">
+        <div class="price-info">
+            <p class="price-label">Für Lehrkräfte & Eltern</p>
+            <div class="price">
+                <span class="price-amount">9,99</span>
+                <span class="price-currency">€</span>
+            </div>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/yhqug" class="buy-button" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- ===================== GRATIS SECTION ===================== -->
+<div id="gratis" class="category-header">
+    <h2>🎁 Gratis-Download</h2>
+    <p>Als Dankeschön für Ihre wertvolle Arbeit</p>
+</div>
+
+<!-- PRODUKT 6: BEOBACHTUNGSBÖGEN (FREE) -->
+<div class="product free">
+    <div class="free-badge">🎁 KOSTENLOS</div>
+    
+    <div class="product-header">
+        <div>
+            <img src="3. Beobachtungsbögen.png" alt="Beobachtungsbögen" class="product-image">
+        </div>
+        <div class="product-title">
+            <h2>📋 Beobachtungsbögen für autistische Schüler:innen</h2>
+            <p class="product-subtitle">Professionelle Dokumentation leicht gemacht (24 Seiten)</p>
+        </div>
+    </div>
+
+    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+        <strong>Beobachtung ist die Basis für erfolgreiche Förderung.</strong> Diese 4 wissenschaftlich fundierten Beobachtungsbögen helfen Ihnen, Verhalten neutral zu dokumentieren.
+    </p>
+
+    <div class="problem-solution">
+        <div class="problem-box">
+            <h3>🚨 Typische Probleme</h3>
+            <ul>
+                <li>Beobachtungen sind zu subjektiv</li>
+                <li>Keine Struktur bei Dokumentation</li>
+                <li>Verhalten wird falsch interpretiert</li>
+                <li>Keine Trigger-Analyse</li>
+            </ul>
+        </div>
+        
+        <div class="solution-box">
+            <h3>✅ Die Lösung</h3>
+            <ul>
+                <li>4 strukturierte Beobachtungsbögen</li>
+                <li>ABC-Modell für Verhaltensanalyse</li>
+                <li>Video-Kamera-Regel (neutrale Beschreibung)</li>
+                <li>3 ausgefüllte Beispiele</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item">
+            <strong>📋 Allgemeine Beobachtung</strong>
+            Gesamtüberblick über Verhalten
+        </div>
+        <div class="feature-item">
+            <strong>🚨 Stresssituationen</strong>
+            Trigger & Warnsignale erkennen
+        </div>
+        <div class="feature-item">
+            <strong>✨ Positive Momente</strong>
+            Stärken & Ressourcen dokumentieren
+        </div>
+        <div class="feature-item">
+            <strong>👀 Sensorische Beobachtung</strong>
+            Die 8 Sinne systematisch erfassen
+        </div>
+        <div class="feature-item">
+            <strong>📖 ABC-Modell</strong>
+            Antecedent – Behavior – Consequence
+        </div>
+        <div class="feature-item">
+            <strong>✅ 3 Beispiele</strong>
+            Leon & Mia ausgefüllt
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h3>📦 Das ist enthalten:</h3>
+        <ul>
+            <li>24 Seiten professionell gestaltetes PDF</li>
+            <li>4 Beobachtungsbögen (Allgemein, Stress, Positiv, Sensorisch)</li>
+            <li>ABC-Modell erklärt & angewendet</li>
+            <li>Video-Kamera-Regel für neutrale Beschreibung</li>
+            <li>3 ausgefüllte Beispiele (Leon & Mia)</li>
+            <li>Druckoptimiert für A4-Format</li>
+            <li>7 wissenschaftliche Quellen</li>
+        </ul>
+        <p style="font-weight: bold; color: var(--color-free); margin-top: 1rem;">
+            💝 Dieses Produkt ist KOSTENLOS als Dankeschön für Ihre wertvolle Arbeit!
+        </p>
+    </div>
+
+    <div class="price-section">
+        <div class="price-info">
+            <p class="price-label">Kostenloser Download</p>
+            <div class="price">
+                <span class="price-amount">0</span>
+                <span class="price-currency">€</span>
+            </div>
+            <p class="price-savings">🎁 Gratis für alle Lehrkräfte!</p>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/ehkho" class="buy-button" target="_blank" rel="noopener">
+            Kostenlos downloaden
+        </a>
+    </div>
+</div>
+
+<!-- ===================== FAQ ===================== -->
+<section id="faq" class="faq">
+    <h2>Häufige Fragen</h2>
+    
+    <div class="faq-item">
+        <h4>Sind diese Materialien auch für Erzieher:innen & Sozialpädagog:innen geeignet?</h4>
+        <p>Ja! Die Guides sind für alle pädagogischen Fachkräfte konzipiert – Lehrkräfte, Erzieher:innen, Sozialpädagog:innen, Schulbegleiter:innen, Integrationskräfte.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h4>Kann ich die Materialien in meiner Einrichtung vervielfältigen?</h4>
+        <p>Ja, für den persönlichen Gebrauch und in Ihrer Einrichtung (Schule, Kita) dürfen Sie die Materialien unbegrenzt ausdrucken. Keine Weitergabe oder Weiterverkauf gestattet.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h4>Bekomme ich eine Rechnung?</h4>
+        <p>Ja, Gumroad sendet automatisch eine Rechnung per E-Mail. Diese ist steuerlich absetzbar.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h4>Gibt es Updates?</h4>
+        <p>Ja! Alle zukünftigen Updates sind kostenlos. Einmal kaufen, immer profitieren.</p>
+    </div>
+
+    <div class="faq-item">
+        <h4>Warum soll ich als Lehrkraft bei Gumroad kaufen?</h4>
+        <p>Gumroad ist eine etablierte Plattform für digitale Produkte. Sofortiger Download, sichere Bezahlung, automatische Rechnung. Kein Abo, keine versteckten Kosten.</p>
+    </div>
+
+    <div class="faq-item">
+        <h4>Wo sind die Materialien für Eltern?</h4>
+        <p>Eltern-Materialien (Alltag, Tagesplan, Social Stories) finden Sie auf unserer <a href="downloads.html"><strong>Eltern-Seite</strong></a>.</p>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Autismus & ADHS – Erfahrungswissen für Lehrkräfte</p>
+    <p style="margin-top: 0.5rem; font-size: 0.95rem;">Entwickelt von Grundschullehrerin Katharina Rawe</p>
+    <div class="legal">
+        <a href="impressum.html">Impressum</a> | 
+        <a href="datenschutz.html">Datenschutz</a> | 
+        <a href="ueberuns.html">Über Uns</a>
+    </div>
+</footer>
+
+<script src="cookies.js"></script>
+
+<script>
+// Smooth Scroll für Quick-Nav
+document.querySelectorAll('.quick-nav-item').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (this.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const offset = 80;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+});
+</script>
+
+</body>
+</html>
