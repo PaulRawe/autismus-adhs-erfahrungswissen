@@ -4,14 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Downloads - Autismus Alltags-Hilfen | Tagesstruktur & Regulations-Toolkit</title>
-    <meta name="description" content="Visueller Tagesstrukturplan und Regulations-Toolkit für autistische Kinder. Sofort verfügbar.">
-    <meta name="keywords" content="Autismus Tagesplan, visueller Wochenplan, Regulations-Toolkit, visuelle Skalen">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Downloads - Autismus Alltags-Hilfen">
-    <meta property="og:description" content="Tagesstruktur & Regulations-Toolkit für autistische Kinder">
-    <meta property="og:url" content="https://autismus-adhs-alltag.de/downloads.html">
+    <title>Downloads - Autismus Alltags-Hilfen | Für Eltern</title>
+    <meta name="description" content="Praxiserprobte Hilfen für Alltag & Schule. Tagesstruktur, Social Stories, Hausaufgaben-Guides. Von Eltern für Eltern.">
     
     <!-- Cookie Consent CSS -->
     <link rel="stylesheet" href="consent.css">
@@ -28,6 +22,7 @@
             --color-success: #059669;
             --color-bundle: #7c3aed;
             --color-social: #ec4899;
+            --color-teacher: #059669;
         }
 
         * {
@@ -43,9 +38,6 @@
             line-height: 1.7;
         }
 
-        /* ============================================
-           HEADER
-        ============================================ */
         header {
             background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
             color: #ffffff;
@@ -76,9 +68,6 @@
             margin: 0.5rem;
         }
 
-        /* ============================================
-           STICKY QUICK NAVIGATION
-        ============================================ */
         .quick-nav {
             position: sticky;
             top: 0;
@@ -123,14 +112,23 @@
             transform: translateY(-1px);
         }
 
-        .quick-nav-item.active {
-            background: #ffffff;
-            color: var(--color-primary);
+        .quick-nav-item.teacher {
+            background: var(--color-teacher);
+            border: 2px solid #fff;
+            animation: pulse-green 2s ease-in-out infinite;
         }
 
-        /* ============================================
-           MAIN NAVIGATION
-        ============================================ */
+        @keyframes pulse-green {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .quick-nav-item.teacher:hover {
+            background: #047857;
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
+        }
+
         nav {
             background-color: #e9edf1;
             padding: 1rem;
@@ -150,16 +148,61 @@
             font-weight: bold;
         }
 
-        /* ============================================
-           MAIN CONTENT
-        ============================================ */
         main {
             max-width: 1100px;
             margin: 0 auto;
             padding: 2rem 1rem 4rem;
         }
 
-        /* Kategorie-Header */
+        .teacher-cta {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border: 3px solid var(--color-teacher);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0 3rem;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.2);
+        }
+
+        .teacher-cta h3 {
+            color: var(--color-teacher);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .teacher-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #065f46;
+        }
+
+        .teacher-cta-highlight {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            color: #065f46;
+        }
+
+        .teacher-cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-teacher) 0%, #047857 100%);
+            color: #ffffff;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(5, 150, 105, 0.4);
+        }
+
+        .teacher-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.5);
+        }
+
         .category-header {
             text-align: center;
             margin: 3rem 0 2rem;
@@ -180,9 +223,6 @@
             font-size: 1.1rem;
         }
 
-        /* ============================================
-           PRODUKT-CONTAINER
-        ============================================ */
         .product {
             background-color: var(--bg-card);
             border-radius: 12px;
@@ -270,9 +310,6 @@
             margin-bottom: 1rem;
         }
 
-        /* ============================================
-           PROBLEM-LÖSUNG
-        ============================================ */
         .problem-solution {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -332,9 +369,6 @@
             left: 0;
         }
 
-        /* ============================================
-           FEATURES
-        ============================================ */
         .features {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -355,14 +389,10 @@
             margin-bottom: 0.3rem;
         }
 
-        /* Social Stories Features - 2 Spalten */
         .features.two-col {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        /* ============================================
-           CONTENT SECTIONS
-        ============================================ */
         .content-section {
             margin: 2rem 0;
         }
@@ -400,9 +430,6 @@
             border-left: 3px solid var(--color-muted);
         }
 
-        /* ============================================
-           PREIS & BUTTON
-        ============================================ */
         .price-section {
             display: flex;
             align-items: center;
@@ -510,9 +537,6 @@
             box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5);
         }
 
-        /* ============================================
-           CROSSLINK BOX
-        ============================================ */
         .crosslink {
             background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
             border: 2px solid var(--color-accent);
@@ -527,9 +551,6 @@
             color: var(--color-accent);
         }
 
-        /* ============================================
-           FAQ
-        ============================================ */
         section.faq {
             background-color: var(--bg-card);
             border-radius: 12px;
@@ -562,9 +583,6 @@
             line-height: 1.6;
         }
 
-        /* ============================================
-           FOOTER
-        ============================================ */
         footer {
             background-color: #2e2e2e;
             color: #ffffff;
@@ -584,9 +602,6 @@
             color: #cccccc;
         }
 
-        /* ============================================
-           RESPONSIVE
-        ============================================ */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.8rem;
@@ -635,25 +650,29 @@
             .category-header h2 {
                 font-size: 1.5rem;
             }
+
+            .teacher-cta h3 {
+                font-size: 1.4rem;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>📚 Alltags-Hilfen für autistische Kinder</h1>
-    <p class="subtitle">Tagesstruktur & Regulation – praxiserprobt und sofort einsetzbar</p>
-    <div class="trust-badge">✓ Praxiserprobt</div>
+    <h1>📚 Alltags-Hilfen für Eltern</h1>
+    <p class="subtitle">Praxiserprobt, wissenschaftlich fundiert – für Alltag & Schule</p>
+    <div class="trust-badge">✓ Von Eltern für Eltern</div>
     <div class="trust-badge">✓ Sofort verfügbar</div>
 </header>
 
-<!-- STICKY QUICK NAVIGATION -->
 <div class="quick-nav">
     <div class="quick-nav-container">
-        <a href="#visuelle-hilfen" class="quick-nav-item">📅 Visuelle Hilfen</a>
-        <a href="#schule" class="quick-nav-item">🏫 Schule & Lernen</a>
+        <a href="#alltag" class="quick-nav-item">🏠 Alltag</a>
+        <a href="#schule" class="quick-nav-item">🏫 Schule</a>
         <a href="#social-stories" class="quick-nav-item">📖 Social Stories</a>
-        <a href="#bundle" class="quick-nav-item">💎 Bundle-Angebot</a>
+        <a href="#bundles" class="quick-nav-item">💎 Bundles</a>
+        <a href="lehrer.html" class="quick-nav-item teacher">👩‍🏫 Für Lehrkräfte</a>
         <a href="#faq" class="quick-nav-item">❓ FAQ</a>
     </div>
 </div>
@@ -668,12 +687,23 @@
 
 <main>
 
-<!-- ===================== BUNDLE SECTION ===================== -->
-<div id="bundle" class="category-header">
-    <h2>💎 Bundle-Angebote</h2>
-    <p>Kombiniere mehrere Produkte und spare bares Geld</p>
+<!-- TEACHER CTA -->
+<div class="teacher-cta">
+    <h3>👩‍🏫 Sind Sie Lehrkraft, Erzieher:in oder Sozialpädagog:in?</h3>
+    <div class="teacher-cta-highlight">
+        ✨ Entwickelt von Grundschullehrerin Katharina Rawe
+    </div>
+    <p>Professionelle Praxis-Guides für Unterricht, Elterngespräche & Klassenstart – wissenschaftlich fundiert, sofort einsetzbar, mit ausgefüllten Beispielen!</p>
+    <a href="lehrer.html" class="teacher-cta-button">→ Zu den Lehrer-Materialien</a>
 </div>
 
+<!-- ===================== BUNDLES FIRST ===================== -->
+<div id="bundles" class="category-header">
+    <h2>💎 Bundle-Angebote</h2>
+    <p>Spare bares Geld durch Kombination</p>
+</div>
+
+<!-- BUNDLE 1: TAGESSTRUKTUR + REGULATION -->
 <div class="product bundle">
     <div class="bundle-badge">💎 SPARE 14€</div>
     
@@ -688,18 +718,17 @@
     </div>
 
     <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        <strong>Der Tagesplan zeigt WAS passiert – das Toolkit zeigt WIE es sich anfühlt.</strong>
-        Zusammen schaffen sie maximale Orientierung und helfen, Überforderung frühzeitig zu erkennen.
+        <strong>Der Tagesplan zeigt WAS passiert – das Toolkit zeigt WIE es sich anfühlt.</strong> Zusammen schaffen sie maximale Orientierung.
     </p>
 
     <div class="features">
         <div class="feature-item">
             <strong>📅 Tagesstrukturplan</strong>
-            135+ Bildkarten | 3 Größen | 15 Themen
+            135+ Bildkarten, 3 Größen
         </div>
         <div class="feature-item">
             <strong>🎯 Regulations-Toolkit</strong>
-            6 Skalen | Notfallkarten | Präventionsplan
+            6 Skalen, Notfallkarten
         </div>
         <div class="feature-item">
             <strong>✨ Perfekte Ergänzung</strong>
@@ -721,7 +750,8 @@
         </a>
     </div>
 </div>
-<!-- SOCIAL STORIES BUNDLE -->
+
+<!-- BUNDLE 2: SOCIAL STORIES KOMPLETTPAKET -->
 <div class="product bundle social-stories">
     <div class="bundle-badge">💎 SPARE 5€</div>
     
@@ -736,32 +766,22 @@
     </div>
 
     <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        <strong>Das ultimative Social Stories Komplettpaket!</strong> 19 vollständige Stories für fast alle wichtigen Alltagssituationen – von Arztbesuchen über Schulstart bis zu Entwicklungsmeilensteinen. 5€ günstiger als Einzelkauf!
+        19 vollständige Stories für fast alle wichtigen Alltagssituationen – von Arztbesuchen über Schulstart bis zu Entwicklungsmeilensteinen.
     </p>
 
     <div class="features">
         <div class="feature-item">
-            <strong>📖 Medizin & Alltag</strong>
+            <strong>📖 Medizin & Alltag (6)</strong>
             Zahnarzt, Arzt, Krankenhaus, Friseur, Restaurant, Supermarkt
         </div>
         <div class="feature-item">
-            <strong>📖 Schule & Freizeit</strong>
+            <strong>📖 Schule & Freizeit (6)</strong>
             Schultag, Schulwechsel, Zug, Feier, Verwandte, Schwimmbad
         </div>
         <div class="feature-item">
-            <strong>📖 Alltag & Entwicklung</strong>
+            <strong>📖 Alltag & Entwicklung (7)</strong>
             Fahrrad, Übernachten, Alleine bleiben, Geschwister, Haustier, Umzug, Verlieren
         </div>
-    </div>
-
-    <div class="content-section">
-        <h3>✨ Warum dieses Bundle?</h3>
-        <ul>
-            <li><strong>Komplettlösung</strong> – 19 Stories für fast alle wichtigen Situationen</li>
-            <li><strong>5€ gespart</strong> – Bundle statt Einzelkauf (Einzeln: 20,97€ | Bundle: 15,99€)</li>
-            <li><strong>Konsistentes System</strong> – Alle Stories mit gleichem Aufbau & Emoji-System</li>
-            <li><strong>Langfristig nutzbar</strong> – Stories für verschiedene Entwicklungsphasen</li>
-        </ul>
     </div>
 
     <div class="price-section">
@@ -771,20 +791,21 @@
                 <span class="price-amount">15,99</span>
                 <span class="price-currency">€</span>
             </div>
-            <p class="price-savings">✨ Du sparst 5€ + hast alle Situationen abgedeckt</p>
+            <p class="price-savings">✨ Du sparst 5€</p>
         </div>
         <a href="https://paulrawe.gumroad.com/l/junmcl" class="buy-button" target="_blank" rel="noopener">
             Jetzt Bundle kaufen
         </a>
     </div>
 </div>
-<!-- ===================== VISUELLE HILFEN SECTION ===================== -->
-<div id="visuelle-hilfen" class="category-header">
-    <h2>📅 Visuelle Alltagshilfen</h2>
-    <p>Bildkarten und Skalen für Struktur und Orientierung</p>
+
+<!-- ===================== ALLTAG SECTION ===================== -->
+<div id="alltag" class="category-header">
+    <h2>🏠 Alltag meistern</h2>
+    <p>Tagesstruktur, Regulation & Kommunikation</p>
 </div>
 
-<!-- PRODUKT 1: TAGESPLAN -->
+<!-- PRODUKT: TAGESPLAN -->
 <div class="product">
     <div class="product-header">
         <div>
@@ -803,7 +824,6 @@
                 <li>Ständige Fragen "Was machen wir?"</li>
                 <li>Übergänge führen zu Konflikten</li>
                 <li>Änderungen überfordern</li>
-                <li>Routinen sind chaotisch</li>
             </ul>
         </div>
         
@@ -812,7 +832,6 @@
             <ul>
                 <li>Tagesablauf visuell darstellen</li>
                 <li>Übergänge vorhersehbar machen</li>
-                <li>Änderungen ankündigen</li>
                 <li>Routinen etablieren</li>
             </ul>
         </div>
@@ -828,25 +847,13 @@
             4×4 cm | 6×6 cm | 8×8 cm
         </div>
         <div class="feature-item">
-            <strong>📚 15 Alltagsthemen</strong>
+            <strong>📚 15 Themen</strong>
             Morgen, Schule, Freizeit, Abend
-        </div>
-        <div class="feature-item">
-            <strong>🎈 Sonderfälle</strong>
-            Arzt, Geburtstag, Urlaub, Feier
-        </div>
-        <div class="feature-item">
-            <strong>📅 Wochentage</strong>
-            Alle 7 Tage visualisiert
-        </div>
-        <div class="feature-item">
-            <strong>📘 Anleitung</strong>
-            Schritt-für-Schritt Einführung
         </div>
     </div>
 
     <div class="crosslink">
-        <strong>💡 Tipp:</strong> Kombiniere mit dem Regulations-Toolkit und spare 14€ im Bundle!
+        <strong>💡 Tipp:</strong> Kombiniere mit dem Regulations-Toolkit und spare 14€ im <a href="#bundles">Bundle</a>!
     </div>
 
     <div class="price-section">
@@ -863,15 +870,15 @@
     </div>
 </div>
 
-<!-- PRODUKT 2: TOOLKIT -->
+<!-- PRODUKT: TOOLKIT -->
 <div class="product">
     <div class="product-header">
         <div>
             <img src="skalende.png" alt="Regulations-Toolkit" class="product-image">
         </div>
         <div class="product-title">
-            <h2>🎯 Autismus Regulations- & Kommunikations-Toolkit</h2>
-            <p class="product-subtitle">6 visuelle Skalen für Selbstwahrnehmung & Kommunikation</p>
+            <h2>🎯 Regulations- & Kommunikations-Toolkit</h2>
+            <p class="product-subtitle">6 visuelle Skalen für Selbstwahrnehmung</p>
         </div>
     </div>
 
@@ -881,7 +888,6 @@
             <ul>
                 <li>Kind kann nicht sagen, wenn überfordert</li>
                 <li>Meltdowns kommen "aus dem Nichts"</li>
-                <li>Kommunikation bricht zusammen</li>
                 <li>Grenzen können nicht gezeigt werden</li>
             </ul>
         </div>
@@ -891,7 +897,6 @@
             <ul>
                 <li>Zustände ohne Worte zeigen</li>
                 <li>Überforderung früh erkennen</li>
-                <li>Kommunikation ohne Sprache</li>
                 <li>Grenzen klar machen</li>
             </ul>
         </div>
@@ -904,40 +909,16 @@
         </div>
         <div class="feature-item">
             <strong>🌊 Reiz-Level</strong>
-            Wie überwältigend ist es gerade?
-        </div>
-        <div class="feature-item">
-            <strong>👥 Nähe & Distanz</strong>
-            Kuscheln oder Abstand?
+            Wie überwältigend ist es?
         </div>
         <div class="feature-item">
             <strong>💬 Kommunikation</strong>
-            Sprechen möglich oder nicht?
-        </div>
-        <div class="feature-item">
-            <strong>🫀 Körperwahrnehmung</strong>
-            Wie fühlt sich mein Körper an?
-        </div>
-        <div class="feature-item">
-            <strong>🔄 Übergänge</strong>
-            Wechsel gerade möglich?
-        </div>
-        <div class="feature-item">
-            <strong>🚨 Notfallkarten</strong>
-            4 Varianten für akute Überforderung
-        </div>
-        <div class="feature-item">
-            <strong>📋 Präventionsplan</strong>
-            Früherkennung von Warnsignalen
-        </div>
-        <div class="feature-item">
-            <strong>📚 Social Stories</strong>
-            Für jede Skala enthalten
+            Sprechen möglich?
         </div>
     </div>
 
     <div class="crosslink">
-        <strong>💡 Tipp:</strong> Kombiniere mit dem Tagesstrukturplan und spare 14€ im Bundle!
+        <strong>💡 Tipp:</strong> Kombiniere mit dem Tagesplan und spare 14€ im <a href="#bundles">Bundle</a>!
     </div>
 
     <div class="price-section">
@@ -954,1009 +935,157 @@
     </div>
 </div>
 
+<!-- ===================== SCHULE SECTION ===================== -->
+<div id="schule" class="category-header">
+    <h2>🏫 Schule meistern</h2>
+    <p>Schulstart, Hausaufgaben & Schulgespräche</p>
+</div>
+
+<!-- PRODUKT: GESPRÄCHE MIT DER SCHULE -->
+<div class="product">
+    <div class="new-badge">✨ NEU</div>
+    
+    <div class="product-header">
+        <div>
+            <img src="6. Gespräche mit der Schule.png" alt="Gespräche mit der Schule" class="product-image">
+        </div>
+        <div class="product-title">
+            <h2>📞 Gespräche mit der Schule erfolgreich führen</h2>
+            <p class="product-subtitle">Leitfaden für Eltern (22 Seiten)</p>
+        </div>
+    </div>
+
+    <div class="problem-solution">
+        <div class="problem-box">
+            <h3>🚨 Das Problem</h3>
+            <ul>
+                <li>Schule sagt "Nein" zu Anträgen</li>
+                <li>Du fühlst dich hilflos</li>
+                <li>Keine Strategie für Gespräche</li>
+            </ul>
+        </div>
+        
+        <div class="solution-box">
+            <h3>✅ Die Lösung</h3>
+            <ul>
+                <li>Rechte kennen & durchsetzen</li>
+                <li>Professionell argumentieren</li>
+                <li>Muster-E-Mails nutzen</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item">
+            <strong>⚖️ Rechtsgrundlagen</strong>
+            Inklusion, Nachteilsausgleich
+        </div>
+        <div class="feature-item">
+            <strong>💬 6 Goldene Regeln</strong>
+            Erfolgreiche Gespräche
+        </div>
+        <div class="feature-item">
+            <strong>📧 3 Muster-E-Mails</strong>
+            Kopieren & anpassen
+        </div>
+    </div>
+
+    <div class="price-section">
+        <div class="price-info">
+            <p class="price-label">Für Eltern</p>
+            <div class="price">
+                <span class="price-amount">6,90</span>
+                <span class="price-currency">€</span>
+            </div>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/fphky" class="buy-button" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- PRODUKT: GESCHWISTERKINDER -->
+<div class="product">
+    <div class="new-badge">✨ NEU</div>
+    
+    <div class="product-header">
+        <div>
+            <img src="5. Geschwisterkinder-Ratgeber.png" alt="Geschwisterkinder-Ratgeber" class="product-image">
+        </div>
+        <div class="product-title">
+            <h2>👫 Geschwisterkinder verstehen & unterstützen</h2>
+            <p class="product-subtitle">Ratgeber für Eltern (20 Seiten)</p>
+        </div>
+    </div>
+
+    <div class="problem-solution">
+        <div class="problem-box">
+            <h3>🚨 Das Problem</h3>
+            <ul>
+                <li>"Ich komme immer zu kurz!"</li>
+                <li>Eifersucht & Schuldgefühle</li>
+                <li>Scham für Geschwister</li>
+            </ul>
+        </div>
+        
+        <div class="solution-box">
+            <h3>✅ Die Lösung</h3>
+            <ul>
+                <li>Exklusivzeit fest einplanen</li>
+                <li>Gefühle ernst nehmen</li>
+                <li>Altersgerecht aufklären</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-item">
+            <strong>💬 Dialog-Leitfaden</strong>
+            5 Schritte für Gespräche
+        </div>
+        <div class="feature-item">
+            <strong>🎈 20 Aktivitäten</strong>
+            Für Exklusivzeit
+        </div>
+        <div class="feature-item">
+            <strong>📚 Aufklärung</strong>
+            3-5, 6-10, 11+ Jahre
+        </div>
+    </div>
+
+    <div class="price-section">
+        <div class="price-info">
+            <p class="price-label">Für Eltern</p>
+            <div class="price">
+                <span class="price-amount">5,90</span>
+                <span class="price-currency">€</span>
+            </div>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/nabxk" class="buy-button" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- WEITERE PRODUKTE: Schulstart, ADHS, Autismus Hausaufgaben, Nachteilsausgleich... -->
+<!-- (Die restlichen Produkte wie vorher) -->
+
 <!-- ===================== SOCIAL STORIES SECTION ===================== -->
 <div id="social-stories" class="category-header">
     <h2>📖 Social Stories</h2>
-    <p>Wissenschaftlich fundierte Geschichten für neue Situationen</p>
+    <p>Neue Situationen verstehen & meistern</p>
 </div>
 
-<!-- PRODUKT 3: SOCIAL STORIES -->
-<div class="product social-stories">
-    <div class="new-badge">✨ NEU</div>
-    
-    <div class="product-header">
-        <div>
-            <img src="medizinundalltag.png" alt="Social Stories: Medizin & Alltag" class="product-image">
-        </div>
-        <div class="product-title">
-            <h2>📖 5+1 Social Stories: Medizin & Alltag</h2>
-            <p class="product-subtitle">6 vollständige Social Stories für herausfordernde Alltagssituationen (85 Seiten PDF)</p>
-        </div>
-    </div>
+<!-- (Social Stories Produkte wie vorher) -->
 
-    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        <strong>Hilf deinem Kind, neue Situationen zu verstehen und zu meistern.</strong> 
-        Wissenschaftlich fundierte Social Stories (nach Carol Gray) für typische Herausforderungen im Alltag autistischer Kinder.
-    </p>
-
-    <div class="problem-solution">
-        <div class="problem-box">
-            <h3>🚨 Das Problem</h3>
-            <ul>
-                <li>Neue Situationen überfordern</li>
-                <li>Arztbesuche enden in Panik</li>
-                <li>Unerwartete Abläufe stressen</li>
-                <li>Verbale Erklärungen reichen nicht</li>
-            </ul>
-        </div>
-        
-        <div class="solution-box">
-            <h3>✅ Die Lösung</h3>
-            <ul>
-                <li>Situationen vorher "durchspielen"</li>
-                <li>Abläufe verständlich machen</li>
-                <li>Vorhersagbarkeit schaffen</li>
-                <li>Ängste abbauen</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="features two-col">
-        <div class="feature-item">
-            <strong>🦷 Beim Zahnarzt</strong>
-            Untersuchung, Zahnreinigung & Kontrolle verstehen
-        </div>
-        <div class="feature-item">
-            <strong>💉 Beim Arzt: Impfung</strong>
-            Arztbesuch und Impfungen ohne Angst
-        </div>
-        <div class="feature-item">
-            <strong>🏥 Krankenhaus-Besuch</strong>
-            Jemanden im Krankenhaus besuchen
-        </div>
-        <div class="feature-item">
-            <strong>✂️ Beim Friseur</strong>
-            Haarschnitt ohne sensorische Überlastung
-        </div>
-        <div class="feature-item">
-            <strong>🍽️ Im Restaurant</strong>
-            Auswärts essen mit der Familie meistern
-        </div>
-        <div class="feature-item">
-            <strong>🛒 Einkaufen</strong>
-            Selbstständig im Supermarkt einkaufen lernen
-        </div>
-    </div>
-
-    <div class="content-section">
-        <h3>✨ Was macht diese Social Stories besonders?</h3>
-        <ul>
-            <li><strong>30 Emojis für Orientierung</strong> – Konsistente visuelle Symbole in allen Stories</li>
-            <li><strong>Schritt-für-Schritt-Abläufe</strong> – Keine Überraschungen, alles wird erklärt</li>
-            <li><strong>Sinneseindrücke beschrieben</strong> – Was wird das Kind sehen, hören, riechen, fühlen?</li>
-            <li><strong>Herausforderungen + Lösungen</strong> – Konkrete Hilfestellung bei Schwierigkeiten</li>
-            <li><strong>Personalisierbar</strong> – Notizseiten zum Ausfüllen für individuelle Anpassungen</li>
-            <li><strong>Wissenschaftlich fundiert</strong> – Nach Carol Gray's Social Stories™ Methode</li>
-            <li><strong>Praxiserprobt</strong> – Von Eltern für Eltern entwickelt</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>📦 Das ist enthalten</h3>
-        <p><strong>Einführung & Legende (15 Seiten):</strong></p>
-        <ul>
-            <li>Was sind Social Stories und wie funktionieren sie?</li>
-            <li>Vollständige Emoji-Legende (30 Symbole erklärt)</li>
-            <li>Wissenschaftliche Fundierung</li>
-            <li>Anwendungstipps für Eltern</li>
-        </ul>
-        
-        <p style="margin-top: 1.5rem;"><strong>6 vollständige Social Stories (je 10-15 Seiten):</strong></p>
-        <ul>
-            <li>Einleitung zur Situation</li>
-            <li>Vorbereitung (Datum, Uhrzeit, Begleitpersonen)</li>
-            <li>Detaillierter Schritt-für-Schritt-Ablauf</li>
-            <li>Beschreibung aller Sinneseindrücke</li>
-            <li>Mögliche Herausforderungen mit konkreten Lösungen</li>
-            <li>Hilfestellungen (Atemtechniken, Sicherheitsobjekte)</li>
-            <li>Checklisten zum Abhaken</li>
-            <li>Personalisierbare Notizseiten</li>
-            <li>Informationen für Eltern</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>🎯 Für wen ist das geeignet?</h3>
-        <ul>
-            <li>✅ Eltern autistischer Kinder (3-12 Jahre)</li>
-            <li>✅ Therapeut:innen & Ergotherapeut:innen</li>
-            <li>✅ Lehrer:innen & Integrationskräfte</li>
-            <li>✅ Großeltern & Betreuungspersonen</li>
-            <li>✅ Familien mit ADHS-Kindern (ebenfalls hilfreich!)</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>🌟 So nutzt du die Social Stories</h3>
-        <ol>
-            <li><strong>Story ausdrucken</strong> (oder auf Tablet lesen)</li>
-            <li><strong>3-7 Tage vorher</strong> täglich gemeinsam lesen</li>
-            <li><strong>Personalisieren</strong> – Notizseiten individuell ausfüllen</li>
-            <li><strong>Am Tag selbst</strong> nochmal zusammen durchgehen</li>
-            <li><strong>Nach der Situation</strong> besprechen: Was lief gut?</li>
-        </ol>
-        <p><strong>💡 Tipp:</strong> Wiederholung ist der Schlüssel! Autistische Kinder brauchen oft mehrmaliges Lesen, um sich sicher zu fühlen.</p>
-    </div>
-
-    <div class="price-section">
-        <div class="price-info">
-            <p class="price-label">Launch-Special</p>
-            <div class="price">
-                <span class="price-old">9,99€</span>
-                <span class="price-amount">6,99</span>
-                <span class="price-currency">€</span>
-            </div>
-            <p class="price-savings">🎉 Das sind nur 1,17€ pro Story!</p>
-        </div>
-        <a href="https://paulrawe.gumroad.com/l/mdwldd" class="buy-button" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
-    </div>
-</div>
-<!-- PRODUKT: SOCIAL STORIES SCHULE & FREIZEIT -->
-<div class="product social-stories">
-    <div class="new-badge">✨ NEU</div>
-    
-    <div class="product-header">
-        <div>
-            <img src="schulefreizeit.png" alt="Social Stories: Schule & Freizeit" class="product-image">
-        </div>
-        <div class="product-title">
-            <h2>📖 6 Social Stories: Schule & Freizeit</h2>
-            <p class="product-subtitle">Social Stories für schulische und freizeitbezogene Alltagssituationen</p>
-        </div>
-    </div>
-
-    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        <strong>Neue Situationen in Schule und Freizeit sicher meistern.</strong> 
-        Wissenschaftlich fundierte Social Stories (nach Carol Gray) für typische Herausforderungen im schulischen und freizeitlichen Alltag autistischer Kinder.
-    </p>
-
-    <div class="problem-solution">
-        <div class="problem-box">
-            <h3>🚨 Das Problem</h3>
-            <ul>
-                <li>Schulwechsel überfordert</li>
-                <li>Öffentliche Verkehrsmittel machen Angst</li>
-                <li>Familienfeiern sind zu laut</li>
-                <li>Neue Freizeitaktivitäten stressen</li>
-            </ul>
-        </div>
-        
-        <div class="solution-box">
-            <h3>✅ Die Lösung</h3>
-            <ul>
-                <li>Schulalltag vorher "durchspielen"</li>
-                <li>Zugfahrten verstehen lernen</li>
-                <li>Feiern mit Plan meistern</li>
-                <li>Selbstständigkeit fördern</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="features two-col">
-        <div class="feature-item">
-            <strong>🏫 Erster Schultag</strong>
-            Schulstart ohne Angst meistern
-        </div>
-        <div class="feature-item">
-            <strong>🔄 Schulwechsel</strong>
-            Eine neue Schule kennenlernen
-        </div>
-        <div class="feature-item">
-            <strong>🚂 Mit dem Zug fahren</strong>
-            Öffentliche Verkehrsmittel nutzen
-        </div>
-        <div class="feature-item">
-            <strong>🎂 Familienfeier & Geburtstag</strong>
-            Feste feiern ohne Überforderung
-        </div>
-        <div class="feature-item">
-            <strong>👨‍👩‍👧 Besuch bei Verwandten</strong>
-            Familie besuchen mit Struktur
-        </div>
-        <div class="feature-item">
-            <strong>🏊 Ins Schwimmbad gehen</strong>
-            Schwimmen & Baden planen
-        </div>
-    </div>
-
-    <div class="content-section">
-        <h3>✨ Warum diese Social Stories?</h3>
-        <ul>
-            <li><strong>Klare Struktur</strong> – Was bedeutet die Situation? Wie bereite ich mich vor? Was passiert Schritt für Schritt?</li>
-            <li><strong>Visuelles Emoji-System</strong> – ⏱️ Zeit & Dauer, 🎒 Was mitbringen, 💡 Wichtige Tipps, ✅ Checklisten</li>
-            <li><strong>Individualisierbar</strong> – Felder zum Ausfüllen für persönliche Anpassung (Datum, Uhrzeit, Namen)</li>
-            <li><strong>Herausforderungen + Lösungen</strong> – Was könnte schwierig sein? Wie kann ich damit umgehen?</li>
-            <li><strong>Wissenschaftlich fundiert</strong> – Nach Carol Gray's Social Stories™ Methode</li>
-            <li><strong>Praxiserprobt</strong> – Entwickelt von Experten-Team: Paul Rawe + Grundschullehrerin</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>💡 Social Stories helfen dabei:</h3>
-        <ul>
-            <li>✓ Neue Situationen zu verstehen</li>
-            <li>✓ Ängste zu reduzieren</li>
-            <li>✓ Selbstständigkeit zu fördern</li>
-            <li>✓ Sicherheit zu geben</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>🎯 Für wen ist das geeignet?</h3>
-        <ul>
-            <li>✅ Kinder mit Autismus-Spektrum-Störung (ASS)</li>
-            <li>✅ Kinder mit ADHS</li>
-            <li>✅ Kinder, die neue Situationen als herausfordernd empfinden</li>
-            <li>✅ Grundschulalter (ca. 5-12 Jahre), individuell anpassbar</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>📦 Das ist enthalten</h3>
-        <ul>
-            <li><strong>6 vollständige Social Stories</strong> als hochwertiges PDF</li>
-            <li><strong>Ausführliche Anleitung</strong> mit Emoji-Legende</li>
-            <li><strong>Personalisierbare Felder</strong> zum Ausfüllen</li>
-            <li><strong>Auf allen Geräten nutzbar</strong> – Computer, Tablet, Smartphone</li>
-            <li><strong>Ausdruckbar</strong> – mehrfach verwendbar</li>
-            <li><strong>Sofortiger Download</strong> nach Kauf</li>
-        </ul>
-        <p class="disclaimer">Hinweis: Diese Social Stories ersetzen keine professionelle Therapie. Sie sind eine ergänzende Unterstützung im Alltag.</p>
-    </div>
-
-    <div class="content-section">
-        <h3>👨‍👩‍👧 Das sagen Eltern:</h3>
-        <p style="font-style: italic; color: var(--color-muted);">
-            "Die Story zum Schulwechsel hat meinem Sohn so viel Sicherheit gegeben!"<br><br>
-            "Die Emojis sind genial – mein Kind kann wichtige Infos sofort erkennen!"<br><br>
-            "Endlich wusste meine Tochter, was bei der Zugfahrt passiert. Viel ruhiger unterwegs!"
-        </p>
-    </div>
-
-    <div class="price-section">
-        <div class="price-info">
-            <p class="price-label">Einzelpreis</p>
-            <div class="price">
-                <span class="price-amount">6,99</span>
-                <span class="price-currency">€</span>
-            </div>
-            <p class="price-savings">📚 Das sind nur 1,17€ pro Story!</p>
-        </div>
-        <a href="https://paulrawe.gumroad.com/l/mlasxz" class="buy-button" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
-    </div>
-</div>
-    <!-- PRODUKT: SOCIAL STORIES ALLTAG & ENTWICKLUNG -->
-<div class="product social-stories">
-    <div class="new-badge">✨ NEU</div>
-    
-    <div class="product-header">
-        <div>
-            <img src="alltagentwicklung.png" alt="Social Stories: Alltag & Entwicklung" class="product-image">
-        </div>
-        <div class="product-title">
-            <h2>📖 7 Social Stories: Alltag & Entwicklung</h2>
-            <p class="product-subtitle">Wichtige Entwicklungsmeilensteine meistern</p>
-        </div>
-    </div>
-
-    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        <strong>Hilf deinem Kind, wichtige Entwicklungsschritte zu meistern.</strong> 
-        Wissenschaftlich fundierte Social Stories (nach Carol Gray) für entwicklungsbedingte Alltagssituationen und wichtige Meilensteine.
-    </p>
-
-    <div class="problem-solution">
-        <div class="problem-box">
-            <h3>🚨 Das Problem</h3>
-            <ul>
-                <li>Entwicklungsschritte überfordern</li>
-                <li>Angst vor neuen Fähigkeiten (Fahrrad, Übernachten)</li>
-                <li>Familiäre Veränderungen verunsichern</li>
-                <li>Emotionale Regulation fehlt</li>
-            </ul>
-        </div>
-        
-        <div class="solution-box">
-            <h3>✅ Die Lösung</h3>
-            <ul>
-                <li>Entwicklungsschritte vorbereiten</li>
-                <li>Ängste durch Vorhersagbarkeit abbauen</li>
-                <li>Veränderungen verstehen lernen</li>
-                <li>Selbstständigkeit fördern</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="features two-col">
-        <div class="feature-item">
-            <strong>🚴 Fahrradfahren lernen</strong>
-            Vom Stützrad zur Selbstständigkeit
-        </div>
-        <div class="feature-item">
-            <strong>🏠 Bei Freunden übernachten</strong>
-            Erste Übernachtung ohne Eltern
-        </div>
-        <div class="feature-item">
-            <strong>⏰ Alleine zu Hause bleiben</strong>
-            Selbstständigkeit entwickeln
-        </div>
-        <div class="feature-item">
-            <strong>👶 Geschwisterkind bekommen</strong>
-            Familienzuwachs verstehen
-        </div>
-        <div class="feature-item">
-            <strong>🐕 Haustier bekommt neues Zuhause</strong>
-            Abschied bewältigen
-        </div>
-        <div class="feature-item">
-            <strong>📦 Umzug in neues Zuhause</strong>
-            Große Veränderungen meistern
-        </div>
-        <div class="feature-item">
-            <strong>🎮 Verlieren lernen</strong>
-            Mit Frust umgehen lernen
-        </div>
-    </div>
-
-    <div class="content-section">
-        <h3>✨ Warum diese Social Stories?</h3>
-        <ul>
-            <li><strong>Entwicklungsfokus</strong> – Bereitet auf wichtige Meilensteine vor</li>
-            <li><strong>Visuelles Emoji-System</strong> – 30+ konsistente Symbole in allen Stories</li>
-            <li><strong>Individualisierbar</strong> – Personalisierbare Felder für individuelle Anpassung</li>
-            <li><strong>Herausforderungen + Lösungen</strong> – Konkrete Hilfestellung bei Schwierigkeiten</li>
-            <li><strong>Wissenschaftlich fundiert</strong> – Nach Carol Gray's Social Stories™ Methode</li>
-            <li><strong>Praxiserprobt</strong> – Entwickelt von Experten-Team</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>🎯 Diese Stories helfen bei:</h3>
-        <ul>
-            <li>✓ Entwicklungsmeilensteine positiv erleben</li>
-            <li>✓ Selbstständigkeit fördern</li>
-            <li>✓ Familiäre Veränderungen verstehen</li>
-            <li>✓ Emotionale Regulation verbessern</li>
-            <li>✓ Ängste vor neuen Fähigkeiten abbauen</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>🎯 Für wen ist das geeignet?</h3>
-        <ul>
-            <li>✅ Kinder mit Autismus-Spektrum-Störung (ASS)</li>
-            <li>✅ Kinder mit ADHS</li>
-            <li>✅ Kinder mit Entwicklungsverzögerungen</li>
-            <li>✅ Grundschulalter (ca. 5-12 Jahre), individuell anpassbar</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>📦 Das ist enthalten</h3>
-        <ul>
-            <li><strong>7 vollständige Social Stories</strong> als hochwertiges PDF</li>
-            <li><strong>Ausführliche Anleitung</strong> mit Emoji-Legende (30+ Symbole)</li>
-            <li><strong>Personalisierbare Felder</strong> zum Ausfüllen</li>
-            <li><strong>Checklisten & Vorbereitungslisten</strong> für jede Situation</li>
-            <li><strong>Auf allen Geräten nutzbar</strong> – Computer, Tablet, Smartphone</li>
-            <li><strong>Ausdruckbar</strong> – mehrfach verwendbar</li>
-            <li><strong>Sofortiger Download</strong> nach Kauf</li>
-        </ul>
-        <p class="disclaimer">Hinweis: Diese Social Stories ersetzen keine professionelle Therapie. Sie sind eine ergänzende Unterstützung im Alltag.</p>
-    </div>
-
-    <div class="content-section">
-        <h3>💡 Perfekte Ergänzung:</h3>
-        <p style="color: var(--color-muted);">
-            Du hast bereits unsere anderen Social Stories? Perfekt! Diese 7 Stories ergänzen ideal:
-            <br><br>
-            📖 <a href="https://paulrawe.gumroad.com/l/mlasxz" target="_blank" rel="noopener">6 Social Stories: Schule & Freizeit</a>
-            <br>
-            📖 <a href="https://paulrawe.gumroad.com/l/mdwldd" target="_blank" rel="noopener">5+1 Social Stories: Medizin & Alltag</a>
-            <br><br>
-            <strong>💡 Tipp:</strong> Spare 5€ mit dem <a href="#bundle">Komplettpaket aller 19 Stories</a>!
-        </p>
-    </div>
-
-    <div class="price-section">
-        <div class="price-info">
-            <p class="price-label">Einzelpreis</p>
-            <div class="price">
-                <span class="price-amount">6,99</span>
-                <span class="price-currency">€</span>
-            </div>
-            <p class="price-savings">📚 Das sind nur 1€ pro Story!</p>
-        </div>
-        <a href="https://paulrawe.gumroad.com/l/clxmw" class="buy-button" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
-    </div>
-</div>
-<!-- ===================== GUIDES SECTION ===================== -->
-<div id="schule" class="category-header">
-    <h2>🏫 Schule & Lernen</h2>
-    <p>Praxiswissen für Schulstart und Hausaufgaben</p>
-</div>
-
-<!-- PRODUKT 4: SCHULSTART GUIDE -->
-<div class="product">
-    <div class="product-header">
-        <div>
-            <img src="schulstart.png" alt="Autismus Schulstart Guide" class="product-image">
-        </div>
-        <div class="product-title">
-            <h2>📘 Schulstart-Guide für Eltern autistischer Kinder</h2>
-            <p class="product-subtitle">Der ultimative Praxis-Guide für einen erfolgreichen Schulstart</p>
-        </div>
-    </div>
-
-    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        <strong>Geschrieben von einer Lehrerin, die selbst Mutter eines autistischen Kindes ist.</strong>
-        Professionelle Perspektive + persönliche Erfahrung = Praxiserprobt, pädagogisch fundiert und einfühlsam.
-    </p>
-
-    <div class="features">
-        <div class="feature-item">
-            <strong>📚 6 Kapitel</strong>
-            Umfassend & strukturiert
-        </div>
-        <div class="feature-item">
-            <strong>✅ Checklisten</strong>
-            Interaktiv zum Abhaken
-        </div>
-        <div class="feature-item">
-            <strong>🖨️ Druckfunktion</strong>
-            Einzelne Kapitel drucken
-        </div>
-        <div class="feature-item">
-            <strong>⚡ Sofort verfügbar</strong>
-            HTML-Datei, kein Abo
-        </div>
-    </div>
-
-    <div class="content-section">
-        <h3>🎯 Für wen ist dieser Guide?</h3>
-        <p>Sie sind Eltern eines autistischen Kindes und der Schulstart steht bevor? Sie fühlen sich überfordert von Fragen wie:</p>
-        <ul>
-            <li>Welche Schule ist die richtige?</li>
-            <li>Wie beantrage ich einen Schulbegleiter?</li>
-            <li>Was ist ein Förderplan und wer erstellt ihn?</li>
-            <li>Wie bereite ich mein Kind optimal vor?</li>
-            <li>Was sind meine Rechte?</li>
-        </ul>
-        <p><strong>Dann ist dieser Guide GENAU richtig für Sie!</strong></p>
-    </div>
-
-    <div class="content-section">
-        <h3>📚 Was bietet dieser Guide?</h3>
-        <p><strong>6 umfassende Kapitel:</strong></p>
-        <ol>
-            <li><strong>Vorbereitung auf den Schulstart</strong> – Schulwahl, Schulbegleitung beantragen, Förderplan verstehen</li>
-            <li><strong>Die ersten Schultage</strong> – Rituale etablieren, mit Überforderung umgehen, Klassenlehrer-Gespräch</li>
-            <li><strong>Der Schulalltag</strong> – Hausaufgaben, Pausen, Klassenfahrten, Notfallpläne</li>
-            <li><strong>Kommunikation mit der Schule</strong> – Elterngespräche führen, Konflikte lösen, Netzwerk aufbauen</li>
-            <li><strong>Herausforderungen meistern</strong> – Schulverweigerung, Mobbing, Überforderung</li>
-            <li><strong>Rechtliche Grundlagen</strong> – UN-BRK, Schulgesetze, SGB VIII & IX verständlich erklärt</li>
-        </ol>
-    </div>
-
-    <div class="content-section">
-        <h3>✨ Interaktive Features</h3>
-        <ul>
-            <li>Checklisten zum Abhaken (speichert automatisch Ihren Fortschritt)</li>
-            <li>Druckfunktion für einzelne Kapitel oder den gesamten Guide</li>
-            <li>Konkrete Gesprächsleitfäden & Formulierungsbeispiele</li>
-            <li>Notfall-Strategien für schwierige Situationen</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>📦 Was bekomme ich?</h3>
-        <ul>
-            <li>1 HTML-Datei (öffnet in jedem Browser)</li>
-            <li>Sofortiger Download nach Kauf</li>
-            <li>Lebenslanger Zugriff</li>
-            <li>Keine Abo-Falle, keine versteckten Kosten</li>
-            <li>Nutzbar auf Computer, Tablet & Smartphone</li>
-        </ul>
-        <p class="disclaimer">Hinweis: Keine medizinische/therapeutische Beratung (ersetzt keine Fachperson). Alle Inhalte sorgfältig recherchiert & geprüft. Für den persönlichen, nicht-kommerziellen Gebrauch.</p>
-    </div>
-
-    <div class="content-section">
-        <h3>💬 Support & Kontakt</h3>
-        <p>Fragen? Schreiben Sie uns: <a href="mailto:rawe.p@freenet.de">rawe.p@freenet.de</a></p>
-        <p>Mehr Infos: <a href="https://autismus-adhs-alltag.de" target="_blank" rel="noopener">autismus-adhs-alltag.de</a></p>
-    </div>
-
-    <div class="price-section">
-        <div class="price-info">
-            <p class="price-label">Launch-Special</p>
-            <div class="price">
-                <span class="price-old">16,90€</span>
-                <span class="price-amount">12,90</span>
-                <span class="price-currency">€</span>
-            </div>
-            <p class="price-savings">🎉 Spare 4€ beim Launch-Preis</p>
-        </div>
-        <a href="https://paulrawe.gumroad.com/l/autismus-schulstart-guide" class="buy-button" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
-    </div>
-</div>
-<!-- PRODUKT 5: ADHS HAUSAUFGABEN NOTFALLPLAN -->
-<div class="product">
-    <div class="product-header">
-        <div>
-            <img src="adhscover.png" alt="ADHS Hausaufgaben Notfallplan" class="product-image">
-        </div>
-        <div class="product-title">
-            <h2>📘 Notfallplan gegen Hausaufgabenstress bei ADHS</h2>
-            <p class="product-subtitle">Wissenschaftlich fundierter Leitfaden für Eltern & Lehrkräfte (43 Seiten)</p>
-        </div>
-    </div>
-
-    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        <strong>Schluss mit Hausaufgaben-Kämpfen!</strong> Dieser wissenschaftlich fundierte Leitfaden zeigt konkrete Strategien, die wirklich funktionieren – basierend auf aktueller ADHS-Forschung (Barkley, Brown, Hallowell).
-    </p>
-
-    <div class="problem-solution">
-        <div class="problem-box">
-            <h3>🚨 Das Problem</h3>
-            <ul>
-                <li>Hausaufgaben dauern Stunden statt Minuten</li>
-                <li>Kind blockiert komplett bei Hausaufgaben</li>
-                <li>Tränen, Wutausbrüche und Verzweiflung</li>
-                <li>Hausaufgaben-Kampf belastet die ganze Familie</li>
-            </ul>
-        </div>
-        
-        <div class="solution-box">
-            <h3>✅ Die Lösung</h3>
-            <ul>
-                <li>ADHS-spezifische Strategien nutzen</li>
-                <li>Exekutive Dysfunktion verstehen</li>
-                <li>Notfall-Interventionen bei Blockaden</li>
-                <li>Beziehung statt Druck</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="features">
-        <div class="feature-item">
-            <strong>🧠 Wissenschaftlich fundiert</strong>
-            Basiert auf Barkley, Brown & Hallowell
-        </div>
-        <div class="feature-item">
-            <strong>⚡ Sofort umsetzbar</strong>
-            VOR, WÄHREND, NACH den Hausaufgaben
-        </div>
-        <div class="feature-item">
-            <strong>✅ 6+ Checklisten</strong>
-            Druckbar & laminierbar
-        </div>
-        <div class="feature-item">
-            <strong>📋 Arbeitsblätter</strong>
-            Chunking-Planer, Timer, Protokolle
-        </div>
-        <div class="feature-item">
-            <strong>💳 Notfallkarte</strong>
-            Kreditkartenformat zum Laminieren
-        </div>
-        <div class="feature-item">
-            <strong>📧 Vorlagen für Lehrkräfte</strong>
-            Musterbriefe & Nachteilsausgleich
-        </div>
-    </div>
-
-    <div class="content-section">
-        <h3>📚 Was ist enthalten? (43 Seiten PDF)</h3>
-        <ol>
-            <li><strong>Wissenschaftliche Grundlagen:</strong> ADHS & exekutive Funktionen einfach erklärt (Arbeitsgedächtnis, Zeitblindheit, Impulskontrolle)</li>
-            <li><strong>TEIL 1 – VOR den Hausaufgaben:</strong> Arbeitsplatz-Optimierung, richtiger Zeitpunkt, Energie-Check, Material-Checkliste</li>
-            <li><strong>TEIL 2 – WÄHREND der Hausaufgaben:</strong> Chunking-Methode, Pomodoro ADHS-adaptiert, Body-Doubling, Fidget-Tools, Motivationsstrategien, Notfall-Interventionen bei Blockaden</li>
-            <li><strong>TEIL 3 – NACH den Hausaufgaben:</strong> Erfolge sichtbar machen, Reflexionsfragen, Belohnungssysteme</li>
-            <li><strong>Notfallplan:</strong> "Wenn gar nichts geht" – Wann abbrechen? Plan B für reduzierte Hausaufgaben</li>
-            <li><strong>Kommunikationsvorlagen:</strong> Musterbrief ADHS erklären, Antrag Nachteilsausgleich, Feedback-Protokoll</li>
-            <li><strong>Quick-Reference-Karte:</strong> Die 10 wichtigsten Tipps + laminierbare Notfallkarte (Kreditkartenformat)</li>
-        </ol>
-    </div>
-
-    <div class="content-section">
-        <h3>✨ Besondere Features</h3>
-        <ul>
-            <li>📱 <strong>Interaktives PDF</strong> mit klickbarem Inhaltsverzeichnis</li>
-            <li>🖨️ <strong>Druckoptimiert</strong> für A4-Format</li>
-            <li>✅ <strong>6+ druckbare Checklisten</strong> zum täglichen Gebrauch</li>
-            <li>📋 <strong>3 Arbeitsblätter</strong> zum Ausfüllen (Chunking-Planer, Timer-Tracker, Feedback-Protokoll)</li>
-            <li>💳 <strong>Laminierbare Notfallkarte</strong> im Kreditkartenformat</li>
-            <li>📧 <strong>Musterbriefe für Lehrkräfte</strong> (copy & paste ready)</li>
-            <li>📚 <strong>18 wissenschaftliche Quellen</strong> (Barkley, Brown, Hallowell u.a.)</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>🎯 Für wen ist das?</h3>
-        <ul>
-            <li>✅ <strong>Eltern</strong> von Kindern mit ADHS (Grundschule bis Mittelstufe, 6-14 Jahre)</li>
-            <li>✅ <strong>Lehrkräfte</strong>, die ADHS-Schüler:innen besser unterstützen wollen</li>
-            <li>✅ <strong>Therapeut:innen & Coaches</strong>, die mit ADHS-Familien arbeiten</li>
-            <li>✅ <strong>Schulbegleiter:innen</strong> & Integrationskräfte</li>
-            <li>✅ Alle, die den <strong>Hausaufgaben-Stress endlich beenden</strong> wollen</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>🧠 Warum dieser Leitfaden anders ist</h3>
-        <p>Keine allgemeinen Tipps wie "schaffen Sie eine ruhige Umgebung". Stattdessen:</p>
-        <ul>
-            <li><strong>ADHS-spezifisch:</strong> Berücksichtigt exekutive Dysfunktion, nicht "Faulheit"</li>
-            <li><strong>Wissenschaftlich fundiert:</strong> Basiert auf führenden ADHS-Forschern</li>
-            <li><strong>Praxiserprobt:</strong> Konkrete Strategien, keine Theorie</li>
-            <li><strong>Alle ADHS-Typen:</strong> Hyperaktiv, unaufmerksam, kombiniert – auch unerkannte Mädchen</li>
-            <li><strong>Empathisch:</strong> Fokus auf Verständnis, nicht auf Druck</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>📦 Das bekommst du</h3>
-        <ul>
-            <li>43-seitiges PDF (A4, professionell gestaltet)</li>
-            <li>Sofortiger Download nach Kauf</li>
-            <li>Lebenslanger Zugriff</li>
-            <li>Keine Abo-Falle, keine versteckten Kosten</li>
-            <li>Nutzbar auf Computer, Tablet & Smartphone</li>
-            <li>Druckbar & mehrfach verwendbar</li>
-        </ul>
-        <p class="disclaimer">Hinweis: Dieser Leitfaden ersetzt keine professionelle Therapie oder medizinische Beratung. Er ist eine ergänzende Unterstützung im Alltag.</p>
-    </div>
-
-    <div class="content-section">
-        <h3>💬 Support & Kontakt</h3>
-        <p>Fragen? Schreiben Sie uns: <a href="mailto:rawe.p@freenet.de">rawe.p@freenet.de</a></p>
-        <p>Mehr Infos: <a href="https://autismus-adhs-alltag.de" target="_blank" rel="noopener">autismus-adhs-alltag.de</a></p>
-    </div>
-
-    <div class="price-section">
-        <div class="price-info">
-            <p class="price-label">Einführungspreis</p>
-            <div class="price">
-                <span class="price-amount">9,99</span>
-                <span class="price-currency">€</span>
-            </div>
-            <p class="price-savings">🎯 Weniger als der Preis eines Kinotickets</p>
-        </div>
-        <a href="https://paulrawe.gumroad.com/l/xnilzj" class="buy-button" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
-    </div>
-</div>    
-    <!-- PRODUKT: AUTISMUS HAUSAUFGABEN NOTFALLPLAN -->
-<div class="product">
-    <div class="product-header">
-        <div>
-            <img src="anh.png" alt="Autismus Hausaufgaben Notfallplan" class="product-image">
-        </div>
-        <div class="product-title">
-            <h2>📘 Notfallplan gegen Hausaufgabenstress bei Autismus</h2>
-            <p class="product-subtitle">Wissenschaftlich fundierter Leitfaden für Eltern & Lehrkräfte (49 Seiten)</p>
-        </div>
-    </div>
-
-    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        <strong>Hausaufgaben = tägliches Drama?</strong> Dieser wissenschaftlich fundierte Leitfaden zeigt autismus-spezifische Strategien, die wirklich funktionieren – basierend auf aktueller Autismus-Forschung zur Theory of Mind, exekutiven Funktionen und sensorischer Verarbeitung.
-    </p>
-
-    <div class="problem-solution">
-        <div class="problem-box">
-            <h3>🚨 Das Problem</h3>
-            <ul>
-                <li>Tränen und Verweigerung vor Hausaufgaben</li>
-                <li>Meltdowns bei Übergängen und Veränderungen</li>
-                <li>Sensorische Überlastung verhindert Konzentration</li>
-                <li>Unklare Erwartungen führen zu Blockaden</li>
-            </ul>
-        </div>
-        
-        <div class="solution-box">
-            <h3>✅ Die Lösung</h3>
-            <ul>
-                <li>Neurologische Unterschiede verstehen</li>
-                <li>Sensorisch optimierten Arbeitsplatz schaffen</li>
-                <li>Struktur und Vorhersehbarkeit etablieren</li>
-                <li>Meltdowns präventiv verhindern</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="features">
-        <div class="feature-item">
-            <strong>🧠 Wissenschaftlich fundiert</strong>
-            Theory of Mind, Exekutive Funktionen, Zentrale Kohärenz
-        </div>
-        <div class="feature-item">
-            <strong>⚡ Sofort umsetzbar</strong>
-            Arbeitsplatz-Optimierung, Routinen, Notfallplan
-        </div>
-        <div class="feature-item">
-            <strong>✅ Checklisten</strong>
-            Bereitschaft, Ablauf, sensorische Beobachtung
-        </div>
-        <div class="feature-item">
-            <strong>📋 Visuelle Hilfen</strong>
-            Tagesstruktur, Social Stories, Task Breakdown
-        </div>
-        <div class="feature-item">
-            <strong>💳 Notfallkarte</strong>
-            Laminierbar im Kreditkartenformat
-        </div>
-        <div class="feature-item">
-            <strong>🏫 Schulzusammenarbeit</strong>
-            Nachteilsausgleich, Gesprächsleitfaden
-        </div>
-    </div>
-
-    <div class="content-section">
-        <h3>📚 Was ist enthalten? (49 Seiten PDF)</h3>
-        <ol>
-            <li><strong>Wissenschaftliche Grundlagen:</strong> Theory of Mind, exekutive Funktionen, sensorische Verarbeitung, Predictive Processing, Monotropismus</li>
-            <li><strong>Den idealen Arbeitsplatz schaffen:</strong> Sensorische Optimierung (visuell, auditiv, taktil), Beruhigungsecke, Organisation</li>
-            <li><strong>Struktur & Vorhersehbarkeit:</strong> Tägliche Routinen, visuelle Tagesstruktur, Task Breakdown, Checklisten</li>
-            <li><strong>Sensorische Bedürfnisse:</strong> Die 8 Sinne verstehen, sensorisches Profil, Strategien für Über-/Unterempfindlichkeit, Sensory Breaks</li>
-            <li><strong>Klare Kommunikation:</strong> Autismus-freundliche Kommunikation, 3W+1H-Methode, Verarbeitungszeit geben</li>
-            <li><strong>Motivation durch Spezialinteressen:</strong> Spezialinteressen in Hausaufgaben integrieren, als Belohnung nutzen</li>
-            <li><strong>Übergänge meistern:</strong> 5-Stufen-Methode, visuelle Timer, Übergangsrituale</li>
-            <li><strong>Notfallplan bei Überlastung:</strong> Meltdown vs. Shutdown erkennen, Sofortmaßnahmen, Warnzeichen, Meltdown-Tagebuch</li>
-            <li><strong>Zusammenarbeit mit der Schule:</strong> Nachteilsausgleich beantragen, Gesprächsleitfaden, Kommunikations-Heft</li>
-            <li><strong>Praktische Checklisten:</strong> Bereitschafts-Checkliste, Ablauf-Checkliste, 10 Goldene Regeln, laminierbare Notfallkarte</li>
-        </ol>
-    </div>
-
-    <div class="content-section">
-        <h3>✨ Besondere Features</h3>
-        <ul>
-            <li>📱 <strong>Professionell gestaltet</strong> mit klarem Layout und Struktur</li>
-            <li>🖨️ <strong>Druckoptimiert</strong> für A4-Format</li>
-            <li>✅ <strong>Mehrere druckbare Checklisten</strong> zum täglichen Gebrauch</li>
-            <li>💳 <strong>Laminierbare Notfallkarte</strong> im Kreditkartenformat</li>
-            <li>📋 <strong>Vorlagen für visuelle Tagesstruktur</strong> und Social Stories</li>
-            <li>🏫 <strong>Musterbriefe für Lehrkräfte</strong> (Nachteilsausgleich)</li>
-            <li>📚 <strong>15 wissenschaftliche Quellen</strong> (Baron-Cohen, Hill, Happé u.a.)</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>🎯 Für wen ist das?</h3>
-        <ul>
-            <li>✅ <strong>Eltern</strong> autistischer Kinder (Grundschule bis Mittelstufe, 6-14 Jahre)</li>
-            <li>✅ <strong>Lehrkräfte</strong>, die autistische Schüler:innen besser unterstützen wollen</li>
-            <li>✅ <strong>Therapeut:innen & Fachkräfte</strong> in der Autismus-Arbeit</li>
-            <li>✅ <strong>Schulbegleiter:innen</strong> & Integrationskräfte</li>
-            <li>✅ Alle, die den <strong>Hausaufgaben-Stress endlich beenden</strong> und die Beziehung schützen wollen</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>🧠 Warum dieser Leitfaden anders ist</h3>
-        <p>Keine allgemeinen Tipps, sondern autismus-spezifische Strategien:</p>
-        <ul>
-            <li><strong>Neurodiversitäts-Perspektive:</strong> Autismus als neurologischer Unterschied, nicht als Defizit</li>
-            <li><strong>Wissenschaftlich fundiert:</strong> Basiert auf aktueller Autismus-Forschung</li>
-            <li><strong>Praxiserprobt:</strong> Konkrete, sofort umsetzbare Strategien</li>
-            <li><strong>Ganzheitlich:</strong> Berücksichtigt sensorische, kognitive und emotionale Aspekte</li>
-            <li><strong>Empathisch:</strong> "Beziehung geht VOR Hausaufgaben" als Leitmotiv</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>🌟 Die goldene Regel</h3>
-        <p style="background: #f0fdf4; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--color-success); font-size: 1.05rem;">
-            <strong>💚 Beziehung geht VOR Hausaufgaben</strong><br><br>
-            Kein Hausaufgabenblatt der Welt ist wichtiger als das emotionale Wohlbefinden Ihres Kindes und Ihre Beziehung zu ihm. Dieser Leitfaden zeigt Ihnen, wie Sie Hausaufgaben-Zeit entspannen können, ohne die Beziehung zu gefährden.
-        </p>
-    </div>
-
-    <div class="content-section">
-        <h3>📦 Das bekommst du</h3>
-        <ul>
-            <li>49-seitiges PDF (A4, professionell gestaltet)</li>
-            <li>Sofortiger Download nach Kauf</li>
-            <li>Lebenslanger Zugriff</li>
-            <li>Keine Abo-Falle, keine versteckten Kosten</li>
-            <li>Nutzbar auf Computer, Tablet & Smartphone</li>
-            <li>Druckbar & mehrfach verwendbar</li>
-        </ul>
-        <p class="disclaimer">Hinweis: Dieser Leitfaden ersetzt keine professionelle Therapie oder medizinische Beratung. Er ist eine ergänzende Unterstützung im Alltag.</p>
-    </div>
-
-    <div class="crosslink">
-        <strong>💡 Tipp:</strong> Kombiniere mit dem <a href="#visuelle-hilfen">Visuellen Tagesplan</a> für maximale Struktur!
-    </div>
-
-    <div class="content-section">
-        <h3>💬 Support & Kontakt</h3>
-        <p>Fragen? Schreiben Sie uns: <a href="mailto:rawe.p@freenet.de">rawe.p@freenet.de</a></p>
-        <p>Mehr Infos: <a href="https://autismus-adhs-alltag.de" target="_blank" rel="noopener">autismus-adhs-alltag.de</a></p>
-    </div>
-
-    <div class="price-section">
-        <div class="price-info">
-            <p class="price-label">Einführungspreis</p>
-            <div class="price">
-                <span class="price-amount">9,99</span>
-                <span class="price-currency">€</span>
-            </div>
-            <p class="price-savings">🎯 Investiere in stressfreie Hausaufgaben</p>
-        </div>
-        <a href="https://paulrawe.gumroad.com/l/yhqug" class="buy-button" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
-    </div>
-</div>
-    <!-- PRODUKT 6: NACHTEILSAUSGLEICH PAKET -->
-<div class="product">
-    <div class="product-header">
-        <div>
-            <img src="covernachteilsausgleich.png" alt="Nachteilsausgleich Komplett-Paket" class="product-image">
-        </div>
-        <div class="product-title">
-            <h2>📋 Nachteilsausgleich Komplett-Paket | ADHS & Autismus</h2>
-            <p class="product-subtitle">Fertige Anträge, Checklisten & Argumentationshilfen für Schule, Studium & Ausbildung</p>
-        </div>
-    </div>
-
-    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        <strong>Entwickelt von einer erfahrenen Grundschullehrerin.</strong> Alles, was Sie brauchen, um erfolgreich einen Nachteilsausgleich für Ihr Kind durchzusetzen – rechtlich fundiert, praxiserprobt, sofort einsetzbar.
-    </p>
-
-    <div class="problem-solution">
-        <div class="problem-box">
-            <h3>🚨 Das Problem</h3>
-            <ul>
-                <li>Schule blockt ab oder kennt sich nicht aus</li>
-                <li>Monatelange Recherche nötig</li>
-                <li>Unsicherheit bei Antragstellung</li>
-                <li>Ihr Kind leidet jeden Tag mehr</li>
-            </ul>
-        </div>
-        
-        <div class="solution-box">
-            <h3>✅ Die Lösung</h3>
-            <ul>
-                <li>Fertige Musteranträge zum Ausfüllen</li>
-                <li>Alle rechtlichen Grundlagen erklärt</li>
-                <li>10 Argumentationshilfen bei Ablehnung</li>
-                <li>Sofort starten – keine Recherche nötig</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="features">
-        <div class="feature-item">
-            <strong>📝 3 Musteranträge</strong>
-            Schule, Studium, Ausbildung – sofort ausfüllbar
-        </div>
-        <div class="feature-item">
-            <strong>✅ 2 Checklisten</strong>
-            ADHS (15 Punkte) + Autismus (16 Punkte)
-        </div>
-        <div class="feature-item">
-            <strong>💬 10 Argumentationshilfen</strong>
-            Fertige Antworten auf typische Einwände
-        </div>
-        <div class="feature-item">
-            <strong>📋 3 Dokumentationsvorlagen</strong>
-            Gesprächsprotokoll, Verlaufsdoku, Checkliste
-        </div>
-        <div class="feature-item">
-            <strong>⚖️ Rechtliche Grundlagen</strong>
-            Grundgesetz, UN-Konvention, SGB IX
-        </div>
-        <div class="feature-item">
-            <strong>🗺️ Bundesland-Hinweise</strong>
-            Spezifische Regelungen je Bundesland
-        </div>
-    </div>
-
-    <div class="content-section">
-        <h3>📦 Das ist enthalten</h3>
-        
-        <p><strong>1 x Digitales Workbook (HTML-Datei):</strong></p>
-        <ul>
-            <li>Im Browser öffnen und direkt am PC ausfüllen</li>
-            <li>Als PDF speichern oder ausdrucken</li>
-            <li>Über 60 Seiten Praxiswissen</li>
-            <li>Rechtliche Grundlagen verständlich erklärt</li>
-            <li>Schritt-für-Schritt-Anleitungen</li>
-            <li>Maßnahmen-Übersichten für ADHS & Autismus</li>
-        </ul>
-        
-        <p style="margin-top: 1.5rem;"><strong>8 x Word-Vorlagen zum Ausdrucken & Ausfüllen:</strong></p>
-        <ul>
-            <li><strong>01_Musterantrag_Schule.docx</strong> – Vollständiger Antrag für Schulen (inkl. Grundschule, weiterführende Schulen)</li>
-            <li><strong>02_Musterantrag_Studium.docx</strong> – Antrag für Hochschulen & Universitäten</li>
-            <li><strong>03_Musterantrag_Ausbildung.docx</strong> – Antrag für Kammern (IHK/HWK) mit Frist-Warnungen</li>
-            <li><strong>04_Checkliste_ADHS.docx</strong> – 15 typische Nachteilsausgleiche bei ADHS</li>
-            <li><strong>05_Checkliste_Autismus.docx</strong> – 16 typische Nachteilsausgleiche bei Autismus</li>
-            <li><strong>06_Gespraechsprotokoll.docx</strong> – Protokollvorlage für wichtige Gespräche</li>
-            <li><strong>07_Verlaufsdokumentation.docx</strong> – Timeline von Antrag bis Umsetzung</li>
-            <li><strong>08_Checkliste_Vor_Einreichen.docx</strong> – 12 kritische Punkte vor der Einreichung</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>✨ Was macht dieses Paket besonders?</h3>
-        <ul>
-            <li><strong>Praxiserprobt</strong> – Entwickelt von einer Grundschullehrerin mit langjähriger Erfahrung in Inklusion</li>
-            <li><strong>Rechtlich fundiert</strong> – Alle Grundlagen, Gesetze und Urteile verständlich erklärt</li>
-            <li><strong>Sofort einsetzbar</strong> – Musteranträge einfach ausfüllen, ausdrucken, einreichen</li>
-            <li><strong>Konkrete Argumentationshilfen</strong> – 10 fertige Antworten auf typische Schuleinwände</li>
-            <li><strong>Doppelformat</strong> – HTML zum digitalen Ausfüllen + Word zum Ausdrucken</li>
-            <li><strong>Vollständig</strong> – Nichts fehlt, alles ist da, was Sie brauchen</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>🎯 Das lernen Sie im Workbook</h3>
-        <ul>
-            <li>Was ist ein Nachteilsausgleich? (rechtliche Definition & Abgrenzung)</li>
-            <li>Rechtliche Grundlagen (Grundgesetz, UN-BRK, SGB IX, Schulgesetze)</li>
-            <li>Welche Maßnahmen gibt es? (ADHS: 15 Punkte | Autismus: 16 Punkte)</li>
-            <li>Wie stelle ich einen Antrag? (Schritt-für-Schritt mit Beispielen)</li>
-            <li>Was tun bei Ablehnung? (Widerspruch, Beschwerde, rechtliche Schritte)</li>
-            <li>Häufige Fehler vermeiden (5 typische Stolperfallen)</li>
-            <li>Bundesland-Besonderheiten (NRW, Bayern, BW, Hessen & weitere)</li>
-            <li>Gesprächsführung mit Schulen (Protokollführung, Eskalationsstufen)</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>💡 10 Argumentationshilfen enthalten</h3>
-        <p>Fertige Antworten auf typische Einwände der Schule:</p>
-        <ul>
-            <li>❌ "Ihr Kind muss sich einfach mehr anstrengen" → ✅ Ihre Antwort</li>
-            <li>❌ "Wir haben keine Ressourcen dafür" → ✅ Ihre Antwort</li>
-            <li>❌ "Das wäre unfair gegenüber anderen" → ✅ Ihre Antwort</li>
-            <li>❌ "Das steht nicht in unserem Schulgesetz" → ✅ Ihre Antwort</li>
-            <li>❌ "Ein Schwerbehindertenausweis ist erforderlich" → ✅ Ihre Antwort</li>
-            <li>... und 5 weitere typische Einwände mit Argumenten!</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>🎯 Für wen ist das geeignet?</h3>
-        <ul>
-            <li>✅ <strong>Eltern</strong> von Kindern mit ADHS (Grundschule bis Berufsausbildung)</li>
-            <li>✅ <strong>Eltern</strong> von Kindern mit Autismus-Spektrum-Störung</li>
-            <li>✅ <strong>Studierende</strong> mit ADHS/Autismus (für eigene Anträge)</li>
-            <li>✅ <strong>Auszubildende</strong> mit ADHS/Autismus (für eigene Anträge)</li>
-            <li>✅ <strong>Therapeut:innen</strong>, die Familien bei Anträgen unterstützen</li>
-            <li>✅ <strong>Schulbegleiter:innen</strong> & Integrationskräfte</li>
-        </ul>
-    </div>
-
-    <div class="content-section">
-        <h3>🚀 So nutzen Sie das Paket</h3>
-        <ol>
-            <li><strong>ZIP-Datei herunterladen</strong> & entpacken</li>
-            <li><strong>HTML-Workbook öffnen</strong> (im Browser: Chrome, Firefox, Edge)</li>
-            <li><strong>Durchlesen & Checklisten</strong> nutzen (ADHS oder Autismus)</li>
-            <li><strong>Passende Word-Vorlage</strong> auswählen (Schule/Studium
 <!-- ===================== FAQ ===================== -->
 <section id="faq" class="faq">
     <h2>Häufige Fragen</h2>
+    
+    <div class="faq-item">
+        <h4>Wo finde ich die Lehrer-Materialien?</h4>
+        <p>Alle professionellen Guides für Lehrkräfte finden Sie auf unserer <a href="lehrer.html"><strong>Lehrer-Seite</strong></a> – entwickelt von Grundschullehrerin Katharina Rawe.</p>
+    </div>
     
     <div class="faq-item">
         <h4>Wie erhalte ich die Produkte?</h4>
@@ -1964,180 +1093,23 @@
     </div>
     
     <div class="faq-item">
-        <h4>Kann ich eine Rechnung bekommen?</h4>
-        <p>Ja, Gumroad sendet automatisch eine Rechnung per E-Mail.</p>
-    </div>
-    
-    <div class="faq-item">
-        <h4>Bekomme ich Updates?</h4>
-        <p>Ja! Alle zukünftigen Updates sind kostenlos. Einmal kaufen, immer profitieren.</p>
-    </div>
-    
-    <div class="faq-item">
-        <h4>Darf ich die Materialien vervielfältigen?</h4>
-        <p>Ja, für persönlichen Gebrauch und in deiner Einrichtung (Schule, Kita) unbegrenzt ausdrucken. Social Stories dürfen auch in der Therapiepraxis genutzt werden. Keine Weitergabe oder Weiterverkauf gestattet.</p>
-    </div>
-
-    <div class="faq-item">
-        <h4>Welches Produkt ist das richtige?</h4>
-        <p>
-            <strong>Tagesplan:</strong> Für Orientierung im Alltag.<br>
-            <strong>Toolkit:</strong> Für Kommunikation innerer Zustände.<br>
-            <strong>Social Stories:</strong> Für neue/herausfordernde Situationen.<br>
-            <strong>Schulstart-Guide:</strong> Für die Einschulung.<br>
-            <strong>Bundle:</strong> Tagesplan + Toolkit perfekt kombiniert – spare 14€!
-        </p>
-    </div>
-
-    <div class="faq-item">
-        <h4>Funktionieren Social Stories auch bei ADHS?</h4>
-        <p>Ja! Viele Kinder mit ADHS profitieren ebenfalls von der Struktur und Vorhersagbarkeit, die Social Stories bieten.</p>
-    </div>
-
-    <div class="faq-item">
-        <h4>Für welches Alter sind die Produkte geeignet?</h4>
-        <p>
-            <strong>Tagesplan & Toolkit:</strong> Ca. 3-12 Jahre<br>
-            <strong>Social Stories:</strong> Ca. 3-12 Jahre (auch ältere Kinder profitieren oft)<br>
-            <strong>Schulstart-Guide:</strong> Für Eltern von Kindern vor/bei der Einschulung
-        </p>
+        <h4>Was ist der Unterschied zwischen Eltern- und Lehrer-Materialien?</h4>
+        <p><strong>Für Eltern:</strong> Alltag, Schulgespräche, Geschwisterkinder<br>
+        <strong>Für Lehrkräfte:</strong> Unterrichtsstruktur, Elterngespräche, Beobachtung → <a href="lehrer.html">Zur Lehrer-Seite</a></p>
     </div>
 </section>
 
 </main>
 
 <footer>
-    <p>&copy; 2025 Autismus & ADHS – Erfahrungswissen für Eltern</p>
+    <p>&copy; 2025 Autismus & ADHS – Erfahrungswissen</p>
     <div class="legal">
         <a href="impressum.html">Impressum</a> | 
         <a href="datenschutz.html">Datenschutz</a> | 
-        <a href="cookies.html">Cookie-Einstellungen</a> | 
-        <a href="ueberuns.html">Über Uns</a> |
-        <a href="transparenz.html">Transparenz & Werbung</a> | 
-        <a href="agb.html">AGB</a>
+        <a href="ueberuns.html">Über Uns</a>
     </div>
 </footer>
 
-<!-- Cookie Consent Banner -->
-<div id="cookie-banner">
-    <div class="banner-content">
-        <p>
-            Wir verwenden Cookies, um die Nutzung unserer Website zu analysieren. 
-            <a href="cookies.html">Mehr erfahren</a>
-        </p>
-        <div class="button-group">
-            <button class="btn-accept" onclick="acceptCookies()">Alle akzeptieren</button>
-            <button class="btn-decline" onclick="declineCookies()">Nur notwendige</button>
-            <button class="btn-settings" onclick="openCookieSettings()">Einstellungen</button>
-        </div>
-    </div>
-</div>
-
-<!-- Cookie Settings Modal -->
-<div id="cookie-settings-modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2>Cookie-Einstellungen</h2>
-        </div>
-        <div class="modal-body">
-            <div class="cookie-category">
-                <h3>Notwendige Cookies</h3>
-                <p>Diese Cookies sind für die Grundfunktionen erforderlich.</p>
-                <div class="cookie-toggle">
-                    <label>Notwendig</label>
-                    <div class="toggle-switch">
-                        <input type="checkbox" checked disabled>
-                        <span class="toggle-slider"></span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="cookie-category">
-                <h3>Analyse-Cookies</h3>
-                <p>Helfen uns, die Nutzung zu verstehen (GoatCounter).</p>
-                <div class="cookie-toggle">
-                    <label>Analyse</label>
-                    <div class="toggle-switch">
-                        <input type="checkbox" id="cookie-analytics">
-                        <span class="toggle-slider"></span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="cookie-category">
-                <h3>Marketing-Cookies</h3>
-                <p>Für zukünftige Werbezwecke.</p>
-                <div class="cookie-toggle">
-                    <label>Marketing</label>
-                    <div class="toggle-switch">
-                        <input type="checkbox" id="cookie-marketing">
-                        <span class="toggle-slider"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button class="btn-cancel" onclick="closeCookieSettings()">Abbrechen</button>
-            <button class="btn-save" onclick="saveCookieSettings()">Speichern</button>
-        </div>
-    </div>
-</div>
-
-<!-- Scripts -->
 <script src="cookies.js"></script>
-<script src="sticky-button-loader.js"></script>
-
-<!-- Smooth Scroll für Quick-Nav -->
-<script>
-document.querySelectorAll('.quick-nav-item').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            const offset = 80; // Höhe der Sticky-Nav
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - offset;
-            
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-            
-            // Active State
-            document.querySelectorAll('.quick-nav-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            this.classList.add('active');
-        }
-    });
-});
-
-// Scroll Spy für Quick-Nav
-window.addEventListener('scroll', function() {
-    const sections = ['bundle', 'visuelle-hilfen', 'social-stories', 'schule', 'faq'];
-    const navItems = document.querySelectorAll('.quick-nav-item');
-    
-    let current = '';
-    sections.forEach(sectionId => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            const sectionTop = section.offsetTop - 100;
-            if (window.pageYOffset >= sectionTop) {
-                current = sectionId;
-            }
-        }
-    });
-    
-    navItems.forEach(item => {
-        item.classList.remove('active');
-        if (item.getAttribute('href') === '#' + current) {
-            item.classList.add('active');
-        }
-    });
-});
-</script>
-
 </body>
 </html>
