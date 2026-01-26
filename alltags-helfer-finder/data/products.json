@@ -128,7 +128,7 @@
         "soziales": 3
       }
     },
-    {
+   {
       "id": "autismus-hausaufgaben",
       "name": "Notfallplan gegen Hausaufgabenstress bei Autismus",
       "short_name": "Autismus Hausaufgaben-Guide",
@@ -156,6 +156,37 @@
         "soziales": 3
       }
     },
+    {
+      "id": "nachteilsausgleich",
+      "name": "Nachteilsausgleich Komplett-Paket | ADHS & Autismus",
+      "short_name": "Nachteilsausgleich-Paket",
+      "price": 27.99,
+      "description": "Fertige Musteranträge, Checklisten & Argumentationshilfen für Schule, Studium & Ausbildung. Entwickelt von einer erfahrenen Grundschullehrerin. 1x HTML-Workbook (90+ Seiten) + 8x Word-Vorlagen zum Ausdrucken.",
+      "image": "covernachteilsausgleich.png",
+      "url": "https://paulrawe.gumroad.com/l/ceiovz",
+      "tags": ["schule", "eltern", "kommunikation"],
+      "helps_with": [
+        "Nachteilsausgleich beantragen ohne monatelange Recherche",
+        "Schule blockt ab oder kennt sich nicht aus",
+        "Unsicherheit bei Antragstellung und Formulierungen",
+        "Rechtliche Grundlagen verstehen (Grundgesetz, UN-BRK, SGB IX)",
+        "Argumentationshilfen bei Ablehnung oder Einwänden",
+        "Bundesland-spezifische Regelungen kennen",
+        "Anträge für Schule, Studium oder Ausbildung",
+        "Dokumentation und Gesprächsführung mit Schulen",
+        "ADHS-spezifische Maßnahmen (15 Punkte)",
+        "Autismus-spezifische Maßnahmen (16 Punkte)"
+      ],
+      "priority_score": {
+        "schule": 10,
+        "eltern": 10,
+        "kommunikation": 8,
+        "regulation": 5,
+        "tagesstruktur": 3,
+        "soziales": 3
+      }
+    },
+    
     {
       "id": "social-stories-schule",
       "name": "6 Social Stories: Schule & Freizeit",
