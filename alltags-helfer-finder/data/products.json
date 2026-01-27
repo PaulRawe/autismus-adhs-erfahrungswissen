@@ -100,6 +100,58 @@
         "kommunikation": 3,
         "tagesstruktur": 2,
         "regulation": 2
+   }
+    },
+    {
+      "id": "gespraeche-schule",
+      "name": "Gespräche mit der Schule erfolgreich führen",
+      "short_name": "Gespräche mit der Schule",
+      "price": 6.90,
+      "description": "22-seitiger Leitfaden für Eltern autistischer Kinder. Strategien, Formulierungen und Rechtsgrundlagen – damit du endlich gehört wirst.",
+      "image": "6. Gespräche mit der Schule.png",
+      "url": "https://paulrawe.gumroad.com/l/ltwen",
+      "tags": ["schule", "eltern", "kommunikation"],
+      "helps_with": [
+        "Schule versteht Autismus nicht",
+        "Anträge werden abgelehnt",
+        "Keine Strategie für Gespräche mit Lehrkräften",
+        "Nachteilsausgleich durchsetzen",
+        "Schulbegleitung beantragen",
+        "Professionell argumentieren können"
+      ],
+      "priority_score": {
+        "schule": 10,
+        "eltern": 10,
+        "kommunikation": 9,
+        "regulation": 3,
+        "tagesstruktur": 2,
+        "soziales": 4
+      }
+    },
+    {
+      "id": "geschwisterkinder",
+      "name": "Geschwisterkinder verstehen & unterstützen",
+      "short_name": "Geschwisterkinder-Ratgeber",
+      "price": 5.90,
+      "description": "20-seitiger Ratgeber für Eltern autistischer Kinder. Praktische Strategien für neurotypische Geschwister – wissenschaftlich fundiert, sofort umsetzbar.",
+      "image": "5. Geschwisterkinder-Ratgeber.png",
+      "url": "https://paulrawe.gumroad.com/l/rhnjt",
+      "tags": ["eltern", "soziales", "kommunikation"],
+      "helps_with": [
+        "Geschwister fühlt sich vernachlässigt",
+        "Eifersucht und Schuldgefühle",
+        "Zu viel Verantwortung für Geschwister",
+        "Scham für autistisches Geschwisterkind",
+        "Exklusivzeit für neurotypisches Kind schaffen",
+        "Altersgerechte Aufklärung über Autismus"
+      ],
+      "priority_score": {
+        "eltern": 10,
+        "soziales": 8,
+        "kommunikation": 7,
+        "regulation": 4,
+        "schule": 3,
+        "tagesstruktur": 2
       }
     },
     {
