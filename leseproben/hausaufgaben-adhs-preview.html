@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notfallplan gegen Hausaufgabenstress bei ADHS PREVIEW</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1B5F8C;
+            --color-secondary: #4A90E2;
+            --color-accent: #FF8A3D;
+            --color-success: #52C1A6;
+            --color-warm: #E07A5F;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.7;
+            color: #2C2C2C;
+            background: linear-gradient(135deg, #E8F4F8 0%, #D4E8F0 100%);
+            font-size: 18px;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #14486B 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 138, 61, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            z-index: 1;
+        }
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--color-accent);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        .back-btn {
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: rgba(255,255,255,0.25); }
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+        .teaser-box {
+            background: linear-gradient(135deg, #FFF9F0 0%, #FFE8CC 100%);
+            border: 3px solid var(--color-accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .teaser-box h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #E8E3D6;
+        }
+        .section h3 {
+            color: var(--color-secondary);
+            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #E8F4FF 0%, #D4E8F7 100%);
+            border-left: 5px solid var(--color-primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #FFF4E6 0%, #FFE8CC 100%);
+            border-left: 5px solid var(--color-accent);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .blur-overlay { position: relative; margin-top: 2rem; min-height: 180px; }
+        .blurred-text { filter: blur(5px); user-select: none; color: #999; }
+        .blur-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--color-accent);
+            color: white;
+            padding: 1.5rem 2.5rem;
+            border-radius: 30px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 138, 61, 0.4);
+        }
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #14486B 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+            border-radius: 12px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--color-primary);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            transition: 0.3s;
+        }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .feature { text-align: center; padding: 1rem; }
+        .feature-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .preview-badge {
+            display: inline-block;
+            background: var(--color-accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
+        ul { margin-left: 1.5rem; line-height: 2; }
+        .author-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--color-accent);
+        }
+        .footer { background: #2e2e2e; color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
+        .footer a { color: var(--color-accent); text-decoration: none; }
+        @media (max-width: 768px) {
+            .back-btn { position: static; display: block; margin: 0 auto 1rem; width: fit-content; }
+            .header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button onclick="window.history.back()" class="back-btn">← Zurück</button>
+        <h1>Notfallplan gegen Hausaufgabenstress bei ADHS</h1>
+        <p class="subtitle">Ein wissenschaftlich fundierter Leitfaden für Eltern und Lehrkräfte</p>
+        <span class="badge">📖 KOSTENLOSE LESEPROBE</span>
+    </div>
+
+    <div class="container">
+        <div class="teaser-box">
+            <h2>🧠 Warum Hausaufgaben bei ADHS besonders herausfordernd sind</h2>
+            <p>Konkrete Strategien, erprobte Methoden und sofort umsetzbare Hilfen für den Hausaufgaben-Alltag</p>
+        </div>
+
+        <section class="section">
+            <h2>1. Einleitung: Die tägliche Herausforderung</h2>
+            
+            <p>Hausaufgaben sind für viele Kinder eine Herausforderung – doch für Kinder mit ADHS können sie zu einer täglichen Belastungsprobe werden, die Familien an ihre Grenzen bringt. Was für neurotypische Kinder eine überschaubare Aufgabe ist, wird für Kinder mit ADHS oft zum mehrstündigen Kampf, begleitet von Tränen, Frustration und Konflikten.</p>
+            
+            <p>Dieser Leitfaden ist bewusst anders konzipiert als typische Ratgeber. Er basiert nicht auf Annahmen wie "mangelnder Motivation" oder "Faulheit", sondern auf dem wissenschaftlichen Verständnis von ADHS als neurobiologische Störung der exekutiven Funktionen.</p>
+            
+            <div class="highlight-box">
+                <strong>🧠 Warum dieser Leitfaden anders ist</strong>
+                <p style="margin-top:0.5rem;">ADHS ist keine Charakterschwäche oder Erziehungsproblem. Es ist eine neurologische Entwicklungsstörung, die primär die exekutiven Funktionen des Gehirns betrifft – jene Fähigkeiten, die wir für Planung, Organisation, Selbstregulation und Durchhaltevermögen benötigen.</p>
+                <p>Hausaufgaben erfordern alle diese exekutiven Funktionen gleichzeitig – und genau das macht sie für Kinder mit ADHS so außergewöhnlich schwierig.</p>
+            </div>
+
+            <h3>Die unsichtbare Last: Was bei Hausaufgaben wirklich gefordert wird</h3>
+            
+            <p>Betrachten wir eine vermeintlich "einfache" Hausaufgabe: "Schreibe 10 Sätze über deinen Lieblingsort."</p>
+            
+            <p>Für ein neurotypisches Kind mag dies eine 15-minütige Aufgabe sein. Für ein Kind mit ADHS bedeutet diese Aufgabe:</p>
+            
+            <ul>
+                <li><strong>Arbeitsgedächtnis:</strong> Aufgabenstellung merken, während man nach dem Heft sucht</li>
+                <li><strong>Aufmerksamkeitskontrolle:</strong> Fokus halten trotz Geräuschen, Gedanken, sichtbaren Ablenkungen</li>
+                <li><strong>Initiierung:</strong> Überhaupt anfangen, obwohl die Aufgabe langweilig erscheint</li>
+                <li><strong>Planung:</strong> Welche 10 Sätze? In welcher Reihenfolge? Wie anfangen?</li>
+                <li><strong>Selbstregulation:</strong> Mit der Frustration umgehen, wenn einem nichts einfällt</li>
+            </ul>
+
+            <div class="blur-overlay">
+                <div class="blurred-text">
+                    <ul>
+                        <li><strong>Zeitgefühl:</strong> Einschätzen, wie lange es noch dauert (oft unmöglich bei ADHS)</li>
+                        <li><strong>Durchhaltevermögen:</strong> Dranbleiben bis alle 10 Sätze geschrieben sind</li>
+                    </ul>
+                    <div class="warning-box" style="margin-top:1rem;">
+                        <strong>⚠️ Häufige Falle: "Das Kind muss sich nur mehr anstrengen"</strong>
+                        <p>Der größte Fehler im Umgang mit ADHS-bedingten Hausaufgabenproblemen...</p>
+                    </div>
+                </div>
+                <div class="blur-message">🔒 Vollständige Erklärung in der Vollversion</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>2. Wissenschaftliche Grundlagen <span class="preview-badge">PREVIEW</span></h2>
+            
+            <h3>Was sind exekutive Funktionen?</h3>
+            
+            <div class="highlight-box">
+                <p>Stellen Sie sich exekutive Funktionen als den "Dirigenten" im Orchester des Gehirns vor. Sie koordinieren alle anderen Prozesse und ermöglichen uns:</p>
+                <ul style="margin-top:0.5rem;">
+                    <li><strong>Planen:</strong> Schritte vorausdenken und organisieren</li>
+                    <li><strong>Initiieren:</strong> Aufgaben beginnen (auch wenn sie langweilig sind)</li>
+                    <li><strong>Fokussieren:</strong> Aufmerksamkeit auf eine Sache richten und halten</li>
+                    <li><strong>Arbeitsgedächtnis nutzen:</strong> Informationen im Kopf behalten</li>
+                </ul>
+            </div>
+
+            <div class="blur-overlay">
+                <div class="blurred-text">
+                    <h3>Arbeitsgedächtnis und Hausaufgaben</h3>
+                    <p>Das Arbeitsgedächtnis ist wie ein mentaler Notizblock... Bei ADHS ist dieser Notizblock kleiner und die Notizen verblassen schneller...</p>
+                    <p>Konkrete Auswirkungen auf Hausaufgaben: Mehrere Anweisungen gleichzeitig merken, Zwischenschritte behalten während man rechnet...</p>
+                </div>
+                <div class="blur-message">🔒 Alle wissenschaftlichen Grundlagen + Studien</div>
+            </div>
+        </section>
+
+        <div class="cta-section">
+            <h2>💡 Möchten Sie alle Strategien erfahren?</h2>
+            <p>Die Vollversion enthält 43 Seiten mit wissenschaftlich fundierten, sofort umsetzbaren Strategien</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📚</div>
+                    <strong>43 Seiten</strong>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔬</div>
+                    <strong>Wissenschaftlich</strong>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✅</div>
+                    <strong>Checklisten</strong>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📋</div>
+                    <strong>Vorlagen</strong>
+                </div>
+            </div>
+            
+            <a href="https://paulrawe.gumroad.com/l/xnilzj" class="cta-button">
+                🛒 Zur Vollversion (9,99€)
+            </a>
+        </div>
+
+        <section class="section">
+            <h2>📚 Was Sie in der Vollversion erwartet <span class="preview-badge">PREVIEW</span></h2>
+            
+            <h3>Vollständiger Inhalt:</h3>
+            <ul>
+                <li><strong>TEIL 1: VOR den Hausaufgaben</strong> - Optimale Vorbereitung, Arbeitsplatz-Optimierung, Material-Checkliste</li>
+                <li><strong>TEIL 2: WÄHREND der Hausaufgaben</strong> - Aufgaben chunken, Pomodoro-Technik ADHS-adaptiert, Body-Doubling</li>
+                <li><strong>TEIL 3: NACH den Hausaufgaben</strong> - Reflexion, Belohnungssysteme</li>
+            </ul>
+
+            <div class="blur-overlay">
+                <div class="blurred-text">
+                    <ul>
+                        <li><strong>Notfallplan:</strong> "Wenn gar nichts geht" - Deeskalations-Strategien</li>
+                        <li><strong>Kommunikation mit Lehrkraft:</strong> Mustervorlagen für Eltern-Lehrer-Gespräche</li>
+                        <li><strong>Druckbare Checklisten:</strong> Quick-Reference-Karten zum Laminieren</li>
+                        <li><strong>Arbeitsblätter:</strong> Aufgaben-Chunking-Planer, Timer-Experimente</li>
+                        <li><strong>Literaturverzeichnis:</strong> Alle Studien und Quellen vollständig</li>
+                    </ul>
+                </div>
+                <div class="blur-message">🔒 Vollversion freischalten</div>
+            </div>
+        </section>
+
+        <div class="author-section">
+            <h3>Über den Leitfaden</h3>
+            <p>Dieser wissenschaftlich fundierte Leitfaden basiert auf aktueller ADHS-Forschung und exekutiven Funktionen. Entwickelt für Eltern und Lehrkräfte von Kindern im Alter von 6-14 Jahren (Grundschule bis Mittelstufe).</p>
+            
+            <div style="background: linear-gradient(135deg, var(--color-primary) 0%, #14486B 100%); padding: 2rem; border-radius: 12px; text-align: center; color: white; margin-top: 2rem;">
+                <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;">🎯 Notfallplan Hausaufgabenstress ADHS</p>
+                <p style="font-size: 2.5rem; font-weight: 700; color: var(--color-accent); margin: 0.5rem 0;">9,99€</p>
+                <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 1.5rem;">43 Seiten • Wissenschaftlich fundiert • Mit Checklisten & Vorlagen</p>
+                <a href="https://paulrawe.gumroad.com/l/xnilzj" style="display: inline-block; background: var(--color-accent); color: white; padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem;" onmouseover="this.style.background='#FF9A5D'" onmouseout="this.style.background='#FF8A3D'">
+                    🛒 Jetzt kaufen
+                </a>
+            </div>
+        </div>
+        
+        <div class="author-section" style="border-left: 5px solid var(--color-secondary);">
+            <h3>Mehr auf autismus-adhs-alltag.de</h3>
+            <ul style="margin-left: 1.5rem;">
+                <li>Kostenlose Blog-Artikel zu ADHS & Autismus</li>
+                <li>Praktische Alltagstipps</li>
+                <li>Erfahrungsberichte von Familien</li>
+            </ul>
+            <p style="margin-top: 1rem;"><a href="https://autismus-adhs-alltag.de/" style="color: var(--color-primary); font-weight: 600;">→ Zur Website</a></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p><strong>© 2026 autismus-adhs-alltag.de</strong> | Paul Rawe</p>
+        <p style="margin-top: 1rem;">
+            <a href="https://paulrawe.gumroad.com/l/xnilzj">🛒 Vollversion (9,99€)</a> | 
+            <a href="https://autismus-adhs-alltag.de/">🌐 Website</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">
+            <a href="https://autismus-adhs-alltag.de/impressum.html">Impressum</a> | 
+            <a href="https://autismus-adhs-alltag.de/datenschutz.html">Datenschutz</a>
+        </p>
+    </footer>
+</body>
+</html>

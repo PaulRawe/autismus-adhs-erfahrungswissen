@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strukturpläne für den Unterricht PREVIEW</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #3498DB;
+            --color-secondary: #27AE60;
+            --color-accent: #16A085;
+            --color-success: #52C1A6;
+            --color-warm: #5DADE2;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.7;
+            color: #2C2C2C;
+            background: linear-gradient(135deg, #E8F5FF 0%, #D4E8F7 100%);
+            font-size: 18px;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #2874A6 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(22, 160, 133, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            z-index: 1;
+        }
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--color-accent);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        .back-btn {
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: rgba(255,255,255,0.25); }
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+        .teaser-box {
+            background: linear-gradient(135deg, #D5F4E6 0%, #A2E1C8 100%);
+            border: 3px solid var(--color-accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .teaser-box h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #E8E3D6;
+        }
+        .section h3 {
+            color: var(--color-secondary);
+            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #E8F5FF 0%, #D4E8F7 100%);
+            border-left: 5px solid var(--color-primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #FFF4E6 0%, #FEEBC8 100%);
+            border-left: 5px solid #E67E22;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .plan-example {
+            background: #F8F9FA;
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .plan-example table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .plan-example th {
+            background: var(--color-primary);
+            color: white;
+            padding: 0.8rem;
+            text-align: left;
+        }
+        .plan-example td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #E8E3D6;
+        }
+        .blur-overlay { position: relative; margin-top: 2rem; min-height: 180px; }
+        .blurred-text { filter: blur(5px); user-select: none; color: #999; }
+        .blur-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--color-accent);
+            color: white;
+            padding: 1.5rem 2.5rem;
+            border-radius: 30px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(22, 160, 133, 0.4);
+        }
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #2874A6 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+            border-radius: 12px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--color-primary);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            transition: 0.3s;
+        }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .preview-badge {
+            background: var(--color-success);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .author-section {
+            background: #F8F8F8;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--color-primary);
+        }
+        .footer {
+            background: linear-gradient(135deg, #2C2C2C 0%, #1a1a1a 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+            margin: 0 0.8rem;
+            font-weight: 600;
+        }
+        .footer a:hover { text-decoration: underline; }
+        ul { margin-left: 1.5rem; }
+        li { margin-bottom: 0.7rem; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="back-btn" onclick="window.history.back()">← Zurück</button>
+        <h1>Strukturpläne für den Unterricht</h1>
+        <p class="subtitle">Wissenschaftlich fundierte Praxishilfen für autistische Schüler:innen</p>
+        <span class="badge">📖 KOSTENLOSE LESEPROBE</span>
+    </div>
+
+    <div class="container">
+        <div class="teaser-box">
+            <h2>📋 Struktur schafft Sicherheit – Erfolg für alle!</h2>
+            <p>Konkrete, sofort einsetzbare Strukturpläne für Ihren Unterricht – wissenschaftlich fundiert und praxiserprobt</p>
+        </div>
+
+        <section class="section">
+            <h2>1. Einleitung</h2>
+            
+            <p>Autistische Schüler:innen erleben die Welt anders. Was für neurotypische Kinder selbstverständlich ist – Vorhersehbarkeit im Schulalltag, implizite Regeln, flexible Anpassung an Veränderungen – stellt für autistische Kinder oft enorme Herausforderungen dar.</p>
+            
+            <p>Dieser Leitfaden basiert auf aktueller Autismus-Forschung und jahrelanger Praxiserfahrung. Er bietet Ihnen konkrete, sofort einsetzbare Strukturpläne, die autistischen Schüler:innen helfen, sich im Schulalltag zu orientieren und ihr volles Potenzial zu entfalten.</p>
+            
+            <div class="highlight-box">
+                <strong>💡 Für wen ist dieser Leitfaden?</strong>
+                <p style="margin-top:0.5rem;">Lehrkräfte an Grundschulen und weiterführenden Schulen, Sonderpädagog:innen, Schulbegleitungen, Referendar:innen und alle, die mit autistischen Kindern arbeiten.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>2. Warum Strukturpläne? Neurobiologische Grundlagen</h2>
+            
+            <h3>Theory of Mind & Vorhersagbarkeit</h3>
+            
+            <p>Autistische Menschen haben oft Schwierigkeiten mit der "Theory of Mind" – der Fähigkeit, mentale Zustände anderer zu erfassen und vorherzusagen (Baron-Cohen et al., 1985). Im Schulkontext bedeutet das: Was für Sie als Lehrkraft selbstverständlich ist ("Nach der Pause kommt Mathe"), ist für autistische Kinder nicht automatisch klar.</p>
+            
+            <h3>Exekutive Funktionen & Planung</h3>
+            
+            <p>Viele autistische Kinder haben Schwierigkeiten mit exekutiven Funktionen – insbesondere mit Planung, Flexibilität und Arbeitsgedächtnis (Hill, 2004; Ozonoff et al., 1991). Strukturpläne kompensieren diese Schwierigkeiten, indem sie:</p>
+            
+            <ul>
+                <li>Den Tagesablauf externalisieren (entlastet das Arbeitsgedächtnis)</li>
+                <li>Übergänge vorhersehbar machen (reduziert Angst)</li>
+                <li>Klarheit schaffen (kompensiert Planungsschwierigkeiten)</li>
+                <li>Selbstständigkeit fördern (Kind kann selbst nachschauen)</li>
+            </ul>
+
+            <h3>Monotropismus & Aufmerksamkeitsfokus</h3>
+            
+            <p>Das Konzept des Monotropismus (Murray et al., 2005) beschreibt, dass autistische Menschen ihre Aufmerksamkeit sehr intensiv auf wenige Dinge fokussieren. Ein Wechsel zwischen Aktivitäten fühlt sich an wie ein "Herausreißen" aus der Konzentration. Strukturpläne mit Übergangsankündigungen geben Zeit, sich mental vorzubereiten.</p>
+
+            <div class="warning-box">
+                <strong>⚠️ Wichtig:</strong>
+                <p style="margin-top:0.5rem;">Übergänge OHNE Vorwarnung können bei autistischen Kindern zu Meltdowns führen. Planen Sie immer 3-5 Minuten Vorwarnzeit ein!</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>3. Tagesstrukturplan für die Klasse <span class="preview-badge">PREVIEW</span></h2>
+            
+            <h3>Was ist ein Tagesstrukturplan?</h3>
+            
+            <p>Ein visueller Plan, der den gesamten Schultag auf einen Blick zeigt. Er beantwortet die Frage: "Was kommt als Nächstes?"</p>
+            
+            <h3>Wissenschaftlicher Hintergrund</h3>
+            
+            <p>Visuelle Unterstützung ist bei Autismus besonders wirksam, da viele autistische Menschen "visuelle Denker" sind (Grandin, 1995). Bilder werden schneller und zuverlässiger verarbeitet als mündliche Anweisungen. Studien zeigen, dass visuelle Zeitpläne Angst reduzieren und die Kooperation erhöhen (Mesibov & Shea, 2010).</p>
+
+            <h3>So setzen Sie ihn ein: Schritt für Schritt</h3>
+            
+            <ol>
+                <li><strong>Erstellen Sie den Plan:</strong> Nutzen Sie Bildkarten oder Symbole für jede Stunde. Konsistenz ist wichtig: Immer das gleiche Symbol für Mathe (➕), Deutsch (📖), Pause (⏸️) etc.</li>
+                <li><strong>Platzierung:</strong> Hängen Sie den Plan gut sichtbar auf – idealerweise vorne an der Tafel, sodass alle Kinder ihn sehen können.</li>
+                <li><strong>Morgendliches Ritual:</strong> Besprechen Sie JEDEN Morgen gemeinsam den Tagesablauf. Nehmen Sie sich 3-5 Minuten Zeit. Für autistische Kinder ist das essentiell.</li>
+            </ol>
+
+            <div class="blur-overlay">
+                <div class="blurred-text">
+                    <ol start="4">
+                        <li><strong>Änderungen ankündigen:</strong> Bei Stundenplanänderungen: Sofort ansagen UND visuell ändern...</li>
+                        <li><strong>Individuelle Kopien:</strong> Manche Kinder brauchen eine persönliche Kopie am Platz...</li>
+                    </ol>
+                    
+                    <div class="plan-example">
+                        <h4>📋 Beispiel: Ausgefüllter Tagesstrukturplan</h4>
+                        <p>So könnte ein fertiger Tagesplan aussehen (4. Klasse, Dienstag):</p>
+                        <table>
+                            <tr>
+                                <th>Zeit</th>
+                                <th>Fach/Aktivität</th>
+                                <th>Lehrer:in</th>
+                            </tr>
+                            <tr>
+                                <td>8:00 - 8:45</td>
+                                <td>📖 Deutsch (Lesestunde)</td>
+                                <td>Frau Schmidt</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="blur-message">🔒 Komplette Beispiele & Vorlagen</div>
+            </div>
+        </section>
+
+        <div class="cta-section">
+            <h2>📋 Möchten Sie alle Strukturpläne & Vorlagen?</h2>
+            <p>Die Vollversion enthält 13 Seiten mit konkreten Plänen, Beispielen und Troubleshooting</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📅</div>
+                    <strong>Tagesplan</strong>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⏱️</div>
+                    <strong>Stundenplan</strong>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔄</div>
+                    <strong>Übergangshilfen</strong>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🆘</div>
+                    <strong>Notfallplan</strong>
+                </div>
+            </div>
+            
+            <a href="https://paulrawe.gumroad.com/l/fphky" class="cta-button">
+                🛒 Zur Vollversion (4,99€)
+            </a>
+        </div>
+
+        <section class="section">
+            <h2>📚 Was Sie in der Vollversion erwartet <span class="preview-badge">PREVIEW</span></h2>
+            
+            <h3>Vollständiger Inhalt (10 Kapitel):</h3>
+            <ul>
+                <li><strong>1. Einleitung:</strong> Wissenschaftlicher Hintergrund</li>
+                <li><strong>2. Warum Strukturpläne?</strong> Neurobiologische Grundlagen (Theory of Mind, Exekutive Funktionen, Monotropismus)</li>
+                <li><strong>3. Tagesstrukturplan:</strong> Komplett ausgefülltes Beispiel mit Schritt-für-Schritt-Anleitung</li>
+                <li><strong>4. Stundenstrukturplan:</strong> Detaillierte Einzelstunden-Planung (45-Min-Beispiel)</li>
+            </ul>
+
+            <div class="blur-overlay">
+                <div class="blurred-text">
+                    <ul>
+                        <li><strong>5. Übergangshilfen:</strong> Die 5-Minuten-Regel, Visuelle Timer, konkrete Formulierungen</li>
+                        <li><strong>6. Notfallplan bei Überforderung:</strong> Meltdown vs. Trotzanfall, 3-Stufen-Notfallplan</li>
+                        <li><strong>7. Praxisbeispiele:</strong> Leon (3. Klasse) und Mia (5. Klasse) – erfolgreiche Umsetzung</li>
+                        <li><strong>8. Troubleshooting:</strong> Häufige Fragen und Probleme mit Lösungen</li>
+                        <li><strong>9. Best Practices:</strong> 8 goldene Regeln zusammengefasst</li>
+                        <li><strong>10. Literatur:</strong> Alle wissenschaftlichen Quellen und weiterführende Ressourcen</li>
+                    </ul>
+                </div>
+                <div class="blur-message">🔒 Vollversion freischalten</div>
+            </div>
+
+            <h3>Besondere Features:</h3>
+            <ul>
+                <li>📋 <strong>2 komplett ausgefüllte Beispiel-Pläne</strong> (Tagesplan & Stundenplan)</li>
+                <li>📊 <strong>Vergleichstabelle</strong> Meltdown vs. Trotzanfall</li>
+                <li>🔄 <strong>5-Minuten-Übergangsregel</strong> mit konkreten Formulierungen</li>
+                <li>💼 <strong>2 Praxisbeispiele</strong> aus echten Klassenzimmern</li>
+                <li>❓ <strong>Troubleshooting-Sektion</strong> mit häufigen Problemen</li>
+                <li>📚 <strong>9 wissenschaftliche Quellen</strong> zur Vertiefung</li>
+            </ul>
+        </section>
+
+        <div class="author-section">
+            <h3>Über die Autoren</h3>
+            <p><strong>Paul Rawe</strong> (Intensivpfleger & Website-Betreiber) und <strong>Katharina Rawe</strong> (Grundschullehrerin) haben diese Strukturpläne aus ihrer beruflichen Praxis entwickelt.</p>
+            
+            <p style="margin-top: 1rem;">Katharina Rawe arbeitet täglich mit autistischen Kindern und weiß, welche Strukturen im Schulalltag wirklich funktionieren – wissenschaftlich fundiert und praxiserprobt.</p>
+            
+            <div style="background: linear-gradient(135deg, var(--color-primary) 0%, #2874A6 100%); padding: 2rem; border-radius: 12px; text-align: center; color: white; margin-top: 2rem;">
+                <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;">🎯 Strukturpläne für den Unterricht</p>
+                <p style="font-size: 2.5rem; font-weight: 700; color: var(--color-accent); margin: 0.5rem 0;">4,99€</p>
+                <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 1.5rem;">13 Seiten • Beispiel-Pläne • Praxisbeispiele • Troubleshooting</p>
+                <a href="https://paulrawe.gumroad.com/l/fphky" style="display: inline-block; background: var(--color-accent); color: white; padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem;" onmouseover="this.style.background='#1ABC9C'" onmouseout="this.style.background='#16A085'">
+                    🛒 Jetzt kaufen
+                </a>
+            </div>
+        </div>
+        
+        <div class="author-section" style="border-left: 5px solid var(--color-secondary);">
+            <h3>Mehr auf autismus-adhs-alltag.de</h3>
+            <ul style="margin-left: 1.5rem;">
+                <li>Kostenlose Blog-Artikel zu ADHS & Autismus</li>
+                <li>Praktische Alltagstipps</li>
+                <li>Erfahrungsberichte von Familien</li>
+                <li>Weitere Leitfäden und Ressourcen</li>
+            </ul>
+            <p style="margin-top: 1rem;"><a href="https://autismus-adhs-alltag.de/" style="color: var(--color-primary); font-weight: 600;">→ Zur Website</a></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p><strong>© 2026 autismus-adhs-alltag.de</strong> | Paul Rawe & Katharina Rawe</p>
+        <p style="margin-top: 1rem;">
+            <a href="https://paulrawe.gumroad.com/l/fphky">🛒 Vollversion (4,99€)</a> | 
+            <a href="https://autismus-adhs-alltag.de/">🌐 Website</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">
+            <a href="https://autismus-adhs-alltag.de/impressum.html">Impressum</a> | 
+            <a href="https://autismus-adhs-alltag.de/datenschutz.html">Datenschutz</a>
+        </p>
+    </footer>
+</body>
+</html>

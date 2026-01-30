@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nachteilsausgleich Eltern-Paket PREVIEW - Kostenlose Leseprobe | Autismus-ADHS-Alltag</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1B4965;
+            --color-secondary: #2C5F7E;
+            --color-accent: #E8A547;
+            --color-accent-dark: #D68D2E;
+            --color-success: #52A675;
+            --color-light: #F7F9FB;
+            --color-white: #FFFFFF;
+            --color-text: #1A1A2E;
+            --color-text-light: #6B7A8F;
+            --shadow-md: 0 4px 16px rgba(27, 73, 101, 0.12);
+            --shadow-lg: 0 8px 32px rgba(27, 73, 101, 0.16);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.7;
+            color: var(--color-text);
+            background: linear-gradient(135deg, #F7F9FB 0%, #E8E3D6 100%);
+            font-size: 18px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #15384F 100%);
+            color: var(--color-white);
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(232, 165, 71, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            position: relative;
+            z-index: 1;
+            line-height: 1.2;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--color-accent);
+            color: var(--color-text);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* Zurück-Button */
+        .back-btn {
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateX(-3px);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .teaser-box {
+            background: linear-gradient(135deg, #FFF9F0 0%, #FFE8CC 100%);
+            border: 3px solid var(--color-accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .teaser-box h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .teaser-box p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            margin-bottom: 0;
+        }
+
+        .author-section {
+            background: var(--color-white);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--color-accent);
+        }
+
+        .author-section h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .section {
+            background: var(--color-white);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #E8E3D6;
+        }
+
+        .section h3 {
+            color: var(--color-secondary);
+            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .pain-points {
+            display: grid;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .pain-point {
+            background: var(--color-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .pain-point strong {
+            color: var(--color-primary);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .blur-overlay {
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .blurred-text {
+            filter: blur(5px);
+            user-select: none;
+            color: #999;
+            line-height: 1.8;
+        }
+
+        .blur-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--color-accent);
+            color: var(--color-text);
+            padding: 1.5rem 3rem;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(232, 165, 71, 0.4);
+            font-size: 1.1rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #15384F 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-radius: 12px;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: white;
+            border: none;
+            padding: 0;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--color-primary);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .preview-badge {
+            display: inline-block;
+            background: var(--color-accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
+
+        .highlight {
+            background: rgba(232, 165, 71, 0.25);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, #E8F8F0 0%, #D4F1E3 100%);
+            border-left: 5px solid var(--color-success);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .footer {
+            background: #2e2e2e;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+
+        .footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .back-btn {
+                position: static;
+                display: block;
+                margin: 0 auto 1.5rem;
+                width: fit-content;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <button onclick="window.history.back()" class="back-btn">
+            ← Zurück
+        </button>
+        
+        <h1>Nachteilsausgleich Komplett-Paket für Eltern</h1>
+        <p class="subtitle">ADHS & Autismus - Ihr Weg zum erfolgreichen Antrag</p>
+        <span class="badge">📖 KOSTENLOSE LESEPROBE</span>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <!-- Teaser Box -->
+        <div class="teaser-box">
+            <h2>🎯 Was Sie in dieser Leseprobe erwartet</h2>
+            <p>Einen ersten Einblick in das Komplett-Paket, das Ihnen den Weg zum erfolgreichen Nachteilsausgleich zeigt</p>
+        </div>
+
+        <!-- Emotionale Ansprache (VOLLSTÄNDIG) -->
+        <section class="section">
+            <h2>Liebe Eltern,</h2>
+            
+            <p>Sie kennen das Gefühl: Ihr Kind ist <span class="highlight">intelligent, kreativ und voller Potential</span> – aber im Schulsystem kommt es einfach nicht an. Die Lehrkräfte sehen nur die fehlende Aufmerksamkeit, die nicht gemachten Hausaufgaben, die "schlechte Mitarbeit". Sie wissen, dass Ihr Kind <span class="highlight">mit den richtigen Bedingungen</span> so viel mehr leisten könnte.</p>
+            
+            <p>Sie haben recherchiert, Artikel gelesen, in Foren gefragt. Sie wissen, dass es einen <strong>Nachteilsausgleich</strong> gibt – aber wie Sie ihn bekommen? Was genau Sie beantragen sollen? Wie Sie die Schule überzeugen? Das bleibt unklar.</p>
+            
+            <p>Vielleicht haben Sie es sogar schon versucht – und wurden abgewimmelt. "Das machen wir hier nicht." "Ihr Kind muss sich halt mehr anstrengen." "Ein Nachteilsausgleich wäre unfair gegenüber den anderen."</p>
+            
+            <p><strong>Schluss damit.</strong></p>
+            
+            <p>Dieses Paket gibt Ihnen <span class="highlight">alles an die Hand, was Sie brauchen</span>, um erfolgreich einen Nachteilsausgleich für Ihr Kind durchzusetzen. Keine Unsicherheit mehr. Keine monatelange Recherche. Keine Ablehnung.</p>
+            
+            <div class="success-box">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="font-size: 40px;">👩‍🏫</div>
+                    <div>
+                        <div style="font-weight: 700; color: var(--color-primary); font-size: 18px; margin-bottom: 5px;">Praxiswissen aus erster Hand</div>
+                        <div style="color: var(--color-text-light); font-size: 16px;">Dieses Paket wurde von einer Grundschullehrerin erstellt, die täglich mit Nachteilsausgleichen arbeitet und weiß, worauf es ankommt.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schmerzpunkte (PREVIEW - 3 von vielen) -->
+        <section class="section">
+            <h2>Diese Situationen kennen Sie zu gut... <span class="preview-badge">PREVIEW</span></h2>
+            
+            <div class="pain-points">
+                <div class="pain-point">
+                    <strong>😰 "Wie soll ich das alles beantragen?"</strong>
+                    <p>Sie haben schon von verschiedenen Stellen gehört: Jugendamt, Sozialamt, Schulamt, Krankenkasse. Aber wer ist wofür zuständig? Welche Anträge gibt es überhaupt? Wo fangen Sie an?</p>
+                </div>
+
+                <div class="pain-point">
+                    <strong>📋 "Welche Unterlagen brauche ich?"</strong>
+                    <p>Diagnose ist klar. Aber dann? Welche Formulare? Welche Gutachten? Was schreiben Sie in den Antrag? Die Bürokratie ist überwältigend.</p>
+                </div>
+
+                <div class="pain-point">
+                    <strong>⏱️ "Mein Kind braucht JETZT Hilfe"</strong>
+                    <p>Die Noten werden schlechter, die Frustration größer. Sie können nicht noch 6 Monate auf einen Termin warten oder monatelang recherchieren.</p>
+                </div>
+            </div>
+
+            <!-- Blur Overlay für mehr Schmerzpunkte -->
+            <div class="blur-overlay">
+                <div class="blurred-text">
+                    <p><strong>💬 "Die Schule sagt Nein"</strong></p>
+                    <p>Sie haben es versucht, aber die Schule wehrt ab: "Das ist zu viel Aufwand", "Das machen wir hier nicht", "Ihr Kind braucht das nicht wirklich". Sie fühlen sich machtlos.</p>
+                    
+                    <p><strong>📄 "Ich verstehe die rechtlichen Grundlagen nicht"</strong></p>
+                    <p>UN-BRK, SGB, Schulgesetz – überall steht etwas anderes. Was gilt wirklich? Worauf können Sie sich berufen?</p>
+                    
+                    <p><strong>💡 "Was kann ich überhaupt beantragen?"</strong></p>
+                    <p>Mehr Zeit bei Tests? Laptop? Separate Prüfungen? Sie wissen nicht, welche Möglichkeiten es gibt und was für Ihr Kind sinnvoll wäre.</p>
+                </div>
+                <div class="blur-message">
+                    🔒 6+ weitere Schmerzpunkte & Lösungen in der Vollversion
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section 1 -->
+        <div class="cta-section">
+            <h2>💡 Möchten Sie den kompletten Leitfaden?</h2>
+            <p>Die Vollversion enthält alles, was Sie für einen erfolgreichen Nachteilsausgleich brauchen:</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📄</div>
+                    <strong>Fertige Anträge</strong>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✅</div>
+                    <strong>Checklisten</strong>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚖️</div>
+                    <strong>Rechtliche Grundlagen</strong>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💬</div>
+                    <strong>Argumentationshilfen</strong>
+                </div>
+            </div>
+            
+            <a href="https://paulrawe.gumroad.com/l/ceiovz" class="cta-button">
+                🛒 Zur Vollversion (27,99€)
+            </a>
+        </div>
+
+        <!-- Was dich noch erwartet (PREVIEW) -->
+        <section class="section">
+            <h2>📚 Was Sie noch erwartet <span class="preview-badge">PREVIEW</span></h2>
+            
+            <h3>In der Vollversion finden Sie:</h3>
+            <ul style="line-height: 2; margin-left: 1.5rem; color: var(--color-text-light);">
+                <li><strong>Schritt-für-Schritt-Anleitung:</strong> Vom ersten Gedanken bis zum bewilligten Nachteilsausgleich</li>
+                <li><strong>Fertige Antragsvorlagen:</strong> Für alle relevanten Ämter und Stellen</li>
+                <li><strong>Checklisten:</strong> Was Sie wann wo brauchen</li>
+            </ul>
+
+            <!-- Blur Overlay -->
+            <div class="blur-overlay" style="margin-top: 2rem;">
+                <div class="blurred-text">
+                    <ul style="line-height: 2; margin-left: 1.5rem;">
+                        <li><strong>Rechtliche Grundlagen:</strong> UN-BRK, Schulgesetze, SGB - verständlich erklärt</li>
+                        <li><strong>Argumentationshilfen:</strong> Wie Sie die Schule überzeugen</li>
+                        <li><strong>Beispiele für Nachteilsausgleiche:</strong> Von Zeitzuschlag bis Laptop</li>
+                        <li><strong>Umgang mit Ablehnung:</strong> Widerspruch und Beschwerde</li>
+                        <li><strong>Praxis-Tipps:</strong> Aus der Erfahrung einer Lehrerin</li>
+                        <li><strong>Alle wichtigen Kontakte:</strong> Beratungsstellen und Anlaufstellen</li>
+                    </ul>
+                </div>
+                <div class="blur-message">
+                    🔒 Vollversion freischalten
+                </div>
+            </div>
+        </section>
+
+        <!-- Author Section -->
+        <div class="author-section">
+            <h3>Über die Autorin</h3>
+            <p><strong>Katharina Rawe</strong> ist Grundschullehrerin mit langjähriger Erfahrung in Inklusion und Nachteilsausgleichen. Als betroffene Mutter kennt sie beide Seiten: die der Lehrkraft UND die der Eltern.</p>
+            
+            <div style="background: linear-gradient(135deg, var(--color-primary) 0%, #15384F 100%); padding: 2rem; border-radius: 12px; text-align: center; color: white; margin-top: 2rem;">
+                <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;">🎯 Nachteilsausgleich Eltern-Paket VOLLVERSION</p>
+                <p style="font-size: 2.5rem; font-weight: 700; color: var(--color-accent); margin: 0.5rem 0;">27,99€</p>
+                <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 1.5rem;">Einmalzahlung • Sofortiger Download • Lebenslanger Zugriff</p>
+                <a href="https://paulrawe.gumroad.com/l/ceiovz" style="display: inline-block; background: var(--color-accent); color: var(--color-text); padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(232, 165, 71, 0.4);" onmouseover="this.style.background='#F0B055'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#E8A547'; this.style.transform='translateY(0)'">
+                    🛒 Jetzt Vollversion kaufen
+                </a>
+                <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 1rem;">✨ Von Katharina Rawe, Lehrerin & betroffene Mutter</p>
+            </div>
+        </div>
+        
+        <!-- Mehr auf Website -->
+        <div class="author-section" style="border-left: 5px solid var(--color-secondary); margin-top: 2rem;">
+            <h3>Mehr auf autismus-adhs-alltag.de</h3>
+            <p>Weitere Artikel, Erfahrungsberichte und praktische Tipps für den Alltag:</p>
+            <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                <li>Kostenlose Blog-Artikel zu Alltag, Therapie und Familie</li>
+                <li>Erfahrungsberichte von betroffenen Familien</li>
+                <li>Community und Austausch</li>
+            </ul>
+            <p style="margin-top: 1rem;"><a href="https://autismus-adhs-alltag.de/" style="color: var(--color-primary); font-weight: 600;">→ Zur Website</a></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p><strong>© 2026 autismus-adhs-alltag.de</strong> | Paul Rawe</p>
+        <p>Inhaltliche Erstellung: Katharina Rawe (Lehrerin, Grundschule Stadt Marl)</p>
+        <p style="margin-top: 1rem;">
+            <a href="https://paulrawe.gumroad.com/l/ceiovz">🛒 Vollversion für 27,99€ kaufen</a> | 
+            <a href="https://autismus-adhs-alltag.de/">🌐 Zur Website</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">
+            <a href="https://autismus-adhs-alltag.de/impressum.html">Impressum</a> | 
+            <a href="https://autismus-adhs-alltag.de/datenschutz.html">Datenschutz</a>
+        </p>
+    </footer>
+</body>
+</html>

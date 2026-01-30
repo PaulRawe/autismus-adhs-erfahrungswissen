@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notfallplan gegen Hausaufgabenstress bei Autismus PREVIEW</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #6B4FA0;
+            --color-secondary: #52C1A6;
+            --color-accent: #4A90E2;
+            --color-success: #52C1A6;
+            --color-warm: #9B7EBD;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.7;
+            color: #2C2C2C;
+            background: linear-gradient(135deg, #F3E8FF 0%, #E8D4F7 100%);
+            font-size: 18px;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #53387A 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(82, 193, 166, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            z-index: 1;
+        }
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--color-secondary);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        .back-btn {
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: rgba(255,255,255,0.25); }
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+        .teaser-box {
+            background: linear-gradient(135deg, #F0F9FF 0%, #CCE8FF 100%);
+            border: 3px solid var(--color-accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .teaser-box h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #E8E3D6;
+        }
+        .section h3 {
+            color: var(--color-secondary);
+            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #F3E8FF 0%, #E8D4F7 100%);
+            border-left: 5px solid var(--color-primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #FFF4E6 0%, #FFE8CC 100%);
+            border-left: 5px solid var(--color-accent);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .blur-overlay { position: relative; margin-top: 2rem; min-height: 180px; }
+        .blurred-text { filter: blur(5px); user-select: none; color: #999; }
+        .blur-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--color-accent);
+            color: white;
+            padding: 1.5rem 2.5rem;
+            border-radius: 30px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+        }
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #53387A 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+            border-radius: 12px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--color-primary);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            transition: 0.3s;
+        }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .preview-badge {
+            background: var(--color-secondary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .author-section {
+            background: #F8F8F8;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--color-primary);
+        }
+        .footer {
+            background: linear-gradient(135deg, #2C2C2C 0%, #1a1a1a 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .footer a {
+            color: var(--color-secondary);
+            text-decoration: none;
+            margin: 0 0.8rem;
+            font-weight: 600;
+        }
+        .footer a:hover { text-decoration: underline; }
+        ul { margin-left: 1.5rem; }
+        li { margin-bottom: 0.7rem; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="back-btn" onclick="window.history.back()">← Zurück</button>
+        <h1>Notfallplan gegen Hausaufgabenstress bei Autismus</h1>
+        <p class="subtitle">Ein wissenschaftlich fundierter Leitfaden für Eltern und Lehrkräfte</p>
+        <span class="badge">📖 KOSTENLOSE LESEPROBE</span>
+    </div>
+
+    <div class="container">
+        <div class="teaser-box">
+            <h2>🧩 Warum Hausaufgaben bei Autismus besonders herausfordernd sind</h2>
+            <p>Konkrete Strategien, erprobte Methoden und sofort umsetzbare Hilfen für den Hausaufgaben-Alltag</p>
+        </div>
+
+        <section class="section">
+            <h2>1. Einführung: Warum Hausaufgaben bei Autismus so herausfordernd sind</h2>
+            
+            <p>Wenn Ihr Kind im Autismus-Spektrum ist, wissen Sie wahrscheinlich bereits: Hausaufgaben können zur täglichen Zerreißprobe werden. Was für neurotypische Kinder eine lästige, aber machbare Aufgabe ist, kann für autistische Kinder zu einer überwältigenden Herausforderung werden.</p>
+            
+            <div class="warning-box">
+                <strong>⚠️ Wichtig zu verstehen</strong>
+                <p style="margin-top:0.5rem;">Ihr Kind ist nicht faul, nicht unmotiviert, nicht absichtlich schwierig. Die Herausforderungen bei Hausaufgaben sind neurologisch bedingt und erfordern spezifische Strategien und Anpassungen.</p>
+            </div>
+
+            <h3>Typische Hausaufgaben-Szenarien bei Autismus</h3>
+            
+            <p>Vielleicht erkennen Sie einige dieser Situationen wieder:</p>
+            
+            <ul>
+                <li>Das Kind bricht in Tränen aus, noch bevor die Hausaufgaben begonnen haben</li>
+                <li>Kleine Veränderungen in der Routine führen zu kompletter Verweigerung</li>
+                <li>Das Kind besteht darauf, Aufgaben auf eine bestimmte Art zu erledigen, auch wenn es unpraktisch ist</li>
+                <li>Sensorische Reize (Geräusche, Licht, Kleidung) verhindern die Konzentration</li>
+                <li>Das Kind versteht die Aufgabenstellung nicht, obwohl es die Worte lesen kann</li>
+            </ul>
+
+            <div class="blur-overlay">
+                <div class="blurred-text">
+                    <ul>
+                        <li>Übergänge (vom Spielen zu den Hausaufgaben) dauern ewig oder enden in Meltdowns</li>
+                        <li>Das Kind arbeitet stundenlang perfektionistisch an Details, die nicht wichtig sind</li>
+                        <li>Bei unklaren oder offenen Aufgabenstellungen zeigt das Kind völlige Blockade</li>
+                    </ul>
+                    <div class="highlight-box" style="margin-top:1rem;">
+                        <strong>🧠 Wissenschaftliche Erkenntnis</strong>
+                        <p>Diese Verhaltensweisen sind keine Verhaltensprobleme, sondern neurologische Unterschiede...</p>
+                    </div>
+                </div>
+                <div class="blur-message">🔒 Vollständige Erklärung in der Vollversion</div>
+            </div>
+
+            <h3>Was Sie von diesem Leitfaden erwarten können</h3>
+            
+            <p>Dieser Notfallplan basiert auf aktueller Autismus-Forschung und praktischen Erfahrungen von Familien und Fachleuten. Sie erhalten:</p>
+            
+            <ul>
+                <li><strong>Wissenschaftliches Verständnis:</strong> Warum bestimmte Situationen für autistische Kinder so schwierig sind</li>
+                <li><strong>Konkrete Strategien:</strong> Praktische, sofort umsetzbare Methoden für den Alltag</li>
+                <li><strong>Checklisten und Vorlagen:</strong> Druckbare Hilfen, die Sie direkt verwenden können</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>2. Die Wissenschaft verstehen <span class="preview-badge">PREVIEW</span></h2>
+            
+            <h3>Theory of Mind und soziale Kognition</h3>
+            
+            <div class="highlight-box">
+                <p>Autistische Kinder haben oft Schwierigkeiten mit der Theory of Mind – der Fähigkeit, sich in die Gedankenwelt anderer hineinzuversetzen und deren Erwartungen zu verstehen.</p>
+            </div>
+
+            <h3>📚 Was bedeutet das für Hausaufgaben?</h3>
+            
+            <ul>
+                <li>Das Kind versteht möglicherweise nicht, warum die Lehrerin diese Aufgabe gestellt hat</li>
+                <li>Implizite Erwartungen ("Du sollst zeigen, dass du es verstanden hast") sind unklar</li>
+                <li>Das Kind weiß nicht, wie viel Detail die Lehrerin erwartet</li>
+                <li>Soziale Hinweise wie "Das ist wichtig für die Prüfung" werden möglicherweise nicht verarbeitet</li>
+            </ul>
+
+            <div class="blur-overlay">
+                <div class="blurred-text">
+                    <h3>Exekutive Funktionen: Planung, Organisation, Flexibilität</h3>
+                    <p>Viele autistische Kinder haben Schwierigkeiten mit exekutiven Funktionen – den mentalen Prozessen, die Planung, Organisation, Arbeitsgedächtnis und kognitive Flexibilität steuern...</p>
+                    
+                    <h3>Sensorische Verarbeitung</h3>
+                    <p>Die meisten autistischen Menschen haben sensorische Verarbeitungsunterschiede – sie nehmen Sinneseindrücke entweder viel intensiver oder viel schwächer wahr...</p>
+                </div>
+                <div class="blur-message">🔒 Alle wissenschaftlichen Grundlagen + Tabellen</div>
+            </div>
+        </section>
+
+        <div class="cta-section">
+            <h2>💡 Möchten Sie alle Strategien erfahren?</h2>
+            <p>Die Vollversion enthält 49 Seiten mit wissenschaftlich fundierten, sofort umsetzbaren Strategien</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📚</div>
+                    <strong>49 Seiten</strong>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔬</div>
+                    <strong>Wissenschaftlich</strong>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✅</div>
+                    <strong>Checklisten</strong>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📋</div>
+                    <strong>Vorlagen</strong>
+                </div>
+            </div>
+            
+            <a href="https://paulrawe.gumroad.com/l/yhqug" class="cta-button">
+                🛒 Zur Vollversion (9,99€)
+            </a>
+        </div>
+
+        <section class="section">
+            <h2>📚 Was Sie in der Vollversion erwartet <span class="preview-badge">PREVIEW</span></h2>
+            
+            <h3>Vollständiger Inhalt (12 Kapitel):</h3>
+            <ul>
+                <li><strong>1. Einführung:</strong> Warum Hausaufgaben bei Autismus so herausfordernd sind</li>
+                <li><strong>2. Die Wissenschaft verstehen:</strong> Was im Gehirn passiert (Theory of Mind, Exekutive Funktionen, Zentrale Kohärenz, Sensorische Verarbeitung, Predictive Processing, Monotropismus)</li>
+                <li><strong>3. Vorbereitung ist alles:</strong> Den idealen Arbeitsplatz schaffen (Sensorische Optimierung, Organisation, Zeitliche Struktur, Notfall-Escape-Plan)</li>
+                <li><strong>4. Struktur und Vorhersehbarkeit:</strong> Der Schlüssel zum Erfolg (Visuelle Tagesstruktur, Task Breakdown, Visuelle Unterstützung, Checklisten, Social Stories)</li>
+            </ul>
+
+            <div class="blur-overlay">
+                <div class="blurred-text">
+                    <ul>
+                        <li><strong>5. Sensorische Bedürfnisse berücksichtigen:</strong> Die 8 Sinne verstehen, Sensorisches Profil, Strategien für über-/unterempfindliche Kinder, Sensory Breaks</li>
+                        <li><strong>6. Klare Kommunikation:</strong> Wie Sie Aufgaben verständlich machen (Prinzipien autismus-freundlicher Kommunikation, Die 3W + 1H-Methode, Umgang mit offenen Aufgaben)</li>
+                        <li><strong>7. Motivation durch spezielle Interessen:</strong> Spezialinteressen verstehen und nutzen</li>
+                        <li><strong>8. Übergänge und Veränderungen meistern:</strong> Die 5-Stufen-Methode, Visuelle Timer, Übergangs-Rituale</li>
+                        <li><strong>9. Der Notfallplan:</strong> Was tun bei Überlastung? (Meltdown vs. Shutdown vs. Trotzreaktion, Sofortmaßnahmen, Prävention, Recovery, Plan B)</li>
+                        <li><strong>10. Zusammenarbeit mit der Schule:</strong> Nachteilsausgleich, Gespräch mit Lehrkraft, Eskalationsstufen</li>
+                        <li><strong>11. Praktische Checklisten und Vorlagen:</strong> Bereitschafts-Checkliste, Ablauf-Checkliste, 10 Goldene Regeln, Laminierbare Notfallkarte</li>
+                        <li><strong>12. Literaturverzeichnis:</strong> Alle wissenschaftlichen Quellen</li>
+                    </ul>
+                </div>
+                <div class="blur-message">🔒 Vollversion freischalten</div>
+            </div>
+
+            <h3>Besondere Features:</h3>
+            <ul>
+                <li>🆘 <strong>Notfallkarte im Kreditkartenformat</strong> zum Laminieren</li>
+                <li>📋 <strong>Druckbare Checklisten</strong> für jeden Tag</li>
+                <li>📊 <strong>Wissenschaftliche Tabellen</strong> zu exekutiven Funktionen und sensorischer Verarbeitung</li>
+                <li>💬 <strong>Gesprächs-Leitfaden</strong> für Eltern-Lehrer-Gespräche</li>
+                <li>📖 <strong>Social Story Vorlagen</strong></li>
+                <li>⭐ <strong>Die 10 Goldenen Regeln</strong> für Hausaufgaben bei Autismus</li>
+            </ul>
+        </section>
+
+        <div class="author-section">
+            <h3>Über den Leitfaden</h3>
+            <p>Dieser wissenschaftlich fundierte Leitfaden basiert auf aktueller Autismus-Forschung und der Wissenschaft der Neurodiversität. Entwickelt für Eltern und Lehrkräfte von autistischen Kindern im Alter von 6-14 Jahren (Grundschule bis Mittelstufe).</p>
+            
+            <p style="margin-top: 1rem;"><strong>Basierend auf aktueller Autismus-Forschung</strong> und der Wissenschaft der Neurodiversität.</p>
+            
+            <p style="margin-top: 1rem;"><strong>Altersgruppe:</strong> Grundschule bis Mittelstufe (6-14 Jahre).</p>
+            
+            <p style="margin-top: 1rem;">Mit druckbaren Checklisten, Vorlagen und Notfallkarten.</p>
+            
+            <div style="background: linear-gradient(135deg, var(--color-primary) 0%, #53387A 100%); padding: 2rem; border-radius: 12px; text-align: center; color: white; margin-top: 2rem;">
+                <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;">🎯 Notfallplan Hausaufgabenstress Autismus</p>
+                <p style="font-size: 2.5rem; font-weight: 700; color: var(--color-secondary); margin: 0.5rem 0;">9,99€</p>
+                <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 1.5rem;">49 Seiten • Wissenschaftlich fundiert • Mit Checklisten & Vorlagen</p>
+                <a href="https://paulrawe.gumroad.com/l/yhqug" style="display: inline-block; background: var(--color-secondary); color: white; padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem;" onmouseover="this.style.background='#62D1B6'" onmouseout="this.style.background='#52C1A6'">
+                    🛒 Jetzt kaufen
+                </a>
+            </div>
+        </div>
+        
+        <div class="author-section" style="border-left: 5px solid var(--color-secondary);">
+            <h3>Mehr auf autismus-adhs-alltag.de</h3>
+            <ul style="margin-left: 1.5rem;">
+                <li>Kostenlose Blog-Artikel zu ADHS & Autismus</li>
+                <li>Praktische Alltagstipps</li>
+                <li>Erfahrungsberichte von Familien</li>
+                <li>Weitere Leitfäden und Ressourcen</li>
+            </ul>
+            <p style="margin-top: 1rem;"><a href="https://autismus-adhs-alltag.de/" style="color: var(--color-primary); font-weight: 600;">→ Zur Website</a></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p><strong>© 2026 autismus-adhs-alltag.de</strong> | Paul Rawe</p>
+        <p style="margin-top: 1rem;">
+            <a href="https://paulrawe.gumroad.com/l/yhqug">🛒 Vollversion (9,99€)</a> | 
+            <a href="https://autismus-adhs-alltag.de/">🌐 Website</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">
+            <a href="https://autismus-adhs-alltag.de/impressum.html">Impressum</a> | 
+            <a href="https://autismus-adhs-alltag.de/datenschutz.html">Datenschutz</a>
+        </p>
+    </footer>
+</body>
+</html>

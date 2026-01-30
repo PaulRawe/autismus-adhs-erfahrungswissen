@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gespräche mit der Schule erfolgreich führen PREVIEW</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #2C7A7B;
+            --color-secondary: #38A169;
+            --color-accent: #ED8936;
+            --color-success: #48BB78;
+            --color-warm: #4299E1;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.7;
+            color: #2C2C2C;
+            background: linear-gradient(135deg, #E6FFFA 0%, #B2F5EA 100%);
+            font-size: 18px;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1E5A5C 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(237, 137, 54, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            z-index: 1;
+        }
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--color-accent);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        .back-btn {
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: rgba(255,255,255,0.25); }
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+        .teaser-box {
+            background: linear-gradient(135deg, #FFF5EB 0%, #FEEBC8 100%);
+            border: 3px solid var(--color-accent);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .teaser-box h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #E8E3D6;
+        }
+        .section h3 {
+            color: var(--color-secondary);
+            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #E6FFFA 0%, #B2F5EA 100%);
+            border-left: 5px solid var(--color-primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #FFF5EB 0%, #FEEBC8 100%);
+            border-left: 5px solid var(--color-accent);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .success-box {
+            background: linear-gradient(135deg, #F0FFF4 0%, #C6F6D5 100%);
+            border-left: 5px solid var(--color-success);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .blur-overlay { position: relative; margin-top: 2rem; min-height: 180px; }
+        .blurred-text { filter: blur(5px); user-select: none; color: #999; }
+        .blur-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--color-accent);
+            color: white;
+            padding: 1.5rem 2.5rem;
+            border-radius: 30px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(237, 137, 54, 0.4);
+        }
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1E5A5C 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+            border-radius: 12px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--color-primary);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            transition: 0.3s;
+        }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .preview-badge {
+            background: var(--color-success);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .author-section {
+            background: #F8F8F8;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--color-primary);
+        }
+        .footer {
+            background: linear-gradient(135deg, #2C2C2C 0%, #1a1a1a 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .footer a {
+            color: var(--color-success);
+            text-decoration: none;
+            margin: 0 0.8rem;
+            font-weight: 600;
+        }
+        .footer a:hover { text-decoration: underline; }
+        ul { margin-left: 1.5rem; }
+        li { margin-bottom: 0.7rem; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        table th {
+            background: var(--color-primary);
+            color: white;
+            padding: 0.8rem;
+            text-align: left;
+        }
+        table td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #E8E3D6;
+        }
+        .rule-box {
+            background: white;
+            border: 2px solid var(--color-secondary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="back-btn" onclick="window.history.back()">← Zurück</button>
+        <h1>Gespräche mit der Schule erfolgreich führen</h1>
+        <p class="subtitle">Leitfaden für Eltern autistischer Kinder</p>
+        <span class="badge">📖 KOSTENLOSE LESEPROBE</span>
+    </div>
+
+    <div class="container">
+        <div class="teaser-box">
+            <h2>👩‍🏫 Professionelle Schulgespräche führen – mit Erfolg!</h2>
+            <p>Konkrete Strategien, Muster-E-Mails und Vorlagen für konstruktive Gespräche mit Lehrkräften</p>
+        </div>
+
+        <section class="section">
+            <h2>1. Einleitung: Warum gute Schulgespräche wichtig sind</h2>
+            
+            <p>Als Eltern autistischer Kinder führen Sie wahrscheinlich mehr Gespräche mit der Schule als andere Eltern. Das kann anstrengend sein – besonders wenn Sie das Gefühl haben, nicht gehört zu werden.</p>
+            
+            <p>Dieser Leitfaden hilft Ihnen, Gespräche professionell, konstruktiv und erfolgreich zu führen. Sie sind die Expert:innen für Ihr Kind – niemand kennt Ihr Kind besser als Sie!</p>
+            
+            <div class="highlight-box">
+                <strong>💙 Wichtig vorab:</strong>
+                <p style="margin-top:0.5rem;">Sie sind nicht allein! Viele Eltern machen dieselben Erfahrungen. Mit der richtigen Strategie können Sie viel erreichen – für Ihr Kind und Ihre Familie.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>2. Ihre Rechte als Eltern <span class="preview-badge">PREVIEW</span></h2>
+            
+            <p>Das steht Ihnen rechtlich zu:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Recht</th>
+                        <th>Rechtsgrundlage</th>
+                        <th>Bedeutung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Inklusion</strong></td>
+                        <td>UN-BRK Art. 24, Schulgesetz</td>
+                        <td>Ihr Kind hat das Recht auf Beschulung in der Regelschule</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nachteilsausgleich</strong></td>
+                        <td>§ 126 SGB IX</td>
+                        <td>Anpassungen, die Nachteile ausgleichen (mehr Zeit, ruhiger Raum...)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Schulbegleitung</strong></td>
+                        <td>§ 112 SGB IX, § 35a SGB VIII</td>
+                        <td>Eingliederungshilfe für Teilhabe am Unterricht</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="blur-overlay">
+                <div class="blurred-text">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><strong>Förderplan</strong></td>
+                                <td>Schulgesetz (länderspezifisch)</td>
+                                <td>Individueller Plan mit Zielen und Maßnahmen</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Elterngespräche</strong></td>
+                                <td>Schulgesetz</td>
+                                <td>Regelmäßiger Austausch über Entwicklung</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="warning-box">
+                        <strong>⚠️ Wichtig:</strong>
+                        <p>Schulgesetze sind Ländersache – die Details unterscheiden sich zwischen Bundesländern!</p>
+                    </div>
+                </div>
+                <div class="blur-message">🔒 Vollständige Rechtsübersicht in der Vollversion</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>3. Die 6 goldenen Regeln für Schulgespräche <span class="preview-badge">PREVIEW</span></h2>
+            
+            <div class="rule-box">
+                <h3>Regel 1: Partnerschaft statt Konfrontation</h3>
+                <p>Gehen Sie davon aus, dass Lehrkräfte das Beste für Ihr Kind wollen – auch wenn sie manchmal nicht wissen, WIE. Ihr Ziel: Gemeinsam Lösungen finden, nicht gegeneinander arbeiten.</p>
+                <p style="margin-top:1rem;"><strong>✅ Sagen Sie:</strong> "Ich möchte mit Ihnen zusammen schauen, wie wir [Name] am besten unterstützen können."</p>
+                <p><strong>❌ Nicht:</strong> "Sie verstehen mein Kind überhaupt nicht!"</p>
+            </div>
+
+            <div class="rule-box">
+                <h3>Regel 2: Sachlich bleiben (auch wenn es schwerfällt)</h3>
+                <p>Emotionen sind verständlich – aber sie helfen nicht. Je sachlicher Sie bleiben, desto ernster werden Sie genommen.</p>
+                <p style="margin-top:1rem;"><strong>✅ Sagen Sie:</strong> "Mir ist aufgefallen, dass [Name] oft nach der Pause gestresst wirkt. Können wir darüber sprechen?"</p>
+                <p><strong>❌ Nicht:</strong> "Sie überfordern mein Kind ständig!"</p>
+            </div>
+
+            <div class="rule-box">
+                <h3>Regel 3: Konkret werden</h3>
+                <p>Vage Aussagen helfen nicht. Je konkreter, desto besser.</p>
+                <p style="margin-top:1rem;"><strong>✅ Sagen Sie:</strong> "Am Montag sagte [Name], dass die Gruppenarbeit zu laut war. Könnte er in solchen Situationen Kopfhörer tragen?"</p>
+                <p><strong>❌ Nicht:</strong> "Mein Kind ist überfordert."</p>
+            </div>
+
+            <div class="blur-overlay">
+                <div class="blurred-text">
+                    <div class="rule-box">
+                        <h3>Regel 4: Lösungen mitbringen</h3>
+                        <p>Probleme benennen ist wichtig – aber bringen Sie auch Lösungsideen mit!</p>
+                    </div>
+                    <div class="rule-box">
+                        <h3>Regel 5: Dokumentieren</h3>
+                        <p>Schreiben Sie alles auf – vor, während und nach dem Gespräch...</p>
+                    </div>
+                    <div class="rule-box">
+                        <h3>Regel 6: Respekt zeigen</h3>
+                        <p>Lehrkräfte haben schwierige Jobs. Anerkennen Sie das – es öffnet Türen.</p>
+                    </div>
+                </div>
+                <div class="blur-message">🔒 Alle 6 Regeln mit Praxisbeispielen</div>
+            </div>
+        </section>
+
+        <div class="cta-section">
+            <h2>💡 Möchten Sie alle Strategien & Vorlagen?</h2>
+            <p>Die Vollversion enthält 18 Seiten mit konkreten Anleitungen, Muster-E-Mails und Praxisbeispielen</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📄</div>
+                    <strong>18 Seiten</strong>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✉️</div>
+                    <strong>Muster-E-Mails</strong>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✅</div>
+                    <strong>Checklisten</strong>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💼</div>
+                    <strong>Praxisbeispiele</strong>
+                </div>
+            </div>
+            
+            <a href="https://paulrawe.gumroad.com/l/ltwen" class="cta-button">
+                🛒 Zur Vollversion (6,99€)
+            </a>
+        </div>
+
+        <section class="section">
+            <h2>📚 Was Sie in der Vollversion erwartet <span class="preview-badge">PREVIEW</span></h2>
+            
+            <h3>Vollständiger Inhalt (12 Kapitel):</h3>
+            <ul>
+                <li><strong>1. Einleitung:</strong> Warum gute Schulgespräche wichtig sind</li>
+                <li><strong>2. Ihre Rechte als Eltern:</strong> Vollständige Rechtsübersicht (Inklusion, Nachteilsausgleich, Schulbegleitung, Förderplan)</li>
+                <li><strong>3. Die 6 goldenen Regeln:</strong> Partnerschaft, Sachlichkeit, Konkretheit, Lösungen, Dokumentation, Respekt</li>
+                <li><strong>4. Vorbereitung ist alles:</strong> Checkliste für vor dem Gespräch</li>
+            </ul>
+
+            <div class="blur-overlay">
+                <div class="blurred-text">
+                    <ul>
+                        <li><strong>5. Die 4 Gesprächsphasen:</strong> Einstieg, Situation schildern, Lösungen finden, Vereinbarungen festhalten</li>
+                        <li><strong>6. Schwierige Situationen meistern:</strong> "Die Schule sieht kein Problem", "Das können wir nicht leisten", Defensive Lehrkraft</li>
+                        <li><strong>7. Wichtige Themen:</strong> Schulbegleitung beantragen, Nachteilsausgleich durchsetzen, Förderplan erstellen</li>
+                        <li><strong>8. Muster-E-Mails & Vorlagen:</strong> Gesprächstermin anfragen, Gesprächsprotokoll, Nachteilsausgleich beantragen</li>
+                        <li><strong>9. Nach dem Gespräch:</strong> Dokumentation & Follow-up</li>
+                        <li><strong>10. Praxisbeispiele:</strong> Erfolgreiche Schulgespräche (Schulbegleitung durchgesetzt, Nachteilsausgleich erreicht)</li>
+                        <li><strong>11. Anlaufstellen:</strong> Wo Sie Unterstützung finden (Autismus-Beratungsstellen, Schulamt, etc.)</li>
+                        <li><strong>12. Literatur & Rechtsgrundlagen:</strong> Wichtige Gesetze, Bücher, Online-Ressourcen</li>
+                    </ul>
+                </div>
+                <div class="blur-message">🔒 Vollversion freischalten</div>
+            </div>
+
+            <h3>Besondere Features:</h3>
+            <ul>
+                <li>✉️ <strong>3 Muster-E-Mails</strong> zum direkten Verwenden</li>
+                <li>📋 <strong>Vorbereitungs-Checkliste</strong> für jedes Gespräch</li>
+                <li>📊 <strong>Rechtstabelle</strong> mit allen wichtigen Grundlagen</li>
+                <li>💬 <strong>4-Phasen-Modell</strong> für strukturierte Gespräche</li>
+                <li>💼 <strong>2 Praxisbeispiele</strong> erfolgreicher Schulgespräche</li>
+                <li>📱 <strong>Anlaufstellen-Übersicht</strong> mit Kontakten</li>
+            </ul>
+        </section>
+
+        <div class="author-section">
+            <h3>Über die Autoren</h3>
+            <p><strong>Paul Rawe</strong> (Intensivpfleger & Website-Betreiber) und <strong>Katharina Rawe</strong> (Grundschullehrerin) kennen beide Seiten: Als betroffene Eltern UND als Fachkräfte im Bildungs- und Gesundheitssystem.</p>
+            
+            <p style="margin-top: 1rem;">Katharina Rawe arbeitet täglich mit Nachteilsausgleichen und Förderplänen und weiß, worauf es in Schulgesprächen ankommt.</p>
+            
+            <div style="background: linear-gradient(135deg, var(--color-primary) 0%, #1E5A5C 100%); padding: 2rem; border-radius: 12px; text-align: center; color: white; margin-top: 2rem;">
+                <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;">🎯 Gespräche mit der Schule erfolgreich führen</p>
+                <p style="font-size: 2.5rem; font-weight: 700; color: var(--color-accent); margin: 0.5rem 0;">6,99€</p>
+                <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 1.5rem;">18 Seiten • Muster-E-Mails • Checklisten • Praxisbeispiele</p>
+                <a href="https://paulrawe.gumroad.com/l/ltwen" style="display: inline-block; background: var(--color-accent); color: white; padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem;" onmouseover="this.style.background='#F6AD55'" onmouseout="this.style.background='#ED8936'">
+                    🛒 Jetzt kaufen
+                </a>
+            </div>
+        </div>
+        
+        <div class="author-section" style="border-left: 5px solid var(--color-secondary);">
+            <h3>Mehr auf autismus-adhs-alltag.de</h3>
+            <ul style="margin-left: 1.5rem;">
+                <li>Kostenlose Blog-Artikel zu ADHS & Autismus</li>
+                <li>Praktische Alltagstipps</li>
+                <li>Erfahrungsberichte von Familien</li>
+                <li>Weitere Leitfäden und Ressourcen</li>
+            </ul>
+            <p style="margin-top: 1rem;"><a href="https://autismus-adhs-alltag.de/" style="color: var(--color-primary); font-weight: 600;">→ Zur Website</a></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p><strong>© 2026 autismus-adhs-alltag.de</strong> | Paul Rawe & Katharina Rawe</p>
+        <p style="margin-top: 1rem;">
+            <a href="https://paulrawe.gumroad.com/l/ltwen">🛒 Vollversion (6,99€)</a> | 
+            <a href="https://autismus-adhs-alltag.de/">🌐 Website</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">
+            <a href="https://autismus-adhs-alltag.de/impressum.html">Impressum</a> | 
+            <a href="https://autismus-adhs-alltag.de/datenschutz.html">Datenschutz</a>
+        </p>
+    </footer>
+</body>
+</html>

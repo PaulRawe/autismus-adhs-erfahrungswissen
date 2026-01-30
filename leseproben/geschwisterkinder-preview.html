@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geschwisterkinder verstehen & unterstützen PREVIEW</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #2D5F5D;
+            --color-accent: #D4A574;
+            --color-success: #52C1A6;
+            --color-warm: #E07A5F;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.7;
+            color: #2C2C2C;
+            background: linear-gradient(135deg, #F5F1E8 0%, #E8E3D6 100%);
+            font-size: 18px;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #234745 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--color-accent);
+            color: #2C2C2C;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        .back-btn {
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background: rgba(255,255,255,0.25); }
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #E8E3D6;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #FFF9F0 0%, #FFE8CC 100%);
+            border-left: 5px solid var(--color-accent);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .success-box {
+            background: linear-gradient(135deg, #E8F8F0 0%, #D4F1E3 100%);
+            border-left: 5px solid var(--color-success);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+        .blur-overlay { position: relative; margin-top: 2rem; min-height: 150px; }
+        .blurred-text { filter: blur(5px); user-select: none; color: #999; }
+        .blur-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--color-accent);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #234745 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+            border-radius: 12px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--color-primary);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+        .footer { background: #2e2e2e; color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
+        .footer a { color: var(--color-accent); text-decoration: none; }
+        @media (max-width: 768px) {
+            .back-btn { position: static; display: block; margin: 0 auto 1rem; width: fit-content; }
+            .header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button onclick="window.history.back()" class="back-btn">← Zurück</button>
+        <h1>Geschwisterkinder verstehen & unterstützen</h1>
+        <p>Für Eltern autistischer Kinder mit Geschwistern</p>
+        <span class="badge">📖 KOSTENLOSE LESEPROBE</span>
+    </div>
+
+    <div class="container">
+        <section class="section">
+            <h2>1. Einleitung: Die unsichtbaren Helden</h2>
+            <p>Geschwisterkinder autistischer Kinder leisten täglich Großes – oft still und unbemerkt. Sie müssen zurückstecken, Verständnis zeigen und sich anpassen. Gleichzeitig sind sie Kinder mit eigenen Bedürfnissen, Wünschen und Gefühlen.</p>
+            <p>Dieser Ratgeber hilft Ihnen, Ihre neurotypischen Kinder zu verstehen, zu unterstützen und ihnen den Raum zu geben, den sie brauchen.</p>
+            <div class="highlight-box">
+                <strong>💙 Wichtig vorab:</strong>
+                <p style="margin-top:0.5rem;">Wenn Sie diesen Ratgeber lesen, zeigt das bereits: Sie nehmen Ihre Geschwisterkinder ernst. Das ist der erste und wichtigste Schritt!</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>2. Wissenschaftlicher Hintergrund</h2>
+            <div class="success-box">
+                <strong>Positive Effekte:</strong>
+                <ul style="margin-top:0.5rem;margin-left:1.5rem;">
+                    <li>Überdurchschnittliche Empathie</li>
+                    <li>Höhere soziale Kompetenz</li>
+                    <li>Reiferes Verantwortungsbewusstsein</li>
+                    <li>Stärkere Geschwisterbeziehung</li>
+                </ul>
+            </div>
+            <div class="blur-overlay">
+                <div class="blurred-text">
+                    <p>Herausforderungen: Weniger elterliche Aufmerksamkeit, mehr Verantwortung im Haushalt...</p>
+                </div>
+                <div class="blur-message">🔒 Vollständige Studien in der Vollversion</div>
+            </div>
+        </section>
+
+        <div class="cta-section">
+            <h2>💡 Möchten Sie mehr erfahren?</h2>
+            <p>Die Vollversion enthält 14 Seiten mit wissenschaftlich fundierten Strategien</p>
+            <a href="https://paulrawe.gumroad.com/l/rhnjt" class="cta-button">🛒 Zur Vollversion (5,90€)</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p><strong>© 2026 autismus-adhs-alltag.de</strong> | Paul & Katharina Rawe</p>
+        <p style="margin-top:1rem;">
+            <a href="https://paulrawe.gumroad.com/l/rhnjt">🛒 Vollversion</a> | 
+            <a href="https://autismus-adhs-alltag.de/">🌐 Website</a>
+        </p>
+    </footer>
+</body>
+</html>
