@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leseprobe – ADHS Classroom Management Toolkit</title>
+<meta name="description" content="Kostenlose Leseprobe: Bewährte Strategien für deinen Unterricht. 5:1-Prinzip, Token-Systeme, visuelle Pläne, Übergangsrituale.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --warm-bg: #faf8f5; --white: #ffffff; --primary: #6b9080; --primary-light: #a4c3b2;
+    --primary-pale: #eaf4f0; --accent: #f0a868; --accent-light: #f8c794; --text-dark: #2d3436;
+    --text-mid: #636e72; --text-light: #95a5a6; --border: #e0ddd8;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--warm-bg);
+    color: var(--text-dark); line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .hero {
+    background: linear-gradient(160deg, #5a8070 0%, #4a6f5f 50%, #3a5f4f 100%);
+    color: #fff; padding: 60px 24px 80px; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(164,195,178,0.25) 0%, transparent 70%);
+  }
+  .hero-badge {
+    display: inline-block; background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.27);
+    color: var(--accent-light); font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase;
+    padding: 7px 18px; border-radius: 30px; margin-bottom: 28px; position: relative;
+  }
+  .hero h1 {
+    font-size: clamp(1.65rem, 3.8vw, 2.5rem); font-weight: 300; line-height: 1.3;
+    max-width: 700px; margin: 0 auto 16px; position: relative; letter-spacing: -0.5px;
+  }
+  .hero h1 strong { font-weight: 500; color: var(--accent-light); }
+  .hero-sub {
+    font-size: 0.98rem; color: rgba(255,255,255,0.65); max-width: 560px; margin: 0 auto; position: relative;
+  }
+  .section { padding: 48px 24px; max-width: 860px; margin: 0 auto; }
+  .section h2 {
+    font-size: clamp(1.55rem, 3vw, 2rem); font-weight: 300; color: var(--text-dark);
+    margin: 24px 0 32px; letter-spacing: -0.3px;
+  }
+  .section h2 strong { font-weight: 500; color: var(--primary); }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 7px; color: var(--primary);
+    font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 8px;
+  }
+  .divider {
+    height: 1px; background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--border) 80%, transparent 100%);
+    margin: 56px 0 0;
+  }
+  .preview-box {
+    background: var(--white); border: 2px solid var(--primary-light); border-radius: 16px;
+    padding: 32px; margin: 32px 0; box-shadow: 0 8px 24px rgba(107, 144, 128, 0.08);
+  }
+  .preview-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+    padding-bottom: 16px; border-bottom: 1px solid var(--border);
+  }
+  .preview-icon { font-size: 2.5rem; }
+  .preview-title { font-size: 1.3rem; font-weight: 600; color: var(--primary); }
+  .preview-content { color: var(--text-dark); line-height: 1.8; }
+  .preview-content h4 {
+    font-size: 1.05rem; font-weight: 600; color: var(--text-dark); margin: 24px 0 12px;
+  }
+  .preview-content ul { margin: 16px 0; padding-left: 24px; }
+  .preview-content li { margin: 8px 0; color: var(--text-mid); }
+  .preview-content strong { color: var(--primary); font-weight: 600; }
+  .highlight-box {
+    background: var(--primary-pale); border-left: 4px solid var(--primary);
+    padding: 16px 20px; margin: 20px 0; border-radius: 0 8px 8px 0;
+  }
+  .highlight-box p { color: var(--text-dark); font-size: 0.95rem; }
+  .example-box {
+    background: #f8f9fa; border: 1px solid var(--border); border-radius: 12px;
+    padding: 24px; margin: 20px 0;
+  }
+  .example-label {
+    display: inline-block; background: var(--primary); color: white; font-size: 0.75rem;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+    padding: 4px 10px; border-radius: 4px; margin-bottom: 12px;
+  }
+  .token-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 20px 0;
+  }
+  .token-slot {
+    aspect-ratio: 1; border: 2px dashed var(--primary-light); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+    background: white;
+  }
+  .ratio-box {
+    display: flex; align-items: center; justify-content: center; gap: 20px;
+    padding: 24px; background: var(--primary-pale); border-radius: 12px; margin: 20px 0;
+  }
+  .ratio-number {
+    font-size: 3rem; font-weight: 700; color: var(--primary);
+  }
+  .ratio-label {
+    font-size: 1rem; color: var(--text-mid); text-align: center;
+  }
+  .included-list { display: grid; gap: 16px; margin: 32px 0; }
+  .included-item {
+    display: flex; align-items: flex-start; gap: 16px; background: var(--white);
+    border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: all 0.3s ease;
+  }
+  .included-item:hover {
+    border-color: var(--primary-light); box-shadow: 0 4px 16px rgba(107, 144, 128, 0.1);
+  }
+  .included-icon { font-size: 2rem; flex-shrink: 0; }
+  .included-item h4 { font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 6px; }
+  .included-item p { color: var(--text-mid); font-size: 0.88rem; line-height: 1.5; }
+  .cta-block {
+    background: linear-gradient(135deg, var(--primary) 0%, #4a6f5f 100%); color: white;
+    text-align: center; padding: 56px 24px; border-radius: 20px; margin: 48px 24px;
+    max-width: 860px; margin-left: auto; margin-right: auto;
+  }
+  .cta-block h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 300; margin-bottom: 16px; color: white;
+  }
+  .cta-block h2 strong { font-weight: 500; color: var(--accent-light); }
+  .cta-block > p {
+    font-size: 1rem; color: rgba(255,255,255,0.8); margin-bottom: 32px;
+    max-width: 600px; margin-left: auto; margin-right: auto;
+  }
+  .cta-price { margin: 24px 0; }
+  .price-new { font-size: 2.5rem; font-weight: 700; color: var(--accent-light); }
+  .cta-btn {
+    display: inline-block; background: var(--accent); color: white; font-size: 1.1rem;
+    font-weight: 600; padding: 16px 48px; border-radius: 50px; text-decoration: none;
+    transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(240, 168, 104, 0.3); margin-top: 8px;
+  }
+  .cta-btn:hover {
+    background: #e89850; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(240, 168, 104, 0.4);
+  }
+  .cta-note { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 16px; }
+  @media (max-width: 640px) {
+    .hero { padding: 48px 20px 60px; }
+    .section { padding: 36px 20px; }
+    .preview-box { padding: 24px 20px; }
+    .token-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Kostenlose Leseprobe</div>
+  <h1><strong>ADHS Classroom Management</strong><br>Toolkit</h1>
+  <p class="hero-sub">Bewährte Strategien für deinen Unterricht • 5:1-Prinzip • Token-Systeme • Visuelle Pläne<br>Von Grundschullehrerin Katharina Rawe</p>
+</div>
+
+<div class="section">
+  <div style="text-align:center; margin-bottom: 8px;">
+    <div class="section-label">Das Problem</div>
+    <h2>Du versuchst <strong>alles</strong>, aber Max testet<br>trotzdem jede Grenze. Täglich.</h2>
+  </div>
+
+  <div class="highlight-box">
+    <p>Du ermahnst 10x am Tag. Du wirst streng. Du wirst nett. Nichts funktioniert langfristig. <strong>Das Problem:</strong> Du brauchst keine neuen Ideen - du brauchst ein <strong>System</strong>.</p>
+  </div>
+
+  <p style="text-align: center; color: var(--text-mid); font-size: 1.05rem; margin: 32px 0;">Classroom Management bei ADHS ist <strong style="color: var(--primary);">Wissenschaft, nicht Bauchgefühl.</strong> Dieses Toolkit gibt dir erprobte Strategien + fertige Vorlagen.</p>
+</div>
+
+<div class="section">
+  <div class="divider"></div>
+  <div style="text-align:center; margin-top: 36px; margin-bottom: 16px;">
+    <div class="section-label">Kostenlose Leseprobe</div>
+    <h2>Das <strong>5:1-Prinzip</strong></h2>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">🎯</div>
+      <div class="preview-title">Die mächtigste Classroom-Management-Regel</div>
+    </div>
+    <div class="preview-content">
+      
+      <div class="ratio-box">
+        <div style="text-align: center;">
+          <div class="ratio-number">5</div>
+          <div class="ratio-label">Positive<br>Feedbacks</div>
+        </div>
+        <div style="font-size: 2rem; color: var(--text-light);">:</div>
+        <div style="text-align: center;">
+          <div class="ratio-number">1</div>
+          <div class="ratio-label">Korrektur/<br>Ermahnung</div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <p><strong>📊 Forschung (Dr. Russell Barkley, ADHS-Experte):</strong><br>ADHS-Kinder brauchen 5x mehr positive Rückmeldungen als neurotypische Kinder, um Verhalten zu ändern. Bei 1:1 oder 1:5 (mehr Kritik als Lob) verschlechtert sich Verhalten.</p>
+      </div>
+
+      <h4>Warum das funktioniert</h4>
+      <p>ADHS-Gehirne haben ein <strong>unteraktives Belohnungssystem</strong>:</p>
+      <ul>
+        <li>Weniger Dopamin (Motivations-Neurotransmitter)</li>
+        <li>Negative Konsequenzen wirken schlecht</li>
+        <li>Positive Verstärkung wirkt deutlich besser</li>
+        <li>Brauchen häufigere, intensivere positive Rückmeldungen</li>
+      </ul>
+
+      <h4>Praktische Umsetzung</h4>
+
+      <div class="example-box">
+        <div class="example-label">✅ Was zählt als "positives Feedback"?</div>
+        <p><strong>Verbales Lob:</strong></p>
+        <ul>
+          <li>"Gut gemacht, Max!"</li>
+          <li>"Danke dass du Hand gehoben hast!"</li>
+          <li>"Super wie du heute arbeitest!"</li>
+        </ul>
+        <p style="margin-top: 16px;"><strong>Nonverbales Lob:</strong></p>
+        <ul>
+          <li>Daumen hoch</li>
+          <li>Lächeln + Nicken</li>
+          <li>Kurz Schulter berühren</li>
+        </ul>
+        <p style="margin-top: 16px;"><strong>Materielle Verstärker:</strong></p>
+        <ul>
+          <li>Sticker/Stempel</li>
+          <li>Smiley auf Arbeitsblatt</li>
+          <li>Token/Punkt auf Karte</li>
+        </ul>
+      </div>
+
+      <div class="example-box">
+        <div class="example-label">❌ Was zählt als "Korrektur"?</div>
+        <ul>
+          <li>"Max, hör auf zu reden!"</li>
+          <li>"Lisa, setz dich hin!"</li>
+          <li>"Das haben wir schon besprochen!"</li>
+          <li>Mahnender Blick</li>
+          <li>Konsequenz androhen</li>
+        </ul>
+      </div>
+
+      <h4>5:1 im Alltag tracken</h4>
+
+      <div class="example-box">
+        <div class="example-label">📊 Tracking-Methode</div>
+        <p><strong>Strichliste am Schreibtisch:</strong></p>
+        <p style="margin-left: 16px; color: var(--text-mid);">Links: ||||| (Positiv)<br>Rechts: | (Korrektur)</p>
+        <p style="margin-top: 16px;"><strong>Oder: 2 Taschen mit Steinen</strong></p>
+        <p style="margin-left: 16px; color: var(--text-mid);">Linke Tasche: 10 Steine<br>Bei positivem Feedback: Stein in rechte Tasche<br>Bei Korrektur: Stein zurück in linke Tasche (und du brauchst 5 neue Positive!)</p>
+        <p style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);"><strong style="color: var(--primary);">Ziel am Ende der Woche:</strong> Mindestens 5:1 Ratio erreicht haben</p>
+      </div>
+
+      <h4>Die ersten 7 Tage</h4>
+      <p>So implementierst du 5:1 diese Woche:</p>
+
+      <div class="highlight-box">
+        <p><strong>Tag 1-2:</strong> Nur tracken, nichts ändern. Schau wie dein aktuelles Verhältnis ist.<br>
+        <strong>Tag 3-4:</strong> Aktiv mehr positives Feedback geben. Ziel: 3:1<br>
+        <strong>Tag 5-7:</strong> Auf 5:1 steigern. Du wirst merken: Verhalten verbessert sich!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">🎫</div>
+      <div class="preview-title">Token-Systeme</div>
+    </div>
+    <div class="preview-content">
+      <p>Token-Systeme sind <strong>externe Belohnungssysteme</strong> die das fehlende interne Belohnungssystem bei ADHS ersetzen.</p>
+
+      <div class="highlight-box">
+        <p><strong>💡 Grundprinzip:</strong> Kind zeigt gewünschtes Verhalten → bekommt sofort Token (Punkt, Sticker, Stern) → sammelt Tokens → tauscht gegen Belohnung</p>
+      </div>
+
+      <h4>Beispiel: Hand-Heben Challenge</h4>
+
+      <div class="example-box">
+        <div class="example-label">🎯 Token-Karte</div>
+        <div style="background: white; padding: 20px; border-radius: 12px; border: 2px solid var(--primary);">
+          <p style="text-align: center; font-weight: 600; font-size: 1.2rem; margin-bottom: 16px; color: var(--primary);">Hand heben Challenge!</p>
+          <p style="text-align: center; margin-bottom: 16px;"><strong>Name:</strong> Max</p>
+          <div class="token-grid">
+            <div class="token-slot">⭐</div>
+            <div class="token-slot">⭐</div>
+            <div class="token-slot">⭐</div>
+            <div class="token-slot">⭐</div>
+            <div class="token-slot">⭐</div>
+            <div class="token-slot">⭐</div>
+            <div class="token-slot">⭐</div>
+            <div class="token-slot">⭐</div>
+            <div class="token-slot">⭐</div>
+            <div class="token-slot">⭐</div>
+          </div>
+          <p style="text-align: center; margin-top: 16px; font-size: 0.9rem;">
+            <strong>Ziel:</strong> 10 Sterne = 10 Min Tablet-Zeit<br>
+            <strong>Regel:</strong> Hand heben statt reinrufen = 1 Stern
+          </p>
+        </div>
+      </div>
+
+      <h4>Token-System einrichten - Schritt für Schritt</h4>
+
+      <div class="example-box">
+        <p><strong>Schritt 1: Zielverhalten definieren</strong></p>
+        <p style="margin-left: 16px; color: var(--text-mid);">Konkret & messbar: "Hand heben bevor sprechen" (nicht "respektvoll sein")</p>
+
+        <p style="margin-top: 16px;"><strong>Schritt 2: Token wählen</strong></p>
+        <p style="margin-left: 16px; color: var(--text-mid);">Sticker, Stempel, Punkte auf Karte, echte Chips - Kind darf mitentscheiden</p>
+
+        <p style="margin-top: 16px;"><strong>Schritt 3: Belohnung festlegen (mit Kind!)</strong></p>
+        <p style="margin-left: 16px; color: var(--text-mid);">10 Token = gewünschte Belohnung (Tablet-Zeit, Spiel aussuchen, Hausaufgaben-Joker...)</p>
+
+        <p style="margin-top: 16px;"><strong>Schritt 4: Sofort starten</strong></p>
+        <p style="margin-left: 16px; color: var(--text-mid);">Erste Token sofort geben für jedes korrekte Verhalten. Konsistent bleiben!</p>
+      </div>
+
+      <div class="highlight-box">
+        <p><strong>⚠️ Wichtig:</strong> Token NIE wegnehmen! Nur für positive Verhaltensweisen vergeben. Sonst wird es Bestrafungssystem statt Belohnungssystem.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">📅</div>
+      <div class="preview-title">Visuelle Tagesstruktur</div>
+    </div>
+    <div class="preview-content">
+      <p>ADHS-Kinder haben <strong>kein inneres Zeitgefühl.</strong> Sie brauchen externe Struktur.</p>
+
+      <div class="highlight-box">
+        <p><strong>Das Problem:</strong> "Was kommt als nächstes?" verursacht Angst. "Wann sind wir fertig?" ist unklar. Das triggert Unruhe und Widerstand.</p>
+      </div>
+
+      <h4>Visueller Tagesplan</h4>
+
+      <div class="example-box">
+        <div class="example-label">📊 Beispiel-Plan (an Tafel/Wand)</div>
+        <div style="background: white; padding: 20px; border-radius: 8px; border: 2px solid var(--border);">
+          <p style="text-align: center; font-weight: 600; font-size: 1.1rem; margin-bottom: 16px;">UNSER TAG</p>
+          <div style="display: grid; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 12px; padding: 8px; background: var(--primary-pale); border-radius: 6px;">
+              <span style="font-size: 1.5rem;">📘</span>
+              <div>
+                <strong>8:00 - 8:45</strong> Deutsch
+              </div>
+              <span style="margin-left: auto; font-size: 1.2rem;">✓</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 8px; background: #fff; border-radius: 6px; border: 1px solid var(--border);">
+              <span style="font-size: 1.5rem;">🔢</span>
+              <div>
+                <strong>8:45 - 9:30</strong> Mathe
+              </div>
+              <span style="margin-left: auto; font-size: 1.2rem; color: var(--text-light);">☐</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 8px; background: #fff; border-radius: 6px; border: 1px solid var(--border);">
+              <span style="font-size: 1.5rem;">☕</span>
+              <div>
+                <strong>9:30 - 9:45</strong> Pause
+              </div>
+              <span style="margin-left: auto; font-size: 1.2rem; color: var(--text-light);">☐</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h4>Warum das funktioniert</h4>
+      <ul>
+        <li><strong>Vorhersagbarkeit:</strong> Kind weiß was kommt</li>
+        <li><strong>Zeitgefühl:</strong> "Nach Mathe ist Pause" = konkret</li>
+        <li><strong>Erfolgserlebnis:</strong> Abhaken = sichtbarer Fortschritt</li>
+        <li><strong>Weniger Fragen:</strong> "Wann ist Pause?" → einfach auf Plan schauen</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="divider"></div>
+  <div style="text-align:center; margin-top:36px; margin-bottom:8px;">
+    <div class="section-label" style="display:inline-block;">Das komplette PDF</div>
+    <h2 style="text-align:center;">Was du bekommst</h2>
+  </div>
+  <div class="included-list">
+    <div class="included-item">
+      <div class="included-icon">🎯</div>
+      <div>
+        <h4>5:1-Prinzip mit Tracking-System</h4>
+        <p>Wissenschaftliche Grundlagen, praktische Umsetzung, Tracking-Methoden, 7-Tage-Implementierungsplan</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🎫</div>
+      <div>
+        <h4>Token-Systeme einrichten</h4>
+        <p>Schritt-für-Schritt-Anleitung, 5 fertige Token-Karten zum Ausdrucken, Belohnungslisten, Do's & Don'ts</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">📅</div>
+      <div>
+        <h4>Visuelle Tagespläne & Strukturhilfen</h4>
+        <p>Tagesplan-Vorlagen, Übergangs-Checklisten, visuelle Timer-Systeme</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">✅</div>
+      <div>
+        <h4>Klassenregeln etablieren</h4>
+        <p>4 Regeln-Prinzip, Klassenregeln-Plakat zum Ausdrucken, Einführungs-Script</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">⏱️</div>
+      <div>
+        <h4>Übergangsrituale & Routinen</h4>
+        <p>Morgenroutine-Checkliste, Übergangs-Signale, Stundenstart/-ende-Rituale</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🚦</div>
+      <div>
+        <h4>Ampelsystem für Verhalten</h4>
+        <p>Visuelles Feedback-System, Ampel-Vorlage zum Ausdrucken, Implementierungs-Anleitung</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">💬</div>
+      <div>
+        <h4>Kommunikations-Scripts</h4>
+        <p>Wie erklärst du Token-System dem Kind, wie stellst du Klassenregeln vor, wie führst du neue Routinen ein</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">📋</div>
+      <div>
+        <h4>10+ druckfertige Vorlagen</h4>
+        <p>Token-Karten, Klassenregeln-Plakat, Tagesplan, Checklisten, Verhaltens-Tracker - alles sofort einsetzbar</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">⚡</div>
+      <div>
+        <h4>5-Tage-Schnellstart-Plan</h4>
+        <p>Tag 1: 5:1-Prinzip | Tag 2: Token-Karte | Tag 3: Morgenroutine | Tag 4: Klassenregeln | Tag 5: Übergänge</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🖨️</div>
+      <div>
+        <h4>Druckfertig & sofort einsetzbar</h4>
+        <p>18 Seiten PDF, wissenschaftlich fundiert, von Grundschullehrerin Katharina Rawe erstellt</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-block">
+  <h2>Bereit für <strong>systematisches<br>Classroom Management</strong>?</h2>
+  <p>18 Seiten kompaktes Praxiswissen · 10+ Vorlagen · Sofort umsetzbar<br>Von Grundschullehrerin Katharina Rawe</p>
+  <div class="cta-price">
+    <span class="price-new">€ 6,99</span>
+  </div>
+  <a href="#" class="cta-btn">Jetzt kaufen</a>
+  <p class="cta-note">Sofort-Download · Lebenslange Nutzung · Alle Updates inklusive</p>
+</div>
+
+<footer style="background: linear-gradient(135deg, #1a2420 0%, #0f1812 100%); padding: 40px 24px 32px; text-align: center;">
+  <p style="color: rgba(255,255,255,0.7); font-size: 0.82rem; margin-bottom: 16px;">
+    <strong style="color: rgba(255,255,255,0.9);">© 2026 autismus-adhs-alltag.de</strong> &nbsp;|&nbsp; Paul Rawe &amp; Katharina Rawe
+  </p>
+  <p style="margin-bottom: 14px;">
+    <a href="#" style="color: #f0a868; text-decoration: none; font-size: 0.82rem; font-weight: 600; margin: 0 10px;">🛒 Kaufen (€ 6,99)</a>
+    <a href="https://autismus-adhs-alltag.de/" style="color: #f0a868; text-decoration: none; font-size: 0.82rem; font-weight: 600; margin: 0 10px;">🌐 Website</a>
+  </p>
+  <p style="margin: 0;">
+    <a href="https://autismus-adhs-alltag.de/impressum.html" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.75rem; margin: 0 8px;">Impressum</a>
+    <a href="https://autismus-adhs-alltag.de/datenschutz.html" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.75rem; margin: 0 8px;">Datenschutz</a>
+  </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leseprobe – ADHS im Klassenraum: Sitzordnung & Raumgestaltung</title>
+<meta name="description" content="Kostenlose Leseprobe: Der physische Raum kann 50% deiner Arbeit erleichtern. Optimale Sitzplatzierung, Raumzonen, Reizreduktion.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --warm-bg: #faf8f5; --white: #ffffff; --primary: #6b9080; --primary-light: #a4c3b2;
+    --primary-pale: #eaf4f0; --accent: #f0a868; --accent-light: #f8c794; --text-dark: #2d3436;
+    --text-mid: #636e72; --text-light: #95a5a6; --border: #e0ddd8;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--warm-bg);
+    color: var(--text-dark); line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .hero {
+    background: linear-gradient(160deg, #5a8070 0%, #4a6f5f 50%, #3a5f4f 100%);
+    color: #fff; padding: 60px 24px 80px; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(164,195,178,0.25) 0%, transparent 70%);
+  }
+  .hero-badge {
+    display: inline-block; background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.27);
+    color: var(--accent-light); font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase;
+    padding: 7px 18px; border-radius: 30px; margin-bottom: 28px; position: relative;
+  }
+  .hero h1 {
+    font-size: clamp(1.65rem, 3.8vw, 2.5rem); font-weight: 300; line-height: 1.3;
+    max-width: 700px; margin: 0 auto 16px; position: relative; letter-spacing: -0.5px;
+  }
+  .hero h1 strong { font-weight: 500; color: var(--accent-light); }
+  .hero-sub {
+    font-size: 0.98rem; color: rgba(255,255,255,0.65); max-width: 560px; margin: 0 auto; position: relative;
+  }
+  .section { padding: 48px 24px; max-width: 860px; margin: 0 auto; }
+  .section h2 {
+    font-size: clamp(1.55rem, 3vw, 2rem); font-weight: 300; color: var(--text-dark);
+    margin: 24px 0 32px; letter-spacing: -0.3px;
+  }
+  .section h2 strong { font-weight: 500; color: var(--primary); }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 7px; color: var(--primary);
+    font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 8px;
+  }
+  .divider {
+    height: 1px; background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--border) 80%, transparent 100%);
+    margin: 56px 0 0;
+  }
+  .preview-box {
+    background: var(--white); border: 2px solid var(--primary-light); border-radius: 16px;
+    padding: 32px; margin: 32px 0; box-shadow: 0 8px 24px rgba(107, 144, 128, 0.08);
+  }
+  .preview-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+    padding-bottom: 16px; border-bottom: 1px solid var(--border);
+  }
+  .preview-icon { font-size: 2.5rem; }
+  .preview-title { font-size: 1.3rem; font-weight: 600; color: var(--primary); }
+  .preview-content { color: var(--text-dark); line-height: 1.8; }
+  .preview-content h4 {
+    font-size: 1.05rem; font-weight: 600; color: var(--text-dark); margin: 24px 0 12px;
+  }
+  .preview-content ul { margin: 16px 0; padding-left: 24px; }
+  .preview-content li { margin: 8px 0; color: var(--text-mid); }
+  .preview-content strong { color: var(--primary); font-weight: 600; }
+  .highlight-box {
+    background: var(--primary-pale); border-left: 4px solid var(--primary);
+    padding: 16px 20px; margin: 20px 0; border-radius: 0 8px 8px 0;
+  }
+  .highlight-box p { color: var(--text-dark); font-size: 0.95rem; }
+  .example-box {
+    background: #f8f9fa; border: 1px solid var(--border); border-radius: 12px;
+    padding: 24px; margin: 20px 0;
+  }
+  .example-label {
+    display: inline-block; background: var(--primary); color: white; font-size: 0.75rem;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+    padding: 4px 10px; border-radius: 4px; margin-bottom: 12px;
+  }
+  .seat-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: 20px 0;
+    padding: 20px; background: #f8f9fa; border-radius: 12px;
+  }
+  .seat {
+    aspect-ratio: 1; border: 2px solid var(--border); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; font-size: 0.7rem;
+    text-align: center; padding: 6px; background: white;
+  }
+  .seat.optimal { border-color: #27ae60; background: #e8f5e9; font-weight: 600; }
+  .seat.avoid { border-color: #e74c3c; background: #fee; }
+  .seat.teacher { background: var(--accent-light); border-color: var(--accent); font-weight: 600; }
+  .included-list { display: grid; gap: 16px; margin: 32px 0; }
+  .included-item {
+    display: flex; align-items: flex-start; gap: 16px; background: var(--white);
+    border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: all 0.3s ease;
+  }
+  .included-item:hover {
+    border-color: var(--primary-light); box-shadow: 0 4px 16px rgba(107, 144, 128, 0.1);
+  }
+  .included-icon { font-size: 2rem; flex-shrink: 0; }
+  .included-item h4 { font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 6px; }
+  .included-item p { color: var(--text-mid); font-size: 0.88rem; line-height: 1.5; }
+  .cta-block {
+    background: linear-gradient(135deg, var(--primary) 0%, #4a6f5f 100%); color: white;
+    text-align: center; padding: 56px 24px; border-radius: 20px; margin: 48px 24px;
+    max-width: 860px; margin-left: auto; margin-right: auto;
+  }
+  .cta-block h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 300; margin-bottom: 16px; color: white;
+  }
+  .cta-block h2 strong { font-weight: 500; color: var(--accent-light); }
+  .cta-block > p {
+    font-size: 1rem; color: rgba(255,255,255,0.8); margin-bottom: 32px;
+    max-width: 600px; margin-left: auto; margin-right: auto;
+  }
+  .cta-price { margin: 24px 0; }
+  .price-new { font-size: 2.5rem; font-weight: 700; color: var(--accent-light); }
+  .cta-btn {
+    display: inline-block; background: var(--accent); color: white; font-size: 1.1rem;
+    font-weight: 600; padding: 16px 48px; border-radius: 50px; text-decoration: none;
+    transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(240, 168, 104, 0.3); margin-top: 8px;
+  }
+  .cta-btn:hover {
+    background: #e89850; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(240, 168, 104, 0.4);
+  }
+  .cta-note { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 16px; }
+  .zone-grid {
+    display: grid; gap: 16px; margin: 24px 0;
+  }
+  @media (min-width: 640px) {
+    .zone-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .zone-card {
+    background: white; border: 2px solid var(--border); border-radius: 12px;
+    padding: 20px; text-align: center;
+  }
+  .zone-card h5 {
+    color: var(--primary); font-size: 1.05rem; margin: 12px 0 8px;
+  }
+  @media (max-width: 640px) {
+    .hero { padding: 48px 20px 60px; }
+    .section { padding: 36px 20px; }
+    .preview-box { padding: 24px 20px; }
+    .seat-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Kostenlose Leseprobe</div>
+  <h1><strong>ADHS im Klassenraum</strong><br>Sitzordnung & Raumgestaltung</h1>
+  <p class="hero-sub">Optimale Platzierung • Raumzonen einrichten • Reizreduktion<br>Von Grundschullehrerin Katharina Rawe</p>
+</div>
+
+<div class="section">
+  <div style="text-align:center; margin-bottom: 8px;">
+    <div class="section-label">Das Wichtigste vorab</div>
+    <h2>Der physische Raum kann <strong>50% deiner Arbeit</strong><br>erleichtern oder erschweren</h2>
+  </div>
+
+  <div class="highlight-box">
+    <p>Du hast ein ADHS-Kind in deiner Klasse und fragst dich: <strong>"Wo soll ich es hinsetzen?"</strong> Die Antwort: Der Sitzplatz ist einer der wichtigsten Faktoren für schulischen Erfolg bei ADHS.</p>
+  </div>
+
+  <p style="text-align: center; color: var(--text-mid); font-size: 1.05rem; margin: 32px 0;">Ein ADHS-optimierter Klassenraum ist <strong style="color: var(--primary);">für alle Kinder</strong> besser. Klare Struktur, weniger Reize, durchdachte Sitzordnung - das profitiert die gesamte Klasse.</p>
+</div>
+
+<div class="section">
+  <div class="divider"></div>
+  <div style="text-align:center; margin-top: 36px; margin-bottom: 16px;">
+    <div class="section-label">Kostenlose Leseprobe</div>
+    <h2>Die <strong>optimale Sitzordnung</strong></h2>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">🪑</div>
+      <div class="preview-title">Grundprinzipien der Platzierung</div>
+    </div>
+    <div class="preview-content">
+      
+      <div class="highlight-box">
+        <p><strong>✅ Idealer Platz für ADHS-Kind:</strong></p>
+        <ul style="margin-top: 12px;">
+          <li><strong>Vorne:</strong> 1.-2. Reihe (in Reichweite der Lehrkraft)</li>
+          <li><strong>Mittig:</strong> Nicht am Fenster (Ablenkung), nicht am Gang (Durchgangsverkehr)</li>
+          <li><strong>Neben ruhigem Schüler:</strong> Geduldig, hilfsbereit, nicht selbst unruhig</li>
+          <li><strong>Rücken zur Wand:</strong> Kein Durchgangsverkehr hinter ihm</li>
+          <li><strong>Zugang zu Bewegung:</strong> Kann kurz aufstehen ohne durch Klasse zu müssen</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box" style="background: #fee; border-left-color: #e74c3c;">
+        <p><strong>❌ Ungünstiger Platz:</strong></p>
+        <ul style="margin-top: 12px;">
+          <li>Hinten (keine Aufsicht, viele Ablenkungen)</li>
+          <li>Am Fenster (permanente Reize von draußen)</li>
+          <li>Neben "unruhigem" Schüler (triggern sich gegenseitig)</li>
+          <li>An Hauptwegen (Durchgangsverkehr lenkt ab)</li>
+        </ul>
+      </div>
+
+      <h4>Beispiel-Sitzplan</h4>
+      <div class="example-box">
+        <div class="example-label">📐 Optimal vs. Problematisch</div>
+        <p style="margin-bottom: 16px; color: var(--text-mid);">Grün = ADHS-Kind optimal platziert | Orange = Tafel | Weiß = andere Schüler | Rot = ungünstig</p>
+        
+        <div class="seat-grid">
+          <div class="seat teacher" style="grid-column: 1 / -1; font-size: 0.85rem;">← TAFEL →</div>
+          <div class="seat">S1</div>
+          <div class="seat optimal">Max<br>(ADHS)</div>
+          <div class="seat">Ruhig</div>
+          <div class="seat">S4</div>
+          <div class="seat avoid">❌<br>Fenster</div>
+          <div class="seat">S6</div>
+          <div class="seat">S7</div>
+          <div class="seat">S8</div>
+          <div class="seat">S9</div>
+          <div class="seat avoid">❌<br>Hinten</div>
+        </div>
+        
+        <p style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--text-mid);">
+          <strong style="color: var(--primary);">Warum das funktioniert:</strong> Max sitzt vorne-mittig, hat Lehrkraft in Reichweite, keinen Durchgangsverkehr, und sein Nachbar ist geduldig und hilfsbereit.
+        </p>
+      </div>
+
+      <div class="highlight-box" style="background: #e3f2fd; border-left-color: #2196f3;">
+        <p><strong>💡 Pro-Tipp: Flexible Sitzalternativen</strong><br>Manche ADHS-Kinder arbeiten besser im <strong>Stehen an einem Stehpult</strong> oder auf einem <strong>Gymnastikball</strong> statt Stuhl. Bewegung = Regulation. Probiere verschiedene Optionen!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">🏠</div>
+      <div class="preview-title">Raumzonen schaffen</div>
+    </div>
+    <div class="preview-content">
+      <p>ADHS-Kinder brauchen <strong>klare räumliche Struktur.</strong> Schaffe 4 Zonen in deinem Klassenraum:</p>
+
+      <div class="zone-grid">
+        <div class="zone-card">
+          <div style="font-size: 2.5rem;">🎯</div>
+          <h5>1. Arbeitszone</h5>
+          <p style="color: var(--text-mid); font-size: 0.88rem;">Tische, still, konzentriert<br>Minimale Deko, Timer sichtbar</p>
+        </div>
+
+        <div class="zone-card">
+          <div style="font-size: 2.5rem;">😌</div>
+          <h5>2. Ruheecke</h5>
+          <p style="color: var(--text-mid); font-size: 0.88rem;">Für emotionale Pausen<br>Sitzsack, Sanduhr, Bücher</p>
+        </div>
+
+        <div class="zone-card">
+          <div style="font-size: 2.5rem;">🏃</div>
+          <h5>3. Bewegungszone</h5>
+          <p style="color: var(--text-mid); font-size: 0.88rem;">Hinten, für kurze Aktivität<br>Hampelmänner, Stretching</p>
+        </div>
+
+        <div class="zone-card">
+          <div style="font-size: 2.5rem;">📚</div>
+          <h5>4. Materialzone</h5>
+          <p style="color: var(--text-mid); font-size: 0.88rem;">Schrank mit klarer Struktur<br>Farbcodiert, beschriftet</p>
+        </div>
+      </div>
+
+      <h4>Ruheecke einrichten - praktisch</h4>
+
+      <div class="example-box">
+        <div class="example-label">🛋️ Einrichtung</div>
+        <p><strong>Was du brauchst:</strong></p>
+        <ul>
+          <li>Sitzsack oder dickes Kissen</li>
+          <li>Sanduhr (5-Min-Timer für zeitlich begrenzte Pause)</li>
+          <li>Bücher oder Malzeug (zur Beruhigung)</li>
+          <li>Optional: Kopfhörer mit Naturgeräuschen</li>
+        </ul>
+        <p style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);"><strong style="color: var(--primary);">Regel etablieren:</strong> "Wenn du überfordert bist, darfst du 5 Min in die Ruheecke. Sanduhr stellen, dann zurück zur Arbeit."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">👁️</div>
+      <div class="preview-title">Reizreduktion</div>
+    </div>
+    <div class="preview-content">
+      <p>Das ADHS-Gehirn kann <strong>Reize nicht filtern.</strong> Während du sprichst, nimmt das Kind gleichzeitig wahr:</p>
+      <ul>
+        <li>Deine Stimme</li>
+        <li>Das Vogelgezwitscher draußen</li>
+        <li>Den Radiergummi vom Nachbarn</li>
+        <li>Das Poster an der Wand</li>
+        <li>Das Jucken am Bein</li>
+        <li>Das Rascheln einer Plastiktüte</li>
+      </ul>
+
+      <div class="highlight-box">
+        <p><strong>Das Problem:</strong> Das Gehirn kann nicht priorisieren "Lehrerin = wichtig!". Alle Reize haben gleiche Priorität. Deshalb ist <strong>Reizreduktion im Klassenraum</strong> essentiell.</p>
+      </div>
+
+      <h4>Praktische Maßnahmen</h4>
+
+      <div class="example-box">
+        <div class="example-label">🎨 Visuelle Reize</div>
+        <p><strong>Problem:</strong> Zu viele Poster, bunte Deko, chaotische Regale<br>
+        <strong>Lösung:</strong> Wände teilweise leer lassen, nur lernrelevante Poster aufhängen, einheitliche Farben</p>
+      </div>
+
+      <div class="example-box">
+        <div class="example-label">🔊 Akustische Reize</div>
+        <p><strong>Problem:</strong> Stuhlscharren, Murmeln, Unruhe<br>
+        <strong>Lösung:</strong> Teppich auslegen, Filzgleiter unter alle Stühle, Lärmampel nutzen, "Flüsterstimme"-Regel</p>
+      </div>
+
+      <div class="example-box">
+        <div class="example-label">🚶 Bewegungsreize</div>
+        <p><strong>Problem:</strong> Kinder laufen hinter ADHS-Kind vorbei, Durchgangsverkehr<br>
+        <strong>Lösung:</strong> ADHS-Kind Rücken zur Wand, Wege so planen dass niemand vorbeilaufen muss</p>
+      </div>
+
+      <h4>Arbeitsplatz minimieren</h4>
+
+      <p>ADHS-Kinder brauchen <strong>weniger</strong> auf dem Tisch, nicht mehr:</p>
+
+      <div class="highlight-box">
+        <p><strong>✅ Auf dem Tisch erlaubt:</strong></p>
+        <ul style="margin-top: 8px;">
+          <li>Nur Material für <strong>aktuelle</strong> Aufgabe</li>
+          <li>3 Stifte (nicht 20)</li>
+          <li>Aktuelles Arbeitsblatt/Heft</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box" style="background: #fee; border-left-color: #e74c3c;">
+        <p><strong>❌ Muss weg vom Tisch:</strong></p>
+        <ul style="margin-top: 8px;">
+          <li>Spielzeug, Fidget-Toys (außer genehmigt)</li>
+          <li>Unnötige Stifte/Materialien</li>
+          <li>Alles was ablenkt</li>
+        </ul>
+        <p style="margin-top: 12px;"><strong>Tipp:</strong> Fach/Box unter dem Tisch für "Ablenkungen"</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="divider"></div>
+  <div style="text-align:center; margin-top:36px; margin-bottom:8px;">
+    <div class="section-label" style="display:inline-block;">Das komplette PDF</div>
+    <h2 style="text-align:center;">Was du bekommst</h2>
+  </div>
+  <div class="included-list">
+    <div class="included-item">
+      <div class="included-icon">🪑</div>
+      <div>
+        <h4>Optimale Sitzordnung mit 3 Beispiel-Plänen</h4>
+        <p>Grundprinzipien, Do's & Don'ts, Sitzpläne für verschiedene Klassenzimmer-Layouts</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🏠</div>
+      <div>
+        <h4>4 Raumzonen einrichten</h4>
+        <p>Arbeitszone, Ruheecke, Bewegungszone, Materialzone - jeweils mit kompletter Einrichtungsliste und Regelwerk</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">👁️</div>
+      <div>
+        <h4>Reizreduktion: Problem → Lösung Tabelle</h4>
+        <p>Konkrete Maßnahmen für visuelle, akustische und taktile Reize</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">✅</div>
+      <div>
+        <h4>Sitzplan-Checkliste (7 Punkte)</h4>
+        <p>Zum Ausdrucken und Abhaken: Ist dieser Platz optimal?</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">📋</div>
+      <div>
+        <h4>Arbeitsplatz-Checkliste für ADHS-Kinder</h4>
+        <p>Was sollte auf/unter dem Tisch sein? Tägliche Kontrolle</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🎯</div>
+      <div>
+        <h4>Raumzonen-Plan zum Ausdrucken</h4>
+        <p>Visuelle Darstellung der 4 Zonen für Klassenzimmer-Wand oder Schrank</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">📐</div>
+      <div>
+        <h4>Blanko-Sitzpläne zum Ausfüllen</h4>
+        <p>3 verschiedene Layouts, trage deine Schüler ein und plane optimal</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">⚡</div>
+      <div>
+        <h4>5-Tage-Umsetzungsplan</h4>
+        <p>Tag 1: Sitzplatz optimieren | Tag 2: Arbeitsplatz reduzieren | Tag 3: Ruheecke einrichten | Tag 4: Reizreduktion | Tag 5: Materialzone</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🖨️</div>
+      <div>
+        <h4>Druckfertig & sofort einsetzbar</h4>
+        <p>10 Seiten PDF, wissenschaftlich fundiert, von Grundschullehrerin Katharina Rawe erstellt</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-block">
+  <h2>Bereit für ein<br><strong>ADHS-optimiertes Klassenzimmer</strong>?</h2>
+  <p>10 Seiten kompaktes Praxiswissen · Sofort umsetzbar · Mit druckfertigen Vorlagen<br>Von Grundschullehrerin Katharina Rawe</p>
+  <div class="cta-price">
+    <span class="price-new">€ 6,99</span>
+  </div>
+  <a href="#" class="cta-btn">Jetzt kaufen</a>
+  <p class="cta-note">Sofort-Download · Lebenslange Nutzung · Alle Updates inklusive</p>
+</div>
+
+<footer style="background: linear-gradient(135deg, #1a2420 0%, #0f1812 100%); padding: 40px 24px 32px; text-align: center;">
+  <p style="color: rgba(255,255,255,0.7); font-size: 0.82rem; margin-bottom: 16px;">
+    <strong style="color: rgba(255,255,255,0.9);">© 2026 autismus-adhs-alltag.de</strong> &nbsp;|&nbsp; Paul Rawe &amp; Katharina Rawe
+  </p>
+  <p style="margin-bottom: 14px;">
+    <a href="#" style="color: #f0a868; text-decoration: none; font-size: 0.82rem; font-weight: 600; margin: 0 10px;">🛒 Kaufen (€ 6,99)</a>
+    <a href="https://autismus-adhs-alltag.de/" style="color: #f0a868; text-decoration: none; font-size: 0.82rem; font-weight: 600; margin: 0 10px;">🌐 Website</a>
+  </p>
+  <p style="margin: 0;">
+    <a href="https://autismus-adhs-alltag.de/impressum.html" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.75rem; margin: 0 8px;">Impressum</a>
+    <a href="https://autismus-adhs-alltag.de/datenschutz.html" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.75rem; margin: 0 8px;">Datenschutz</a>
+  </p>
+</footer>
+
+</body>
+</html>

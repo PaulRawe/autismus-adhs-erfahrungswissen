@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leseprobe – ADHS-SOS: Notfallplan für Krisen</title>
+<meta name="description" content="Kostenlose Leseprobe: Wenn nichts mehr geht. Meltdown-Protokoll, Deeskalations-Scripts, Reset-Strategien.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --warm-bg: #faf8f5; --white: #ffffff; --primary: #6b9080; --primary-light: #a4c3b2;
+    --primary-pale: #eaf4f0; --accent: #f0a868; --accent-light: #f8c794; --text-dark: #2d3436;
+    --text-mid: #636e72; --text-light: #95a5a6; --border: #e0ddd8;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--warm-bg);
+    color: var(--text-dark); line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  .hero {
+    background: linear-gradient(160deg, #c0504d 0%, #953935 50%, #6d2926 100%);
+    color: #fff; padding: 60px 24px 80px; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(255,165,150,0.25) 0%, transparent 70%);
+  }
+  .hero-badge {
+    display: inline-block; background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.27);
+    color: #ffd4a3; font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase;
+    padding: 7px 18px; border-radius: 30px; margin-bottom: 28px; position: relative;
+  }
+  .hero h1 {
+    font-size: clamp(1.65rem, 3.8vw, 2.5rem); font-weight: 300; line-height: 1.3;
+    max-width: 700px; margin: 0 auto 16px; position: relative; letter-spacing: -0.5px;
+  }
+  .hero h1 strong { font-weight: 500; color: #ffd4a3; }
+  .hero-sub {
+    font-size: 0.98rem; color: rgba(255,255,255,0.7); max-width: 560px; margin: 0 auto; position: relative;
+  }
+  .section { padding: 48px 24px; max-width: 860px; margin: 0 auto; }
+  .section h2 {
+    font-size: clamp(1.55rem, 3vw, 2rem); font-weight: 300; color: var(--text-dark);
+    margin: 24px 0 32px; letter-spacing: -0.3px;
+  }
+  .section h2 strong { font-weight: 500; color: #c0504d; }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 7px; color: #c0504d;
+    font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 8px;
+  }
+  .divider {
+    height: 1px; background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--border) 80%, transparent 100%);
+    margin: 56px 0 0;
+  }
+  .preview-box {
+    background: var(--white); border: 2px solid #f0a4a4; border-radius: 16px;
+    padding: 32px; margin: 32px 0; box-shadow: 0 8px 24px rgba(192, 80, 77, 0.08);
+  }
+  .preview-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+    padding-bottom: 16px; border-bottom: 1px solid var(--border);
+  }
+  .preview-icon { font-size: 2.5rem; }
+  .preview-title { font-size: 1.3rem; font-weight: 600; color: #c0504d; }
+  .preview-content { color: var(--text-dark); line-height: 1.8; }
+  .preview-content h4 {
+    font-size: 1.05rem; font-weight: 600; color: var(--text-dark); margin: 24px 0 12px;
+  }
+  .preview-content ul { margin: 16px 0; padding-left: 24px; }
+  .preview-content li { margin: 8px 0; color: var(--text-mid); }
+  .preview-content strong { color: #c0504d; font-weight: 600; }
+  .highlight-box {
+    background: #fff5f5; border-left: 4px solid #c0504d;
+    padding: 16px 20px; margin: 20px 0; border-radius: 0 8px 8px 0;
+  }
+  .highlight-box p { color: var(--text-dark); font-size: 0.95rem; }
+  .example-box {
+    background: #f8f9fa; border: 1px solid var(--border); border-radius: 12px;
+    padding: 24px; margin: 20px 0;
+  }
+  .example-label {
+    display: inline-block; background: #c0504d; color: white; font-size: 0.75rem;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+    padding: 4px 10px; border-radius: 4px; margin-bottom: 12px;
+  }
+  .step-box {
+    background: white; border-left: 4px solid #c0504d; padding: 16px 20px;
+    margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+  .step-box h5 {
+    color: #c0504d; font-size: 1rem; margin-bottom: 8px;
+  }
+  .included-list { display: grid; gap: 16px; margin: 32px 0; }
+  .included-item {
+    display: flex; align-items: flex-start; gap: 16px; background: var(--white);
+    border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: all 0.3s ease;
+  }
+  .included-item:hover {
+    border-color: #f0a4a4; box-shadow: 0 4px 16px rgba(192, 80, 77, 0.1);
+  }
+  .included-icon { font-size: 2rem; flex-shrink: 0; }
+  .included-item h4 { font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 6px; }
+  .included-item p { color: var(--text-mid); font-size: 0.88rem; line-height: 1.5; }
+  .cta-block {
+    background: linear-gradient(135deg, #c0504d 0%, #953935 100%); color: white;
+    text-align: center; padding: 56px 24px; border-radius: 20px; margin: 48px 24px;
+    max-width: 860px; margin-left: auto; margin-right: auto;
+  }
+  .cta-block h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 300; margin-bottom: 16px; color: white;
+  }
+  .cta-block h2 strong { font-weight: 500; color: #ffd4a3; }
+  .cta-block > p {
+    font-size: 1rem; color: rgba(255,255,255,0.85); margin-bottom: 32px;
+    max-width: 600px; margin-left: auto; margin-right: auto;
+  }
+  .cta-price { margin: 24px 0; }
+  .price-new { font-size: 2.5rem; font-weight: 700; color: #ffd4a3; }
+  .cta-btn {
+    display: inline-block; background: var(--accent); color: white; font-size: 1.1rem;
+    font-weight: 600; padding: 16px 48px; border-radius: 50px; text-decoration: none;
+    transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(240, 168, 104, 0.3); margin-top: 8px;
+  }
+  .cta-btn:hover {
+    background: #e89850; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(240, 168, 104, 0.4);
+  }
+  .cta-note { font-size: 0.85rem; color: rgba(255,255,255,0.65); margin-top: 16px; }
+  @media (max-width: 640px) {
+    .hero { padding: 48px 20px 60px; }
+    .section { padding: 36px 20px; }
+    .preview-box { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Kostenlose Leseprobe</div>
+  <h1><strong>ADHS-SOS</strong><br>Notfallplan für Krisen</h1>
+  <p class="hero-sub">Meltdown-Protokoll • Deeskalations-Scripts • Reset-Strategien<br>Von Grundschullehrerin Katharina Rawe</p>
+</div>
+
+<div class="section">
+  <div style="text-align:center; margin-bottom: 8px;">
+    <div class="section-label">Die Realität</div>
+    <h2>Max wirft Stühle. Lisa schreit.<br><strong>Du stehst hilflos da.</strong></h2>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Manchmal geht nichts mehr.</strong> Das ADHS-Kind ist überfordert, emotional überladen, im Meltdown. Alle deine Strategien funktionieren nicht. Du brauchst einen <strong>Notfallplan.</strong></p>
+  </div>
+
+  <p style="text-align: center; color: var(--text-mid); font-size: 1.05rem; margin: 32px 0;">Dieses PDF ist dein <strong style="color: #c0504d;">Krisenprotokoll</strong>: Was du sagst, was du NICHT sagst, wie du deeskalierst, wie ihr danach weitermacht.</p>
+</div>
+
+<div class="section">
+  <div class="divider"></div>
+  <div style="text-align:center; margin-top: 36px; margin-bottom: 16px;">
+    <div class="section-label">Kostenlose Leseprobe</div>
+    <h2>Das <strong>3-Phasen-Krisenprotokoll</strong></h2>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">🚨</div>
+      <div class="preview-title">Phase 1: Akute Krise (0-5 Min)</div>
+    </div>
+    <div class="preview-content">
+      <div class="highlight-box">
+        <p><strong>Dein Ziel:</strong> Sicherheit herstellen. Emotionen runterregulieren. NICHT: Problem lösen, Gespräch führen, Konsequenzen androhen.</p>
+      </div>
+
+      <h4>Sofort-Maßnahmen</h4>
+
+      <div class="step-box">
+        <h5>1. Sicherheit checken (5 Sek)</h5>
+        <p>Kann sich das Kind oder andere verletzen? Falls ja: Klasse evakuieren oder Kind entfernen.</p>
+      </div>
+
+      <div class="step-box">
+        <h5>2. Raum schaffen (10 Sek)</h5>
+        <p>Andere Kinder zurück ("Gebt Lisa Platz"). Zuschauer = mehr Eskalation.</p>
+      </div>
+
+      <div class="step-box">
+        <h5>3. Ruhig bleiben & Präsenz zeigen (konstant)</h5>
+        <p>Deine Ruhe ist ansteckend. Atme bewusst langsam. Sprich leise, monoton.</p>
+      </div>
+
+      <div class="step-box">
+        <h5>4. Minimal sprechen</h5>
+        <p><strong>Sage NUR:</strong><br>
+        "Ich bin hier."<br>
+        "Du bist sicher."<br>
+        "Atme mit mir."</p>
+      </div>
+
+      <div class="highlight-box" style="background: #fee; border-left-color: #e74c3c;">
+        <p><strong>❌ NIEMALS in akuter Krise sagen:</strong></p>
+        <ul style="margin-top: 12px;">
+          <li>"Beruhige dich!" (Funktioniert nie, macht alles schlimmer)</li>
+          <li>"Warum machst du das?" (Kind weiß es nicht)</li>
+          <li>"Wenn du nicht aufhörst..." (Drohen eskaliert)</li>
+          <li>"Alle schauen auf dich" (Scham verstärkt Krise)</li>
+        </ul>
+      </div>
+
+      <h4>Deeskalations-Skript</h4>
+
+      <div class="example-box">
+        <div class="example-label">💬 Was du sagst (langsam, ruhig, monoton)</div>
+        <p style="font-style: italic; margin-bottom: 16px;">[Kind schreit/wirft Dinge]</p>
+        <p style="margin-left: 16px; color: var(--text-mid);"><strong>Du:</strong> "Max, ich bin hier. Du bist sicher."</p>
+        <p style="margin-left: 16px; color: var(--text-mid); margin-top: 8px;"><strong>Pause 30 Sek.</strong> Nicht weiterreden.</p>
+        <p style="margin-left: 16px; color: var(--text-mid); margin-top: 8px;"><strong>Du:</strong> "Atme mit mir. Ein... aus... ein... aus..."</p>
+        <p style="margin-left: 16px; color: var(--text-mid); margin-top: 8px;"><strong>Kind beruhigt sich langsam.</strong></p>
+        <p style="margin-left: 16px; color: var(--text-mid); margin-top: 8px;"><strong>Du:</strong> "Gut gemacht. Wir bleiben hier bis du bereit bist."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">😮‍💨</div>
+      <div class="preview-title">Phase 2: Beruhigung (5-15 Min)</div>
+    </div>
+    <div class="preview-content">
+      <p>Kind ist nicht mehr in akuter Panik, aber noch emotional geladen. <strong>Jetzt:</strong> Emotionen verarbeiten helfen.</p>
+
+      <div class="step-box">
+        <h5>1. An ruhigen Ort bringen</h5>
+        <p>Ruheecke, Gang, leerer Raum - weg von der Klasse. Weniger Reize = schnellere Beruhigung.</p>
+      </div>
+
+      <div class="step-box">
+        <h5>2. Emotionen benennen</h5>
+        <p>"Du warst sehr wütend/frustriert/überfordert." Benennen hilft verarbeiten.</p>
+      </div>
+
+      <div class="step-box">
+        <h5>3. Körperliche Regulation anbieten</h5>
+        <p>• Wasser trinken (physiologisch beruhigend)<br>
+        • Kühles Tuch ins Gesicht (Vagusnerv stimulieren)<br>
+        • Langsam gehen (Bewegung verarbeitet Stress)<br>
+        • Schwere Decke/Druck (propriozeptive Regulation)</p>
+      </div>
+
+      <div class="step-box">
+        <h5>4. Warten bis Kind bereit ist</h5>
+        <p>Nicht sofort Gespräch erzwingen. Frage: "Kannst du reden oder brauchst du noch Zeit?"</p>
+      </div>
+
+      <div class="example-box">
+        <div class="example-label">💬 Regulation-Skript</div>
+        <p style="margin-left: 16px; color: var(--text-mid);"><strong>Du:</strong> "Das war eine schwierige Situation. Du warst sehr frustriert."</p>
+        <p style="margin-left: 16px; color: var(--text-mid); margin-top: 8px;"><strong>Du:</strong> "Lass uns hier sitzen und ruhig werden. Hier ist Wasser."</p>
+        <p style="margin-left: 16px; color: var(--text-mid); margin-top: 8px;"><em>[5 Min Pause. Nicht reden. Nur präsent sein.]</em></p>
+        <p style="margin-left: 16px; color: var(--text-mid); margin-top: 8px;"><strong>Du:</strong> "Geht's etwas besser?"</p>
+        <p style="margin-left: 16px; color: var(--text-mid); margin-top: 8px;"><strong>Kind:</strong> <em>[nickt]</em></p>
+        <p style="margin-left: 16px; color: var(--text-mid); margin-top: 8px;"><strong>Du:</strong> "OK. Willst du darüber reden was passiert ist?"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">🔄</div>
+      <div class="preview-title">Phase 3: Reset & Wiedereinstieg (15-30 Min)</div>
+    </div>
+    <div class="preview-content">
+      <p>Kind ist beruhigt. <strong>Jetzt:</strong> Gespräch führen, Lösung finden, zurück zur Klasse.</p>
+
+      <div class="step-box">
+        <h5>1. Was ist passiert? (keine Schuldfrage!)</h5>
+        <p>"Was ist passiert das dich so frustriert hat?" NICHT: "Warum hast du das gemacht?"</p>
+      </div>
+
+      <div class="step-box">
+        <h5>2. Gefühle validieren</h5>
+        <p>"Ich verstehe dass das frustrierend war. Jeder wäre frustriert."</p>
+      </div>
+
+      <div class="step-box">
+        <h5>3. Alternative Strategie besprechen</h5>
+        <p>"Nächstes Mal wenn du so fühlst, was könntest du stattdessen machen?"<br>
+        → Kind eigene Ideen entwickeln lassen, dann ergänzen</p>
+      </div>
+
+      <div class="step-box">
+        <h5>4. Notfallplan etablieren</h5>
+        <p>"Wenn du merkst es wird zu viel: Zeig mir die Hand (= 'ich brauche Pause'). Dann kannst du in Ruheecke."</p>
+      </div>
+
+      <div class="step-box">
+        <h5>5. Wiedereinstieg planen</h5>
+        <p>"Bist du bereit zurückzugehen? Was brauchst du noch?"</p>
+      </div>
+
+      <div class="example-box">
+        <div class="example-label">✅ Reset-Checkliste vor Rückkehr</div>
+        <p>□ Kind ist körperlich ruhig (kein Zittern/Schwitzen)<br>
+        □ Kann kohärent sprechen<br>
+        □ Hat alternative Strategie verstanden<br>
+        □ Weiß was es beim nächsten Mal anders machen kann<br>
+        □ Hat Notfallsignal (Hand heben = Pause brauchen)<br>
+        □ Fühlt sich bereit zurückzugehen</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="divider"></div>
+  <div style="text-align:center; margin-top:36px; margin-bottom:8px;">
+    <div class="section-label" style="display:inline-block;">Das komplette PDF</div>
+    <h2 style="text-align:center;">Was du bekommst</h2>
+  </div>
+  <div class="included-list">
+    <div class="included-item">
+      <div class="included-icon">🚨</div>
+      <div>
+        <h4>3-Phasen-Krisenprotokoll komplett</h4>
+        <p>Detaillierte Anleitung für jede Phase mit Zeitangaben und konkreten Handlungsschritten</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">💬</div>
+      <div>
+        <h4>5 fertige Deeskalations-Scripts</h4>
+        <p>Wort-für-Wort was du sagst in: Meltdown, Aggressiver Ausbruch, Verweigerung, Emotionaler Zusammenbruch, Impulsive Handlung</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">📋</div>
+      <div>
+        <h4>Notfallplan-Vorlage zum Ausfüllen</h4>
+        <p>Individueller Plan mit Kind erstellen: Frühwarnsignale, Notfallsignal, Beruhigungsstrategien</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🧠</div>
+      <div>
+        <h4>Was NIEMALS sagen (und warum)</h4>
+        <p>Liste von 15 Sätzen die Krisen verschlimmern + wissenschaftliche Erklärung warum</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🛠️</div>
+      <div>
+        <h4>10 Schnelle Regulation-Techniken</h4>
+        <p>Atemübungen, sensorische Inputs, Bewegung - sofort anwendbar in 2-5 Min</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🤝</div>
+      <div>
+        <h4>Post-Crisis-Gespräch führen</h4>
+        <p>Template für Reflexionsgespräch am nächsten Tag: Was war der Trigger, was hilft nächstes Mal</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">👥</div>
+      <div>
+        <h4>Mit der Klasse darüber sprechen</h4>
+        <p>Wie erklärst du anderen Schülern was passiert ist - ohne ADHS-Kind zu beschämen</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">📞</div>
+      <div>
+        <h4>Wann Eltern/Schulleitung informieren</h4>
+        <p>Entscheidungsbaum: Ab wann ist externe Hilfe nötig, wie kommunizierst du das</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🎯</div>
+      <div>
+        <h4>Prävention: Krisen verhindern</h4>
+        <p>Frühwarnsignale erkennen (Körpersprache, Verhalten), präventiv eingreifen bevor Eskalation</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🖨️</div>
+      <div>
+        <h4>Druckfertig & sofort einsetzbar</h4>
+        <p>12 Seiten PDF, wissenschaftlich fundiert, von Grundschullehrerin erstellt</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-block">
+  <h2>Bereit für <strong>souveränes<br>Krisenmanagement</strong>?</h2>
+  <p>12 Seiten kompaktes Praxiswissen · 5 fertige Scripts · Sofort umsetzbar<br>Von Grundschullehrerin Katharina Rawe</p>
+  <div class="cta-price">
+    <span class="price-new">€ 6,99</span>
+  </div>
+  <a href="#" class="cta-btn">Jetzt kaufen</a>
+  <p class="cta-note">Sofort-Download · Lebenslange Nutzung · Alle Updates inklusive</p>
+</div>
+
+<footer style="background: linear-gradient(135deg, #1a2420 0%, #0f1812 100%); padding: 40px 24px 32px; text-align: center;">
+  <p style="color: rgba(255,255,255,0.7); font-size: 0.82rem; margin-bottom: 16px;">
+    <strong style="color: rgba(255,255,255,0.9);">© 2026 autismus-adhs-alltag.de</strong> &nbsp;|&nbsp; Paul Rawe &amp; Katharina Rawe
+  </p>
+  <p style="margin-bottom: 14px;">
+    <a href="#" style="color: #f0a868; text-decoration: none; font-size: 0.82rem; font-weight: 600; margin: 0 10px;">🛒 Kaufen (€ 6,99)</a>
+    <a href="https://autismus-adhs-alltag.de/" style="color: #f0a868; text-decoration: none; font-size: 0.82rem; font-weight: 600; margin: 0 10px;">🌐 Website</a>
+  </p>
+  <p style="margin: 0;">
+    <a href="https://autismus-adhs-alltag.de/impressum.html" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.75rem; margin: 0 8px;">Impressum</a>
+    <a href="https://autismus-adhs-alltag.de/datenschutz.html" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.75rem; margin: 0 8px;">Datenschutz</a>
+  </p>
+</footer>
+
+</body>
+</html>

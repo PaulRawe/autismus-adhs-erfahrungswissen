@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leseprobe – ADHS-Unterricht gestalten: Motivation & Methoden</title>
+<meta name="description" content="Kostenlose Leseprobe: Wie du ADHS-Gehirne 'anschaltest'. 20+ Bewegungspausen, 5:1-Prinzip, 45-Min-Stunde ADHS-optimiert.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --warm-bg: #faf8f5;
+    --white: #ffffff;
+    --primary: #6b9080;
+    --primary-light: #a4c3b2;
+    --primary-pale: #eaf4f0;
+    --accent: #f0a868;
+    --accent-light: #f8c794;
+    --text-dark: #2d3436;
+    --text-mid: #636e72;
+    --text-light: #95a5a6;
+    --border: #e0ddd8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--warm-bg);
+    color: var(--text-dark);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background: linear-gradient(160deg, #5a8070 0%, #4a6f5f 50%, #3a5f4f 100%);
+    color: #fff;
+    padding: 60px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(164,195,178,0.25) 0%, transparent 70%);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.13);
+    border: 1px solid rgba(255,255,255,0.27);
+    color: var(--accent-light);
+    font-size: 0.72rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 7px 18px;
+    border-radius: 30px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: clamp(1.65rem, 3.8vw, 2.5rem);
+    font-weight: 300;
+    line-height: 1.3;
+    max-width: 700px;
+    margin: 0 auto 16px;
+    position: relative;
+    letter-spacing: -0.5px;
+  }
+  .hero h1 strong {
+    font-weight: 500;
+    color: var(--accent-light);
+  }
+  .hero-sub {
+    font-size: 0.98rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 560px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .section {
+    padding: 48px 24px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .section h2 {
+    font-size: clamp(1.55rem, 3vw, 2rem);
+    font-weight: 300;
+    color: var(--text-dark);
+    margin: 24px 0 32px;
+    letter-spacing: -0.3px;
+  }
+  .section h2 strong {
+    font-weight: 500;
+    color: var(--primary);
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--primary);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    margin-bottom: 8px;
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--border) 80%, transparent 100%);
+    margin: 56px 0 0;
+  }
+
+  .preview-box {
+    background: var(--white);
+    border: 2px solid var(--primary-light);
+    border-radius: 16px;
+    padding: 32px;
+    margin: 32px 0;
+    box-shadow: 0 8px 24px rgba(107, 144, 128, 0.08);
+  }
+
+  .preview-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .preview-icon {
+    font-size: 2.5rem;
+  }
+
+  .preview-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  .preview-content {
+    color: var(--text-dark);
+    line-height: 1.8;
+  }
+
+  .preview-content h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 24px 0 12px;
+  }
+
+  .preview-content ul {
+    margin: 16px 0;
+    padding-left: 24px;
+  }
+
+  .preview-content li {
+    margin: 8px 0;
+    color: var(--text-mid);
+  }
+
+  .preview-content strong {
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .highlight-box {
+    background: var(--primary-pale);
+    border-left: 4px solid var(--primary);
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .highlight-box p {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+  }
+
+  .example-box {
+    background: #f8f9fa;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+  }
+
+  .example-label {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+
+  .included-list {
+    display: grid;
+    gap: 16px;
+    margin: 32px 0;
+  }
+
+  .included-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .included-item:hover {
+    border-color: var(--primary-light);
+    box-shadow: 0 4px 16px rgba(107, 144, 128, 0.1);
+  }
+
+  .included-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  .included-item h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+  }
+
+  .included-item p {
+    color: var(--text-mid);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .cta-block {
+    background: linear-gradient(135deg, var(--primary) 0%, #4a6f5f 100%);
+    color: white;
+    text-align: center;
+    padding: 56px 24px;
+    border-radius: 20px;
+    margin: 48px 24px;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-block h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 300;
+    margin-bottom: 16px;
+    color: white;
+  }
+
+  .cta-block h2 strong {
+    font-weight: 500;
+    color: var(--accent-light);
+  }
+
+  .cta-block > p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-price {
+    margin: 24px 0;
+  }
+
+  .price-new {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-light);
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 16px 48px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(240, 168, 104, 0.3);
+    margin-top: 8px;
+  }
+
+  .cta-btn:hover {
+    background: #e89850;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(240, 168, 104, 0.4);
+  }
+
+  .cta-note {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: 16px;
+  }
+
+  .method-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 16px 0;
+  }
+
+  .method-card h5 {
+    color: var(--primary);
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+  }
+
+  .method-card p {
+    color: var(--text-mid);
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding: 48px 20px 60px;
+    }
+    .section {
+      padding: 36px 20px;
+    }
+    .preview-box {
+      padding: 24px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Kostenlose Leseprobe</div>
+  <h1><strong>ADHS-Unterricht gestalten</strong><br>Motivation wecken • Aufmerksamkeit halten</h1>
+  <p class="hero-sub">Wie du ADHS-Gehirne "anschaltest" • 20+ Bewegungspausen • 45-Min-Stunde optimiert<br>Von Grundschullehrerin Katharina Rawe</p>
+</div>
+
+<div class="section">
+  <div style="text-align:center; margin-bottom: 8px;">
+    <div class="section-label">Das Problem</div>
+    <h2>Du planst Unterricht. Denkst an <strong>Max mit ADHS.</strong><br>Fragst dich: "Muss ich jetzt alles anders machen?"</h2>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Nein.</strong> Aber: Ein paar gezielte Anpassungen machen deinen Unterricht für ALLE Kinder besser - nicht nur für Max.</p>
+  </div>
+
+  <p style="text-align: center; color: var(--text-mid); font-size: 1.05rem; margin: 32px 0;">ADHS-freundlicher Unterricht = <strong style="color: var(--primary);">strukturiert, aktivierend, motivierend</strong>. Das sind Prinzipien guter Pädagogik. Du machst also nicht "Extra-Arbeit für Max", sondern einfach besseren Unterricht.</p>
+</div>
+
+<div class="section">
+  <div class="divider"></div>
+  <div style="text-align:center; margin-top: 36px; margin-bottom: 16px;">
+    <div class="section-label">Kostenlose Leseprobe</div>
+    <h2>Was du lernst</h2>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">🧠</div>
+      <div class="preview-title">Exekutivfunktionen – Was bei ADHS schwierig ist</div>
+    </div>
+    <div class="preview-content">
+      <p>Bevor wir zu Methoden kommen: Was macht ADHS-Gehirnen Probleme?</p>
+      
+      <div class="highlight-box">
+        <p><strong>💡 Exekutivfunktionen = CEO im Gehirn</strong><br>Bei ADHS arbeitet der "Chef" im Gehirn nicht gut. Folge: Planung, Fokus, Impulskontrolle, Arbeitsgedächtnis - alles schwieriger.</p>
+      </div>
+
+      <div class="example-box">
+        <div class="example-label">⚙️ Funktion vs. Deine Hilfe</div>
+        
+        <div class="method-card">
+          <h5>Arbeitsgedächtnis → Vergisst Anweisungen nach 10 Sek</h5>
+          <p><strong>Deine Hilfe:</strong> Schreib an Tafel, nicht nur mündlich</p>
+        </div>
+
+        <div class="method-card">
+          <h5>Planung → Kann Aufsatz nicht strukturieren</h5>
+          <p><strong>Deine Hilfe:</strong> Gib Schritt-für-Schritt-Plan</p>
+        </div>
+
+        <div class="method-card">
+          <h5>Impulskontrolle → Platzt rein, kann nicht warten</h5>
+          <p><strong>Deine Hilfe:</strong> Klare Hand-Heben-Regel + Verstärkung</p>
+        </div>
+
+        <div class="method-card">
+          <h5>Fokus → Abgelenkt nach 5 Min</h5>
+          <p><strong>Deine Hilfe:</strong> Bewegungspausen alle 15 Min</p>
+        </div>
+
+        <div class="method-card">
+          <h5>Zeitgefühl → Weiß nicht wie viel Zeit übrig</h5>
+          <p><strong>Deine Hilfe:</strong> Visueller Timer, Zeitansagen</p>
+        </div>
+      </div>
+
+      <p style="margin-top: 20px;"><strong style="color: var(--primary);">Dein Job:</strong> Externe Struktur geben, die interne fehlt.</p>
+    </div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">🎯</div>
+      <div class="preview-title">Motivation aufbauen</div>
+    </div>
+    <div class="preview-content">
+      <h4>Warum Motivation bei ADHS anders funktioniert</h4>
+      
+      <p>ADHS-Gehirne haben ein <strong style="color: var(--primary);">anders funktionierendes Belohnungssystem:</strong></p>
+      <ul>
+        <li>Dopamin (Motivation-Neurotransmitter) ist reduziert</li>
+        <li>Langfristige Belohnungen sind weniger motivierend</li>
+        <li>"Wichtigkeit" allein reicht nicht ("Das ist wichtig für deine Zukunft!")</li>
+        <li>Brauchen stärkere, sofortigere Anreize</li>
+      </ul>
+
+      <div class="highlight-box">
+        <p><strong>💡 Das Interesse-Paradox</strong><br>ADHS-Kinder können bei interessanten Dingen stundenlang hyperfokussiert sein (Videospiele, Lego, etc.) - aber bei Hausaufgaben nach 2 Min fertig. Das liegt nicht an Faulheit, sondern an neurologischen Unterschieden im Belohnungssystem.</p>
+      </div>
+
+      <h4>1. Interesse wecken – Neuheit nutzen</h4>
+      
+      <p>ADHS-Gehirne springen auf <strong>Neuheit</strong> an:</p>
+
+      <div class="example-box">
+        <div class="example-label">✅ Praktische Beispiele</div>
+        <p><strong>Aufgabenformat variieren:</strong> Nicht immer Arbeitsblatt, mal Quiz, mal Spiel, mal am Tablet</p>
+        <p><strong>Überraschungsmomente:</strong> "Heute machen wir was Besonderes!"</p>
+        <p><strong>Bewegung einbauen:</strong> Matheaufgaben beim Laufen in der Turnhalle</p>
+        <p><strong>Rätsel-Elemente:</strong> "Findet den Fehler in diesem Text"</p>
+      </div>
+
+      <h4>Persönliche Interessen einbinden</h4>
+
+      <div class="example-box">
+        <div class="example-label">📚 Beispiel: Max liebt Dinosaurier</div>
+        <p><strong>Mathe:</strong> "3 T-Rex jagen 7 Triceratops. Wie viele Dinos sind das?"</p>
+        <p><strong>Deutsch:</strong> "Schreib eine Geschichte über einen Dino-Forscher"</p>
+        <p><strong>Sachkunde:</strong> "Recherchiere: Wann lebten Dinosaurier?"</p>
+        <p><strong>Rechtschreibung:</strong> Rechtschreib-Wörter mit Dino-Bezug</p>
+        <p style="margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);"><strong style="color: var(--primary);">Effekt:</strong> Max ist plötzlich motiviert, weil Thema ihn interessiert</p>
+      </div>
+
+      <h4>Wettbewerbs-Elemente</h4>
+
+      <p>Viele ADHS-Kinder lieben Challenges:</p>
+      <ul>
+        <li><strong>Beat the clock:</strong> "Kannst du 5 Aufgaben in 3 Min schaffen?"</li>
+        <li><strong>Persönlicher Rekord:</strong> "Gestern 4 Aufgaben, heute schaffen wir 5!"</li>
+        <li><strong>Team-Challenge:</strong> "Eure Reihe gegen andere Reihe - wer ist leiser?"</li>
+        <li><strong>Punkte-Systeme:</strong> Gamification durch Levels/Achievements</li>
+      </ul>
+
+      <h4>2. Unmittelbare Verstärkung</h4>
+
+      <p>ADHS-Kinder brauchen <strong>sofortiges</strong> Feedback, nicht erst am Ende der Woche:</p>
+
+      <div class="example-box">
+        <div class="example-label">✨ Praktische Umsetzungen</div>
+        <p><strong>Walk-by-Praise:</strong> Während Stillarbeit vorbeilaufen, schnelles "Gut!", "Weiter so!"</p>
+        <p><strong>Nonverbale Signale:</strong> Daumen hoch, Lächeln, Nicken</p>
+        <p><strong>Stempel/Sticker:</strong> Nach jeder erledigten Aufgabe sofort Stempel</p>
+        <p><strong>Self-Monitoring:</strong> Kind kann selbst abhaken wenn Aufgabe fertig</p>
+        <p><strong>Peer-Feedback:</strong> Partnerkontrolle - Nachbar gibt Feedback</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">🏃</div>
+      <div class="preview-title">Bewegung als Regulationsinstrument</div>
+    </div>
+    <div class="preview-content">
+      <h4>Warum Bewegung bei ADHS so wichtig ist</h4>
+
+      <p>Bewegung ist bei ADHS <strong>nicht optional, sondern neurologisch notwendig:</strong></p>
+
+      <ul>
+        <li><strong>Erhöht Dopamin & Noradrenalin:</strong> Die Neurotransmitter die bei ADHS fehlen</li>
+        <li><strong>Verbessert Fokus:</strong> Nach Bewegung bessere Konzentration (Studien: +20-30%)</li>
+        <li><strong>Reduziert Hyperaktivität:</strong> Bewegungsdrang wird "abgelassen"</li>
+        <li><strong>Emotionsregulation:</strong> Stress/Frust wird körperlich verarbeitet</li>
+      </ul>
+
+      <div class="highlight-box">
+        <p><strong>📊 Forschung</strong><br>Studie (Ratey, 2008): 20 Min moderate Bewegung verbessert Exekutivfunktionen für 2-3h. Bei ADHS-Kindern sogar noch stärker.</p>
+      </div>
+
+      <h4>Bewegungspausen integrieren</h4>
+
+      <div class="example-box">
+        <div class="example-label">⏰ Zeitplan 45-Min-Stunde</div>
+        <p><strong>0-15 Min:</strong> Instruktion/Arbeitsphase</p>
+        <p><strong>15-17 Min:</strong> 🏃 Bewegungspause</p>
+        <p><strong>17-32 Min:</strong> Weiterarbeiten</p>
+        <p><strong>32-34 Min:</strong> 🏃 Bewegungspause</p>
+        <p><strong>34-45 Min:</strong> Abschluss</p>
+      </div>
+
+      <h4>20+ Bewegungspausen im vollständigen Guide</h4>
+      <p style="color: var(--text-mid);">Der vollständige Guide enthält einen kompletten Katalog mit über 20 Bewegungsübungen (2-3 Min), kategorisiert nach Aktivierungsgrad und Einsatzzweck. Hier 3 Beispiele:</p>
+
+      <div class="method-card">
+        <h5>1. Hampelmänner (1 Min)</h5>
+        <p><strong>Wie:</strong> 20 Hampelmänner, alle machen mit<br><strong>Effekt:</strong> Kreislauf aktivieren, Fokus erhöhen</p>
+      </div>
+
+      <div class="method-card">
+        <h5>4. Brain Gym: Cross-Crawl (2 Min)</h5>
+        <p><strong>Wie:</strong> Überkreuz berühren: rechte Hand zu linkem Knie, links zu rechts. 20x<br><strong>Effekt:</strong> Gehirnhälften verbinden, Konzentration</p>
+      </div>
+
+      <div class="method-card">
+        <h5>6. Yoga: Der Baum (3 Min)</h5>
+        <p><strong>Wie:</strong> Ein Bein angewinkelt, Balance halten, 30 Sek pro Seite<br><strong>Effekt:</strong> Fokus, Balance, Ruhe</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="divider"></div>
+  <div style="text-align:center; margin-top:36px; margin-bottom:8px;">
+    <div class="section-label" style="display:inline-block;">Das komplette PDF</div>
+    <h2 style="text-align:center;">Was du bekommst</h2>
+  </div>
+  <div class="included-list">
+    <div class="included-item">
+      <div class="included-icon">🧠</div>
+      <div>
+        <h4>ADHS verstehen – Das Wichtigste kompakt</h4>
+        <p>Exekutivfunktionen, Belohnungssystem, Kernprobleme – wissenschaftlich fundiert, praxisnah erklärt</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🎯</div>
+      <div>
+        <h4>Motivations-Strategien (5:1-Prinzip + mehr)</h4>
+        <p>Interesse wecken, Neuheit nutzen, unmittelbare Verstärkung, Wahlmöglichkeiten geben – mit konkreten Beispielen</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">💬</div>
+      <div>
+        <h4>Effektive Kommunikation</h4>
+        <p>3-Schritte-Methode für Anweisungen, Check-Methode, klar-kurz-konkret Prinzip</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🏃</div>
+      <div>
+        <h4>20+ Bewegungspausen-Katalog</h4>
+        <p>Fertige Übungen (2-3 Min), sortiert nach Aktivierungsgrad. Sofort einsetzbar.</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">📚</div>
+      <div>
+        <h4>Bewegtes Lernen – Fach-Beispiele</h4>
+        <p>Konkrete Ideen für Mathe, Deutsch, Sachkunde mit Bewegung kombiniert</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">📋</div>
+      <div>
+        <h4>45-Min-Stundenplan ADHS-optimiert</h4>
+        <p>Template für ADHS-freundliche Stundenstruktur mit Bewegungspausen integriert</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">⚡</div>
+      <div>
+        <h4>7-Tage-Umsetzungsplan</h4>
+        <p>Eine Woche, jeden Tag eine neue Strategie implementieren</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🖨️</div>
+      <div>
+        <h4>Druckfertig & sofort einsetzbar</h4>
+        <p>14 Seiten PDF, wissenschaftlich fundiert, von Grundschullehrerin erstellt</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-block">
+  <h2>Bereit für <strong>motivierten,<br>fokussierten Unterricht</strong>?</h2>
+  <p>14 Seiten kompaktes Praxiswissen · 20+ Bewegungspausen · Sofort umsetzbar<br>Von Grundschullehrerin Katharina Rawe</p>
+  <div class="cta-price">
+    <span class="price-new">€ 6,99</span>
+  </div>
+  <a href="#" class="cta-btn">Jetzt kaufen</a>
+  <p class="cta-note">Sofort-Download · Lebenslange Nutzung · Alle Updates inklusive</p>
+</div>
+
+<footer style="background: linear-gradient(135deg, #1a2420 0%, #0f1812 100%); padding: 40px 24px 32px; text-align: center;">
+  <p style="color: rgba(255,255,255,0.7); font-size: 0.82rem; margin-bottom: 16px;">
+    <strong style="color: rgba(255,255,255,0.9);">© 2026 autismus-adhs-alltag.de</strong> &nbsp;|&nbsp; Paul Rawe &amp; Katharina Rawe
+  </p>
+  <p style="margin-bottom: 14px;">
+    <a href="#" style="color: #f0a868; text-decoration: none; font-size: 0.82rem; font-weight: 600; margin: 0 10px;">🛒 Kaufen (€ 6,99)</a>
+    <a href="https://autismus-adhs-alltag.de/" style="color: #f0a868; text-decoration: none; font-size: 0.82rem; font-weight: 600; margin: 0 10px;">🌐 Website</a>
+  </p>
+  <p style="margin: 0;">
+    <a href="https://autismus-adhs-alltag.de/impressum.html" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.75rem; margin: 0 8px;">Impressum</a>
+    <a href="https://autismus-adhs-alltag.de/datenschutz.html" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.75rem; margin: 0 8px;">Datenschutz</a>
+  </p>
+</footer>
+
+</body>
+</html>

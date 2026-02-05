@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leseprobe – ADHS im Klassenzimmer: Praxisguides für Lehrkräfte</title>
+<meta name="description" content="Kostenlose Leseprobe: Sofort umsetzbare Strategien für den ADHS-freundlichen Unterricht. Wissenschaftlich fundiert, praxiserprobt von Grundschullehrerin.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --warm-bg: #faf8f5;
+    --white: #ffffff;
+    --primary: #6b9080;
+    --primary-light: #a4c3b2;
+    --primary-pale: #eaf4f0;
+    --accent: #f0a868;
+    --accent-light: #f8c794;
+    --text-dark: #2d3436;
+    --text-mid: #636e72;
+    --text-light: #95a5a6;
+    --border: #e0ddd8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--warm-bg);
+    color: var(--text-dark);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: linear-gradient(160deg, #5a8070 0%, #4a6f5f 50%, #3a5f4f 100%);
+    color: #fff;
+    padding: 60px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(164,195,178,0.25) 0%, transparent 70%);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.13);
+    border: 1px solid rgba(255,255,255,0.27);
+    color: var(--accent-light);
+    font-size: 0.72rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 7px 18px;
+    border-radius: 30px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: clamp(1.65rem, 3.8vw, 2.5rem);
+    font-weight: 300;
+    line-height: 1.3;
+    max-width: 700px;
+    margin: 0 auto 16px;
+    position: relative;
+    letter-spacing: -0.5px;
+  }
+  .hero h1 strong {
+    font-weight: 500;
+    color: var(--accent-light);
+  }
+  .hero-sub {
+    font-size: 0.98rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 560px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* ─── CONTAINER ─── */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ─── SECTION ─── */
+  .section {
+    padding: 48px 24px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .section h2 {
+    font-size: clamp(1.55rem, 3vw, 2rem);
+    font-weight: 300;
+    color: var(--text-dark);
+    margin: 24px 0 32px;
+    letter-spacing: -0.3px;
+  }
+  .section h2 strong {
+    font-weight: 500;
+    color: var(--primary);
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--primary);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    margin-bottom: 8px;
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--border) 80%, transparent 100%);
+    margin: 56px 0 0;
+  }
+
+  /* ─── PROBLEM-SOLUTION GRID ─── */
+  .problem-grid {
+    display: grid;
+    gap: 20px;
+    margin: 32px 0;
+  }
+
+  .problem-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+
+  .problem-card:hover {
+    border-color: var(--primary-light);
+    box-shadow: 0 4px 16px rgba(107, 144, 128, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .problem-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  .problem-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .problem-card p {
+    color: var(--text-mid);
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .solution-tag {
+    display: inline-block;
+    background: var(--primary-pale);
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-top: 12px;
+  }
+
+  /* ─── PREVIEW CONTENT ─── */
+  .preview-box {
+    background: var(--white);
+    border: 2px solid var(--primary-light);
+    border-radius: 16px;
+    padding: 32px;
+    margin: 32px 0;
+    box-shadow: 0 8px 24px rgba(107, 144, 128, 0.08);
+  }
+
+  .preview-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .preview-icon {
+    font-size: 2.5rem;
+  }
+
+  .preview-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  .preview-content {
+    color: var(--text-dark);
+    line-height: 1.8;
+  }
+
+  .preview-content h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 24px 0 12px;
+  }
+
+  .preview-content ul {
+    margin: 16px 0;
+    padding-left: 24px;
+  }
+
+  .preview-content li {
+    margin: 8px 0;
+    color: var(--text-mid);
+  }
+
+  .preview-content strong {
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .highlight-box {
+    background: var(--primary-pale);
+    border-left: 4px solid var(--primary);
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .highlight-box p {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+  }
+
+  /* ─── EXAMPLE SECTION ─── */
+  .example-box {
+    background: #f8f9fa;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+  }
+
+  .example-label {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+
+  .example-box p {
+    color: var(--text-mid);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin: 8px 0;
+  }
+
+  .wrong-way, .right-way {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 12px 0;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .wrong-way {
+    background: #fee;
+    border-left: 3px solid #e74c3c;
+  }
+
+  .right-way {
+    background: #e8f5e9;
+    border-left: 3px solid #27ae60;
+  }
+
+  .wrong-way::before {
+    content: "❌";
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .right-way::before {
+    content: "✅";
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  /* ─── INCLUDED LIST ─── */
+  .included-list {
+    display: grid;
+    gap: 16px;
+    margin: 32px 0;
+  }
+
+  .included-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .included-item:hover {
+    border-color: var(--primary-light);
+    box-shadow: 0 4px 16px rgba(107, 144, 128, 0.1);
+  }
+
+  .included-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  .included-item h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+  }
+
+  .included-item p {
+    color: var(--text-mid);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  /* ─── GUIDES OVERVIEW ─── */
+  .guides-grid {
+    display: grid;
+    gap: 20px;
+    margin: 32px 0;
+  }
+
+  @media (min-width: 768px) {
+    .guides-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .guide-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+  }
+
+  .guide-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 6px 20px rgba(107, 144, 128, 0.15);
+    transform: translateY(-3px);
+  }
+
+  .guide-number {
+    display: inline-block;
+    background: var(--primary-pale);
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 50%;
+    margin-bottom: 12px;
+  }
+
+  .guide-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .guide-card ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .guide-card li {
+    color: var(--text-mid);
+    font-size: 0.88rem;
+    margin: 6px 0;
+  }
+
+  /* ─── CTA BLOCK ─── */
+  .cta-block {
+    background: linear-gradient(135deg, var(--primary) 0%, #4a6f5f 100%);
+    color: white;
+    text-align: center;
+    padding: 56px 24px;
+    border-radius: 20px;
+    margin: 48px 24px;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-block h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 300;
+    margin-bottom: 16px;
+    color: white;
+  }
+
+  .cta-block h2 strong {
+    font-weight: 500;
+    color: var(--accent-light);
+  }
+
+  .cta-block > p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-price {
+    margin: 24px 0;
+  }
+
+  .price-new {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-light);
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 16px 48px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(240, 168, 104, 0.3);
+    margin-top: 8px;
+  }
+
+  .cta-btn:hover {
+    background: #e89850;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(240, 168, 104, 0.4);
+  }
+
+  .cta-note {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: 16px;
+  }
+
+  /* ─── TESTIMONIAL ─── */
+  .testimonial {
+    background: var(--white);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 32px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+
+  .testimonial-text {
+    font-style: italic;
+    color: var(--text-mid);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-author {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+  }
+
+  .testimonial-role {
+    color: var(--text-light);
+    font-size: 0.85rem;
+  }
+
+  /* ─── STATS ─── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+  }
+
+  .stat-card {
+    text-align: center;
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    color: var(--text-mid);
+    font-size: 0.9rem;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 640px) {
+    .hero {
+      padding: 48px 20px 60px;
+    }
+    .section {
+      padding: 36px 20px;
+    }
+    .preview-box {
+      padding: 24px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="hero-badge">Kostenlose Leseprobe</div>
+  <h1>Wenn <strong>Max wieder rumrennt</strong>,<br>Lisa auf ein leeres Blatt starrt<br>und Ben zum 5. Mal reinruft...</h1>
+  <p class="hero-sub">Konkrete Sofortlösungen für typische ADHS-Situationen im Klassenzimmer.<br>Von einer Grundschullehrerin mit 7+ Jahren Erfahrung.</p>
+</div>
+
+<!-- ═══ PROBLEM ═══ -->
+<div class="section">
+  <div style="text-align:center; margin-bottom: 8px;">
+    <div class="section-label">Das Problem</div>
+    <h2>Kennst du <strong>diese Situationen?</strong></h2>
+  </div>
+  
+  <div class="problem-grid">
+    <div class="problem-card">
+      <div class="problem-icon">🏃</div>
+      <h3>Max kann nicht still sitzen</h3>
+      <p>Zappelt permanent, fällt vom Stuhl, läuft durch die Klasse. Du sagst zum 10. Mal "Sitz still!" – keine Wirkung.</p>
+      <span class="solution-tag">6 Sofort-Lösungen verfügbar</span>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-icon">📝</div>
+      <h3>Lisa startet Aufgaben nicht</h3>
+      <p>Alle arbeiten. Lisa starrt auf ihr leeres Blatt. 10 Minuten später immer noch nichts geschrieben.</p>
+      <span class="solution-tag">5 Start-Strategien verfügbar</span>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-icon">🎒</div>
+      <h3>Ben vergisst alles</h3>
+      <p>Nie den richtigen Stift dabei, Hausaufgaben vergessen, Jacke verloren. Eltern genervt, du auch.</p>
+      <span class="solution-tag">7 Organisations-Systeme verfügbar</span>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-icon">⏰</div>
+      <h3>Nach der Pause: Chaos</h3>
+      <p>Alle kommen rein und setzen sich. Max rennt noch rum, will nicht aufhören. Unterricht kann nicht starten.</p>
+      <span class="solution-tag">5 Übergangs-Rituale verfügbar</span>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-icon">📚</div>
+      <h3>Hausaufgaben-Katastrophe</h3>
+      <p>Werden nie gemacht oder sind chaotisch und unleserlich. Eltern verzweifelt, du frustriert.</p>
+      <span class="solution-tag">Game-Changer-Strategie verfügbar</span>
+    </div>
+
+    <div class="problem-card">
+      <div class="problem-icon">😤</div>
+      <h3>Elterngespräche sind schwierig</h3>
+      <p>Eltern fühlen sich angegriffen, werden defensiv. Du weißt nicht, wie du das Thema ansprechen sollst.</p>
+      <span class="solution-tag">Komplette Gesprächs-Scripts verfügbar</span>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Das Problem?</strong> Die meisten ADHS-Ratgeber sind theoretisch. Was du brauchst, sind konkrete Handlungsanweisungen die HEUTE funktionieren – nicht in 3 Monaten nach einer Fortbildung.</p>
+  </div>
+</div>
+
+<!-- ═══ SOLUTION PREVIEW ═══ -->
+<div class="section">
+  <div class="divider"></div>
+  <div style="text-align:center; margin-top: 36px; margin-bottom: 8px;">
+    <div class="section-label">Die Lösung</div>
+    <h2>4 <strong>Praxis-Guides</strong> für sofortige Umsetzung</h2>
+  </div>
+
+  <div class="guides-grid">
+    <div class="guide-card">
+      <div class="guide-number">1</div>
+      <h3>ADHS-Unterricht gestalten<br><small style="font-weight:400; color: var(--text-light);">Motivation & Methoden</small></h3>
+      <ul>
+        <li>5:1-Prinzip der positiven Verstärkung</li>
+        <li>20+ Bewegungspausen-Katalog (2-3 Min)</li>
+        <li>45-Min-Stundenplan ADHS-optimiert</li>
+        <li>Bewegtes Lernen: Mathe, Deutsch, Sachkunde</li>
+      </ul>
+    </div>
+
+    <div class="guide-card">
+      <div class="guide-number">2</div>
+      <h3>Elterngespräche ADHS<br><small style="font-weight:400; color: var(--text-light);">Leitfaden & Vorlagen</small></h3>
+      <ul>
+        <li>Sandwich-Methode für schwierige Gespräche</li>
+        <li>Fertige Gesprächs-Scripts zum Anpassen</li>
+        <li>Was sagen, was vermeiden (konkrete Formulierungen)</li>
+        <li>Dokumentations-Vorlagen</li>
+      </ul>
+    </div>
+
+    <div class="guide-card">
+      <div class="guide-number">3</div>
+      <h3>ADHS im Klassenraum<br><small style="font-weight:400; color: var(--text-light);">Setup & Sitzordnung</small></h3>
+      <ul>
+        <li>Optimale Sitzplatzierung (mit Beispiel-Plänen)</li>
+        <li>Raumzonen einrichten (Arbeit, Ruhe, Bewegung)</li>
+        <li>Reizreduktion & visuelle Struktur</li>
+        <li>Ausdruckbare Sitzplan-Vorlagen</li>
+      </ul>
+    </div>
+
+    <div class="guide-card">
+      <div class="guide-number">4</div>
+      <h3>ADHS-SOS<br><small style="font-weight:400; color: var(--text-light);">Typische Probleme & Sofortlösungen</small></h3>
+      <ul>
+        <li>5 häufigste Probleme + je 5-7 Lösungen</li>
+        <li>Quick-Reference-Karten für den Schreibtisch</li>
+        <li>Blanko-Notfallplan zum Ausfüllen</li>
+        <li>Was tun wenn nichts hilft</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PREVIEW CONTENT ═══ -->
+<div class="section">
+  <div class="divider"></div>
+  <div style="text-align:center; margin-top: 36px; margin-bottom: 16px;">
+    <div class="section-label">Kostenlose Leseprobe</div>
+    <h2>Das bekommst du <strong>in den Guides</strong></h2>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">🎯</div>
+      <div class="preview-title">Beispiel: Das 5:1-Prinzip der positiven Verstärkung</div>
+    </div>
+    <div class="preview-content">
+      <p>ADHS-Kinder haben in ihrem Leben schon <strong>tausende</strong> negative Rückmeldungen bekommen: "Hör auf!", "Sei still!", "Das war falsch!", "Schon wieder!". Ihr Selbstwertgefühl ist oft im Keller.</p>
+      
+      <div class="highlight-box">
+        <p><strong>💡 Forschung zeigt:</strong> Positive Verstärkung verändert Verhalten 3x effektiver als Strafen. Bei ADHS-Kindern sogar noch mehr, weil ihr Belohnungssystem anders funktioniert.</p>
+      </div>
+
+      <h4>Das 5:1-Prinzip</h4>
+      <p>Für jede Korrektur sollten 5 positive Rückmeldungen kommen.</p>
+
+      <div class="example-box">
+        <div class="example-label">✅ Beispiel Mathematik-Stunde</div>
+        <p><strong>1. Positiv:</strong> "Max, toll dass du heute pünktlich da warst!"</p>
+        <p><strong>2. Positiv:</strong> "Du hast dein Matheheft rausgeholt ohne dass ich es sagen musste"</p>
+        <p><strong>3. Positiv:</strong> "Erste Aufgabe richtig - super!"</p>
+        <p><strong>4. Korrektur:</strong> "Bei der zweiten Aufgabe war ein Fehler. Schau nochmal hier..."</p>
+        <p><strong>5. Positiv:</strong> "Ah, jetzt hast du's! Gut gemacht"</p>
+        <p><strong>6. Positiv:</strong> "Du bist heute wirklich konzentriert bei der Sache"</p>
+      </div>
+
+      <h4>Was verstärken?</h4>
+      <p>Nicht nur Endergebnis, sondern <strong>Prozess:</strong></p>
+      <ul>
+        <li><strong>Anstrengung:</strong> "Ich sehe, du gibst dir Mühe"</li>
+        <li><strong>Verbesserung:</strong> "Letzte Woche 3 Fehler, heute nur 1 – Fortschritt!"</li>
+        <li><strong>Verhaltensalternativen:</strong> "Du hast Hand gehoben statt reinzurufen - perfekt!"</li>
+        <li><strong>Selbstregulation:</strong> "Du warst frustriert, aber hast tief geatmet. Toll!"</li>
+        <li><strong>Sozialverhalten:</strong> "Du hast Anna geholfen - das war nett"</li>
+      </ul>
+
+      <h4>Wie verstärken? 5 Methoden</h4>
+      
+      <div style="margin: 20px 0;">
+        <strong style="color: var(--primary);">1. Verbales Lob:</strong> "Super gemacht!", "Toll!", "Genau richtig!"
+        <p style="margin: 4px 0 16px; color: var(--text-mid); font-size: 0.9rem;">→ Sofort nach gewünschtem Verhalten</p>
+
+        <strong style="color: var(--primary);">2. Spezifisches Lob:</strong> "Du hast heute 10 Min konzentriert gearbeitet - das ist Rekord!"
+        <p style="margin: 4px 0 16px; color: var(--text-mid); font-size: 0.9rem;">→ Wenn du Fortschritt betonen willst</p>
+
+        <strong style="color: var(--primary);">3. Non-verbale Signale:</strong> Daumen hoch, Lächeln, Augenkontakt + Nicken
+        <p style="margin: 4px 0 16px; color: var(--text-mid); font-size: 0.9rem;">→ Während Unterricht ohne Unterbrechung</p>
+
+        <strong style="color: var(--primary);">4. Privilegien:</strong> "Du darfst heute Tafeldienst machen"
+        <p style="margin: 4px 0 16px; color: var(--text-mid); font-size: 0.9rem;">→ Nach besonders guter Leistung/Verhalten</p>
+
+        <strong style="color: var(--primary);">5. Token-System:</strong> Punkte/Stempel sammeln → Belohnung
+        <p style="margin: 4px 0 16px; color: var(--text-mid); font-size: 0.9rem;">→ Für langfristiges Verhaltensziel</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">🏃</div>
+      <div class="preview-title">Beispiel: Problem "Kann nicht still sitzen"</div>
+    </div>
+    <div class="preview-content">
+      <p><strong>Die Situation:</strong> Max zappelt permanent, fällt vom Stuhl, steht auf, läuft rum. Du sagst zum 10. Mal "Sitz still!" - keine Wirkung.</p>
+
+      <h4>6 Sofort-Lösungen:</h4>
+      
+      <div style="margin: 24px 0;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 8px;">1. Bewegungsalternativen:</strong>
+        <p style="margin: 0 0 4px; color: var(--text-mid);">Sitzball statt Stuhl, Wackelkissen, Stehpult</p>
+        <div class="right-way">
+          <div>
+            <strong>Sofort-Tipp:</strong> Lass Kind 1 Woche auf Sitzball sitzen. Bewegung = erlaubt, aber sitzt trotzdem. 80% berichten Verbesserung.
+          </div>
+        </div>
+      </div>
+
+      <div style="margin: 24px 0;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 8px;">2. Legitimierte Bewegung:</strong>
+        <p style="margin: 0 0 4px; color: var(--text-mid);">"Du darfst alle 10 Min aufstehen, Wasser trinken, zurückkommen"</p>
+        <div class="right-way">
+          <div>
+            <strong>Lauf-Pass-System:</strong> Kind bekommt 3 Lauf-Pässe pro Stunde. Kann aufstehen ohne zu fragen. Danach: fragen.
+          </div>
+        </div>
+      </div>
+
+      <div style="margin: 24px 0;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 8px;">3. Aufgaben mit Bewegung:</strong>
+        <p style="margin: 0 0 4px; color: var(--text-mid);">"Max, kannst du Blätter verteilen?" (Bewegung = Aufgabe)</p>
+      </div>
+
+      <div style="margin: 24px 0;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 8px;">4. Fidget-Tools:</strong>
+        <p style="margin: 0 0 4px; color: var(--text-mid);">Stressball in Hand gibt Outlet</p>
+      </div>
+
+      <div style="margin: 24px 0;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 8px;">5. Bewegungspausen:</strong>
+        <p style="margin: 0 0 4px; color: var(--text-mid);">Für ganze Klasse, alle 15-20 Min</p>
+        <div class="right-way">
+          <div>
+            <strong>Bewegungs-Timer:</strong> Timer auf 15 Min. Klingelt → ganze Klasse aufstehen, strecken, 10x springen. Dann weiter.
+          </div>
+        </div>
+      </div>
+
+      <div style="margin: 24px 0;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 8px;">6. Vor Unterricht auspowern:</strong>
+        <p style="margin: 0 0 4px; color: var(--text-mid);">Morgens 15 Min intensive Bewegung</p>
+      </div>
+
+      <div class="wrong-way">
+        <div>
+          <strong>Was NICHT hilft:</strong> "Sitz still!" wiederholen, Bestrafung, Kind festhalten
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">💬</div>
+      <div class="preview-title">Beispiel: Elterngespräch-Script</div>
+    </div>
+    <div class="preview-content">
+      <p><strong>Die Sandwich-Methode:</strong> Bewährte Struktur für konstruktive Gespräche</p>
+
+      <div class="example-box">
+        <div class="example-label">📝 Skript: Erstes Elterngespräch</div>
+        
+        <p style="margin-top: 16px;"><strong style="color: var(--primary);">🍞 Eröffnung (Brot oben):</strong></p>
+        <p style="margin-left: 16px; color: var(--text-mid);">"Danke dass Sie gekommen sind. Ich freue mich, Lisa in meiner Klasse zu haben. Ich möchte Sie gern besser kennenlernen und verstehen, wie ich Lisa am besten unterstützen kann."</p>
+
+        <p style="margin-top: 16px;"><strong style="color: var(--primary);">👂 Fragen an Eltern:</strong></p>
+        <p style="margin-left: 16px; color: var(--text-mid);">"Was sollte ich über Lisa wissen? Was hilft ihr? Was ist schwierig?"<br>
+        "Gibt es Strategien die zuhause funktionieren?"<br>
+        "Was sind Lisas Interessen und Stärken?"</p>
+
+        <p style="margin-top: 16px;"><strong style="color: var(--primary);">✨ Deine Beobachtungen teilen:</strong></p>
+        <p style="margin-left: 16px; color: var(--text-mid);">"Ich habe beobachtet dass Lisa kreativ beim Geschichten-Schreiben ist. Das finde ich toll."<br>
+        "Wo ich merke dass Unterstützung hilfreich wäre: Lisa verliert nach 10 Min bei Instruktionen den Fokus."</p>
+
+        <p style="margin-top: 16px;"><strong style="color: var(--primary);">🎯 Gemeinsamer Plan:</strong></p>
+        <p style="margin-left: 16px; color: var(--text-mid);">"Lass uns konkret werden: Was wäre ein realistisches Ziel für die nächsten Wochen?"<br>
+        "Ich probiere Strategie A und B. Würden Sie zuhause Strategie C umsetzen?"</p>
+
+        <p style="margin-top: 16px;"><strong style="color: var(--primary);">🍞 Abschluss (Brot unten):</strong></p>
+        <p style="margin-left: 16px; color: var(--text-mid);">"Ich bin froh, dass wir im Team arbeiten. Lass uns in 4 Wochen wieder sprechen. Und: Wenn zwischendurch etwas ist, melden Sie sich gern."</p>
+      </div>
+
+      <h4>Was sagen, was vermeiden:</h4>
+      
+      <div class="wrong-way">
+        <div><strong>❌ Problematisch:</strong> "Max stört ständig den Unterricht"</div>
+      </div>
+      <div class="right-way">
+        <div><strong>✅ Besser formuliert:</strong> "Max hat viel Energie. Wir arbeiten daran, diese Energie produktiv zu nutzen."</div>
+      </div>
+
+      <div class="wrong-way">
+        <div><strong>❌ Problematisch:</strong> "Sie müssen zuhause mehr üben"</div>
+      </div>
+      <div class="right-way">
+        <div><strong>✅ Besser formuliert:</strong> "Was können wir gemeinsam tun um Lisa zu unterstützen?"</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ STATS ═══ -->
+<div class="section">
+  <div class="divider"></div>
+  <div style="text-align:center; margin-top: 36px; margin-bottom: 32px;">
+    <div class="section-label">Das komplette Paket</div>
+    <h2>Was du bekommst</h2>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card">
+      <span class="stat-number">4</span>
+      <div class="stat-label">Umfangreiche<br>Praxis-Guides</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">50+</span>
+      <div class="stat-label">Konkrete<br>Sofortlösungen</div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">25+</span>
+      <div class="stat-label">Ausdruckbare<br>Vorlagen</div>
+    </div>
+  </div>
+
+  <div class="included-list">
+    <div class="included-item">
+      <div class="included-icon">📚</div>
+      <div>
+        <h4>ADHS-Unterricht gestalten – Motivation & Methoden</h4>
+        <p>14 Seiten: 5:1-Prinzip, 20+ Bewegungspausen, 45-Min-Stundenplan ADHS-optimiert, Bewegtes Lernen für Mathe/Deutsch/Sachkunde, ausdruckbare Templates</p>
+      </div>
+    </div>
+
+    <div class="included-item">
+      <div class="included-icon">💬</div>
+      <div>
+        <h4>Elterngespräche ADHS – Leitfaden & Vorlagen</h4>
+        <p>15 Seiten: Sandwich-Methode, 3 fertige Gesprächs-Scripts, Formulierungshilfen (was sagen/vermeiden), Dokumentations-Vorlagen, Umgang mit schwierigen Situationen</p>
+      </div>
+    </div>
+
+    <div class="included-item">
+      <div class="included-icon">🪑</div>
+      <div>
+        <h4>ADHS im Klassenraum – Setup & Sitzordnung</h4>
+        <p>10 Seiten: Optimale Sitzplatzierung mit Beispiel-Plänen, 4 Raumzonen einrichten, Reizreduktion & visuelle Struktur, Checklisten, ausdruckbare Sitzplan-Vorlagen</p>
+      </div>
+    </div>
+
+    <div class="included-item">
+      <div class="included-icon">🆘</div>
+      <div>
+        <h4>ADHS-SOS – Typische Probleme & Sofortlösungen</h4>
+        <p>12 Seiten: 5 häufigste Probleme mit je 5-7 Lösungen, Quick-Reference-Karten für Schreibtisch, Blanko-Notfallplan, Bewegungs-Strategien, Fidget-Tools-Überblick</p>
+      </div>
+    </div>
+
+    <div class="included-item">
+      <div class="included-icon">✅</div>
+      <div>
+        <h4>Bonus: ADHS-Classroom Management Toolkit</h4>
+        <p>12 Seiten: Token-Systeme (fertige Vorlagen), Tagesroutinen & Übergangs-Management, Regelplakate, logische Konsequenzen statt Strafen, 5-Tage-Umsetzungsplan</p>
+      </div>
+    </div>
+
+    <div class="included-item">
+      <div class="included-icon">🎯</div>
+      <div>
+        <h4>Alles sofort umsetzbar & wissenschaftlich fundiert</h4>
+        <p>Basiert auf Dr. Russell Barkley (ADHS-Standardwerk), DuPaul & Stoner (ADHD in Schools) und evidenzbasierten Classroom Management-Strategien. Erstellt von Grundschullehrerin mit 7+ Jahren Erfahrung.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TESTIMONIAL ═══ -->
+<div class="section">
+  <div class="testimonial">
+    <p class="testimonial-text">"Endlich praxisnahe Hilfe! Die Token-Karten und Quick-Reference-Notfallpläne hängen jetzt an meinem Schreibtisch. Das 5:1-Prinzip hat die Dynamik in meiner Klasse komplett verändert – nicht nur für Max, sondern für alle Kinder."</p>
+    <p class="testimonial-author">Sarah K.</p>
+    <p class="testimonial-role">Grundschullehrerin, 3. Klasse</p>
+  </div>
+</div>
+
+<!-- ═══ WHO IS THIS FOR ═══ -->
+<div class="section">
+  <div class="divider"></div>
+  <div style="text-align:center; margin-top: 36px; margin-bottom: 32px;">
+    <div class="section-label">Für wen ist das?</div>
+    <h2>Diese Guides sind <strong>perfekt</strong> für dich, wenn...</h2>
+  </div>
+
+  <div class="included-list">
+    <div class="included-item">
+      <div class="included-icon">✅</div>
+      <div>
+        <p>Du ein oder mehrere Kinder mit ADHS in deiner Klasse hast</p>
+      </div>
+    </div>
+
+    <div class="included-item">
+      <div class="included-icon">✅</div>
+      <div>
+        <p>Du <strong>konkrete, sofort umsetzbare</strong> Strategien suchst (keine Theorie)</p>
+      </div>
+    </div>
+
+    <div class="included-item">
+      <div class="included-icon">✅</div>
+      <div>
+        <p>Du frustriert bist von typischen ADHS-Situationen (Rumrennen, Vergesslichkeit, Aufgaben nicht starten)</p>
+      </div>
+    </div>
+
+    <div class="included-item">
+      <div class="included-icon">✅</div>
+      <div>
+        <p>Du Elterngespräche zum Thema ADHS führen musst und unsicher bist</p>
+      </div>
+    </div>
+
+    <div class="included-item">
+      <div class="included-icon">✅</div>
+      <div>
+        <p>Du ausdruckbare Vorlagen und Checklisten willst (keine Zeit für eigene Erstellung)</p>
+      </div>
+    </div>
+
+    <div class="included-item">
+      <div class="included-icon">✅</div>
+      <div>
+        <p>Du wissenschaftlich fundierte UND praxiserprobte Methoden möchtest</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FINAL CTA ═══ -->
+<div class="cta-block">
+  <h2>Bereit für <strong>weniger Stress</strong><br>und <strong>mehr Erfolgserlebnisse</strong><br>im Klassenzimmer?</h2>
+  <p>4 umfangreiche Guides · 50+ Sofortlösungen · 25+ ausdruckbare Vorlagen<br>Von einer Grundschullehrerin für Grundschullehrer.</p>
+  <div class="cta-price">
+    <span class="price-new">Komplettpaket</span>
+  </div>
+  <a href="#" class="cta-btn">Jetzt kaufen</a>
+  <p class="cta-note">Sofort-Download · Lebenslange Nutzung · Alle Updates inklusive</p>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer style="background: linear-gradient(135deg, #1a2420 0%, #0f1812 100%); padding: 40px 24px 32px; text-align: center;">
+  <p style="color: rgba(255,255,255,0.7); font-size: 0.82rem; margin-bottom: 16px;">
+    <strong style="color: rgba(255,255,255,0.9);">© 2026 autismus-adhs-alltag.de</strong> &nbsp;|&nbsp; Paul Rawe &amp; Katharina Rawe
+  </p>
+  <p style="margin-bottom: 14px;">
+    <a href="#" style="color: #f0a868; text-decoration: none; font-size: 0.82rem; font-weight: 600; margin: 0 10px;">🛒 Guides kaufen</a>
+    <a href="https://autismus-adhs-alltag.de/" style="color: #f0a868; text-decoration: none; font-size: 0.82rem; font-weight: 600; margin: 0 10px;">🌐 Website</a>
+  </p>
+  <p style="margin: 0;">
+    <a href="https://autismus-adhs-alltag.de/impressum.html" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.75rem; margin: 0 8px;">Impressum</a>
+    <a href="https://autismus-adhs-alltag.de/datenschutz.html" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.75rem; margin: 0 8px;">Datenschutz</a>
+  </p>
+</footer>
+
+</body>
+</html>

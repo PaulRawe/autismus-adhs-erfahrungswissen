@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseprobe: Autismus - Sensorische Herausforderungen im Klassenzimmer meistern</title>
+    <meta name="description" content="Praktischer Leitfaden für Lehrkräfte: Sensorische Überlastung erkennen und vermeiden. Wissenschaftlich fundiert, sofort umsetzbar.">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        :root {
+            --primary: #4a69bd;
+            --primary-dark: #3a5999;
+            --primary-light: #6a89cc;
+            --accent: #5a7db5;
+            --bg-warm: #faf8f5;
+            --text-dark: #2c3e50;
+            --text-mid: #636e72;
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-warm);
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* ═══ HERO ═══ */
+        .hero {
+            background: linear-gradient(135deg, #4a69bd 0%, #6a89cc 100%);
+            color: white;
+            padding: 60px 24px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(106,137,204,0.3) 0%, transparent 70%);
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 400;
+            line-height: 1.3;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        
+        .hero h1 strong {
+            font-weight: 600;
+        }
+        
+        .hero-sub {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ═══ CONTAINER ═══ */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        /* ═══ PROBLEM/SOLUTION BOXES ═══ */
+        .problem-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffe8a1 100%);
+            border-left: 5px solid #ffc107;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+        
+        .problem-box h2 {
+            color: #856404;
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+        }
+        
+        .solution-box {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border-left: 5px solid #28a745;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+        
+        .solution-box h2 {
+            color: #155724;
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+        }
+        
+        /* ═══ STATS GRID ═══ */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #4a69bd 0%, #6a89cc 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        /* ═══ CONTENT BOX ═══ */
+        .content-box {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 32px;
+            margin: 40px 0;
+        }
+        
+        .content-box h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            padding: 14px 0;
+            padding-left: 32px;
+            position: relative;
+            border-bottom: 1px solid #f1f3f5;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        /* ═══ TESTIMONIAL ═══ */
+        .testimonial {
+            background: white;
+            border-left: 4px solid var(--primary);
+            padding: 28px;
+            border-radius: 8px;
+            margin: 40px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+            color: var(--text-mid);
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* ═══ CTA BLOCK ═══ */
+        .cta-block {
+            background: linear-gradient(135deg, #4a69bd 0%, #6a89cc 100%);
+            color: white;
+            padding: 60px 24px;
+            text-align: center;
+            border-radius: 16px;
+            margin: 60px 0;
+        }
+        
+        .cta-block h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        
+        .cta-price {
+            margin: 32px 0;
+        }
+        
+        .price-new {
+            font-size: 3.5rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 18px 48px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+        }
+        
+        .cta-note {
+            margin-top: 24px;
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+        
+        /* ═══ FOOTER ═══ */
+        footer {
+            background: linear-gradient(135deg, #1a2420 0%, #0f1812 100%);
+            padding: 40px 24px 32px;
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        footer p {
+            margin-bottom: 16px;
+            font-size: 0.82rem;
+        }
+        
+        footer strong {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        footer a {
+            color: #4a69bd;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.82rem;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-legal a {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.75rem;
+            margin: 0 8px;
+        }
+        
+        /* ═══ RESPONSIVE ═══ */
+        @media (max-width: 768px) {
+            .hero { padding: 40px 20px 60px; }
+            .section { padding: 40px 0; }
+            .content-box { padding: 24px; }
+            .stat-number { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+    <div class="hero-badge">💡 Praktischer Leitfaden</div>
+    <h1><strong>Autismus:</strong> Sensorische Herausforderungen<br>im Klassenzimmer meistern</h1>
+    <p class="hero-sub">Wissenschaftlich fundiert • Sofort umsetzbar • Neurodiversitäts-affirmativ</p>
+</div>
+
+<!-- ═══ CONTENT ═══ -->
+<div class="container">
+    <div class="section">
+        <div class="problem-box">
+            <h2>🎯 Das Problem</h2>
+            <p><strong>95% aller autistischen Kinder haben sensorische Verarbeitungsunterschiede.</strong> Wenn ein autistisches Kind im Unterricht "schwierig" ist, liegt die Ursache oft in sensorischer Überlastung - nicht in mangelnder Motivation oder Trotz.</p>
+            <p style="margin-top: 16px;">Das Klassenzimmer = Sensorisches Minenfeld: 25+ Kinder, Neonlicht, ständiger Lärm. Für autistische Gehirne ohne natürlichen Reizfilter ist das wie ein Dauerbombardement.</p>
+        </div>
+        
+        <div class="solution-box">
+            <h2>✅ Die Lösung</h2>
+            <p><strong>Kleine Anpassungen mit großer Wirkung - oft kostenlos umsetzbar!</strong></p>
+            <p style="margin-top: 16px;">Dieser Leitfaden zeigt dir, wie du mit einfachen, wissenschaftlich fundierten Strategien sensorische Überlastung erkennst, vermeidest und ein Klassenzimmer schaffst, in dem autistische Kinder lernen können statt nur zu überleben.</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">der autistischen Kinder haben sensorische Unterschiede</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50%</div>
+                <div class="stat-label">weniger Lärm durch Tennisbälle (€2/Kind)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Sinne (nicht nur 5!) müssen beachtet werden</div>
+            </div>
+        </div>
+        
+        <div class="content-box">
+            <h3>📚 Das lernst du in diesem Leitfaden:</h3>
+            <ul class="feature-list">
+                <li>Warum Sensorik der Schlüssel ist - neurobiologische Grundlagen verstehen</li>
+                <li>Die 7 Sinne bei Autismus - nicht nur die bekannten 5!</li>
+                <li>Akustische Anpassungen - Tennisbälle, Teppiche, Noise-Cancelling (sofort umsetzbar)</li>
+                <li>Visuelle Strategien - LED statt Neonlicht, Wandgestaltung, Sitzplatzwahl</li>
+                <li>Taktile & propriozeptive Unterstützung - Fidget-Tools, Sitzkissen, Gewichtsdecken</li>
+                <li>Früherkennung sensorischer Überlastung - bevor der Meltdown kommt</li>
+                <li>Notfall-Protokoll - was tun wenn's kritisch wird</li>
+                <li>Sensorik-Notfall-Kit für's Klassenzimmer (€50-80 einmalig)</li>
+                <li>Praktische Checklisten zum Ausdrucken und Abhaken</li>
+            </ul>
+        </div>
+        
+        <div class="content-box">
+            <h3>🛠️ Praxistools enthalten:</h3>
+            <ul class="feature-list">
+                <li>Sensorik-Checkliste: Klassenzimmer optimieren</li>
+                <li>Warnsignale-Erkennung: Überlastung früh sehen</li>
+                <li>Notfall-Karte zum Laminieren (griffbereit am Pult)</li>
+                <li>Sensorik-Tagebuch (1 Woche führen = Muster erkennen)</li>
+                <li>Einkaufsliste: Sensorik-Notfall-Kit</li>
+            </ul>
+        </div>
+        
+        <div class="testimonial">
+            <div class="testimonial-text">"Diese einfachen Anpassungen haben alles verändert. Tim kann sich jetzt konzentrieren statt ständig überfordert zu sein. Die Tennisbälle unter den Stühlen allein haben den Lärm um 50% reduziert!"</div>
+            <div class="testimonial-author">— Grundschullehrerin aus dem Recklinghäuser Umfeld</div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ CTA ═══ -->
+<div class="container">
+    <div class="cta-block">
+        <h2>Bereit für mehr Klarheit<br>im Klassenzimmer?</h2>
+        <p>9 Seiten kompaktes Praxiswissen<br>Sofort einsetzbar – wissenschaftlich fundiert</p>
+        <div class="cta-price">
+            <span class="price-new">€ 6,99</span>
+        </div>
+        <a href="IHR-GUMROAD-LINK-HIER" class="cta-btn">Jetzt kaufen</a>
+        <p class="cta-note">Sofort-Download · Lebenslange Nutzung · Ausdruckbare Vorlagen</p>
+    </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <p>
+        <strong>© 2026 autismus-adhs-alltag.de</strong> &nbsp;|&nbsp; Paul Rawe &amp; Katharina Rawe
+    </p>
+    <p>
+        <a href="IHR-GUMROAD-LINK-HIER">🛒 Kaufen (€ 6,99)</a>
+        <a href="https://autismus-adhs-alltag.de/">🌐 Website</a>
+    </p>
+    <p class="footer-legal">
+        <a href="https://autismus-adhs-alltag.de/impressum.html">Impressum</a>
+        <a href="https://autismus-adhs-alltag.de/datenschutz.html">Datenschutz</a>
+    </p>
+</footer>
+
+</body>
+</html>

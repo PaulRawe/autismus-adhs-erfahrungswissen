@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseprobe: Autismus - Stärken entdecken & soziales Lernen fördern</title>
+    <meta name="description" content="Ressourcenorientierter Leitfaden: Autistische Stärken im Unterricht nutzen, Spezialinteressen einbinden, soziales Lernen ermöglichen.">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        :root {
+            --primary: #6b9080;
+            --primary-dark: #5a8070;
+            --primary-light: #a4c3b2;
+            --accent: #f0a868;
+            --bg-warm: #faf8f5;
+            --text-dark: #2d3436;
+            --text-mid: #636e72;
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-warm);
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* ═══ HERO ═══ */
+        .hero {
+            background: linear-gradient(160deg, #5a8070 0%, #4a6f5f 50%, #3a5f4f 100%);
+            color: white;
+            padding: 60px 24px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(164,195,178,0.25) 0%, transparent 70%);
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.13);
+            border: 1px solid rgba(255,255,255,0.27);
+            color: var(--accent);
+            font-size: 0.72rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 7px 18px;
+            border-radius: 30px;
+            margin-bottom: 28px;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: clamp(1.65rem, 3.8vw, 2.5rem);
+            font-weight: 300;
+            line-height: 1.3;
+            max-width: 800px;
+            margin: 0 auto 16px;
+            position: relative;
+            letter-spacing: -0.5px;
+        }
+        
+        .hero h1 strong {
+            font-weight: 500;
+        }
+        
+        .hero-sub {
+            font-size: 0.98rem;
+            color: rgba(255,255,255,0.65);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ═══ CONTAINER ═══ */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        /* ═══ MINDSET SHIFT ═══ */
+        .mindset-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 36px;
+            border-radius: 12px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .mindset-box h2 {
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 24px;
+        }
+        
+        .old-way {
+            background: rgba(231, 76, 60, 0.1);
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+            text-align: left;
+        }
+        
+        .new-way {
+            background: rgba(46, 204, 113, 0.1);
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 4px solid #2ecc71;
+            text-align: left;
+        }
+        
+        .comparison h3 {
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+        
+        /* ═══ STRENGTHS GRID ═══ */
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+        
+        .strength-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            padding: 28px;
+            border-radius: 12px;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .strength-card h3 {
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-size: 1.2rem;
+        }
+        
+        .strength-card ul {
+            list-style: none;
+        }
+        
+        .strength-card li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+        }
+        
+        .strength-card li::before {
+            content: "💪";
+            position: absolute;
+            left: 0;
+        }
+        
+        /* ═══ SPECIAL INTERESTS ═══ */
+        .special-box {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+            padding: 36px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+        
+        .special-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .interest-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+        
+        .interest-example {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .interest-example h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        /* ═══ CONTENT BOX ═══ */
+        .content-box {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 32px;
+            margin: 40px 0;
+        }
+        
+        .content-box h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            padding: 14px 0;
+            padding-left: 32px;
+            position: relative;
+            border-bottom: 1px solid #f1f3f5;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        /* ═══ TESTIMONIAL ═══ */
+        .testimonial {
+            background: white;
+            border-left: 4px solid var(--primary);
+            padding: 28px;
+            border-radius: 8px;
+            margin: 40px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+            color: var(--text-mid);
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* ═══ CTA BLOCK ═══ */
+        .cta-block {
+            background: linear-gradient(160deg, #5a8070 0%, #4a6f5f 50%, #3a5f4f 100%);
+            color: white;
+            padding: 60px 24px;
+            text-align: center;
+            border-radius: 16px;
+            margin: 60px 0;
+        }
+        
+        .cta-block h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        
+        .cta-price {
+            margin: 32px 0;
+        }
+        
+        .price-new {
+            font-size: 3.5rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 18px 48px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+        }
+        
+        .cta-note {
+            margin-top: 24px;
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+        
+        /* ═══ FOOTER ═══ */
+        footer {
+            background: linear-gradient(135deg, #1a2420 0%, #0f1812 100%);
+            padding: 40px 24px 32px;
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        footer p {
+            margin-bottom: 16px;
+            font-size: 0.82rem;
+        }
+        
+        footer strong {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.82rem;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-legal a {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.75rem;
+            margin: 0 8px;
+        }
+        
+        /* ═══ RESPONSIVE ═══ */
+        @media (max-width: 768px) {
+            .hero { padding: 40px 20px 60px; }
+            .section { padding: 40px 0; }
+            .comparison { grid-template-columns: 1fr; }
+            .content-box { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+    <div class="hero-badge">💪 Ressourcenorientiert</div>
+    <h1><strong>Autismus:</strong> Stärken entdecken &<br>soziales Lernen fördern</h1>
+    <p class="hero-sub">Stärkenbasiert • Sozial unterstützend • Inklusiv</p>
+</div>
+
+<!-- ═══ CONTENT ═══ -->
+<div class="container">
+    <div class="section">
+        <div class="mindset-box">
+            <h2>🔄 Der Paradigmenwechsel</h2>
+            <div class="comparison">
+                <div class="old-way">
+                    <h3>❌ Medizinisches Modell</h3>
+                    <p>Fokus auf Defizite: "Was kann das Kind nicht? Was muss korrigiert werden?"</p>
+                </div>
+                <div class="new-way">
+                    <h3>✅ Neurodiversitäts-Modell</h3>
+                    <p>Fokus auf Stärken: "Was kann das Kind besonders gut? Wie nutzen wir das?"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-box">
+            <h3>🎯 Warum dieser Ansatz funktioniert:</h3>
+            <p><strong>Autismus ist keine Krankheit</strong> - es ist eine neurologische Variante. Autistische Kinder haben einzigartige Stärken - nicht nur "Defizite". Diese Stärken können im Unterricht genutzt werden!</p>
+            <p style="margin-top: 16px;">Wenn du "schwierig" durch "braucht nur explizite Erklärung" ersetzt, ändert sich alles.</p>
+        </div>
+        
+        <div class="strengths-grid">
+            <div class="strength-card">
+                <h3>✨ Detail-Fokus</h3>
+                <ul>
+                    <li>Korrekturlesen</li>
+                    <li>Sortieraufgaben</li>
+                    <li>Qualitätskontrolle</li>
+                    <li>Dokumentation</li>
+                </ul>
+            </div>
+            
+            <div class="strength-card">
+                <h3>📚 Spezialinteressen</h3>
+                <ul>
+                    <li>Tiefes Expertenwissen</li>
+                    <li>Referate halten</li>
+                    <li>Themen verknüpfen</li>
+                    <li>Motivation x10</li>
+                </ul>
+            </div>
+            
+            <div class="strength-card">
+                <h3>🔍 Logisches Denken</h3>
+                <ul>
+                    <li>Mathe (oft Stärke!)</li>
+                    <li>Programmieren/Coding</li>
+                    <li>Rätsel & Logik-Spiele</li>
+                    <li>Mustererkennung</li>
+                </ul>
+            </div>
+            
+            <div class="strength-card">
+                <h3>💯 Authentizität</h3>
+                <ul>
+                    <li>Ehrliches Feedback</li>
+                    <li>Vertrauenswürdiger Partner</li>
+                    <li>Keine versteckten Agenden</li>
+                    <li>Direktheit als Stärke</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="special-box">
+            <h3>🚀 Spezialinteressen als Superkraft nutzen</h3>
+            <p>Spezialinteressen sind nicht "Obsessionen" - sie sind Motivationsbooster, Lernvehikel und Komfortzone!</p>
+            
+            <div class="interest-examples">
+                <div class="interest-example">
+                    <h4>📐 Mathe + Dinosaurier</h4>
+                    <p>"Ein T-Rex ist 12m lang, ein Stegosaurus 9m. Wie viel länger ist der T-Rex?"</p>
+                </div>
+                <div class="interest-example">
+                    <h4>✍️ Deutsch + Züge</h4>
+                    <p>Aufsatz: "Meine Reise mit dem ICE nach Hamburg"</p>
+                </div>
+                <div class="interest-example">
+                    <h4>🌍 Sachkunde + Wetter</h4>
+                    <p>Referat: "Wie entsteht ein Tornado?" + Wetterbeobachter der Klasse</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-box">
+            <h3>📚 Das lernst du in diesem Leitfaden:</h3>
+            <ul class="feature-list">
+                <li>Typische autistische Stärken erkennen und gezielt nutzen</li>
+                <li>Spezialinteressen in ALLE Fächer integrieren (konkrete Beispiele!)</li>
+                <li>Soziales Lernen explizit machen - "Hidden Curriculum" aufdecken</li>
+                <li>Social Stories erstellen (Vorlagen inklusive!)</li>
+                <li>Freundschaften unterstützen ohne zu überfordern</li>
+                <li>Gruppenarbeit strukturieren (klare Rollen = weniger Chaos)</li>
+                <li>Häufige Probleme lösen (Übergänge, Pausen, Spezialinteresse "stört")</li>
+                <li>Stärken-Profil mit Kind erstellen</li>
+                <li>Wochenplan: Spezialinteresse-Integration</li>
+            </ul>
+        </div>
+        
+        <div class="content-box">
+            <h3>🛠️ Praxistools enthalten:</h3>
+            <ul class="feature-list">
+                <li>Stärken-Profil Vorlage (mit Kind ausfüllen)</li>
+                <li>Social Story Template (für beliebige Situationen)</li>
+                <li>Spezialinteresse-Integrationsplan (1 Woche)</li>
+                <li>Freundschafts-Unterstützung Checkliste</li>
+                <li>Gruppenarbeit-Rollen Karten (ausdrucken & nutzen)</li>
+            </ul>
+        </div>
+        
+        <div class="testimonial">
+            <div class="testimonial-text">"Seit wir Lenas Dinosaurier-Wissen in den Matheunterricht einbauen, ist ihre Motivation x10! Sie erklärt jetzt sogar anderen Kindern die Aufgaben. Dieser Perspektivwechsel hat alles verändert."</div>
+            <div class="testimonial-author">— Grundschullehrerin, 3. Klasse</div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ CTA ═══ -->
+<div class="container">
+    <div class="cta-block">
+        <h2>Bereit für den<br>Perspektivwechsel?</h2>
+        <p>15 Seiten kompaktes Praxiswissen<br>Von Defizit zu Stärke – wissenschaftlich fundiert</p>
+        <div class="cta-price">
+            <span class="price-new">€ 6,99</span>
+        </div>
+        <a href="IHR-GUMROAD-LINK-HIER" class="cta-btn">Jetzt kaufen</a>
+        <p class="cta-note">Sofort-Download · Lebenslange Nutzung · Ausdruckbare Vorlagen</p>
+    </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+    <p>
+        <strong>© 2026 autismus-adhs-alltag.de</strong> &nbsp;|&nbsp; Paul Rawe &amp; Katharina Rawe
+    </p>
+    <p>
+        <a href="IHR-GUMROAD-LINK-HIER">🛒 Kaufen (€ 6,99)</a>
+        <a href="https://autismus-adhs-alltag.de/">🌐 Website</a>
+    </p>
+    <p class="footer-legal">
+        <a href="https://autismus-adhs-alltag.de/impressum.html">Impressum</a>
+        <a href="https://autismus-adhs-alltag.de/datenschutz.html">Datenschutz</a>
+    </p>
+</footer>
+
+</body>
+</html>
