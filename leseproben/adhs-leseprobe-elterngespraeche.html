@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leseprobe – Elterngespräche ADHS: Leitfaden & Vorlagen</title>
+<meta name="description" content="Kostenlose Leseprobe: Konstruktiv kommunizieren mit ADHS-Eltern. Sandwich-Methode, fertige Scripts, Formulierungshilfen.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --warm-bg: #faf8f5;
+    --white: #ffffff;
+    --primary: #6b9080;
+    --primary-light: #a4c3b2;
+    --primary-pale: #eaf4f0;
+    --accent: #f0a868;
+    --accent-light: #f8c794;
+    --text-dark: #2d3436;
+    --text-mid: #636e72;
+    --text-light: #95a5a6;
+    --border: #e0ddd8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--warm-bg);
+    color: var(--text-dark);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background: linear-gradient(160deg, #5a8070 0%, #4a6f5f 50%, #3a5f4f 100%);
+    color: #fff;
+    padding: 60px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(164,195,178,0.25) 0%, transparent 70%);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.13);
+    border: 1px solid rgba(255,255,255,0.27);
+    color: var(--accent-light);
+    font-size: 0.72rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 7px 18px;
+    border-radius: 30px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: clamp(1.65rem, 3.8vw, 2.5rem);
+    font-weight: 300;
+    line-height: 1.3;
+    max-width: 700px;
+    margin: 0 auto 16px;
+    position: relative;
+    letter-spacing: -0.5px;
+  }
+  .hero h1 strong {
+    font-weight: 500;
+    color: var(--accent-light);
+  }
+  .hero-sub {
+    font-size: 0.98rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 560px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .section {
+    padding: 48px 24px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .section h2 {
+    font-size: clamp(1.55rem, 3vw, 2rem);
+    font-weight: 300;
+    color: var(--text-dark);
+    margin: 24px 0 32px;
+    letter-spacing: -0.3px;
+  }
+  .section h2 strong {
+    font-weight: 500;
+    color: var(--primary);
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--primary);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    margin-bottom: 8px;
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border) 20%, var(--border) 80%, transparent 100%);
+    margin: 56px 0 0;
+  }
+
+  .preview-box {
+    background: var(--white);
+    border: 2px solid var(--primary-light);
+    border-radius: 16px;
+    padding: 32px;
+    margin: 32px 0;
+    box-shadow: 0 8px 24px rgba(107, 144, 128, 0.08);
+  }
+
+  .preview-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .preview-icon {
+    font-size: 2.5rem;
+  }
+
+  .preview-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  .preview-content {
+    color: var(--text-dark);
+    line-height: 1.8;
+  }
+
+  .preview-content h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 24px 0 12px;
+  }
+
+  .preview-content ul {
+    margin: 16px 0;
+    padding-left: 24px;
+  }
+
+  .preview-content li {
+    margin: 8px 0;
+    color: var(--text-mid);
+  }
+
+  .preview-content strong {
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .highlight-box {
+    background: var(--primary-pale);
+    border-left: 4px solid var(--primary);
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .highlight-box p {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+  }
+
+  .example-box {
+    background: #f8f9fa;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+  }
+
+  .example-label {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+
+  .wrong-way, .right-way {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 12px 0;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .wrong-way {
+    background: #fee;
+    border-left: 3px solid #e74c3c;
+  }
+
+  .right-way {
+    background: #e8f5e9;
+    border-left: 3px solid #27ae60;
+  }
+
+  .wrong-way::before {
+    content: "❌";
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .right-way::before {
+    content: "✅";
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .included-list {
+    display: grid;
+    gap: 16px;
+    margin: 32px 0;
+  }
+
+  .included-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .included-item:hover {
+    border-color: var(--primary-light);
+    box-shadow: 0 4px 16px rgba(107, 144, 128, 0.1);
+  }
+
+  .included-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  .included-item h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+  }
+
+  .included-item p {
+    color: var(--text-mid);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .cta-block {
+    background: linear-gradient(135deg, var(--primary) 0%, #4a6f5f 100%);
+    color: white;
+    text-align: center;
+    padding: 56px 24px;
+    border-radius: 20px;
+    margin: 48px 24px;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-block h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 300;
+    margin-bottom: 16px;
+    color: white;
+  }
+
+  .cta-block h2 strong {
+    font-weight: 500;
+    color: var(--accent-light);
+  }
+
+  .cta-block > p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-price {
+    margin: 24px 0;
+  }
+
+  .price-new {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-light);
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 16px 48px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(240, 168, 104, 0.3);
+    margin-top: 8px;
+  }
+
+  .cta-btn:hover {
+    background: #e89850;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(240, 168, 104, 0.4);
+  }
+
+  .cta-note {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: 16px;
+  }
+
+  .script-box {
+    background: var(--white);
+    border: 2px solid var(--accent-light);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+  }
+
+  .script-step {
+    margin: 20px 0;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+  }
+
+  .script-step h5 {
+    color: var(--primary);
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .script-step p {
+    color: var(--text-mid);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding: 48px 20px 60px;
+    }
+    .section {
+      padding: 36px 20px;
+    }
+    .preview-box {
+      padding: 24px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Kostenlose Leseprobe</div>
+  <h1><strong>Elterngespräche ADHS</strong><br>Konstruktiv kommunizieren • Vertrauen aufbauen</h1>
+  <p class="hero-sub">Sandwich-Methode • Fertige Gesprächs-Scripts • Formulierungshilfen<br>Von Grundschullehrerin Katharina Rawe</p>
+</div>
+
+<div class="section">
+  <div style="text-align:center; margin-bottom: 8px;">
+    <div class="section-label">Das Problem</div>
+    <h2>Du hast ein Elterngespräch mit <strong>Maxs Eltern.</strong><br>Du bist nervös.</h2>
+  </div>
+
+  <div class="highlight-box">
+    <p>Du weißt: Sie haben schon <strong>hunderte</strong> negative Gespräche hinter sich. Jeder Lehrer vor dir hat gesagt: "Max stört", "Max passt nicht auf", "Max macht Hausaufgaben nicht".</p>
+  </div>
+
+  <p style="text-align: center; color: var(--text-mid); font-size: 1.05rem; margin: 32px 0;"><strong style="color: var(--primary);">Deine Chance:</strong> Es anders machen. Ein Gespräch führen, nach dem Eltern denken: "Endlich versteht uns jemand."</p>
+
+  <div class="highlight-box">
+    <p><strong>💡 Das Wichtigste vorab</strong><br>Eltern von ADHS-Kindern sind <strong>erschöpft und defensiv</strong>. Sie erwarten Kritik. Deine erste Aufgabe: Zeigen dass du auf ihrer Seite bist. Erst dann könnt ihr gemeinsam Lösungen finden.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="divider"></div>
+  <div style="text-align:center; margin-top: 36px; margin-bottom: 16px;">
+    <div class="section-label">Kostenlose Leseprobe</div>
+    <h2>Die <strong>Sandwich-Methode</strong></h2>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">🥪</div>
+      <div class="preview-title">Bewährte Struktur für konstruktive Gespräche</div>
+    </div>
+    <div class="preview-content">
+      <p>Die <strong>5-Phasen-Struktur</strong> für Elterngespräche:</p>
+
+      <div class="script-step" style="border-left-color: #27ae60; background: #e8f5e9;">
+        <h5>🍞 1. Positiver Start (Brot oben)</h5>
+        <p>Stärken & Positives</p>
+      </div>
+
+      <div class="script-step" style="border-left-color: #e67e22;">
+        <h5>🥓 2. Herausforderung benennen (Belag)</h5>
+        <p>Konkret, ohne Vorwurf</p>
+      </div>
+
+      <div class="script-step" style="border-left-color: var(--primary);">
+        <h5>🤝 3. Gemeinsame Lösungssuche</h5>
+        <p>Was hilft zuhause? Was können wir probieren?</p>
+      </div>
+
+      <div class="script-step" style="border-left-color: var(--accent);">
+        <h5>📋 4. Gemeinsamer Plan</h5>
+        <p>Konkrete nächste Schritte</p>
+      </div>
+
+      <div class="script-step" style="border-left-color: #27ae60; background: #e8f5e9;">
+        <h5>🍞 5. Positiver Abschluss (Brot unten)</h5>
+        <p>Zuversicht & Wertschätzung</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">📝</div>
+      <div class="preview-title">Fertiges Gesprächs-Script: Erstes Elterngespräch</div>
+    </div>
+    <div class="preview-content">
+      <div class="script-box">
+        <div class="example-label">💬 Skript zum Anpassen</div>
+
+        <div class="script-step" style="border-left-color: #27ae60; background: #e8f5e9;">
+          <h5>Eröffnung:</h5>
+          <p>"Danke dass Sie da sind! Ich möchte zuerst sagen: Lisa ist ein tolles Kind. Sie hat ein großes Herz und hilft oft anderen Schülern. Ihre Kreativität beim Geschichten-Schreiben ist beeindruckend - letzte Woche hatte sie eine Geschichte über sprechende Tiere, die war wirklich originell!"</p>
+        </div>
+
+        <div class="script-step" style="border-left-color: #e67e22;">
+          <h5>Herausforderung benennen:</h5>
+          <p>"Wo ich merke dass Lisa Unterstützung braucht, ist bei der Aufmerksamkeit während Instruktionen. Wenn ich etwas erkläre, schaut sie oft aus dem Fenster. Dann startet sie die Aufgabe nicht, weil sie nicht weiß was zu tun ist. Das frustriert sie dann."</p>
+        </div>
+
+        <div class="script-step" style="border-left-color: var(--primary);">
+          <h5>Was du schon probiert hast:</h5>
+          <p>"Ich habe schon ein paar Dinge probiert: Ich stelle mich neben sie während Erklärungen, das hilft etwas. Und ich schreibe Aufgaben jetzt an die Tafel, nicht nur mündlich."</p>
+        </div>
+
+        <div class="script-step" style="border-left-color: var(--primary);">
+          <h5>Fragen an Eltern:</h5>
+          <p>"Was hilft denn zuhause? Wie schaffen Sie es, ihre Aufmerksamkeit zu bekommen?"</p>
+          <p style="margin-top: 12px; font-style: normal; color: var(--text-light);">[Eltern teilen ihre Strategien]</p>
+          <p style="margin-top: 8px;">"OK, also Namen nennen vor wichtigen Sachen hilft! Das probiere ich aus. Und würden Sie zuhause vielleicht auch die Hausaufgaben in kleineren Häppchen machen? Nicht alles auf einmal?"</p>
+        </div>
+
+        <div class="script-step" style="border-left-color: #27ae60; background: #e8f5e9;">
+          <h5>Abschluss:</h5>
+          <p>"Ich bin zuversichtlich dass wir Lisa gut unterstützen können. Sie ist motiviert und will lernen - sie braucht nur die richtige Struktur. Lassen Sie uns in 4 Wochen wieder sprechen und schauen wie's läuft?"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">💬</div>
+      <div class="preview-title">Was sagen, was vermeiden</div>
+    </div>
+    <div class="preview-content">
+      <h4>Kritische Formulierungen</h4>
+
+      <div class="wrong-way">
+        <div><strong>❌ Problematisch:</strong> "Max stört ständig den Unterricht"</div>
+      </div>
+      <div class="right-way">
+        <div><strong>✅ Besser formuliert:</strong> "Max hat viel Energie. Wir arbeiten daran, diese Energie produktiv zu nutzen."</div>
+      </div>
+
+      <div class="wrong-way">
+        <div><strong>❌ Problematisch:</strong> "Sie müssen zuhause mehr üben"</div>
+      </div>
+      <div class="right-way">
+        <div><strong>✅ Besser formuliert:</strong> "Was können wir gemeinsam tun um Lisa zu unterstützen?"</div>
+      </div>
+
+      <div class="wrong-way">
+        <div><strong>❌ Problematisch:</strong> "Hat er seine Medikamente genommen?"</div>
+      </div>
+      <div class="right-way">
+        <div><strong>✅ Besser formuliert:</strong> "Ich habe heute beobachtet, dass Fokus schwieriger war als sonst. Gibt's etwas was ich wissen sollte?"</div>
+      </div>
+
+      <div class="wrong-way">
+        <div><strong>❌ Problematisch:</strong> "Wenn er sich nur mehr anstrengen würde..."</div>
+      </div>
+      <div class="right-way">
+        <div><strong>✅ Besser formuliert:</strong> "Ich sehe, dass er sich anstrengt. Wir müssen Strategien finden die besser passen."</div>
+      </div>
+
+      <div class="wrong-way">
+        <div><strong>❌ Problematisch:</strong> "Alle anderen Kinder schaffen das auch"</div>
+      </div>
+      <div class="right-way">
+        <div><strong>✅ Besser formuliert:</strong> "Max braucht eine andere Herangehensweise. Lass uns herausfinden welche."</div>
+      </div>
+
+      <div class="wrong-way">
+        <div><strong>❌ Problematisch:</strong> "Das kann so nicht weitergehen"</div>
+      </div>
+      <div class="right-way">
+        <div><strong>✅ Besser formuliert:</strong> "Ich möchte gemeinsam mit Ihnen Lösungen finden, die Max besser unterstützen."</div>
+      </div>
+
+      <h4 style="margin-top: 32px;">Positive Eröffnungen</h4>
+
+      <div class="example-box">
+        <p><strong style="color: var(--primary);">✨ So startest du gut:</strong></p>
+        <ul>
+          <li>"Danke dass Sie sich die Zeit nehmen. Mir ist wichtig, dass wir gemeinsam..."</li>
+          <li>"Zuerst möchte ich sagen: [Name] ist ein tolles Kind und ich arbeite gern mit ihm/ihr."</li>
+          <li>"Ich habe ein paar positive Beobachtungen die ich teilen möchte..."</li>
+          <li>"Ich merke, dass [Name] Potenzial hat, und ich möchte gemeinsam mit Ihnen..."</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-box">
+    <div class="preview-header">
+      <div class="preview-icon">💪</div>
+      <div class="preview-title">Stärken-basierter Ansatz</div>
+    </div>
+    <div class="preview-content">
+      <p>ADHS-Kinder haben oft versteckte Superkräfte. <strong>Eltern müssen das hören!</strong></p>
+
+      <div class="highlight-box">
+        <p><strong>✨ ADHS-Kinder haben oft diese Stärken:</strong></p>
+        <ul style="margin-top: 12px;">
+          <li><strong>Kreativität:</strong> Denken outside the box, originelle Ideen</li>
+          <li><strong>Hyperfokus:</strong> Bei Interessen-Themen extrem konzentriert & produktiv</li>
+          <li><strong>Energie & Enthusiasmus:</strong> Begeisterungsfähig, mitreißend</li>
+          <li><strong>Humor:</strong> Oft witzig, sehen Dinge anders</li>
+          <li><strong>Hilfsbereitschaft:</strong> Empathisch (wenn nicht selbst überfordert)</li>
+          <li><strong>Spontaneität:</strong> Flexibel, anpassungsfähig bei Änderungen</li>
+        </ul>
+      </div>
+
+      <div class="example-box">
+        <div class="example-label">💬 Beispiele für Stärken konkret benennen</div>
+        
+        <p style="margin-top: 16px;"><strong style="color: var(--primary);">Beispiel 1:</strong></p>
+        <p style="margin-left: 16px; color: var(--text-mid); font-style: italic;">"Max hat eine unglaubliche Energie und Begeisterungsfähigkeit. Wenn er für ein Thema brennt - wie letztens bei unserem Dino-Projekt - dann ist er zu 100% dabei und zieht andere mit. Diese Energie ist ein Geschenk, wir müssen nur Wege finden sie zu kanalisieren."</p>
+
+        <p style="margin-top: 20px;"><strong style="color: var(--primary);">Beispiel 2:</strong></p>
+        <p style="margin-left: 16px; color: var(--text-mid); font-style: italic;">"Lisa's Kreativität beim Geschichten-Schreiben ist beeindruckend. Ihre Ideen sind originell und überraschend. Das ist eine Stärke die ihr im Leben sehr helfen wird."</p>
+      </div>
+
+      <p style="margin-top: 24px;"><strong style="color: var(--primary);">Im Elterngespräch:</strong> Nenne mindestens 2 dieser Stärken die du bei ihrem Kind siehst. Eltern hören selten Positives - das baut Vertrauen auf!</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="divider"></div>
+  <div style="text-align:center; margin-top:36px; margin-bottom:8px;">
+    <div class="section-label" style="display:inline-block;">Das komplette PDF</div>
+    <h2 style="text-align:center;">Was du bekommst</h2>
+  </div>
+  <div class="included-list">
+    <div class="included-item">
+      <div class="included-icon">📋</div>
+      <div>
+        <h4>Vorbereitungs-Checkliste</h4>
+        <p>Was du VOR dem Gespräch sammeln solltest: positive Beobachtungen, spezifische Beispiele, eigene Strategien dokumentieren</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🥪</div>
+      <div>
+        <h4>Sandwich-Methode detailliert</h4>
+        <p>5-Phasen-Struktur mit Timing und Formulierungshilfen für jede Phase</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">📝</div>
+      <div>
+        <h4>3 fertige Gesprächs-Scripts</h4>
+        <p>Erstes Elterngespräch, Schwieriges Gespräch (Verschlechterung), Follow-Up Gespräch - alle zum Anpassen</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">💬</div>
+      <div>
+        <h4>Formulierungshilfen: Was sagen, was vermeiden</h4>
+        <p>20+ Beispiele für kritische Formulierungen mit besseren Alternativen</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">💪</div>
+      <div>
+        <h4>Stärken-basierter Ansatz</h4>
+        <p>Liste typischer ADHS-Stärken mit konkreten Formulierungen für Elterngespräche</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🔥</div>
+      <div>
+        <h4>Schwierige Situationen meistern</h4>
+        <p>Was tun wenn Eltern defensiv reagieren, Diagnose leugnen, oder überfordert sind</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">📄</div>
+      <div>
+        <h4>Dokumentations-Vorlagen</h4>
+        <p>Gesprächsprotokoll-Vorlage zum Ausdrucken und Ausfüllen</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">✅</div>
+      <div>
+        <h4>Follow-Up Best Practices</h4>
+        <p>Wie dokumentierst du, wann meldest du dich wieder, was ist nach dem Gespräch wichtig</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🎯</div>
+      <div>
+        <h4>Elterngespräch-Abschluss-Checkliste</h4>
+        <p>6-Punkte-Check nach jedem Gespräch: Hast du alles richtig gemacht?</p>
+      </div>
+    </div>
+    <div class="included-item">
+      <div class="included-icon">🖨️</div>
+      <div>
+        <h4>Druckfertig & sofort einsetzbar</h4>
+        <p>15 Seiten PDF, praxiserprobt, von Grundschullehrerin erstellt</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-block">
+  <h2>Bereit für <strong>konstruktive<br>Elterngespräche</strong>?</h2>
+  <p>15 Seiten kompaktes Praxiswissen · 3 fertige Scripts · Sofort umsetzbar<br>Von Grundschullehrerin Katharina Rawe</p>
+  <div class="cta-price">
+    <span class="price-new">€ 6,99</span>
+  </div>
+  <a href="#" class="cta-btn">Jetzt kaufen</a>
+  <p class="cta-note">Sofort-Download · Lebenslange Nutzung · Alle Updates inklusive</p>
+</div>
+
+<footer style="background: linear-gradient(135deg, #1a2420 0%, #0f1812 100%); padding: 40px 24px 32px; text-align: center;">
+  <p style="color: rgba(255,255,255,0.7); font-size: 0.82rem; margin-bottom: 16px;">
+    <strong style="color: rgba(255,255,255,0.9);">© 2026 autismus-adhs-alltag.de</strong> &nbsp;|&nbsp; Paul Rawe &amp; Katharina Rawe
+  </p>
+  <p style="margin-bottom: 14px;">
+    <a href="#" style="color: #f0a868; text-decoration: none; font-size: 0.82rem; font-weight: 600; margin: 0 10px;">🛒 Kaufen (€ 6,99)</a>
+    <a href="https://autismus-adhs-alltag.de/" style="color: #f0a868; text-decoration: none; font-size: 0.82rem; font-weight: 600; margin: 0 10px;">🌐 Website</a>
+  </p>
+  <p style="margin: 0;">
+    <a href="https://autismus-adhs-alltag.de/impressum.html" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.75rem; margin: 0 8px;">Impressum</a>
+    <a href="https://autismus-adhs-alltag.de/datenschutz.html" style="color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.75rem; margin: 0 8px;">Datenschutz</a>
+  </p>
+</footer>
+
+</body>
+</html>
