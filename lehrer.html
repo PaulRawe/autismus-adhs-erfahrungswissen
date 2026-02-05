@@ -29,6 +29,8 @@
             --color-bundle: #7c3aed;
             --color-teacher: #059669;
             --color-free: #ec4899;
+            --color-adhs: #f59e0b;
+            --color-autism: #3b82f6;
         }
 
         * {
@@ -205,6 +207,60 @@
             left: 0;
         }
 
+        /* CATEGORY TABS */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .category-tab {
+            padding: 1rem 2rem;
+            background: #fff;
+            border: 3px solid #e5e7eb;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .category-tab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .category-tab.active {
+            border-color: var(--color-teacher);
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            color: #065f46;
+        }
+
+        .category-tab.adhs.active {
+            border-color: var(--color-adhs);
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            color: #92400e;
+        }
+
+        .category-tab.autism.active {
+            border-color: var(--color-autism);
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            color: #1e40af;
+        }
+
+        .category-content {
+            display: none;
+        }
+
+        .category-content.active {
+            display: block;
+        }
+
         .category-header {
             text-align: center;
             margin: 3rem 0 2rem;
@@ -212,6 +268,15 @@
             background: linear-gradient(135deg, #d1fae5 0%, #e0f2fe 100%);
             border-radius: 12px;
             border-left: 5px solid var(--color-teacher);
+        }
+
+        .category-header.adhs {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left-color: var(--color-adhs);
+        }
+
+        .category-header.adhs h2 {
+            color: var(--color-adhs);
         }
 
         .category-header h2 {
@@ -225,6 +290,213 @@
             font-size: 1.1rem;
         }
 
+        /* COMPACT PRODUCT CARD */
+        .product-compact {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: grid;
+            grid-template-columns: 140px 1fr auto;
+            gap: 1.5rem;
+            align-items: center;
+            scroll-margin-top: 80px;
+            transition: all 0.3s ease;
+        }
+
+        .product-compact:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .product-compact.bundle {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border: 3px solid var(--color-teacher);
+            grid-template-columns: 140px 1fr;
+            padding: 2rem;
+        }
+
+        .product-compact.adhs-bundle {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 3px solid var(--color-adhs);
+        }
+
+        .product-compact .product-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .product-compact .product-info {
+            flex: 1;
+        }
+
+        .product-compact h3 {
+            color: var(--color-teacher);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .product-compact.adhs-product h3 {
+            color: var(--color-adhs);
+        }
+
+        .product-compact .subtitle {
+            color: var(--color-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-compact .hook {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            color: var(--color-text);
+        }
+
+        .product-compact .features-compact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 0.8rem 0;
+        }
+
+        .feature-tag {
+            background: #f3f4f6;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--color-muted);
+            border: 1px solid #e5e7eb;
+        }
+
+        .product-compact .links {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .preview-link {
+            color: var(--color-teacher);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .preview-link:hover {
+            text-decoration: underline;
+        }
+
+        .product-compact .price-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.8rem;
+        }
+
+        .bundle .price-cta {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .price-box {
+            text-align: right;
+        }
+
+        .bundle .price-box {
+            text-align: left;
+        }
+
+        .price-compact {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--color-teacher);
+            line-height: 1;
+        }
+
+        .product-compact.adhs-product .price-compact,
+        .product-compact.adhs-bundle .price-compact {
+            color: var(--color-adhs);
+        }
+
+        .price-currency {
+            font-size: 1.2rem;
+            margin-left: 0.2rem;
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: var(--color-muted);
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .savings {
+            color: #dc2626;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .buy-button-compact {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-teacher) 0%, #047857 100%);
+            color: #ffffff;
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+            white-space: nowrap;
+        }
+
+        .buy-button-compact:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
+        }
+
+        .product-compact.adhs-product .buy-button-compact,
+        .product-compact.adhs-bundle .buy-button-compact {
+            background: linear-gradient(135deg, var(--color-adhs) 0%, #d97706 100%);
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+        }
+
+        .product-compact.adhs-product .buy-button-compact:hover,
+        .product-compact.adhs-bundle .buy-button-compact:hover {
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+        }
+
+        .bundle-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--color-teacher);
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+        }
+
+        .adhs-bundle .bundle-badge {
+            background: var(--color-adhs);
+        }
+
+        /* DETAILED PRODUCT (for key products like Hausaufgaben) */
         .product {
             background-color: var(--bg-card);
             border-radius: 12px;
@@ -234,29 +506,10 @@
             scroll-margin-top: 80px;
         }
 
-        .product.bundle {
-            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
-            border: 3px solid var(--color-teacher);
-            position: relative;
-        }
-
         .product.free {
             background: linear-gradient(135deg, #fef1f7 0%, #fce7f3 100%);
             border: 3px solid var(--color-free);
             position: relative;
-        }
-
-        .bundle-badge {
-            position: absolute;
-            top: -15px;
-            right: 20px;
-            background: var(--color-teacher);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
         }
 
         .free-badge {
@@ -445,12 +698,6 @@
             margin: 0.5rem 0;
         }
 
-        .price-old {
-            text-decoration: line-through;
-            color: var(--color-muted);
-            font-size: 1.3rem;
-        }
-
         .price-amount {
             font-size: 2.5rem;
             font-weight: bold;
@@ -459,11 +706,6 @@
 
         .free .price-amount {
             color: var(--color-free);
-        }
-
-        .price-currency {
-            font-size: 1.2rem;
-            color: var(--color-muted);
         }
 
         .price-savings {
@@ -553,6 +795,7 @@
             color: #cccccc;
         }
 
+        /* MOBILE RESPONSIVE */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.8rem;
@@ -565,6 +808,43 @@
             .quick-nav-item {
                 font-size: 0.85rem;
                 padding: 0.5rem 1rem;
+            }
+
+            .category-tabs {
+                flex-direction: column;
+            }
+
+            .category-tab {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .product-compact {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .product-compact .product-image {
+                max-width: 160px;
+                margin: 0 auto;
+            }
+
+            .product-compact .price-cta {
+                align-items: center;
+                width: 100%;
+            }
+
+            .price-box {
+                text-align: center;
+            }
+
+            .bundle .price-cta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .bundle .price-box {
+                text-align: center;
             }
 
             .product-header {
@@ -589,13 +869,6 @@
                 flex-direction: column;
                 gap: 1rem;
                 text-align: center;
-            }
-
-            .bundle-badge,
-            .free-badge {
-                position: static;
-                display: inline-block;
-                margin-bottom: 1rem;
             }
 
             .category-header h2 {
@@ -623,9 +896,10 @@
 
 <div class="quick-nav">
     <div class="quick-nav-container">
-        <a href="#bundle" class="quick-nav-item">💎 Bundle</a>
-        <a href="#unterricht" class="quick-nav-item">📚 Unterricht</a>
-        <a href="#hausaufgaben" class="quick-nav-item">✏️ Hausaufgaben</a>
+        <a href="#bundles" class="quick-nav-item">💎 Bundles</a>
+        <a href="#adhs" class="quick-nav-item">🎯 ADHS</a>
+        <a href="#autismus" class="quick-nav-item">🧩 Autismus</a>
+        <a href="#allgemein" class="quick-nav-item">📚 Allgemein</a>
         <a href="#gratis" class="quick-nav-item">🎁 Gratis</a>
         <a href="downloads.html" class="quick-nav-item eltern">🏠 Für Eltern</a>
         <a href="#faq" class="quick-nav-item">❓ FAQ</a>
@@ -661,268 +935,384 @@
     </ul>
 </div>
 
-<!-- ===================== BUNDLE SECTION ===================== -->
-<div id="bundle" class="category-header">
-    <h2>💎 Bundle-Angebot für Lehrkräfte</h2>
-    <p>Alle 3 Haupt-Guides im Paket – spare 37%</p>
+<!-- ===================== BUNDLES SECTION ===================== -->
+<div id="bundles" class="category-header">
+    <h2>💎 Bundle-Angebote für Lehrkräfte</h2>
+    <p>Spare bis zu 43% mit unseren Komplett-Paketen</p>
 </div>
 
-<div class="product bundle">
-    <div class="bundle-badge">💎 SPARE 5,80€</div>
-    
-    <div class="product-header">
-        <div>
-            <img src="bundlelehrer.png" alt="Lehrer-Bundle" class="product-image">
-        </div>
-        <div class="product-title">
-            <h2>🎁 Lehrer-Paket: Struktur + Gespräche + Klassenstart</h2>
-            <p class="product-subtitle">Komplett-Lösung für Ihren inklusiven Unterricht</p>
+<!-- ADHS KOMPLETT-BUNDLE -->
+<div class="product-compact bundle adhs-bundle" style="position: relative;">
+    <div class="bundle-badge">💎 SPARE 14,96€ (43%)</div>
+    <div>
+        <img src="bundlelehrer.png" alt="ADHS Komplett-Bundle" class="product-image">
+    </div>
+    <div class="product-info">
+        <h3>🎁 ADHS-Lehrer Komplett-Bundle (alle 5 Ratgeber)</h3>
+        <p class="hook"><strong>Alles für erfolgreichen ADHS-Unterricht in einem Paket!</strong> Von Unterrichtsmethoden über Classroom Management bis zu Elterngesprächen – komplett-Lösung für Ihren ADHS-inklusiven Unterricht.</p>
+        <div class="features-compact">
+            <span class="feature-tag">✅ 5:1-Prinzip der Motivation</span>
+            <span class="feature-tag">✅ Token-Systeme & Routinen</span>
+            <span class="feature-tag">✅ Elterngespräche meistern</span>
+            <span class="feature-tag">✅ Klassenraum optimieren</span>
+            <span class="feature-tag">✅ SOS-Strategien</span>
         </div>
     </div>
-
-    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        <strong>Alles, was Sie für erfolgreiche Inklusion brauchen:</strong> Unterrichtsstruktur, professionelle Elterngespräche, erfolgreicher Klassenstart. 3 essenzielle Guides im Bundle 37% günstiger!
-    </p>
-
-    <div class="features">
-        <div class="feature-item">
-            <strong>📚 Strukturpläne (23 S.)</strong>
-            Tagesstruktur, Stundenablauf, Übergänge, Notfallplan
+    <div class="price-cta">
+        <div class="price-box">
+            <span class="price-old">Einzeln: 34,95€</span>
+            <div class="price-compact">19,99<span class="price-currency">€</span></div>
+            <span class="savings">⭐ BEST DEAL</span>
         </div>
-        <div class="feature-item">
-            <strong>💬 Elterngespräche (21 S.)</strong>
-            5 Phasen, 6 Prinzipien, Muster-E-Mails
-        </div>
-        <div class="feature-item">
-            <strong>📋 Klassenstart (22 S.)</strong>
-            Timeline, Material-Checkliste, Warnsignale
-        </div>
-    </div>
-
-    <div class="content-section">
-        <h3>✨ Das ist im Bundle enthalten:</h3>
-        <ul>
-            <li><strong>Strukturpläne für den Unterricht (23 Seiten, €4.90):</strong> Tagesstrukturplan, Stundenstrukturplan, Übergangshilfen, Notfallplan + 2 Praxisfälle (Leon & Mia)</li>
-            <li><strong>Gesprächsleitfaden Elterngespräch (21 Seiten, €5.90):</strong> 5 Gesprächsphasen, 6 Kommunikationsprinzipien, schwierige Situationen meistern + Muster-E-Mails</li>
-            <li><strong>Klassenstart-Checkliste (22 Seiten, €4.90):</strong> 4-Wochen-Timeline, Material-Checkliste, Warnsignale erkennen + 2 Erfolgsbeispiele (Tim & Sarah)</li>
-        </ul>
-    </div>
-
-    <div class="price-section">
-        <div class="price-info">
-            <p class="price-label">Einzeln: 15,70€</p>
-            <div class="price">
-                <span class="price-amount">9,90</span>
-                <span class="price-currency">€</span>
-            </div>
-            <p class="price-savings">✨ Du sparst 5,80€ (37%)</p>
-        </div>
-        <a href="https://paulrawe.gumroad.com/l/obdfvd" class="buy-button" target="_blank" rel="noopener">
-            Jetzt Bundle kaufen
-        </a>
-    </div>
-</div>
-
-<!-- ===================== UNTERRICHT SECTION ===================== -->
-<div id="unterricht" class="category-header">
-    <h2>📚 Unterricht strukturieren</h2>
-    <p>Praxiserprobte Strukturhilfen für autistische Schüler:innen</p>
-</div>
-
-<!-- PRODUKT 1: STRUKTURPLÄNE -->
-<div class="product">
-    <div class="product-header">
-        <div>
-            <img src="1struckturpläne für lehrer.png" alt="Strukturpläne für den Unterricht" class="product-image">
-        </div>
-        <div class="product-title">
-            <h2>📚 Strukturpläne für den Unterricht</h2>
-            <p class="product-subtitle">Tagesstruktur, Stundenablauf & Übergangshilfen (23 Seiten)</p>
-            <a href="https://autismus-adhs-alltag.de/leseproben/strukturplaene-preview.html">📖 Hier geht's zur Leseprobe</a>
-        </div>
-    </div>
-
-    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        <strong>Autistische Schüler:innen brauchen Struktur – nicht Chaos.</strong> Dieser Guide zeigt Ihnen, wie Sie mit einfachen Strukturhilfen Meltdowns verhindern und Lernen ermöglichen.
-    </p>
-
-    <div class="problem-solution">
-        <div class="problem-box">
-            <h3>🚨 Typische Probleme</h3>
-            <ul>
-                <li>Übergänge führen zu Meltdowns</li>
-                <li>Stundenende ist jedes Mal Kampf</li>
-                <li>Unangekündigte Änderungen überfordern</li>
-                <li>Schüler:in versteht Aufgaben nicht</li>
-            </ul>
-        </div>
-        
-        <div class="solution-box">
-            <h3>✅ Die Lösung</h3>
-            <ul>
-                <li>Tagesstruktur visuell darstellen</li>
-                <li>5-Minuten-Regel bei Übergängen</li>
-                <li>Änderungen rechtzeitig ankündigen</li>
-                <li>Aufgaben kleinschrittig erklären</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="features">
-        <div class="feature-item">
-            <strong>📅 Tagesstrukturplan</strong>
-            Visualisierung des gesamten Schultags
-        </div>
-        <div class="feature-item">
-            <strong>⏰ Stundenstrukturplan</strong>
-            Ablauf einzelner Unterrichtsstunden
-        </div>
-        <div class="feature-item">
-            <strong>🔄 Übergangshilfen</strong>
-            5-Minuten-Regel, Time Timer, visuelle Hinweise
-        </div>
-        <div class="feature-item">
-            <strong>🚨 Notfallplan</strong>
-            Was tun bei Überforderung?
-        </div>
-        <div class="feature-item">
-            <strong>📖 2 Praxisfälle</strong>
-            Leon (1. Klasse) & Mia (3. Klasse)
-        </div>
-        <div class="feature-item">
-            <strong>🧠 Wissenschaftlich</strong>
-            Theory of Mind, Exekutive Funktionen, Monotropismus
-        </div>
-    </div>
-
-    <div class="content-section">
-        <h3>📦 Das ist enthalten:</h3>
-        <ul>
-            <li>23 Seiten professionell gestaltetes PDF</li>
-            <li>Neurobiologische Grundlagen verständlich erklärt</li>
-            <li>4 konkrete Strukturhilfen mit Umsetzung</li>
-            <li>2 ausgefüllte Praxisfälle (Leon & Mia)</li>
-            <li>Kopiervorlagen für Ihren Unterricht</li>
-            <li>8 wissenschaftliche Quellen</li>
-        </ul>
-    </div>
-
-    <div class="price-section">
-        <div class="price-info">
-            <p class="price-label">Einzelpreis</p>
-            <div class="price">
-                <span class="price-amount">4,90</span>
-                <span class="price-currency">€</span>
-            </div>
-        </div>
-        <a href="https://paulrawe.gumroad.com/l/fphky" class="buy-button" target="_blank" rel="noopener">
+        <a href="https://paulrawe.gumroad.com/l/pdatv" class="buy-button-compact" target="_blank" rel="noopener">
             Jetzt kaufen
         </a>
     </div>
 </div>
 
-<!-- PRODUKT 2: ELTERNGESPRÄCHE -->
-
-<!-- PRODUKT 3: KLASSENSTART -->
-<div class="product">
-    <div class="product-header">
-        <div>
-            <img src="4. Klassenstart-Checkliste.png" alt="Klassenstart-Checkliste" class="product-image">
-        </div>
-        <div class="product-title">
-            <h2>📋 Klassenstart-Checkliste</h2>
-            <p class="product-subtitle">Schuljahresbeginn ohne Meltdowns (22 Seiten)</p>
-            <a href="https://autismus-adhs-alltag.de/leseproben/klassenstart-checkliste-preview.html">📖 Hier geht's zur Leseprobe</a>
+<!-- LEHRER ALLGEMEIN BUNDLE -->
+<div class="product-compact bundle" style="position: relative;">
+    <div class="bundle-badge">💎 SPARE 5,80€ (37%)</div>
+    <div>
+        <img src="bundlelehrer.png" alt="Lehrer-Bundle" class="product-image">
+    </div>
+    <div class="product-info">
+        <h3>🎁 Autismus Lehrer-Paket: Struktur + Gespräche + Klassenstart</h3>
+        <p class="hook"><strong>Komplett-Lösung für inklusiven Unterricht!</strong> Unterrichtsstruktur, professionelle Elterngespräche, erfolgreicher Klassenstart. 3 essenzielle Guides im Bundle 37% günstiger!</p>
+        <div class="features-compact">
+            <span class="feature-tag">📚 Strukturpläne (23 S.)</span>
+            <span class="feature-tag">💬 Elterngespräche (21 S.)</span>
+            <span class="feature-tag">📋 Klassenstart (22 S.)</span>
         </div>
     </div>
-
-    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        <strong>Der Schulstart entscheidet über das ganze Jahr.</strong> Diese Checkliste führt Sie Schritt für Schritt durch die ersten 8 Wochen.
-    </p>
-
-    <div class="problem-solution">
-        <div class="problem-box">
-            <h3>🚨 Typische Probleme</h3>
-            <ul>
-                <li>Erste Schulwochen sind Chaos</li>
-                <li>Autistische Kinder überfordert</li>
-                <li>Keine Vorbereitung auf Neues</li>
-                <li>Meltdowns häufen sich</li>
-            </ul>
+    <div class="price-cta">
+        <div class="price-box">
+            <span class="price-old">Einzeln: 15,70€</span>
+            <div class="price-compact">9,90<span class="price-currency">€</span></div>
+            <span class="savings">✨ Du sparst 5,80€</span>
         </div>
-        
-        <div class="solution-box">
-            <h3>✅ Die Lösung</h3>
-            <ul>
-                <li>Strukturierte 4-Wochen-Vorbereitung</li>
-                <li>Material rechtzeitig besorgen</li>
-                <li>Warnsignale früh erkennen</li>
-                <li>Erste Wochen professionell begleiten</li>
-            </ul>
+        <a href="https://paulrawe.gumroad.com/l/obdfvd" class="buy-button-compact" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- ADHS STARTER BUNDLE -->
+<div class="product-compact bundle adhs-bundle" style="position: relative;">
+    <div class="bundle-badge">💎 SPARE 5,98€ (29%)</div>
+    <div>
+        <img src="bundlelehrer.png" alt="ADHS Starter-Bundle" class="product-image">
+    </div>
+    <div class="product-info">
+        <h3>🎁 ADHS Starter-Bundle (3 essenzielle Ratgeber)</h3>
+        <p class="hook"><strong>Neu in der Arbeit mit ADHS-Kindern? Start hier.</strong> Die perfekte Kombination: Verstehen + Sofort umsetzen + Raum optimal gestalten</p>
+        <div class="features-compact">
+            <span class="feature-tag">✅ ADHS-Unterricht gestalten</span>
+            <span class="feature-tag">✅ ADHS-SOS</span>
+            <span class="feature-tag">✅ ADHS im Klassenraum</span>
         </div>
     </div>
+    <div class="price-cta">
+        <div class="price-box">
+            <span class="price-old">Einzeln: 20,97€</span>
+            <div class="price-compact">14,99<span class="price-currency">€</span></div>
+            <span class="savings">✨ Du sparst 5,98€</span>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/fsscwh" class="buy-button-compact" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
 
-    <div class="features">
-        <div class="feature-item">
-            <strong>⏰ 4-Wochen-Timeline</strong>
-            4 Wochen vor → 1 Monat nach Schulstart
-        </div>
-        <div class="feature-item">
-            <strong>🛒 Material-Checkliste</strong>
-            Time Timer, Kopfhörer, Fidget-Tools (inkl. Preise)
-        </div>
-        <div class="feature-item">
-            <strong>🚨 Warnsignale</strong>
-            Früherkennung von Überforderung
-        </div>
-        <div class="feature-item">
-            <strong>📖 2 Erfolgsbeispiele</strong>
-            Tim (1. Klasse) & Sarah (Schulwechsel 5. Klasse)
-        </div>
-        <div class="feature-item">
-            <strong>✅ Checklisten</strong>
-            Für jede Phase des Schulstarts
-        </div>
-        <div class="feature-item">
-            <strong>🧠 Wissenschaftlich</strong>
-            Predictive Processing, Sensorik
+<!-- ADHS CLASSROOM BUNDLE -->
+<div class="product-compact bundle adhs-bundle" style="position: relative;">
+    <div class="bundle-badge">💎 SPARE 5,98€ (29%)</div>
+    <div>
+        <img src="bundlelehrer.png" alt="ADHS Classroom-Bundle" class="product-image">
+    </div>
+    <div class="product-info">
+        <h3>🎁 ADHS Classroom-Bundle (Struktur & Management)</h3>
+        <p class="hook"><strong>Systematisches Classroom Management aufbauen.</strong> Fokus: Klare Strukturen, optimaler Raum, Notfall-Strategien</p>
+        <div class="features-compact">
+            <span class="feature-tag">✅ ADHS Classroom Management</span>
+            <span class="feature-tag">✅ ADHS im Klassenraum</span>
+            <span class="feature-tag">✅ ADHS-SOS</span>
         </div>
     </div>
-
-    <div class="content-section">
-        <h3>📦 Das ist enthalten:</h3>
-        <ul>
-            <li>22 Seiten professionell gestaltetes PDF</li>
-            <li>Timeline: 4 Wochen vor bis 1 Monat nach Schulstart</li>
-            <li>Material-Checkliste mit Preisen (Time Timer €30, Kopfhörer, etc.)</li>
-            <li>Warnsignale für Überforderung erkennen</li>
-            <li>2 ausgefüllte Erfolgsbeispiele (Tim & Sarah)</li>
-            <li>Checklisten für jede Phase</li>
-            <li>8 wissenschaftliche Quellen</li>
-        </ul>
-    </div>
-
-    <div class="price-section">
-        <div class="price-info">
-            <p class="price-label">Einzelpreis</p>
-            <div class="price">
-                <span class="price-amount">4,90</span>
-                <span class="price-currency">€</span>
-            </div>
+    <div class="price-cta">
+        <div class="price-box">
+            <span class="price-old">Einzeln: 20,97€</span>
+            <div class="price-compact">14,99<span class="price-currency">€</span></div>
+            <span class="savings">✨ Du sparst 5,98€</span>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/agenx" class="buy-button" target="_blank" rel="noopener">
+        <a href="https://paulrawe.gumroad.com/l/trnevt" class="buy-button-compact" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- ADHS KOMMUNIKATIONS BUNDLE -->
+<div class="product-compact bundle adhs-bundle" style="position: relative;">
+    <div class="bundle-badge">💎 SPARE 1,99€ (14%)</div>
+    <div>
+        <img src="bundlelehrer.png" alt="ADHS Kommunikations-Bundle" class="product-image">
+    </div>
+    <div class="product-info">
+        <h3>🎁 ADHS Kommunikations-Bundle</h3>
+        <p class="hook"><strong>Erfolgreich kommunizieren mit ADHS-Kindern UND Eltern.</strong> Effektive Kommunikation im Unterricht + konstruktive Elterngespräche</p>
+        <div class="features-compact">
+            <span class="feature-tag">✅ ADHS-Unterricht gestalten</span>
+            <span class="feature-tag">✅ Elterngespräche ADHS</span>
+        </div>
+    </div>
+    <div class="price-cta">
+        <div class="price-box">
+            <span class="price-old">Einzeln: 13,98€</span>
+            <div class="price-compact">11,99<span class="price-currency">€</span></div>
+            <span class="savings">✨ Du sparst 1,99€</span>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/bfxyoc" class="buy-button-compact" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- ===================== ADHS SECTION ===================== -->
+<div id="adhs" class="category-header adhs">
+    <h2>🎯 ADHS-spezifische Materialien</h2>
+    <p>Wissenschaftlich fundierte Guides für ADHS im Unterricht</p>
+</div>
+
+<!-- ADHS EINZELPRODUKT 1: UNTERRICHT GESTALTEN -->
+<div class="product-compact adhs-product">
+    <div>
+        <img src="ADHS-Unterricht gestalten - Motivation & Methoden.png" alt="ADHS-Unterricht gestalten" class="product-image">
+    </div>
+    <div class="product-info">
+        <h3>📚 ADHS-Unterricht gestalten: Motivation & Methoden</h3>
+        <p class="subtitle">Das 5:1-Prinzip der Motivation - ADHS-Gehirne "anschalten"</p>
+        <p class="hook">Max zappelt, Lisa starrt ins Leere, Ben ruft rein - und du fragst dich: "Muss ich jetzt alles anders machen?" <strong>Die Antwort: Nein!</strong> Ein paar gezielte Anpassungen machen deinen Unterricht für ALLE Kinder besser.</p>
+        <div class="features-compact">
+            <span class="feature-tag">✅ 5:1-Prinzip der Motivation</span>
+            <span class="feature-tag">✅ 20+ Bewegungspausen</span>
+            <span class="feature-tag">✅ ADHS-optimierte Stundenstruktur</span>
+            <span class="feature-tag">✅ 7-Tage-Aktionsplan</span>
+        </div>
+        <div class="links">
+            <a href="https://autismus-adhs-alltag.de/leseproben/leseprobe-adhs-unterricht-gestalten.html" class="preview-link" target="_blank">📖 Kostenlos reinlesen</a>
+        </div>
+    </div>
+    <div class="price-cta">
+        <div class="price-box">
+            <div class="price-compact">6,99<span class="price-currency">€</span></div>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/tdmbv" class="buy-button-compact" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- ADHS EINZELPRODUKT 2: ELTERNGESPRÄCHE -->
+<div class="product-compact adhs-product">
+    <div>
+        <img src="Elterngespräche ADHS - Leitfaden & Vorlagen.png" alt="Elterngespräche ADHS" class="product-image">
+    </div>
+    <div class="product-info">
+        <h3>💬 Elterngespräche ADHS: Der konstruktive Leitfaden</h3>
+        <p class="subtitle">Nach dem Gespräch denken Eltern: "Endlich versteht uns jemand"</p>
+        <p class="hook">Du bereitest ein Elterngespräch vor. Die Eltern hatten schon hunderte negative Gespräche. Du weißt: Ein falsches Wort und sie gehen in Abwehrhaltung. <strong>Schluss damit!</strong></p>
+        <div class="features-compact">
+            <span class="feature-tag">✅ Sandwich-Methode (5 Phasen)</span>
+            <span class="feature-tag">✅ Formulierungshilfen</span>
+            <span class="feature-tag">✅ 2 fertige Gesprächs-Skripte</span>
+            <span class="feature-tag">✅ Dokumentations-Vorlage</span>
+        </div>
+        <div class="links">
+            <a href="https://autismus-adhs-alltag.de/leseproben/adhs-leseprobe-elterngespraeche.html" class="preview-link" target="_blank">📖 Kostenlos reinlesen</a>
+        </div>
+    </div>
+    <div class="price-cta">
+        <div class="price-box">
+            <div class="price-compact">6,99<span class="price-currency">€</span></div>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/vlzwzv" class="buy-button-compact" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- ADHS EINZELPRODUKT 3: SOS -->
+<div class="product-compact adhs-product">
+    <div>
+        <img src="ADHS-SOS Typische Probleme & Sofortlösungen.png" alt="ADHS-SOS" class="product-image">
+    </div>
+    <div class="product-info">
+        <h3>🚨 ADHS-SOS: Typische Probleme & Sofortlösungen</h3>
+        <p class="subtitle">Wenn's brennt - JETZT eine Lösung, keine Theorie!</p>
+        <p class="hook">9:15 Uhr. Max rennt durch die Klasse. Lisa starrt seit 10 Minuten auf ihr leeres Blatt. Ben ruft zum 5. Mal rein. <strong>Du brauchst JETZT eine Lösung!</strong></p>
+        <div class="features-compact">
+            <span class="feature-tag">🪑 "Kann nicht still sitzen"</span>
+            <span class="feature-tag">⏱️ "Startet Aufgaben nicht"</span>
+            <span class="feature-tag">💭 "Vergisst alles"</span>
+            <span class="feature-tag">🔄 "Übergangs-Chaos"</span>
+            <span class="feature-tag">📝 Quick-Reference-Karten</span>
+        </div>
+        <div class="links">
+            <a href="https://autismus-adhs-alltag.de/leseproben/leseprobe-adhs-sos.html" class="preview-link" target="_blank">📖 Kostenlos reinlesen</a>
+        </div>
+    </div>
+    <div class="price-cta">
+        <div class="price-box">
+            <div class="price-compact">6,99<span class="price-currency">€</span></div>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/akuzjf" class="buy-button-compact" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- ADHS EINZELPRODUKT 4: CLASSROOM MANAGEMENT -->
+<div class="product-compact adhs-product">
+    <div>
+        <img src="ADHS-Classroom Management Toolkit.png" alt="ADHS Classroom Management" class="product-image">
+    </div>
+    <div class="product-info">
+        <h3>🎯 ADHS Classroom Management Toolkit</h3>
+        <p class="subtitle">Struktur, die trägt - weil ADHS-Kinder externe Struktur brauchen</p>
+        <p class="hook">Max rennt rum, Lisa vergisst Hausaufgaben, Ben ruft rein. Du fühlst dich wie ein Feuerwehrmann. <strong>ADHS-Kinder brauchen externe Struktur - weil interne fehlt.</strong></p>
+        <div class="features-compact">
+            <span class="feature-tag">✅ 5:1-Prinzip (wissenschaftlich belegt)</span>
+            <span class="feature-tag">🎫 Token-Systeme (2 Vorlagen)</span>
+            <span class="feature-tag">📋 Tagesroutinen & Übergänge</span>
+            <span class="feature-tag">⚖️ CRISP-Modell (logische Konsequenzen)</span>
+        </div>
+        <div class="links">
+            <a href="https://autismus-adhs-alltag.de/leseproben/leseprobe-adhs-classroom-management.html" class="preview-link" target="_blank">📖 Kostenlos reinlesen</a>
+        </div>
+    </div>
+    <div class="price-cta">
+        <div class="price-box">
+            <div class="price-compact">6,99<span class="price-currency">€</span></div>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/vtqst" class="buy-button-compact" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- ADHS EINZELPRODUKT 5: KLASSENRAUM -->
+<div class="product-compact adhs-product">
+    <div>
+        <img src="ADHS im Klassenraum - Setup & Sitzordnung.png" alt="ADHS im Klassenraum" class="product-image">
+    </div>
+    <div class="product-info">
+        <h3>🏫 ADHS im Klassenraum: Setup & Sitzordnung</h3>
+        <p class="subtitle">Der physische Raum kann 50% deiner Arbeit erleichtern oder erschweren</p>
+        <p class="hook">"Wo soll ich das ADHS-Kind hinsetzen? Wie gestalte ich den Raum?" <strong>Die Antwort: Der Raum entscheidet über Erfolg oder Kampf.</strong></p>
+        <div class="features-compact">
+            <span class="feature-tag">🪑 Optimale Sitzordnung</span>
+            <span class="feature-tag">✏️ Nur 3 Stifte-Regel</span>
+            <span class="feature-tag">🎨 Raumzonen schaffen</span>
+            <span class="feature-tag">🔇 Reizreduktion</span>
+            <span class="feature-tag">📋 Checklisten</span>
+        </div>
+        <div class="links">
+            <a href="https://autismus-adhs-alltag.de/leseproben/leseprobe-adhs-klassenraum.html" class="preview-link" target="_blank">📖 Kostenlos reinlesen</a>
+        </div>
+    </div>
+    <div class="price-cta">
+        <div class="price-box">
+            <div class="price-compact">6,99<span class="price-currency">€</span></div>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/prtxs" class="buy-button-compact" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- ===================== AUTISMUS SECTION (PLACEHOLDER) ===================== -->
+<div id="autismus" class="category-header" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-left-color: var(--color-autism);">
+    <h2 style="color: var(--color-autism);">🧩 Autismus-spezifische Materialien</h2>
+    <p>⏳ Wird morgen mit 9 weiteren Produkten befüllt</p>
+</div>
+
+<div style="background: #f0f9ff; border: 2px dashed #3b82f6; border-radius: 12px; padding: 2rem; text-align: center; margin-bottom: 3rem;">
+    <h3 style="color: #3b82f6; margin-bottom: 1rem;">🚀 9 neue Autismus-Guides kommen morgen!</h3>
+    <p style="color: #1e40af;">Strukturpläne, Elterngespräche, Social Stories und vieles mehr speziell für autistische Schüler:innen</p>
+</div>
+
+<!-- ===================== ALLGEMEIN SECTION ===================== -->
+<div id="allgemein" class="category-header">
+    <h2>📚 Allgemeine Unterrichtsmaterialien</h2>
+    <p>Für autistische Schüler:innen - auch bei ADHS einsetzbar</p>
+</div>
+
+<!-- PRODUKT: STRUKTURPLÄNE -->
+<div class="product-compact">
+    <div>
+        <img src="1struckturpläne für lehrer.png" alt="Strukturpläne für den Unterricht" class="product-image">
+    </div>
+    <div class="product-info">
+        <h3>📚 Strukturpläne für den Unterricht</h3>
+        <p class="subtitle">Tagesstruktur, Stundenablauf & Übergangshilfen (23 Seiten)</p>
+        <p class="hook"><strong>Autistische Schüler:innen brauchen Struktur – nicht Chaos.</strong> Mit einfachen Strukturhilfen Meltdowns verhindern und Lernen ermöglichen.</p>
+        <div class="features-compact">
+            <span class="feature-tag">📅 Tagesstrukturplan</span>
+            <span class="feature-tag">⏰ Stundenstrukturplan</span>
+            <span class="feature-tag">🔄 Übergangshilfen (5-Minuten-Regel)</span>
+            <span class="feature-tag">🚨 Notfallplan</span>
+            <span class="feature-tag">📖 2 Praxisfälle</span>
+        </div>
+        <div class="links">
+            <a href="https://autismus-adhs-alltag.de/leseproben/strukturplaene-preview.html" class="preview-link" target="_blank">📖 Kostenlos reinlesen</a>
+        </div>
+    </div>
+    <div class="price-cta">
+        <div class="price-box">
+            <div class="price-compact">4,90<span class="price-currency">€</span></div>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/fphky" class="buy-button-compact" target="_blank" rel="noopener">
+            Jetzt kaufen
+        </a>
+    </div>
+</div>
+
+<!-- PRODUKT: KLASSENSTART -->
+<div class="product-compact">
+    <div>
+        <img src="4. Klassenstart-Checkliste.png" alt="Klassenstart-Checkliste" class="product-image">
+    </div>
+    <div class="product-info">
+        <h3>📋 Klassenstart-Checkliste</h3>
+        <p class="subtitle">Schuljahresbeginn ohne Meltdowns (22 Seiten)</p>
+        <p class="hook"><strong>Der Schulstart entscheidet über das ganze Jahr.</strong> Diese Checkliste führt Sie Schritt für Schritt durch die ersten 8 Wochen.</p>
+        <div class="features-compact">
+            <span class="feature-tag">⏰ 4-Wochen-Timeline</span>
+            <span class="feature-tag">🛒 Material-Checkliste (inkl. Preise)</span>
+            <span class="feature-tag">🚨 Warnsignale erkennen</span>
+            <span class="feature-tag">📖 2 Erfolgsbeispiele</span>
+        </div>
+        <div class="links">
+            <a href="https://autismus-adhs-alltag.de/leseproben/klassenstart-checkliste-preview.html" class="preview-link" target="_blank">📖 Kostenlos reinlesen</a>
+        </div>
+    </div>
+    <div class="price-cta">
+        <div class="price-box">
+            <div class="price-compact">4,90<span class="price-currency">€</span></div>
+        </div>
+        <a href="https://paulrawe.gumroad.com/l/agenx" class="buy-button-compact" target="_blank" rel="noopener">
             Jetzt kaufen
         </a>
     </div>
 </div>
 
 <!-- ===================== HAUSAUFGABEN SECTION ===================== -->
-<div id="hausaufgaben" class="category-header">
-    <h2>✏️ Hausaufgaben-Guides</h2>
-    <p>Wissenschaftlich fundierte Notfallpläne für ADHS & Autismus</p>
+<div class="category-header" style="background: linear-gradient(135deg, #fef3c7 0%, #e0f2fe 100%);">
+    <h2>✏️ Hausaufgaben-Notfallpläne</h2>
+    <p>Wissenschaftlich fundierte Guides für ADHS & Autismus</p>
 </div>
 
-<!-- PRODUKT 4: ADHS HAUSAUFGABEN -->
+<!-- PRODUKT: ADHS HAUSAUFGABEN (DETAILED) -->
 <div class="product">
     <div class="product-header">
         <div>
@@ -988,22 +1378,6 @@
         </div>
     </div>
 
-    <div class="content-section">
-        <h3>📦 Das ist enthalten:</h3>
-        <ul>
-            <li>43 Seiten professionell gestaltetes PDF</li>
-            <li>Wissenschaftliche Grundlagen (Exekutive Funktionen, Arbeitsgedächtnis, Zeitblindheit)</li>
-            <li>VOR – WÄHREND – NACH Strategien</li>
-            <li>Chunking-Methode, Pomodoro ADHS-adaptiert, Body-Doubling</li>
-            <li>Notfall-Interventionen bei Blockaden</li>
-            <li>6+ druckbare Checklisten</li>
-            <li>3 Arbeitsblätter zum Ausfüllen</li>
-            <li>Laminierbare Notfallkarte (Kreditkartenformat)</li>
-            <li>Musterbriefe für Eltern (Nachteilsausgleich)</li>
-            <li>18 wissenschaftliche Quellen</li>
-        </ul>
-    </div>
-
     <div class="price-section">
         <div class="price-info">
             <p class="price-label">Für Lehrkräfte & Eltern</p>
@@ -1018,7 +1392,7 @@
     </div>
 </div>
 
-<!-- PRODUKT 5: AUTISMUS HAUSAUFGABEN -->
+<!-- PRODUKT: AUTISMUS HAUSAUFGABEN (DETAILED) -->
 <div class="product">
     <div class="product-header">
         <div>
@@ -1084,23 +1458,6 @@
         </div>
     </div>
 
-    <div class="content-section">
-        <h3>📦 Das ist enthalten:</h3>
-        <ul>
-            <li>49 Seiten professionell gestaltetes PDF</li>
-            <li>Wissenschaftliche Grundlagen (Theory of Mind, Exekutive Funktionen, Predictive Processing)</li>
-            <li>Sensorische Optimierung des Arbeitsplatzes (die 8 Sinne)</li>
-            <li>Struktur & Vorhersehbarkeit etablieren</li>
-            <li>Klare, autismus-freundliche Kommunikation (3W+1H-Methode)</li>
-            <li>Übergänge meistern (5-Stufen-Methode)</li>
-            <li>Notfallplan bei Meltdown/Shutdown</li>
-            <li>Mehrere druckbare Checklisten</li>
-            <li>Laminierbare Notfallkarte (Kreditkartenformat)</li>
-            <li>Musterbriefe für Eltern (Nachteilsausgleich)</li>
-            <li>15 wissenschaftliche Quellen</li>
-        </ul>
-    </div>
-
     <div class="price-section">
         <div class="price-info">
             <p class="price-label">Für Lehrkräfte & Eltern</p>
@@ -1121,7 +1478,7 @@
     <p>Als Dankeschön für Ihre wertvolle Arbeit</p>
 </div>
 
-<!-- PRODUKT 6: BEOBACHTUNGSBÖGEN (FREE) -->
+<!-- PRODUKT: BEOBACHTUNGSBÖGEN (FREE) -->
 <div class="product free">
     <div class="free-badge">🎁 KOSTENLOS</div>
     
@@ -1138,28 +1495,6 @@
     <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
         <strong>Beobachtung ist die Basis für erfolgreiche Förderung.</strong> Diese 4 wissenschaftlich fundierten Beobachtungsbögen helfen Ihnen, Verhalten neutral zu dokumentieren.
     </p>
-
-    <div class="problem-solution">
-        <div class="problem-box">
-            <h3>🚨 Typische Probleme</h3>
-            <ul>
-                <li>Beobachtungen sind zu subjektiv</li>
-                <li>Keine Struktur bei Dokumentation</li>
-                <li>Verhalten wird falsch interpretiert</li>
-                <li>Keine Trigger-Analyse</li>
-            </ul>
-        </div>
-        
-        <div class="solution-box">
-            <h3>✅ Die Lösung</h3>
-            <ul>
-                <li>4 strukturierte Beobachtungsbögen</li>
-                <li>ABC-Modell für Verhaltensanalyse</li>
-                <li>Video-Kamera-Regel (neutrale Beschreibung)</li>
-                <li>3 ausgefüllte Beispiele</li>
-            </ul>
-        </div>
-    </div>
 
     <div class="features">
         <div class="feature-item">
@@ -1186,22 +1521,6 @@
             <strong>✅ 3 Beispiele</strong>
             Leon & Mia ausgefüllt
         </div>
-    </div>
-
-    <div class="content-section">
-        <h3>📦 Das ist enthalten:</h3>
-        <ul>
-            <li>24 Seiten professionell gestaltetes PDF</li>
-            <li>4 Beobachtungsbögen (Allgemein, Stress, Positiv, Sensorisch)</li>
-            <li>ABC-Modell erklärt & angewendet</li>
-            <li>Video-Kamera-Regel für neutrale Beschreibung</li>
-            <li>3 ausgefüllte Beispiele (Leon & Mia)</li>
-            <li>Druckoptimiert für A4-Format</li>
-            <li>7 wissenschaftliche Quellen</li>
-        </ul>
-        <p style="font-weight: bold; color: var(--color-free); margin-top: 1rem;">
-            💝 Dieses Produkt ist KOSTENLOS als Dankeschön für Ihre wertvolle Arbeit!
-        </p>
     </div>
 
     <div class="price-section">
@@ -1252,6 +1571,11 @@
         <h4>Wo sind die Materialien für Eltern?</h4>
         <p>Eltern-Materialien (Alltag, Tagesplan, Social Stories) finden Sie auf unserer <a href="downloads.html"><strong>Eltern-Seite</strong></a>.</p>
     </div>
+
+    <div class="faq-item">
+        <h4>Was ist der Unterschied zwischen ADHS- und Autismus-Materialien?</h4>
+        <p>ADHS-Materialien fokussieren auf Exekutive Funktionen, Motivation und Impulsivität. Autismus-Materialien behandeln Theory of Mind, Sensorik und Vorhersehbarkeit. Viele Strategien überschneiden sich und können kombiniert werden.</p>
+    </div>
 </section>
 
 </main>
@@ -1293,8 +1617,4 @@ document.querySelectorAll('.quick-nav-item').forEach(link => {
 </script>
 
 </body>
-
 </html>
-
-
-
