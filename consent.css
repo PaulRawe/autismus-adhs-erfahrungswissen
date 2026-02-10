@@ -293,7 +293,7 @@
 }
 
 /* ============================================ */
-/* STICKY DOWNLOAD BUTTON */
+/* STICKY DOWNLOAD BUTTON - DUAL VERSION */
 /* ============================================ */
 
 #sticky-download-button {
@@ -301,15 +301,14 @@
     bottom: 2rem;
     right: 2rem;
     z-index: 9998;
-    /* Unterhalb des Cookie-Banners (9999) */
+    display: flex;
+    gap: 0.5rem;
 }
 
 .sticky-btn {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    background: linear-gradient(135deg, #2f6f8f 0%, #5fa8c9 100%);
-    color: #ffffff;
     padding: 1rem 1.5rem;
     border-radius: 50px;
     text-decoration: none;
@@ -317,12 +316,37 @@
     transition: all 0.3s ease;
     font-family: Arial, Helvetica, sans-serif;
     border: 3px solid #ffffff;
+    color: #ffffff;
 }
 
-.sticky-btn:hover {
+.sticky-btn.primary {
+    background: linear-gradient(135deg, #2f6f8f 0%, #5fa8c9 100%);
+}
+
+.sticky-btn.primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(47, 111, 143, 0.5);
     background: linear-gradient(135deg, #1e4d68 0%, #2f6f8f 100%);
+}
+
+.sticky-btn.etsy {
+    background: linear-gradient(135deg, #F56400 0%, #D84A00 100%);
+    animation: pulse-etsy 3s ease-in-out infinite;
+}
+
+.sticky-btn.etsy:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(245, 100, 0, 0.5);
+    background: linear-gradient(135deg, #D84A00 0%, #C43D00 100%);
+}
+
+@keyframes pulse-etsy {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 .sticky-btn:focus {
@@ -333,16 +357,6 @@
 .sticky-btn-icon {
     font-size: 2rem;
     line-height: 1;
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
 }
 
 .sticky-btn-text {
@@ -364,41 +378,124 @@
     display: block;
 }
 
-/* Mobile Anpassung für Sticky Button */
+/* ETSY BADGE (Header) */
+.etsy-badge {
+    background: linear-gradient(135deg, #F56400 0%, #D84A00 100%) !important;
+    animation: glow-etsy 2s ease-in-out infinite;
+}
+
+@keyframes glow-etsy {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(245, 100, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(245, 100, 0, 0.6);
+    }
+}
+
+/* ETSY INFO BOX */
+.etsy-info-box {
+    background: linear-gradient(135deg, #FFF4E6 0%, #FFE8CC 100%);
+    border: 3px solid #F56400;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto 3rem;
+    max-width: 1100px;
+    box-shadow: 0 6px 20px rgba(245, 100, 0, 0.2);
+}
+
+.etsy-info-box h3 {
+    color: #D84A00;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.etsy-info-box p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #92400e;
+}
+
+.etsy-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.etsy-benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #92400e;
+}
+
+.etsy-shop-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #F56400 0%, #D84A00 100%);
+    color: #ffffff;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(245, 100, 0, 0.4);
+    text-align: center;
+}
+
+.etsy-shop-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 100, 0, 0.5);
+}
+
+.etsy-cta-wrapper {
+    text-align: center;
+}
+
+/* Mobile Anpassung */
 @media (max-width: 768px) {
     #sticky-download-button {
         bottom: 1rem;
         right: 1rem;
         left: 1rem;
+        flex-direction: column;
     }
     
     .sticky-btn {
         width: 100%;
         justify-content: center;
-        padding: 0.9rem 1.2rem;
+        padding: 0.8rem 1rem;
     }
-    #sticky-download-button {
-    position: fixed;
-    right: 2rem;
-    bottom: 2rem;
-    z-index: 9998;
-    transition: bottom 0.25s ease;
-}
-
-/* Zustand wenn der Footer erreicht wird */
-#sticky-download-button.footer-stop {
-    position: absolute;
-}
+    
     .sticky-btn-icon {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     
     .sticky-btn-text strong {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
     
     .sticky-btn-text small {
         font-size: 0.75rem;
+    }
+    
+    .etsy-info-box {
+        padding: 1.5rem;
+    }
+    
+    .etsy-info-box h3 {
+        font-size: 1.4rem;
+    }
+    
+    .etsy-benefits {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -409,7 +506,7 @@ body.cookie-banner-visible #sticky-download-button {
 
 @media (max-width: 768px) {
     body.cookie-banner-visible #sticky-download-button {
-        bottom: 180px;
+        bottom: 250px;
     }
 }
 /* ============================================ */
@@ -419,4 +516,5 @@ body.cookie-banner-visible #sticky-download-button {
 .ad-container {
     display: none !important;
 }
+
 
