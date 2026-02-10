@@ -465,50 +465,71 @@
         bottom: 1rem;
         right: 1rem;
         left: 1rem;
-        flex-direction: column;
+        flex-direction: row;        /* Nebeneinander */
+        justify-content: space-between;
+        gap: 0.5rem;
     }
     
     .sticky-btn {
-        width: 100%;
+        flex: 1;                    /* Beide gleich breit */
         justify-content: center;
-        padding: 0.8rem 1rem;
+        padding: 0.8rem 0.6rem;
+        gap: 0.4rem;
+        flex-direction: column;     /* Icon ÜBER Text */
+        text-align: center;
     }
     
     .sticky-btn-icon {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .sticky-btn-text {
+        align-items: center;
     }
     
     .sticky-btn-text strong {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
+        line-height: 1.2;
     }
     
     .sticky-btn-text small {
-        font-size: 0.75rem;
+        display: none;              /* Untertitel weg */
+    }
+}
+
+/* Für sehr kleine Handys (unter 360px) */
+@media (max-width: 360px) {
+    .sticky-btn {
+        padding: 0.7rem 0.4rem;
     }
     
-    .etsy-info-box {
-        padding: 1.5rem;
-    }
-    
-    .etsy-info-box h3 {
+    .sticky-btn-icon {
         font-size: 1.4rem;
     }
     
-    .etsy-benefits {
-        grid-template-columns: 1fr;
+    .sticky-btn-text strong {
+        font-size: 0.7rem;
     }
 }
+```
 
-/* Wenn Cookie-Banner aktiv ist, Button nach oben verschieben */
-body.cookie-banner-visible #sticky-download-button {
-    bottom: 120px;
-}
+---
 
-@media (max-width: 768px) {
-    body.cookie-banner-visible #sticky-download-button {
-        bottom: 250px;
-    }
-}
+## 🎨 **Ergebnis auf Mobile:**
+```
+┌──────────────┬──────────────┐
+│      📚      │     🛍️      │
+│ Sams Helfer  │  Auf Etsy    │
+└──────────────┴──────────────┘
+```
+
+**Desktop bleibt wie gehabt:**
+```
+┌────────────────────────┬────────────────────────┐
+│  📚 Sams Helfer        │  🛍️ Auf Etsy          │
+│     Bewährte...        │     Sicher kaufen       │
+└────────────────────────┴────────────────────────┘
 /* ============================================ */
 /* GOOGLE ADSENSE AUSBLENDEN */
 /* ============================================ */
@@ -516,5 +537,6 @@ body.cookie-banner-visible #sticky-download-button {
 .ad-container {
     display: none !important;
 }
+
 
 
