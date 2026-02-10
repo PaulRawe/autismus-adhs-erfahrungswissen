@@ -168,7 +168,7 @@
 })();
 
 // ==================================================
-// STICKY DOWNLOAD BUTTON - Automatisch auf allen Seiten
+// STICKY DOWNLOAD BUTTON - DUAL VERSION (Sams Helfer + Etsy)
 // ==================================================
 (function() {
     'use strict';
@@ -183,14 +183,25 @@
         const depth = (window.location.pathname.match(/\//g) || []).length - 1;
         const pathToDownloads = depth > 0 ? '../'.repeat(depth) + 'downloads.html' : 'downloads.html';
 
-        // Button HTML erstellen und einfügen
-       const buttonHTML = `
+        // Dual Button HTML erstellen
+        const buttonHTML = `
     <div id="sticky-download-button">
-        <a href="${pathToDownloads}" class="sticky-btn" aria-label="Unsere erprobten Alltagshelfer ansehen">
+        <a href="${pathToDownloads}" class="sticky-btn primary" aria-label="Unsere erprobten Alltagshelfer ansehen">
             <span class="sticky-btn-icon">📚</span>
             <span class="sticky-btn-text">
-                <strong>Was uns wirklich hilft</strong>
-                <small>Sams Alltagshelfer</small>
+                <strong>Sams Helfer</strong>
+                <small>Bewährte Alltagshilfen</small>
+            </span>
+        </a>
+        <a href="https://www.etsy.com/de/shop/NeuroTeacherTools" 
+           class="sticky-btn etsy" 
+           target="_blank" 
+           rel="noopener"
+           aria-label="Auf Etsy kaufen">
+            <span class="sticky-btn-icon">🛍️</span>
+            <span class="sticky-btn-text">
+                <strong>Auf Etsy</strong>
+                <small>Sicher kaufen</small>
             </span>
         </a>
     </div>
@@ -208,10 +219,8 @@
     function checkCookieBanner() {
         const banner = document.getElementById('cookie-banner');
         if (banner) {
-            // Initial prüfen
             updateBodyClass();
             
-            // Bei Änderungen am Banner reagieren
             const observer = new MutationObserver(function() {
                 updateBodyClass();
             });
@@ -236,7 +245,6 @@
         loadStickyButton();
     }
 })();
-
 // ==================================================
 // STICKY BUTTON POSITION (Footer-Kollision vermeiden)
 // ==================================================
@@ -375,4 +383,5 @@ document.addEventListener("DOMContentLoaded", () => {
         insertHelpBox();
     }
 })();
+
 
