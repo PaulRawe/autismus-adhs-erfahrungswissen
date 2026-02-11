@@ -508,18 +508,6 @@
         font-size: 0.6rem;
     }
 }
-```
-
----
-
-## ✅ **Ergebnis:**
-
-**Mobile Buttons:**
-```
-┌──────────────┬──────────────┐
-│     📚       │     🛍️      │
-│  Downloads   │  Etsy Shop   │
-└──────────────┴──────────────┘
 
 /* ============================================ */
 /* GOOGLE ADSENSE AUSBLENDEN */
@@ -529,7 +517,6 @@
     display: none !important;
 }
 
-/* Alle möglichen AdSense-Klassen */
 ins.adsbygoogle,
 .adsbygoogle,
 [id^="google_ads"],
@@ -540,4 +527,3 @@ iframe[src*="doubleclick"] {
     height: 0 !important;
     overflow: hidden !important;
 }
-
