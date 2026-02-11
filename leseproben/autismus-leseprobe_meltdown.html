@@ -55,6 +55,15 @@
         footer a { color: #e74c3c; text-decoration: none; margin: 0 10px; font-size: 0.82rem; }
         footer a:hover { text-decoration: underline; }
         .footer-legal a { color: rgba(255,255,255,0.4); font-size: 0.75rem; margin: 0 8px; }
+        /* === DUAL BUY BUTTONS === */
+.buy-buttons { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; }
+.btn-sub { display: block; font-size: 0.72rem; font-weight: 400; opacity: 0.85; margin-top: 3px; }
+.cta-btn-etsy {
+    background: linear-gradient(135deg, #F56400 0%, #D84A00 100%) !important;
+    color: white !important;
+    box-shadow: 0 8px 24px rgba(245,100,0,0.3) !important;
+}
+.cta-btn-etsy:hover { box-shadow: 0 12px 32px rgba(245,100,0,0.4) !important; }
         @media (max-width: 768px) { .hero { padding: 40px 20px 60px; } .comparison-grid { grid-template-columns: 1fr; } .section { padding: 40px 0; } .content-box { padding: 24px; } .critical-box .big-stat { font-size: 3rem; } }
     </style>
 </head>
@@ -158,8 +167,17 @@
         <h2>Bereit für Meltdown-<br>Prävention?</h2>
         <p>11 Seiten Notfall-Wissen<br>90% vermeidbar – wissenschaftlich fundiert</p>
         <div class="cta-price"><span class="price-new">€ 6,99</span></div>
-        <a href="https://paulrawe.gumroad.com/l/nnyibg" class="cta-btn">Jetzt kaufen</a>
-        <p class="cta-note">Sofort-Download · Lebenslange Nutzung · Ausdruckbare Notfall-Karten</p>
+<div class="buy-buttons">
+    <a href="https://paulrawe.gumroad.com/l/prtxs" class="cta-btn">
+        ⬇️ Sofort downloaden
+        <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+    </a>
+    <a href="https://www.etsy.com/de/listing/4455470688/" class="cta-btn cta-btn-etsy" target="_blank" rel="noopener">
+        🛍️ Im Etsy Shop kaufen
+        <span class="btn-sub">mit Käuferschutz · Etsy</span>
+    </a>
+</div>
+<br>
     </div>
 </div>
 <footer>
