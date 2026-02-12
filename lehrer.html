@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Praxis-Guides für Lehrkräfte | Autismus & ADHS im Unterricht</title>
+    <title>Praxis-Guides für Lehrkräfte | Autismus &amp; ADHS im Unterricht</title>
     <meta name="description" content="Professionelle Materialien für Lehrkräfte – entwickelt von Grundschullehrerin Katharina Rawe. Strukturpläne, Elterngespräche, Beobachtungsbögen, Klassenstart.">
     <meta name="keywords" content="Autismus Unterricht, ADHS Schule, Elterngespräche, Beobachtungsbögen, Klassenstart, Nachteilsausgleich, Lehrerfortbildung">
     
@@ -33,11 +33,7 @@
             --color-autism: #3b82f6;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -52,835 +48,306 @@
             padding: 3rem 1rem;
             text-align: center;
         }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        header .subtitle {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            max-width: 800px;
-            margin: 0 auto 1.5rem;
-        }
-
+        header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        header .subtitle { font-size: 1.3rem; opacity: 0.95; max-width: 800px; margin: 0 auto 1.5rem; }
         .author-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.25);
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            font-size: 1.05rem;
-            margin: 1rem 0.5rem;
-            font-weight: bold;
-            border: 2px solid rgba(255, 255, 255, 0.5);
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: rgba(255,255,255,0.25); padding: 0.8rem 1.5rem;
+            border-radius: 50px; font-size: 1.05rem; margin: 1rem 0.5rem;
+            font-weight: bold; border: 2px solid rgba(255,255,255,0.5);
         }
-
         .trust-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.6rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            margin: 0.5rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: rgba(255,255,255,0.2); padding: 0.6rem 1.2rem;
+            border-radius: 50px; font-size: 0.95rem; margin: 0.5rem;
         }
 
+        /* STICKY QUICK NAV */
         .quick-nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            position: sticky; top: 0; z-index: 100;
             background: linear-gradient(135deg, #047857 0%, #059669 100%);
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
-
         .quick-nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0.8rem 1rem;
-            display: flex;
-            gap: 1rem;
-            overflow-x: auto;
-            scrollbar-width: none;
+            max-width: 1100px; margin: 0 auto; padding: 0.8rem 1rem;
+            display: flex; gap: 1rem; overflow-x: auto; scrollbar-width: none;
         }
-
-        .quick-nav-container::-webkit-scrollbar {
-            display: none;
-        }
-
+        .quick-nav-container::-webkit-scrollbar { display: none; }
         .quick-nav-item {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
-            background: rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
+            flex-shrink: 0; display: flex; align-items: center; gap: 0.5rem;
+            padding: 0.6rem 1.2rem; background: rgba(255,255,255,0.15);
+            color: #ffffff; text-decoration: none; border-radius: 50px;
+            font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease;
             border: 2px solid transparent;
         }
+        .quick-nav-item:hover { background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.5); transform: translateY(-1px); }
+        .quick-nav-item.eltern { background: var(--color-primary); border: 2px solid #fff; }
+        .quick-nav-item.eltern:hover { background: #1e5773; }
 
-        .quick-nav-item:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-1px);
-        }
+        /* NAV */
+        nav { background-color: #e9edf1; padding: 1rem; }
+        nav ul { display: flex; flex-wrap: wrap; justify-content: center; list-style: none; gap: 1.5rem; }
+        nav a { text-decoration: none; color: var(--color-teacher); font-weight: bold; }
 
-        .quick-nav-item.eltern {
-            background: var(--color-primary);
-            border: 2px solid #fff;
-        }
+        /* MAIN */
+        main { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 4rem; }
 
-        .quick-nav-item.eltern:hover {
-            background: #1e5773;
-        }
-
-        nav {
-            background-color: #e9edf1;
-            padding: 1rem;
-        }
-
-        nav ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            list-style: none;
-            gap: 1.5rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--color-teacher);
-            font-weight: bold;
-        }
-
-        main {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem 1rem 4rem;
-        }
-
+        /* INTRO BOX */
         .intro-box {
             background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
-            border: 3px solid var(--color-teacher);
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0 3rem;
-            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.2);
+            border: 3px solid var(--color-teacher); border-radius: 12px;
+            padding: 2rem; margin: 2rem 0 3rem;
+            box-shadow: 0 6px 20px rgba(5,150,105,0.2);
         }
+        .intro-box h2 { color: var(--color-teacher); font-size: 1.8rem; margin-bottom: 1rem; }
+        .intro-box p { font-size: 1.05rem; margin-bottom: 1rem; color: #065f46; line-height: 1.8; }
+        .intro-box ul { list-style: none; margin: 1rem 0; }
+        .intro-box li { padding: 0.5rem 0 0.5rem 1.8rem; position: relative; font-size: 1.05rem; color: #065f46; }
+        .intro-box li:before { content: "✅"; position: absolute; left: 0; }
 
-        .intro-box h2 {
-            color: var(--color-teacher);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .intro-box p {
-            font-size: 1.05rem;
-            margin-bottom: 1rem;
-            color: #065f46;
-            line-height: 1.8;
-        }
-
-        .intro-box ul {
-            list-style: none;
-            margin: 1rem 0;
-        }
-
-        .intro-box li {
-            padding: 0.5rem 0 0.5rem 1.8rem;
-            position: relative;
-            font-size: 1.05rem;
-            color: #065f46;
-        }
-
-        .intro-box li:before {
-            content: "✅";
-            position: absolute;
-            left: 0;
-        }
-
-        /* CATEGORY TABS */
-        .category-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .category-tab {
-            padding: 1rem 2rem;
-            background: #fff;
-            border: 3px solid #e5e7eb;
-            border-radius: 12px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .category-tab:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .category-tab.active {
-            border-color: var(--color-teacher);
-            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
-            color: #065f46;
-        }
-
-        .category-tab.adhs.active {
-            border-color: var(--color-adhs);
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            color: #92400e;
-        }
-
-        .category-tab.autism.active {
-            border-color: var(--color-autism);
-            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-            color: #1e40af;
-        }
-
-        .category-content {
-            display: none;
-        }
-
-        .category-content.active {
-            display: block;
-        }
-
+        /* CATEGORY HEADER */
         .category-header {
-            text-align: center;
-            margin: 3rem 0 2rem;
-            padding: 1.5rem;
+            text-align: center; margin: 3rem 0 2rem; padding: 1.5rem;
             background: linear-gradient(135deg, #d1fae5 0%, #e0f2fe 100%);
-            border-radius: 12px;
-            border-left: 5px solid var(--color-teacher);
+            border-radius: 12px; border-left: 5px solid var(--color-teacher);
         }
-
         .category-header.adhs {
             background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
             border-left-color: var(--color-adhs);
         }
+        .category-header.adhs h2 { color: var(--color-adhs); }
+        .category-header h2 { color: var(--color-teacher); font-size: 2rem; margin-bottom: 0.5rem; }
+        .category-header p { color: var(--color-muted); font-size: 1.1rem; }
 
-        .category-header.adhs h2 {
-            color: var(--color-adhs);
+        /* === DUAL BUY BUTTONS === */
+        .buy-buttons {
+            display: flex; flex-direction: column;
+            gap: 0.6rem; align-items: stretch;
         }
-
-        .category-header h2 {
-            color: var(--color-teacher);
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .category-header p {
-            color: var(--color-muted);
-            font-size: 1.1rem;
-        }
+        .btn-sub { display: block; font-size: 0.7rem; font-weight: 400; opacity: 0.85; margin-top: 2px; }
 
         /* COMPACT PRODUCT CARD */
         .product-compact {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            display: grid;
-            grid-template-columns: 140px 1fr auto;
-            gap: 1.5rem;
-            align-items: center;
-            scroll-margin-top: 80px;
-            transition: all 0.3s ease;
+            background: #ffffff; border-radius: 12px; padding: 1.5rem;
+            margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: grid; grid-template-columns: 140px 1fr auto;
+            gap: 1.5rem; align-items: start;
+            scroll-margin-top: 80px; transition: all 0.3s ease;
         }
-
-        .product-compact:hover {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-            transform: translateY(-2px);
-        }
-
+        .product-compact:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); transform: translateY(-2px); }
         .product-compact.bundle {
             background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
             border: 3px solid var(--color-teacher);
-            grid-template-columns: 140px 1fr;
-            padding: 2rem;
+            grid-template-columns: 1fr auto;
+            padding: 2rem; position: relative;
         }
-
         .product-compact.adhs-bundle {
             background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
             border: 3px solid var(--color-adhs);
         }
-
         .product-compact .product-image {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-
-        .product-compact .product-info {
-            flex: 1;
-        }
-
-        .product-compact h3 {
-            color: var(--color-teacher);
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
-        }
-
-        .product-compact.adhs-product h3 {
-            color: var(--color-adhs);
-        }
-
-        .product-compact .subtitle {
-            color: var(--color-muted);
-            font-size: 0.95rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .product-compact .hook {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 0.8rem;
-            color: var(--color-text);
-        }
-
-        .product-compact .features-compact {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 0.8rem 0;
-        }
-
+        .product-compact h3 { color: var(--color-teacher); font-size: 1.3rem; margin-bottom: 0.5rem; line-height: 1.3; }
+        .product-compact.adhs-product h3 { color: var(--color-adhs); }
+        .product-compact .subtitle { color: var(--color-muted); font-size: 0.95rem; margin-bottom: 0.8rem; }
+        .product-compact .hook { font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.8rem; color: var(--color-text); }
+        .product-compact .features-compact { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.8rem 0; }
         .feature-tag {
-            background: #f3f4f6;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--color-muted);
-            border: 1px solid #e5e7eb;
+            background: #f3f4f6; padding: 0.3rem 0.8rem; border-radius: 20px;
+            font-size: 0.85rem; color: var(--color-muted); border: 1px solid #e5e7eb;
         }
-
-        .product-compact .links {
-            display: flex;
-            gap: 0.8rem;
-            margin-top: 0.8rem;
-            flex-wrap: wrap;
-        }
-
+        .product-compact .links { display: flex; gap: 0.8rem; margin-top: 0.8rem; flex-wrap: wrap; }
         .preview-link {
-            color: var(--color-teacher);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
+            color: var(--color-teacher); text-decoration: none; font-size: 0.9rem;
+            font-weight: 600; display: flex; align-items: center; gap: 0.3rem;
         }
+        .preview-link:hover { text-decoration: underline; }
 
-        .preview-link:hover {
-            text-decoration: underline;
-        }
-
+        /* PRICE CTA IN COMPACT CARDS */
         .product-compact .price-cta {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 0.8rem;
+            display: flex; flex-direction: column;
+            align-items: flex-end; gap: 0.8rem; min-width: 200px;
         }
-
         .bundle .price-cta {
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            margin-top: 1rem;
+            flex-direction: row; align-items: center;
+            justify-content: space-between; width: 100%; margin-top: 1rem;
         }
-
-        .price-box {
-            text-align: right;
-        }
-
-        .bundle .price-box {
-            text-align: left;
-        }
-
-        .price-compact {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--color-teacher);
-            line-height: 1;
-        }
-
+        .price-box { text-align: right; }
+        .bundle .price-box { text-align: left; }
+        .price-compact { font-size: 2rem; font-weight: bold; color: var(--color-teacher); line-height: 1; }
         .product-compact.adhs-product .price-compact,
-        .product-compact.adhs-bundle .price-compact {
-            color: var(--color-adhs);
-        }
+        .product-compact.adhs-bundle .price-compact { color: var(--color-adhs); }
+        .price-currency { font-size: 1.2rem; margin-left: 0.2rem; }
+        .price-old { text-decoration: line-through; color: var(--color-muted); font-size: 1rem; display: block; margin-bottom: 0.3rem; }
+        .savings { color: #dc2626; font-weight: bold; font-size: 0.9rem; }
 
-        .price-currency {
-            font-size: 1.2rem;
-            margin-left: 0.2rem;
-        }
-
-        .price-old {
-            text-decoration: line-through;
-            color: var(--color-muted);
-            font-size: 1rem;
-            display: block;
-            margin-bottom: 0.3rem;
-        }
-
-        .savings {
-            color: #dc2626;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
+        /* BUY BUTTON COMPACT (für kompakte Karten) */
         .buy-button-compact {
-            display: inline-block;
+            display: block; text-align: center;
             background: linear-gradient(135deg, var(--color-teacher) 0%, #047857 100%);
-            color: #ffffff;
-            padding: 0.8rem 1.8rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
-            white-space: nowrap;
+            color: #ffffff; padding: 0.7rem 1.4rem;
+            border: none; border-radius: 50px;
+            font-size: 0.95rem; font-weight: bold; text-decoration: none;
+            cursor: pointer; transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(5,150,105,0.3);
+            white-space: nowrap; min-width: 190px;
         }
+        .buy-button-compact:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(5,150,105,0.4); }
 
-        .buy-button-compact:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
-        }
-
+        /* ADHS-colored variants */
         .product-compact.adhs-product .buy-button-compact,
         .product-compact.adhs-bundle .buy-button-compact {
             background: linear-gradient(135deg, var(--color-adhs) 0%, #d97706 100%);
-            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 2px 8px rgba(245,158,11,0.3);
         }
-
         .product-compact.adhs-product .buy-button-compact:hover,
-        .product-compact.adhs-bundle .buy-button-compact:hover {
-            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
-        }
+        .product-compact.adhs-bundle .buy-button-compact:hover { box-shadow: 0 4px 12px rgba(245,158,11,0.4); }
 
+        /* ETSY BUTTON COMPACT */
+        .buy-button-compact.etsy {
+            background: linear-gradient(135deg, #F56400 0%, #D84A00 100%);
+            box-shadow: 0 2px 8px rgba(245,100,0,0.3);
+        }
+        .buy-button-compact.etsy:hover { box-shadow: 0 4px 12px rgba(245,100,0,0.4); }
+
+        /* BUNDLE BADGE */
         .bundle-badge {
-            position: absolute;
-            top: -12px;
-            right: 20px;
-            background: var(--color-teacher);
-            color: white;
-            padding: 0.4rem 1.2rem;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 0.85rem;
-            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+            position: absolute; top: -12px; right: 20px;
+            background: var(--color-teacher); color: white;
+            padding: 0.4rem 1.2rem; border-radius: 50px;
+            font-weight: bold; font-size: 0.85rem;
+            box-shadow: 0 2px 8px rgba(5,150,105,0.3);
         }
+        .adhs-bundle .bundle-badge { background: var(--color-adhs); }
 
-        .adhs-bundle .bundle-badge {
-            background: var(--color-adhs);
-        }
-.product-compact.bundle:not(:has(img)) {
-    grid-template-columns: 1fr auto;
-}
-
-        /* DETAILED PRODUCT (for key products like Hausaufgaben) */
+        /* DETAILED PRODUCT (Hausaufgaben) */
         .product {
-            background-color: var(--bg-card);
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            scroll-margin-top: 80px;
+            background-color: var(--bg-card); border-radius: 12px;
+            padding: 2.5rem; margin-bottom: 3rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); scroll-margin-top: 80px;
         }
-
         .product.free {
             background: linear-gradient(135deg, #fef1f7 0%, #fce7f3 100%);
-            border: 3px solid var(--color-free);
-            position: relative;
+            border: 3px solid var(--color-free); position: relative;
         }
-
         .free-badge {
-            position: absolute;
-            top: -15px;
-            right: 20px;
-            background: var(--color-free);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+            position: absolute; top: -15px; right: 20px;
+            background: var(--color-free); color: white;
+            padding: 0.5rem 1.5rem; border-radius: 50px;
+            font-weight: bold; font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(236,72,153,0.3);
             animation: pulse 2s ease-in-out infinite;
         }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
         .product-header {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 2rem;
-            align-items: center;
-            margin-bottom: 2rem;
+            display: grid; grid-template-columns: 200px 1fr;
+            gap: 2rem; align-items: center; margin-bottom: 2rem;
         }
+        .product-image-large { width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .product-title h2 { color: var(--color-teacher); font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .free .product-title h2 { color: var(--color-free); }
+        .product-subtitle-large { color: var(--color-muted); font-size: 1.1rem; margin-bottom: 0.8rem; }
 
-        .product-image {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        .leseprobe-link {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--color-teacher); font-size: 0.95rem; text-decoration: none;
+            border-bottom: 1px dashed var(--color-teacher); transition: opacity 0.2s;
         }
+        .leseprobe-link:hover { opacity: 0.7; }
 
-        .product-title h2 {
-            color: var(--color-teacher);
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
+        .problem-solution { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .problem-box, .solution-box { padding: 1.5rem; border-radius: 8px; }
+        .problem-box { background: #fff5f5; border-left: 4px solid #dc2626; }
+        .problem-box h3 { color: #dc2626; font-size: 1.1rem; margin-bottom: 1rem; }
+        .solution-box { background: #f0fdf4; border-left: 4px solid var(--color-success); }
+        .solution-box h3 { color: var(--color-success); font-size: 1.1rem; margin-bottom: 1rem; }
+        .problem-box ul, .solution-box ul { list-style: none; font-size: 0.95rem; }
+        .problem-box li, .solution-box li { padding: 0.4rem 0 0.4rem 1.5rem; position: relative; }
+        .problem-box li:before { content: "❌"; position: absolute; left: 0; }
+        .solution-box li:before { content: "✅"; position: absolute; left: 0; }
 
-        .free .product-title h2 {
-            color: var(--color-free);
-        }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
+        .feature-item { padding: 1rem; background: #f9fafb; border-radius: 6px; font-size: 0.9rem; }
+        .feature-item strong { color: var(--color-teacher); display: block; margin-bottom: 0.3rem; }
 
-        .product-subtitle {
-            color: var(--color-muted);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        .problem-solution {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .problem-box,
-        .solution-box {
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-
-        .problem-box {
-            background: #fff5f5;
-            border-left: 4px solid #dc2626;
-        }
-
-        .problem-box h3 {
-            color: #dc2626;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        .solution-box {
-            background: #f0fdf4;
-            border-left: 4px solid var(--color-success);
-        }
-
-        .solution-box h3 {
-            color: var(--color-success);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        .problem-box ul,
-        .solution-box ul {
-            list-style: none;
-            font-size: 0.95rem;
-        }
-
-        .problem-box li,
-        .solution-box li {
-            padding: 0.4rem 0 0.4rem 1.5rem;
-            position: relative;
-        }
-
-        .problem-box li:before {
-            content: "❌";
-            position: absolute;
-            left: 0;
-        }
-
-        .solution-box li:before {
-            content: "✅";
-            position: absolute;
-            left: 0;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .feature-item {
-            padding: 1rem;
-            background: #f9fafb;
-            border-radius: 6px;
-            font-size: 0.9rem;
-        }
-
-        .feature-item strong {
-            color: var(--color-teacher);
-            display: block;
-            margin-bottom: 0.3rem;
-        }
-
-        .content-section {
-            margin: 2rem 0;
-        }
-
-        .content-section h3 {
-            color: var(--color-teacher);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .content-section p {
-            margin-bottom: 1rem;
-            line-height: 1.7;
-        }
-
-        .content-section ul,
-        .content-section ol {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .content-section li {
-            margin-bottom: 0.5rem;
-            line-height: 1.6;
-        }
-
+        /* PRICE SECTION (detail products) */
         .price-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #f0fdf4;
-            border: 2px solid var(--color-teacher);
-            border-radius: 12px;
-            padding: 1.5rem 2rem;
-            margin-top: 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+            background: #f0fdf4; border: 2px solid var(--color-teacher);
+            border-radius: 12px; padding: 1.5rem 2rem; margin-top: 2rem;
         }
+        .free .price-section { background: #fef1f7; border-color: var(--color-free); }
+        .price-info-large { flex: 1; }
+        .price-label { font-size: 0.9rem; color: var(--color-muted); }
+        .price-row { display: flex; align-items: baseline; gap: 0.5rem; margin: 0.5rem 0; }
+        .price-amount { font-size: 2.5rem; font-weight: bold; color: var(--color-teacher); }
+        .free .price-amount { color: var(--color-free); }
+        .price-cur { font-size: 1.2rem; color: var(--color-muted); }
+        .price-savings { color: var(--color-success); font-weight: bold; font-size: 0.95rem; }
 
-        .free .price-section {
-            background: #fef1f7;
-            border-color: var(--color-free);
-        }
-
-        .price-info {
-            flex: 1;
-        }
-
-        .price-label {
-            font-size: 0.9rem;
-            color: var(--color-muted);
-        }
-
-        .price {
-            display: flex;
-            align-items: baseline;
-            gap: 0.5rem;
-            margin: 0.5rem 0;
-        }
-
-        .price-amount {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--color-teacher);
-        }
-
-        .free .price-amount {
-            color: var(--color-free);
-        }
-
-        .price-savings {
-            color: var(--color-success);
-            font-weight: bold;
-            font-size: 0.95rem;
-        }
-
-        .buy-button {
-            display: inline-block;
+        /* BUY BUTTON LARGE (detail products) */
+        .buy-button-large {
+            display: block; text-align: center;
             background: linear-gradient(135deg, var(--color-teacher) 0%, #047857 100%);
-            color: #ffffff;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 16px rgba(5, 150, 105, 0.4);
-            white-space: nowrap;
+            color: #ffffff; padding: 1rem 2.5rem;
+            border: none; border-radius: 50px;
+            font-size: 1.1rem; font-weight: bold; text-decoration: none;
+            cursor: pointer; transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(5,150,105,0.4);
+            white-space: nowrap; min-width: 220px;
         }
-
-        .buy-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.5);
+        .buy-button-large:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(5,150,105,0.5); }
+        .buy-button-large.etsy {
+            background: linear-gradient(135deg, #F56400 0%, #D84A00 100%);
+            box-shadow: 0 4px 16px rgba(245,100,0,0.3);
         }
-
-        .free .buy-button {
+        .buy-button-large.etsy:hover { box-shadow: 0 6px 20px rgba(245,100,0,0.4); }
+        .free .buy-button-large {
             background: linear-gradient(135deg, var(--color-free) 0%, #db2777 100%);
-            box-shadow: 0 4px 16px rgba(236, 72, 153, 0.4);
+            box-shadow: 0 4px 16px rgba(236,72,153,0.4);
         }
 
-        .free .buy-button:hover {
-            box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5);
-        }
-
+        /* FAQ */
         section.faq {
-            background-color: var(--bg-card);
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 3rem;
-            scroll-margin-top: 80px;
+            background-color: var(--bg-card); border-radius: 12px;
+            padding: 2.5rem; margin-bottom: 3rem; scroll-margin-top: 80px;
         }
-
-        section.faq h2 {
-            color: var(--color-teacher);
-            margin-bottom: 1.5rem;
-        }
-
+        section.faq h2 { color: var(--color-teacher); margin-bottom: 1.5rem; }
         .faq-item {
-            margin-bottom: 1.5rem;
-            padding: 1.2rem;
-            background: #fafafa;
-            border-radius: 8px;
-            border-left: 4px solid var(--color-teacher);
+            margin-bottom: 1.5rem; padding: 1.2rem; background: #fafafa;
+            border-radius: 8px; border-left: 4px solid var(--color-teacher);
         }
+        .faq-item h4 { color: var(--color-teacher); margin-bottom: 0.5rem; font-size: 1rem; }
+        .faq-item p { font-size: 0.95rem; line-height: 1.6; }
 
-        .faq-item h4 {
-            color: var(--color-teacher);
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
+        /* FOOTER */
+        footer { background-color: #2e2e2e; color: #ffffff; padding: 2rem 1rem; text-align: center; font-size: 0.9rem; }
+        footer a { color: #ffffff; text-decoration: underline; }
+        .legal { margin-top: 1rem; font-size: 0.85rem; color: #cccccc; }
 
-        .faq-item p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        footer {
-            background-color: #2e2e2e;
-            color: #ffffff;
-            padding: 2rem 1rem;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-
-        .legal {
-            margin-top: 1rem;
-            font-size: 0.85rem;
-            color: #cccccc;
-        }
-
-        /* MOBILE RESPONSIVE */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-
-            .author-badge {
-                font-size: 0.95rem;
-            }
-
-            .quick-nav-item {
-                font-size: 0.85rem;
-                padding: 0.5rem 1rem;
-            }
-
-            .category-tabs {
-                flex-direction: column;
-            }
-
-            .category-tab {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .product-compact {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .product-compact .product-image {
-                max-width: 160px;
-                margin: 0 auto;
-            }
-
-            .product-compact .price-cta {
-                align-items: center;
-                width: 100%;
-            }
-
-            .price-box {
-                text-align: center;
-            }
-
-            .bundle .price-cta {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .bundle .price-box {
-                text-align: center;
-            }
-
-            .product-header {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .product-image {
-                max-width: 200px;
-                margin: 0 auto;
-            }
-
-            .problem-solution {
-                grid-template-columns: 1fr;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            .price-section {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .category-header h2 {
-                font-size: 1.5rem;
-            }
-
-            .intro-box h2 {
-                font-size: 1.4rem;
-            }
+            header h1 { font-size: 1.8rem; }
+            .author-badge { font-size: 0.95rem; }
+            .quick-nav-item { font-size: 0.85rem; padding: 0.5rem 1rem; }
+            .product-compact { grid-template-columns: 1fr; text-align: center; }
+            .product-compact .product-image { max-width: 160px; margin: 0 auto; }
+            .product-compact .price-cta { align-items: center; width: 100%; min-width: 0; }
+            .bundle .price-cta { flex-direction: column; gap: 1rem; }
+            .price-box, .bundle .price-box { text-align: center; }
+            .product-compact .buy-buttons { align-items: center; width: 100%; }
+            .buy-button-compact { min-width: 0; width: 100%; }
+            .product-header { grid-template-columns: 1fr; text-align: center; }
+            .product-image-large { max-width: 200px; margin: 0 auto; }
+            .problem-solution { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .price-section { flex-direction: column; gap: 1rem; text-align: center; }
+            .category-header h2 { font-size: 1.5rem; }
+            .intro-box h2 { font-size: 1.4rem; }
+            .buy-buttons { align-items: stretch; }
+            .buy-button-large { min-width: 0; width: 100%; }
         }
     </style>
 </head>
@@ -889,13 +356,11 @@
 <header>
     <h1>👩‍🏫 Praxis-Guides für Lehrkräfte</h1>
     <p class="subtitle">Wissenschaftlich fundiert, praxiserprobt, sofort einsetzbar – von Lehrerin für Lehrkräfte</p>
-    <div class="author-badge">
-        ✨ Entwickelt von Grundschullehrerin Katharina Rawe
-    </div>
+    <div class="author-badge">✨ Entwickelt von Grundschullehrerin Katharina Rawe</div>
     <div class="trust-badge">✓ Wissenschaftlich fundiert</div>
     <div class="trust-badge">✓ Sofort einsetzbar</div>
     <div class="trust-badge">✓ Mit Beispielen</div>
-    <div class="trust-badge etsy-badge">🛍️ Neu: Auch auf Etsy!</div>
+    <div class="trust-badge">🛍️ Neu: Auch auf Etsy!</div>
 </header>
 
 <div class="quick-nav">
@@ -922,14 +387,9 @@
 
 <!-- INTRO BOX -->
 <div class="intro-box">
-    <h2>Für Lehrkräfte, Erzieher:innen & Sozialpädagog:innen</h2>
-    <p>
-        <strong>Sie stehen vor der Herausforderung, autistische oder ADHS-Schüler:innen professionell zu unterstützen?</strong>
-    </p>
-    <p>
-        Als Grundschullehrerin und Mutter eines autistischen Kindes kenne ich beide Seiten: die professionelle UND die persönliche. 
-        Diese Guides verbinden wissenschaftliche Fundierung mit echter Praxiserfahrung.
-    </p>
+    <h2>Für Lehrkräfte, Erzieher:innen &amp; Sozialpädagog:innen</h2>
+    <p><strong>Sie stehen vor der Herausforderung, autistische oder ADHS-Schüler:innen professionell zu unterstützen?</strong></p>
+    <p>Als Grundschullehrerin und Mutter eines autistischen Kindes kenne ich beide Seiten: die professionelle UND die persönliche. Diese Guides verbinden wissenschaftliche Fundierung mit echter Praxiserfahrung.</p>
     <ul>
         <li><strong>Keine Theorie-Wüste:</strong> Konkrete Handlungsanleitungen für Ihren Unterricht</li>
         <li><strong>Wissenschaftlich fundiert:</strong> Basiert auf aktueller Forschung (Theory of Mind, Exekutive Funktionen, Predictive Processing)</li>
@@ -945,23 +405,20 @@
     <p>Spare bis zu 43% mit unseren Komplett-Paketen</p>
 </div>
 
-<!-- ADHS KOMPLETT-BUNDLE -->
-<div class="product-compact bundle adhs-bundle" style="position: relative;">
+<!-- A1: ADHS KOMPLETT-BUNDLE -->
+<div class="product-compact bundle adhs-bundle" style="position:relative;">
     <div class="bundle-badge">💎 SPARE 14,96€ (43%)</div>
-    <div>
-   </div>
     <div class="product-info">
         <h3>🎁 ADHS-Lehrer Komplett-Bundle (alle 5 Ratgeber)</h3>
-        <p class="hook"><strong>Alles für erfolgreichen ADHS-Unterricht in einem Paket!</strong> Von Unterrichtsmethoden über Classroom Management bis zu Elterngesprächen – komplett-Lösung für Ihren ADHS-inklusiven Unterricht.</p>
+        <p class="hook"><strong>Alles für erfolgreichen ADHS-Unterricht in einem Paket!</strong> Von Unterrichtsmethoden über Classroom Management bis zu Elterngesprächen – die Komplett-Lösung für Ihren ADHS-inklusiven Unterricht.</p>
         <div class="features-compact">
             <span class="feature-tag">✅ 5:1-Prinzip der Motivation</span>
-            <span class="feature-tag">✅ Token-Systeme & Routinen</span>
+            <span class="feature-tag">✅ Token-Systeme &amp; Routinen</span>
             <span class="feature-tag">✅ Elterngespräche meistern</span>
             <span class="feature-tag">✅ Klassenraum optimieren</span>
             <span class="feature-tag">✅ SOS-Strategien</span>
         </div>
-    
-    <div class="links">
+        <div class="links">
             <a href="https://autismus-adhs-alltag.de/leseproben/leseprobe-adhs-unterricht-gestalten.html" class="preview-link" target="_blank">📖 Unterricht-Leseprobe</a>
             <a href="https://autismus-adhs-alltag.de/leseproben/adhs-leseprobe-elterngespraeche.html" class="preview-link" target="_blank">📖 Elterngespräche-Leseprobe</a>
             <a href="https://autismus-adhs-alltag.de/leseproben/leseprobe-adhs-sos.html" class="preview-link" target="_blank">📖 SOS-Leseprobe</a>
@@ -975,19 +432,22 @@
             <div class="price-compact">19,99<span class="price-currency">€</span></div>
             <span class="savings">⭐ BEST DEAL</span>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/pdatv" class="buy-button-compact" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/pdatv" class="buy-button-compact" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455768145/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- LEHRER ALLGEMEIN BUNDLE -->
-
-<!-- ADHS STARTER BUNDLE -->
-<div class="product-compact bundle adhs-bundle" style="position: relative;">
+<!-- A2: ADHS STARTER BUNDLE -->
+<div class="product-compact bundle adhs-bundle" style="position:relative;">
     <div class="bundle-badge">💎 SPARE 5,98€ (29%)</div>
-    <div>
-       </div>
     <div class="product-info">
         <h3>🎁 ADHS Starter-Bundle (3 essenzielle Ratgeber)</h3>
         <p class="hook"><strong>Neu in der Arbeit mit ADHS-Kindern? Start hier.</strong> Die perfekte Kombination: Verstehen + Sofort umsetzen + Raum optimal gestalten</p>
@@ -996,8 +456,7 @@
             <span class="feature-tag">✅ ADHS-SOS</span>
             <span class="feature-tag">✅ ADHS im Klassenraum</span>
         </div>
-    
-    <div class="links">
+        <div class="links">
             <a href="https://autismus-adhs-alltag.de/leseproben/leseprobe-adhs-unterricht-gestalten.html" class="preview-link" target="_blank">📖 Unterricht-Leseprobe</a>
             <a href="https://autismus-adhs-alltag.de/leseproben/leseprobe-adhs-sos.html" class="preview-link" target="_blank">📖 SOS-Leseprobe</a>
             <a href="https://autismus-adhs-alltag.de/leseproben/leseprobe-adhs-klassenraum.html" class="preview-link" target="_blank">📖 Klassenraum-Leseprobe</a>
@@ -1009,51 +468,58 @@
             <div class="price-compact">14,99<span class="price-currency">€</span></div>
             <span class="savings">✨ Du sparst 5,98€</span>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/fsscwh" class="buy-button-compact" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/fsscwh" class="buy-button-compact" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455770091/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- ADHS CLASSROOM BUNDLE -->
-<div class="product-compact bundle adhs-bundle" style="position: relative;">
+<!-- A3: ADHS CLASSROOM BUNDLE -->
+<div class="product-compact bundle adhs-bundle" style="position:relative;">
     <div class="bundle-badge">💎 SPARE 5,98€ (29%)</div>
-    <div>
-      
-    </div>
     <div class="product-info">
-        <h3>🎁 ADHS Classroom-Bundle (Struktur & Management)</h3>
+        <h3>🎁 ADHS Classroom-Bundle (Struktur &amp; Management)</h3>
         <p class="hook"><strong>Systematisches Classroom Management aufbauen.</strong> Fokus: Klare Strukturen, optimaler Raum, Notfall-Strategien</p>
         <div class="features-compact">
             <span class="feature-tag">✅ ADHS Classroom Management</span>
             <span class="feature-tag">✅ ADHS im Klassenraum</span>
             <span class="feature-tag">✅ ADHS-SOS</span>
         </div>
-    
-    <div class="links">
+        <div class="links">
             <a href="https://autismus-adhs-alltag.de/leseproben/leseprobe-adhs-classroom-management.html" class="preview-link" target="_blank">📖 Management-Leseprobe</a>
             <a href="https://autismus-adhs-alltag.de/leseproben/leseprobe-adhs-klassenraum.html" class="preview-link" target="_blank">📖 Klassenraum-Leseprobe</a>
             <a href="https://autismus-adhs-alltag.de/leseproben/leseprobe-adhs-sos.html" class="preview-link" target="_blank">📖 SOS-Leseprobe</a>
-        </div> 
+        </div>
     </div>
-        <div class="price-cta">
+    <div class="price-cta">
         <div class="price-box">
             <span class="price-old">Einzeln: 20,97€</span>
             <div class="price-compact">14,99<span class="price-currency">€</span></div>
             <span class="savings">✨ Du sparst 5,98€</span>
-        </div> 
-      
-        <a href="https://paulrawe.gumroad.com/l/trnevt" class="buy-button-compact" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        </div>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/trnevt" class="buy-button-compact" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455779898/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- ADHS KOMMUNIKATIONS BUNDLE -->
-<div class="product-compact bundle adhs-bundle" style="position: relative;">
+<!-- A4: ADHS KOMMUNIKATIONS BUNDLE -->
+<div class="product-compact bundle adhs-bundle" style="position:relative;">
     <div class="bundle-badge">💎 SPARE 1,99€ (14%)</div>
-    <div>
-           </div>
     <div class="product-info">
         <h3>🎁 ADHS Kommunikations-Bundle</h3>
         <p class="hook"><strong>Erfolgreich kommunizieren mit ADHS-Kindern UND Eltern.</strong> Effektive Kommunikation im Unterricht + konstruktive Elterngespräche</p>
@@ -1072,27 +538,32 @@
             <div class="price-compact">11,99<span class="price-currency">€</span></div>
             <span class="savings">✨ Du sparst 1,99€</span>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/bfxyoc" class="buy-button-compact" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/bfxyoc" class="buy-button-compact" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455781578/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- ===================== ADHS SECTION ===================== -->
+<!-- ===================== ADHS EINZELPRODUKTE ===================== -->
 <div id="adhs" class="category-header adhs">
     <h2>🎯 ADHS-spezifische Materialien</h2>
     <p>Wissenschaftlich fundierte Guides für ADHS im Unterricht</p>
 </div>
 
-<!-- ADHS EINZELPRODUKT 1: UNTERRICHT GESTALTEN -->
+<!-- A5: UNTERRICHT GESTALTEN -->
 <div class="product-compact adhs-product">
-    <div>
-        <img src="ADHS-Unterricht gestalten - Motivation & Methoden.png" alt="ADHS-Unterricht gestalten" class="product-image">
-    </div>
+    <div><img src="ADHS-Unterricht gestalten - Motivation &amp; Methoden.png" alt="ADHS-Unterricht gestalten" class="product-image"></div>
     <div class="product-info">
-        <h3>📚 ADHS-Unterricht gestalten: Motivation & Methoden</h3>
-        <p class="subtitle">Das 5:1-Prinzip der Motivation - ADHS-Gehirne "anschalten"</p>
-        <p class="hook">Max zappelt, Lisa starrt ins Leere, Ben ruft rein - und du fragst dich: "Muss ich jetzt alles anders machen?" <strong>Die Antwort: Nein!</strong> Ein paar gezielte Anpassungen machen deinen Unterricht für ALLE Kinder besser.</p>
+        <h3>📚 ADHS-Unterricht gestalten: Motivation &amp; Methoden</h3>
+        <p class="subtitle">Das 5:1-Prinzip der Motivation – ADHS-Gehirne "anschalten"</p>
+        <p class="hook">Max zappelt, Lisa starrt ins Leere, Ben ruft rein – und du fragst dich: "Muss ich jetzt alles anders machen?" <strong>Die Antwort: Nein!</strong> Ein paar gezielte Anpassungen machen deinen Unterricht für ALLE Kinder besser.</p>
         <div class="features-compact">
             <span class="feature-tag">✅ 5:1-Prinzip der Motivation</span>
             <span class="feature-tag">✅ Bewegungspausen</span>
@@ -1107,21 +578,26 @@
         <div class="price-box">
             <div class="price-compact">6,99<span class="price-currency">€</span></div>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/tdmbv" class="buy-button-compact" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/tdmbv" class="buy-button-compact" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455206764/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- ADHS EINZELPRODUKT 2: ELTERNGESPRÄCHE -->
+<!-- A6: ELTERNGESPRÄCHE ADHS -->
 <div class="product-compact adhs-product">
-    <div>
-        <img src="Elterngespräche ADHS - Leitfaden & Vorlagen.png" alt="Elterngespräche ADHS" class="product-image">
-    </div>
+    <div><img src="Elterngespräche ADHS - Leitfaden &amp; Vorlagen.png" alt="Elterngespräche ADHS" class="product-image"></div>
     <div class="product-info">
         <h3>💬 Elterngespräche ADHS: Der konstruktive Leitfaden</h3>
         <p class="subtitle">Nach dem Gespräch denken Eltern: "Endlich versteht uns jemand"</p>
-        <p class="hook">Du bereitest ein Elterngespräch vor. Die Eltern hatten schon hunderte negative Gespräche. Du weißt: Ein falsches Wort und sie gehen in Abwehrhaltung. <strong>Schluss damit!</strong></p>
+        <p class="hook">Du bereitest ein Elterngespräch vor. Die Eltern hatten schon hunderte negative Gespräche. <strong>Schluss damit!</strong></p>
         <div class="features-compact">
             <span class="feature-tag">✅ Sandwich-Methode (5 Phasen)</span>
             <span class="feature-tag">✅ Formulierungshilfen</span>
@@ -1136,21 +612,26 @@
         <div class="price-box">
             <div class="price-compact">6,99<span class="price-currency">€</span></div>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/vlzwzv" class="buy-button-compact" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/vlzwzv" class="buy-button-compact" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455242868/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- ADHS EINZELPRODUKT 3: SOS -->
+<!-- A7: ADHS-SOS -->
 <div class="product-compact adhs-product">
-    <div>
-        <img src="ADHS-SOS Typische Probleme & Sofortlösungen.png" alt="ADHS-SOS" class="product-image">
-    </div>
+    <div><img src="ADHS-SOS Typische Probleme &amp; Sofortlösungen.png" alt="ADHS-SOS" class="product-image"></div>
     <div class="product-info">
-        <h3>🚨 ADHS-SOS: Typische Probleme & Sofortlösungen</h3>
-        <p class="subtitle">Wenn's brennt - JETZT eine Lösung, keine Theorie!</p>
-        <p class="hook">9:15 Uhr. Max rennt durch die Klasse. Lisa starrt seit 10 Minuten auf ihr leeres Blatt. Ben ruft zum 5. Mal rein. <strong>Du brauchst JETZT eine Lösung!</strong></p>
+        <h3>🚨 ADHS-SOS: Typische Probleme &amp; Sofortlösungen</h3>
+        <p class="subtitle">Wenn's brennt – JETZT eine Lösung, keine Theorie!</p>
+        <p class="hook">9:15 Uhr. Max rennt durch die Klasse. Lisa starrt auf ihr leeres Blatt. Ben ruft zum 5. Mal rein. <strong>Du brauchst JETZT eine Lösung!</strong></p>
         <div class="features-compact">
             <span class="feature-tag">🪑 "Kann nicht still sitzen"</span>
             <span class="feature-tag">⏱️ "Startet Aufgaben nicht"</span>
@@ -1166,26 +647,31 @@
         <div class="price-box">
             <div class="price-compact">6,99<span class="price-currency">€</span></div>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/akuzjf" class="buy-button-compact" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/akuzjf" class="buy-button-compact" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455460421/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- ADHS EINZELPRODUKT 4: CLASSROOM MANAGEMENT -->
+<!-- A8: CLASSROOM MANAGEMENT TOOLKIT -->
 <div class="product-compact adhs-product">
-    <div>
-        <img src="ADHS-Classroom Management Toolkit.png" alt="ADHS Classroom Management" class="product-image">
-    </div>
+    <div><img src="ADHS-Classroom Management Toolkit.png" alt="ADHS Classroom Management" class="product-image"></div>
     <div class="product-info">
         <h3>🎯 ADHS Classroom Management Toolkit</h3>
-        <p class="subtitle">Struktur, die trägt - weil ADHS-Kinder externe Struktur brauchen</p>
-        <p class="hook">Max rennt rum, Lisa vergisst Hausaufgaben, Ben ruft rein. Du fühlst dich wie ein Feuerwehrmann. <strong>ADHS-Kinder brauchen externe Struktur - weil interne fehlt.</strong></p>
+        <p class="subtitle">Struktur, die trägt – weil ADHS-Kinder externe Struktur brauchen</p>
+        <p class="hook">Max rennt rum, Lisa vergisst Hausaufgaben, Ben ruft rein. Du fühlst dich wie ein Feuerwehrmann. <strong>ADHS-Kinder brauchen externe Struktur – weil interne fehlt.</strong></p>
         <div class="features-compact">
             <span class="feature-tag">✅ 5:1-Prinzip (wissenschaftlich belegt)</span>
             <span class="feature-tag">🎫 Token-Systeme (2 Vorlagen)</span>
-            <span class="feature-tag">📋 Tagesroutinen & Übergänge</span>
-            <span class="feature-tag">⚖️ CRISP-Modell (logische Konsequenzen)</span>
+            <span class="feature-tag">📋 Tagesroutinen &amp; Übergänge</span>
+            <span class="feature-tag">⚖️ CRISP-Modell</span>
         </div>
         <div class="links">
             <a href="https://autismus-adhs-alltag.de/leseproben/leseprobe-adhs-classroom-management.html" class="preview-link" target="_blank">📖 Kostenlos reinlesen</a>
@@ -1195,21 +681,26 @@
         <div class="price-box">
             <div class="price-compact">6,99<span class="price-currency">€</span></div>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/vtqst" class="buy-button-compact" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/vtqst" class="buy-button-compact" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455462001/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- ADHS EINZELPRODUKT 5: KLASSENRAUM -->
+<!-- A9: KLASSENRAUM SETUP -->
 <div class="product-compact adhs-product">
-    <div>
-        <img src="ADHS im Klassenraum - Setup & Sitzordnung.png" alt="ADHS im Klassenraum" class="product-image">
-    </div>
+    <div><img src="ADHS im Klassenraum - Setup &amp; Sitzordnung.png" alt="ADHS im Klassenraum" class="product-image"></div>
     <div class="product-info">
-        <h3>🏫 ADHS im Klassenraum: Setup & Sitzordnung</h3>
+        <h3>🏫 ADHS im Klassenraum: Setup &amp; Sitzordnung</h3>
         <p class="subtitle">Der physische Raum kann 50% deiner Arbeit erleichtern oder erschweren</p>
-        <p class="hook">"Wo soll ich das ADHS-Kind hinsetzen? Wie gestalte ich den Raum?" <strong>Die Antwort: Der Raum entscheidet über Erfolg oder Kampf.</strong></p>
+        <p class="hook"><strong>Der Raum entscheidet über Erfolg oder Kampf.</strong> Optimale Sitzordnung, Reizreduktion und Raumzonen – konkret erklärt.</p>
         <div class="features-compact">
             <span class="feature-tag">🪑 Optimale Sitzordnung</span>
             <span class="feature-tag">✏️ Nur 3 Stifte-Regel</span>
@@ -1225,30 +716,36 @@
         <div class="price-box">
             <div class="price-compact">6,99<span class="price-currency">€</span></div>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/prtxs" class="buy-button-compact" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/prtxs" class="buy-button-compact" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455470688/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- ===================== AUTISMUS SECTION (PLACEHOLDER) ===================== -->
 <!-- ===================== AUTISMUS BUNDLES ===================== -->
-<div id="autismus" class="category-header" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-left-color: var(--color-autism);">
-    <h2 style="color: var(--color-autism);">🧩 Autismus Bundle-Angebote</h2>
+<div id="autismus" class="category-header" style="background:linear-gradient(135deg,#dbeafe 0%,#bfdbfe 100%);border-left-color:var(--color-autism);">
+    <h2 style="color:var(--color-autism);">🧩 Autismus Bundle-Angebote</h2>
     <p>Spare bis zu 29% mit unseren Komplett-Paketen</p>
 </div>
 
-<!-- AUTISMUS BUNDLE 1: KOMPLETTPAKET -->
-<div class="product-compact bundle" style="position: relative; background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 3px solid var(--color-autism);">
-    <div class="bundle-badge" style="background: var(--color-autism);">💎 SPARE 9,96€ (29%)</div>
+<!-- B1: AUTISMUS KOMPLETT (nur Etsy) -->
+<div class="product-compact bundle" style="position:relative;background:linear-gradient(135deg,#dbeafe 0%,#bfdbfe 100%);border:3px solid var(--color-autism);">
+    <div class="bundle-badge" style="background:var(--color-autism);">💎 SPARE 9,96€ (29%)</div>
     <div class="product-info">
-        <h3 style="color: var(--color-autism);">🎓 Autismus Komplettpaket (alle 5 Ratgeber)</h3>
-        <p class="hook"><strong>Alles für inklusiven Autismus-Unterricht in einem Paket!</strong> Von Krisenmanagement über Kommunikation bis Stärkenförderung – die komplette Lösung für Ihren Autismus-inklusiven Unterricht.</p>
+        <h3 style="color:var(--color-autism);">🎓 Autismus Komplettpaket (alle 5 Ratgeber)</h3>
+        <p class="hook"><strong>Alles für inklusiven Autismus-Unterricht in einem Paket!</strong> Von Krisenmanagement über Kommunikation bis Stärkenförderung – die komplette Lösung.</p>
         <div class="features-compact">
             <span class="feature-tag">🆘 Meltdown-Management</span>
             <span class="feature-tag">🎨 Sensorische Herausforderungen</span>
             <span class="feature-tag">💪 Stärken entdecken</span>
-            <span class="feature-tag">📅 Struktur & Routinen</span>
+            <span class="feature-tag">📅 Struktur &amp; Routinen</span>
             <span class="feature-tag">💬 Klare Kommunikation</span>
         </div>
         <div class="links">
@@ -1262,23 +759,27 @@
     <div class="price-cta">
         <div class="price-box">
             <span class="price-old">Einzeln: 34,95€</span>
-            <div class="price-compact" style="color: var(--color-autism);">24,99<span class="price-currency">€</span></div>
+            <div class="price-compact" style="color:var(--color-autism);">24,99<span class="price-currency">€</span></div>
             <span class="savings">⭐ BEST DEAL</span>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/kfach" class="buy-button-compact" style="background: linear-gradient(135deg, var(--color-autism) 0%, #2563eb 100%); box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://www.etsy.com/de/listing/4455787793/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+            <small style="color:var(--color-muted);font-size:0.8rem;text-align:center;">Gumroad-Link folgt in Kürze</small>
+        </div>
     </div>
 </div>
 
-<!-- AUTISMUS BUNDLE 2: ALLTAGS-FUNDAMENT -->
-<div class="product-compact bundle" style="position: relative; background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 3px solid var(--color-autism);">
-    <div class="bundle-badge" style="background: var(--color-autism);">💎 SPARE 3,98€ (19%)</div>
+<!-- B2: AUTISMUS ALLTAGS-FUNDAMENT -->
+<div class="product-compact bundle" style="position:relative;background:linear-gradient(135deg,#dbeafe 0%,#bfdbfe 100%);border:3px solid var(--color-autism);">
+    <div class="bundle-badge" style="background:var(--color-autism);">💎 SPARE 3,98€ (19%)</div>
     <div class="product-info">
-        <h3 style="color: var(--color-autism);">📚 Autismus Alltags-Fundament (3 Basis-Ratgeber)</h3>
-        <p class="hook"><strong>Die Basis für entspannten Unterricht!</strong> Struktur, Kommunikation & Stärkenorientierung – die drei Säulen eines erfolgreichen Schulalltags mit autistischen Kindern.</p>
+        <h3 style="color:var(--color-autism);">📚 Autismus Alltags-Fundament (3 Basis-Ratgeber)</h3>
+        <p class="hook"><strong>Die Basis für entspannten Unterricht!</strong> Struktur, Kommunikation &amp; Stärkenorientierung – die drei Säulen eines erfolgreichen Schulalltags.</p>
         <div class="features-compact">
-            <span class="feature-tag">📅 Struktur & Routinen</span>
+            <span class="feature-tag">📅 Struktur &amp; Routinen</span>
             <span class="feature-tag">💬 Klare Kommunikation</span>
             <span class="feature-tag">💪 Stärken entdecken</span>
         </div>
@@ -1291,21 +792,28 @@
     <div class="price-cta">
         <div class="price-box">
             <span class="price-old">Einzeln: 20,97€</span>
-            <div class="price-compact" style="color: var(--color-autism);">16,99<span class="price-currency">€</span></div>
+            <div class="price-compact" style="color:var(--color-autism);">16,99<span class="price-currency">€</span></div>
             <span class="savings">✨ Du sparst 3,98€</span>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/ipgtol" class="buy-button-compact" style="background: linear-gradient(135deg, var(--color-autism) 0%, #2563eb 100%); box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/ipgtol" class="buy-button-compact" style="background:linear-gradient(135deg,var(--color-autism) 0%,#2563eb 100%);box-shadow:0 2px 8px rgba(59,130,246,0.3);" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455789543/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- AUTISMUS BUNDLE 3: KRISENMANAGEMENT -->
-<div class="product-compact bundle" style="position: relative; background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 3px solid var(--color-autism);">
-    <div class="bundle-badge" style="background: var(--color-autism);">💎 SPARE 1,99€ (14%)</div>
+<!-- B3: AUTISMUS KRISENMANAGEMENT -->
+<div class="product-compact bundle" style="position:relative;background:linear-gradient(135deg,#dbeafe 0%,#bfdbfe 100%);border:3px solid var(--color-autism);">
+    <div class="bundle-badge" style="background:var(--color-autism);">💎 SPARE 1,99€ (14%)</div>
     <div class="product-info">
-        <h3 style="color: var(--color-autism);">🆘 Autismus Krisenmanagement-Paket</h3>
-        <p class="hook"><strong>Notfälle sicher begleiten!</strong> Meltdowns erkennen + sensorische Überlastung reduzieren. Diese beiden Guides arbeiten perfekt zusammen: Prävention (Sensorik) + Intervention (Meltdown).</p>
+        <h3 style="color:var(--color-autism);">🆘 Autismus Krisenmanagement-Paket</h3>
+        <p class="hook"><strong>Notfälle sicher begleiten!</strong> Prävention (Sensorik) + Intervention (Meltdown) – diese beiden Guides arbeiten perfekt zusammen.</p>
         <div class="features-compact">
             <span class="feature-tag">🆘 Meltdown-Management</span>
             <span class="feature-tag">🎨 Sensorische Herausforderungen</span>
@@ -1318,30 +826,35 @@
     <div class="price-cta">
         <div class="price-box">
             <span class="price-old">Einzeln: 13,98€</span>
-            <div class="price-compact" style="color: var(--color-autism);">11,99<span class="price-currency">€</span></div>
+            <div class="price-compact" style="color:var(--color-autism);">11,99<span class="price-currency">€</span></div>
             <span class="savings">✨ Du sparst 1,99€</span>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/zumjy" class="buy-button-compact" style="background: linear-gradient(135deg, var(--color-autism) 0%, #2563eb 100%); box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/zumjy" class="buy-button-compact" style="background:linear-gradient(135deg,var(--color-autism) 0%,#2563eb 100%);box-shadow:0 2px 8px rgba(59,130,246,0.3);" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455793332/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
 <!-- ===================== AUTISMUS EINZELPRODUKTE ===================== -->
-<div class="category-header" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-left-color: var(--color-autism); margin-top: 3rem;">
-    <h2 style="color: var(--color-autism);">🧩 Autismus-spezifische Materialien</h2>
+<div class="category-header" style="background:linear-gradient(135deg,#dbeafe 0%,#bfdbfe 100%);border-left-color:var(--color-autism);margin-top:3rem;">
+    <h2 style="color:var(--color-autism);">🧩 Autismus-spezifische Materialien</h2>
     <p>Wissenschaftlich fundierte Guides für Autismus im Unterricht</p>
 </div>
 
-<!-- AUTISMUS PRODUKT 1: MELTDOWN-MANAGEMENT -->
-<div class="product-compact" style="border-left: 4px solid var(--color-autism);">
-    <div>
-        <img src="Meltdown-Management - Erste Hilfe für Lehrkräfte.png" alt="Meltdown-Management" class="product-image">
-    </div>
+<!-- B4: MELTDOWN-MANAGEMENT -->
+<div class="product-compact" style="border-left:4px solid var(--color-autism);">
+    <div><img src="Meltdown-Management - Erste Hilfe für Lehrkräfte.png" alt="Meltdown-Management" class="product-image"></div>
     <div class="product-info">
-        <h3 style="color: var(--color-autism);">🆘 Meltdown-Management: Erste Hilfe für Lehrkräfte</h3>
+        <h3 style="color:var(--color-autism);">🆘 Meltdown-Management: Erste Hilfe für Lehrkräfte</h3>
         <p class="subtitle">3-Phasen-Modell: Rumble, Rage, Recovery</p>
-        <p class="hook">Wenn ein autistisches Kind einen Meltdown hat, zählt jede Sekunde. <strong>Dieser wissenschaftlich fundierte Leitfaden gibt dir sofort umsetzbare Strategien an die Hand.</strong></p>
+        <p class="hook">Wenn ein autistisches Kind einen Meltdown hat, zählt jede Sekunde. <strong>Dieser Guide gibt dir sofort umsetzbare Strategien.</strong></p>
         <div class="features-compact">
             <span class="feature-tag">🔍 Meltdown vs. Tantrum</span>
             <span class="feature-tag">📋 Notfall-Protokoll</span>
@@ -1354,21 +867,26 @@
     </div>
     <div class="price-cta">
         <div class="price-box">
-            <div class="price-compact" style="color: var(--color-autism);">6,99<span class="price-currency">€</span></div>
+            <div class="price-compact" style="color:var(--color-autism);">6,99<span class="price-currency">€</span></div>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/nnyibg" class="buy-button-compact" style="background: linear-gradient(135deg, var(--color-autism) 0%, #2563eb 100%); box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/nnyibg" class="buy-button-compact" style="background:linear-gradient(135deg,var(--color-autism) 0%,#2563eb 100%);box-shadow:0 2px 8px rgba(59,130,246,0.3);" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455465957/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- AUTISMUS PRODUKT 2: SENSORISCHE HERAUSFORDERUNGEN -->
-<div class="product-compact" style="border-left: 4px solid var(--color-autism);">
-    <div>
-        <img src="Sensorische Herausforderungen im Klassenzimmer meistern.png" alt="Sensorische Herausforderungen" class="product-image">
-    </div>
+<!-- B5: SENSORISCHE HERAUSFORDERUNGEN -->
+<div class="product-compact" style="border-left:4px solid var(--color-autism);">
+    <div><img src="Sensorische Herausforderungen im Klassenzimmer meistern.png" alt="Sensorische Herausforderungen" class="product-image"></div>
     <div class="product-info">
-        <h3 style="color: var(--color-autism);">🎨 Sensorische Herausforderungen meistern</h3>
+        <h3 style="color:var(--color-autism);">🎨 Sensorische Herausforderungen meistern</h3>
         <p class="subtitle">Die 7 Sinne bei Autismus verstehen (nicht nur 5!)</p>
         <p class="hook">95% aller autistischen Kinder haben sensorische Verarbeitungsunterschiede. <strong>Wenn dein Schüler "schwierig" ist, liegt die Ursache oft in sensorischer Überlastung.</strong></p>
         <div class="features-compact">
@@ -1383,23 +901,28 @@
     </div>
     <div class="price-cta">
         <div class="price-box">
-            <div class="price-compact" style="color: var(--color-autism);">6,99<span class="price-currency">€</span></div>
+            <div class="price-compact" style="color:var(--color-autism);">6,99<span class="price-currency">€</span></div>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/zvazjd" class="buy-button-compact" style="background: linear-gradient(135deg, var(--color-autism) 0%, #2563eb 100%); box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/zvazjd" class="buy-button-compact" style="background:linear-gradient(135deg,var(--color-autism) 0%,#2563eb 100%);box-shadow:0 2px 8px rgba(59,130,246,0.3);" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455479403/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- AUTISMUS PRODUKT 3: STÄRKEN ENTDECKEN -->
-<div class="product-compact" style="border-left: 4px solid var(--color-autism);">
-    <div>
-        <img src="Stärken entdecken & soziales Lernen fördern.png" alt="Stärken entdecken" class="product-image">
-    </div>
+<!-- B6: STÄRKEN ENTDECKEN -->
+<div class="product-compact" style="border-left:4px solid var(--color-autism);">
+    <div><img src="Stärken entdecken &amp; soziales Lernen fördern.png" alt="Stärken entdecken" class="product-image"></div>
     <div class="product-info">
-        <h3 style="color: var(--color-autism);">💪 Stärken entdecken & soziales Lernen fördern</h3>
+        <h3 style="color:var(--color-autism);">💪 Stärken entdecken &amp; soziales Lernen fördern</h3>
         <p class="subtitle">Ressourcenorientiert statt defizitfokussiert</p>
-        <p class="hook">Autistische Kinder haben einzigartige Stärken – aber das medizinische Modell konzentriert sich nur auf "Defizite". <strong>Dieser Leitfaden zeigt dir, wie du Spezialinteressen als Superkraft nutzt.</strong></p>
+        <p class="hook">Autistische Kinder haben einzigartige Stärken. <strong>Dieser Leitfaden zeigt dir, wie du Spezialinteressen als Superkraft nutzt.</strong></p>
         <div class="features-compact">
             <span class="feature-tag">🎯 Detail-Fokus nutzen</span>
             <span class="feature-tag">🦕 Spezialinteressen einsetzen</span>
@@ -1412,21 +935,26 @@
     </div>
     <div class="price-cta">
         <div class="price-box">
-            <div class="price-compact" style="color: var(--color-autism);">6,99<span class="price-currency">€</span></div>
+            <div class="price-compact" style="color:var(--color-autism);">6,99<span class="price-currency">€</span></div>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/wiqvvd" class="buy-button-compact" style="background: linear-gradient(135deg, var(--color-autism) 0%, #2563eb 100%); box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/wiqvvd" class="buy-button-compact" style="background:linear-gradient(135deg,var(--color-autism) 0%,#2563eb 100%);box-shadow:0 2px 8px rgba(59,130,246,0.3);" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455489798/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- AUTISMUS PRODUKT 4: STRUKTUR & ROUTINEN -->
-<div class="product-compact" style="border-left: 4px solid var(--color-autism);">
-    <div>
-        <img src="Struktur & Routinen - Sicherheit schaffen.png" alt="Struktur & Routinen" class="product-image">
-    </div>
+<!-- B7: STRUKTUR & ROUTINEN -->
+<div class="product-compact" style="border-left:4px solid var(--color-autism);">
+    <div><img src="Struktur &amp; Routinen - Sicherheit schaffen.png" alt="Struktur &amp; Routinen" class="product-image"></div>
     <div class="product-info">
-        <h3 style="color: var(--color-autism);">📅 Struktur & Routinen: Sicherheit durch Vorhersagbarkeit</h3>
+        <h3 style="color:var(--color-autism);">📅 Struktur &amp; Routinen: Sicherheit durch Vorhersagbarkeit</h3>
         <p class="subtitle">Das 5-2-1 Transitions-Prinzip</p>
         <p class="hook">Für neurotypische Kinder sind Veränderungen manchmal unangenehm. <strong>Für autistische Kinder sind unerwartete Veränderungen neurologisch überwältigend – wie ein Stromstoß durchs System.</strong></p>
         <div class="features-compact">
@@ -1441,22 +969,27 @@
     </div>
     <div class="price-cta">
         <div class="price-box">
-            <div class="price-compact" style="color: var(--color-autism);">6,99<span class="price-currency">€</span></div>
+            <div class="price-compact" style="color:var(--color-autism);">6,99<span class="price-currency">€</span></div>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/xogal" class="buy-button-compact" style="background: linear-gradient(135deg, var(--color-autism) 0%, #2563eb 100%); box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/xogal" class="buy-button-compact" style="background:linear-gradient(135deg,var(--color-autism) 0%,#2563eb 100%);box-shadow:0 2px 8px rgba(59,130,246,0.3);" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455490748/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- AUTISMUS PRODUKT 5: KLARE KOMMUNIKATION -->
-<div class="product-compact" style="border-left: 4px solid var(--color-autism);">
-    <div>
-        <img src="Klare Kommunikation mit autistischen Schülern.png" alt="Klare Kommunikation" class="product-image">
-    </div>
+<!-- B8: KLARE KOMMUNIKATION -->
+<div class="product-compact" style="border-left:4px solid var(--color-autism);">
+    <div><img src="Klare Kommunikation mit autistischen Schülern.png" alt="Klare Kommunikation" class="product-image"></div>
     <div class="product-info">
-        <h3 style="color: var(--color-autism);">💬 Klare Kommunikation: Verständigung ohne Rätselraten</h3>
-        <p class="subtitle">Das 5-10 Sekunden Prinzip - Verarbeitungszeit geben</p>
+        <h3 style="color:var(--color-autism);">💬 Klare Kommunikation: Verständigung ohne Rätselraten</h3>
+        <p class="subtitle">Das 5-10 Sekunden Prinzip – Verarbeitungszeit geben</p>
         <p class="hook">Die meiste Kommunikation läuft implizit – wir erwarten, dass andere "zwischen den Zeilen lesen". <strong>Für autistische Kinder ist das wie eine Fremdsprache. Sie nehmen Sprache wörtlich.</strong></p>
         <div class="features-compact">
             <span class="feature-tag">✅ Konkret statt abstrakt</span>
@@ -1470,28 +1003,33 @@
     </div>
     <div class="price-cta">
         <div class="price-box">
-            <div class="price-compact" style="color: var(--color-autism);">6,99<span class="price-currency">€</span></div>
+            <div class="price-compact" style="color:var(--color-autism);">6,99<span class="price-currency">€</span></div>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/usazijf" class="buy-button-compact" style="background: linear-gradient(135deg, var(--color-autism) 0%, #2563eb 100%); box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/usazijf" class="buy-button-compact" style="background:linear-gradient(135deg,var(--color-autism) 0%,#2563eb 100%);box-shadow:0 2px 8px rgba(59,130,246,0.3);" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455483621/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- ===================== ALLGEMEIN SECTION ===================== -->
+<!-- ===================== ALLGEMEIN ===================== -->
 <div id="allgemein" class="category-header">
     <h2>📚 Allgemeine Unterrichtsmaterialien</h2>
-    <p>Für autistische Schüler:innen - auch bei ADHS einsetzbar</p>
+    <p>Für autistische Schüler:innen – auch bei ADHS einsetzbar</p>
 </div>
 
-<!-- PRODUKT: STRUKTURPLÄNE -->
+<!-- C1: STRUKTURPLÄNE -->
 <div class="product-compact">
-    <div>
-        <img src="1struckturpläne für lehrer.png" alt="Strukturpläne für den Unterricht" class="product-image">
-    </div>
+    <div><img src="1struckturpläne für lehrer.png" alt="Strukturpläne für den Unterricht" class="product-image"></div>
     <div class="product-info">
         <h3>📚 Strukturpläne für den Unterricht</h3>
-        <p class="subtitle">Tagesstruktur, Stundenablauf & Übergangshilfen (23 Seiten)</p>
+        <p class="subtitle">Tagesstruktur, Stundenablauf &amp; Übergangshilfen (23 Seiten)</p>
         <p class="hook"><strong>Autistische Schüler:innen brauchen Struktur – nicht Chaos.</strong> Mit einfachen Strukturhilfen Meltdowns verhindern und Lernen ermöglichen.</p>
         <div class="features-compact">
             <span class="feature-tag">📅 Tagesstrukturplan</span>
@@ -1508,17 +1046,22 @@
         <div class="price-box">
             <div class="price-compact">4,90<span class="price-currency">€</span></div>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/fphky" class="buy-button-compact" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/fphky" class="buy-button-compact" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455794261/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- PRODUKT: KLASSENSTART -->
+<!-- C2: KLASSENSTART-CHECKLISTE -->
 <div class="product-compact">
-    <div>
-        <img src="4. Klassenstart-Checkliste.png" alt="Klassenstart-Checkliste" class="product-image">
-    </div>
+    <div><img src="4. Klassenstart-Checkliste.png" alt="Klassenstart-Checkliste" class="product-image"></div>
     <div class="product-info">
         <h3>📋 Klassenstart-Checkliste</h3>
         <p class="subtitle">Schuljahresbeginn ohne Meltdowns (22 Seiten)</p>
@@ -1537,33 +1080,38 @@
         <div class="price-box">
             <div class="price-compact">4,90<span class="price-currency">€</span></div>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/agenx" class="buy-button-compact" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/agenx" class="buy-button-compact" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455804374/" class="buy-button-compact etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- ===================== HAUSAUFGABEN SECTION ===================== -->
-<div class="category-header" style="background: linear-gradient(135deg, #fef3c7 0%, #e0f2fe 100%);">
+<!-- ===================== HAUSAUFGABEN ===================== -->
+<div class="category-header" style="background:linear-gradient(135deg,#fef3c7 0%,#e0f2fe 100%);">
     <h2>✏️ Hausaufgaben-Notfallpläne</h2>
-    <p>Wissenschaftlich fundierte Guides für ADHS & Autismus</p>
+    <p>Wissenschaftlich fundierte Guides für ADHS &amp; Autismus</p>
 </div>
 
-<!-- PRODUKT: ADHS HAUSAUFGABEN (DETAILED) -->
+<!-- ADHS HAUSAUFGABEN (detailed) -->
 <div class="product">
     <div class="product-header">
-        <div>
-            <img src="adhscover.png" alt="ADHS Hausaufgaben Notfallplan" class="product-image">
-        </div>
+        <div><img src="adhscover.png" alt="ADHS Hausaufgaben Notfallplan" class="product-image-large"></div>
         <div class="product-title">
             <h2>✏️ Notfallplan: Hausaufgaben bei ADHS</h2>
-            <p class="product-subtitle">Exekutive Dysfunktion verstehen & unterstützen (43 Seiten)</p>
-             <a href="https://autismus-adhs-alltag.de/leseproben/hausaufgaben-adhs-preview.html">📖 Hier geht's zur Leseprobe</a>
+            <p class="product-subtitle-large">Exekutive Dysfunktion verstehen &amp; unterstützen (43 Seiten)</p>
+            <a href="https://autismus-adhs-alltag.de/leseproben/hausaufgaben-adhs-preview.html" class="leseprobe-link">📖 Zur Leseprobe</a>
         </div>
     </div>
 
-    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        <strong>Hausaufgaben bei ADHS sind KEINE Willensfrage.</strong> Dieser Guide erklärt die neurobiologischen Grundlagen und zeigt konkrete Hilfestellungen.
+    <p style="font-size:1.05rem;line-height:1.7;margin-bottom:1.5rem;">
+        <strong>Hausaufgaben bei ADHS sind KEINE Willensfrage.</strong> Dieser Guide erklärt die neurobiologischen Grundlagen und zeigt konkrete Hilfestellungen – für Lehrkräfte und Eltern.
     </p>
 
     <div class="problem-solution">
@@ -1576,7 +1124,6 @@
                 <li>Blockiert komplett bei Schwierigkeiten</li>
             </ul>
         </div>
-        
         <div class="solution-box">
             <h3>✅ Die Lösung</h3>
             <ul>
@@ -1588,61 +1135,48 @@
         </div>
     </div>
 
-    <div class="features">
-        <div class="feature-item">
-            <strong>🧠 Wissenschaftliche Basis</strong>
-            Barkley, Brown, Hallowell – Exekutive Funktionen
-        </div>
-        <div class="feature-item">
-            <strong>✅ 6+ Checklisten</strong>
-            Arbeitsplatz, Ablauf, Notfall – druckbar
-        </div>
-        <div class="feature-item">
-            <strong>📋 3 Arbeitsblätter</strong>
-            Chunking-Planer, Timer-Tracker, Feedback
-        </div>
-        <div class="feature-item">
-            <strong>💳 Notfallkarte</strong>
-            Laminierbar (Kreditkartenformat)
-        </div>
-        <div class="feature-item">
-            <strong>📧 Eltern-Kommunikation</strong>
-            Musterbriefe & Nachteilsausgleich
-        </div>
-        <div class="feature-item">
-            <strong>⚡ Sofort umsetzbar</strong>
-            VOR, WÄHREND, NACH Hausaufgaben
-        </div>
+    <div class="features-grid">
+        <div class="feature-item"><strong>🧠 Wissenschaftliche Basis</strong>Barkley, Brown, Hallowell – Exekutive Funktionen</div>
+        <div class="feature-item"><strong>✅ 6+ Checklisten</strong>Arbeitsplatz, Ablauf, Notfall – druckbar</div>
+        <div class="feature-item"><strong>📋 3 Arbeitsblätter</strong>Chunking-Planer, Timer-Tracker, Feedback</div>
+        <div class="feature-item"><strong>💳 Notfallkarte</strong>Laminierbar (Kreditkartenformat)</div>
+        <div class="feature-item"><strong>📧 Eltern-Kommunikation</strong>Musterbriefe &amp; Nachteilsausgleich</div>
+        <div class="feature-item"><strong>⚡ Sofort umsetzbar</strong>VOR, WÄHREND, NACH Hausaufgaben</div>
     </div>
 
     <div class="price-section">
-        <div class="price-info">
-            <p class="price-label">Für Lehrkräfte & Eltern</p>
-            <div class="price">
+        <div class="price-info-large">
+            <p class="price-label">Für Lehrkräfte &amp; Eltern</p>
+            <div class="price-row">
                 <span class="price-amount">9,99</span>
-                <span class="price-currency">€</span>
+                <span class="price-cur">€</span>
             </div>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/xnilzj" class="buy-button" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/xnilzj" class="buy-button-large" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455725829/" class="buy-button-large etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- PRODUKT: AUTISMUS HAUSAUFGABEN (DETAILED) -->
+<!-- AUTISMUS HAUSAUFGABEN (detailed) -->
 <div class="product">
     <div class="product-header">
-        <div>
-            <img src="anh.png" alt="Autismus Hausaufgaben Notfallplan" class="product-image">
-        </div>
+        <div><img src="anh.png" alt="Autismus Hausaufgaben Notfallplan" class="product-image-large"></div>
         <div class="product-title">
             <h2>✏️ Notfallplan: Hausaufgaben bei Autismus</h2>
-            <p class="product-subtitle">Theory of Mind & sensorische Verarbeitung verstehen (49 Seiten)</p>
-             <a href="https://autismus-adhs-alltag.de/leseproben/hausaufgaben-autismus-preview.html">📖 Hier geht's zur Leseprobe</a>
+            <p class="product-subtitle-large">Theory of Mind &amp; sensorische Verarbeitung verstehen (49 Seiten)</p>
+            <a href="https://autismus-adhs-alltag.de/leseproben/hausaufgaben-autismus-preview.html" class="leseprobe-link">📖 Zur Leseprobe</a>
         </div>
     </div>
 
-    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+    <p style="font-size:1.05rem;line-height:1.7;margin-bottom:1.5rem;">
         <strong>Hausaufgaben bei Autismus erfordern anderes Vorgehen.</strong> Dieser Guide erklärt die neurologischen Besonderheiten und zeigt autismus-spezifische Strategien.
     </p>
 
@@ -1656,7 +1190,6 @@
                 <li>Perfektionismus bei unwichtigen Details</li>
             </ul>
         </div>
-        
         <div class="solution-box">
             <h3>✅ Die Lösung</h3>
             <ul>
@@ -1668,108 +1201,76 @@
         </div>
     </div>
 
-    <div class="features">
-        <div class="feature-item">
-            <strong>🧠 Wissenschaftliche Basis</strong>
-            Theory of Mind, Exekutive Funktionen, Sensorik
-        </div>
-        <div class="feature-item">
-            <strong>📋 Sensorische Optimierung</strong>
-            Die 8 Sinne verstehen & anpassen
-        </div>
-        <div class="feature-item">
-            <strong>🔄 Übergänge meistern</strong>
-            5-Stufen-Methode, visuelle Timer
-        </div>
-        <div class="feature-item">
-            <strong>✅ Checklisten</strong>
-            Bereitschaft, Ablauf, Sensorik
-        </div>
-        <div class="feature-item">
-            <strong>🚨 Notfallplan</strong>
-            Meltdown vs. Shutdown erkennen
-        </div>
-        <div class="feature-item">
-            <strong>📧 Schulzusammenarbeit</strong>
-            Nachteilsausgleich, Gesprächsleitfaden
-        </div>
+    <div class="features-grid">
+        <div class="feature-item"><strong>🧠 Wissenschaftliche Basis</strong>Theory of Mind, Exekutive Funktionen, Sensorik</div>
+        <div class="feature-item"><strong>📋 Sensorische Optimierung</strong>Die 8 Sinne verstehen &amp; anpassen</div>
+        <div class="feature-item"><strong>🔄 Übergänge meistern</strong>5-Stufen-Methode, visuelle Timer</div>
+        <div class="feature-item"><strong>✅ Checklisten</strong>Bereitschaft, Ablauf, Sensorik</div>
+        <div class="feature-item"><strong>🚨 Notfallplan</strong>Meltdown vs. Shutdown erkennen</div>
+        <div class="feature-item"><strong>📧 Schulzusammenarbeit</strong>Nachteilsausgleich, Gesprächsleitfaden</div>
     </div>
 
     <div class="price-section">
-        <div class="price-info">
-            <p class="price-label">Für Lehrkräfte & Eltern</p>
-            <div class="price">
+        <div class="price-info-large">
+            <p class="price-label">Für Lehrkräfte &amp; Eltern</p>
+            <div class="price-row">
                 <span class="price-amount">9,99</span>
-                <span class="price-currency">€</span>
+                <span class="price-cur">€</span>
             </div>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/yhqug" class="buy-button" target="_blank" rel="noopener">
-            Jetzt kaufen
-        </a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/yhqug" class="buy-button-large" target="_blank" rel="noopener">
+                ⬇️ Sofort downloaden
+                <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/de/listing/4455735786/" class="buy-button-large etsy" target="_blank" rel="noopener">
+                🛍️ Im Etsy Shop kaufen
+                <span class="btn-sub">mit Käuferschutz · Etsy</span>
+            </a>
+        </div>
     </div>
 </div>
 
-<!-- ===================== GRATIS SECTION ===================== -->
+<!-- ===================== GRATIS ===================== -->
 <div id="gratis" class="category-header">
     <h2>🎁 Gratis-Download</h2>
     <p>Als Dankeschön für Ihre wertvolle Arbeit</p>
 </div>
 
-<!-- PRODUKT: BEOBACHTUNGSBÖGEN (FREE) -->
+<!-- BEOBACHTUNGSBÖGEN (FREE) -->
 <div class="product free">
     <div class="free-badge">🎁 KOSTENLOS</div>
-    
     <div class="product-header">
-        <div>
-            <img src="3. Beobachtungsbögen.png" alt="Beobachtungsbögen" class="product-image">
-        </div>
+        <div><img src="3. Beobachtungsbögen.png" alt="Beobachtungsbögen" class="product-image-large"></div>
         <div class="product-title">
             <h2>📋 Beobachtungsbögen für autistische Schüler:innen</h2>
-            <p class="product-subtitle">Professionelle Dokumentation leicht gemacht (24 Seiten)</p>
+            <p class="product-subtitle-large">Professionelle Dokumentation leicht gemacht (24 Seiten)</p>
         </div>
     </div>
 
-    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        <strong>Beobachtung ist die Basis für erfolgreiche Förderung.</strong> Diese 4 wissenschaftlich fundierten Beobachtungsbögen helfen Ihnen, Verhalten neutral zu dokumentieren.
+    <p style="font-size:1.05rem;line-height:1.7;margin-bottom:1.5rem;">
+        <strong>Beobachtung ist die Basis für erfolgreiche Förderung.</strong> 4 wissenschaftlich fundierte Beobachtungsbögen helfen Ihnen, Verhalten neutral zu dokumentieren.
     </p>
 
-    <div class="features">
-        <div class="feature-item">
-            <strong>📋 Allgemeine Beobachtung</strong>
-            Gesamtüberblick über Verhalten
-        </div>
-        <div class="feature-item">
-            <strong>🚨 Stresssituationen</strong>
-            Trigger & Warnsignale erkennen
-        </div>
-        <div class="feature-item">
-            <strong>✨ Positive Momente</strong>
-            Stärken & Ressourcen dokumentieren
-        </div>
-        <div class="feature-item">
-            <strong>👀 Sensorische Beobachtung</strong>
-            Die 8 Sinne systematisch erfassen
-        </div>
-        <div class="feature-item">
-            <strong>📖 ABC-Modell</strong>
-            Antecedent – Behavior – Consequence
-        </div>
-        <div class="feature-item">
-            <strong>✅ 3 Beispiele</strong>
-            Leon & Mia ausgefüllt
-        </div>
+    <div class="features-grid">
+        <div class="feature-item"><strong>📋 Allgemeine Beobachtung</strong>Gesamtüberblick über Verhalten</div>
+        <div class="feature-item"><strong>🚨 Stresssituationen</strong>Trigger &amp; Warnsignale erkennen</div>
+        <div class="feature-item"><strong>✨ Positive Momente</strong>Stärken &amp; Ressourcen dokumentieren</div>
+        <div class="feature-item"><strong>👀 Sensorische Beobachtung</strong>Die 8 Sinne systematisch erfassen</div>
+        <div class="feature-item"><strong>📖 ABC-Modell</strong>Antecedent – Behavior – Consequence</div>
+        <div class="feature-item"><strong>✅ 3 Beispiele</strong>Leon &amp; Mia ausgefüllt</div>
     </div>
 
     <div class="price-section">
-        <div class="price-info">
+        <div class="price-info-large">
             <p class="price-label">Kostenloser Download</p>
-            <div class="price">
+            <div class="price-row">
                 <span class="price-amount">0</span>
-                <span class="price-currency">€</span>
+                <span class="price-cur">€</span>
             </div>
             <p class="price-savings">🎁 Gratis für alle Lehrkräfte!</p>
         </div>
-        <a href="https://paulrawe.gumroad.com/l/ehkho" class="buy-button" target="_blank" rel="noopener">
+        <a href="https://paulrawe.gumroad.com/l/ehkho" class="buy-button-large" target="_blank" rel="noopener">
             Kostenlos downloaden
         </a>
     </div>
@@ -1778,37 +1279,30 @@
 <!-- ===================== FAQ ===================== -->
 <section id="faq" class="faq">
     <h2>Häufige Fragen</h2>
-    
     <div class="faq-item">
-        <h4>Sind diese Materialien auch für Erzieher:innen & Sozialpädagog:innen geeignet?</h4>
+        <h4>Sind diese Materialien auch für Erzieher:innen &amp; Sozialpädagog:innen geeignet?</h4>
         <p>Ja! Die Guides sind für alle pädagogischen Fachkräfte konzipiert – Lehrkräfte, Erzieher:innen, Sozialpädagog:innen, Schulbegleiter:innen, Integrationskräfte.</p>
     </div>
-    
     <div class="faq-item">
         <h4>Kann ich die Materialien in meiner Einrichtung vervielfältigen?</h4>
         <p>Ja, für den persönlichen Gebrauch und in Ihrer Einrichtung (Schule, Kita) dürfen Sie die Materialien unbegrenzt ausdrucken. Keine Weitergabe oder Weiterverkauf gestattet.</p>
     </div>
-    
+    <div class="faq-item">
+        <h4>Gumroad oder Etsy – was ist der Unterschied?</h4>
+        <p><strong>Gumroad:</strong> Kein Account nötig, schnellster Weg, sofortige Lieferung. <strong>Etsy:</strong> Vertraute Plattform mit Käuferschutz, öffentlichen Bewertungen und sicherer Zahlung. Gleiches Produkt, gleicher Preis.</p>
+    </div>
     <div class="faq-item">
         <h4>Bekomme ich eine Rechnung?</h4>
-        <p>Ja, Gumroad sendet automatisch eine Rechnung per E-Mail. Diese ist steuerlich absetzbar.</p>
+        <p>Ja, sowohl Gumroad als auch Etsy senden automatisch eine Rechnung per E-Mail. Diese ist steuerlich absetzbar.</p>
     </div>
-    
     <div class="faq-item">
         <h4>Gibt es Updates?</h4>
         <p>Ja! Alle zukünftigen Updates sind kostenlos. Einmal kaufen, immer profitieren.</p>
     </div>
-
-    <div class="faq-item">
-        <h4>Warum soll ich als Lehrkraft bei Gumroad kaufen?</h4>
-        <p>Gumroad ist eine etablierte Plattform für digitale Produkte. Sofortiger Download, sichere Bezahlung, automatische Rechnung. Kein Abo, keine versteckten Kosten.</p>
-    </div>
-
     <div class="faq-item">
         <h4>Wo sind die Materialien für Eltern?</h4>
         <p>Eltern-Materialien (Alltag, Tagesplan, Social Stories) finden Sie auf unserer <a href="downloads.html"><strong>Eltern-Seite</strong></a>.</p>
     </div>
-
     <div class="faq-item">
         <h4>Was ist der Unterschied zwischen ADHS- und Autismus-Materialien?</h4>
         <p>ADHS-Materialien fokussieren auf Exekutive Funktionen, Motivation und Impulsivität. Autismus-Materialien behandeln Theory of Mind, Sensorik und Vorhersehbarkeit. Viele Strategien überschneiden sich und können kombiniert werden.</p>
@@ -1818,47 +1312,28 @@
 </main>
 
 <footer>
-    <p>&copy; 2025 Autismus & ADHS – Erfahrungswissen für Lehrkräfte</p>
-    <p style="margin-top: 0.5rem; font-size: 0.95rem;">Entwickelt von Grundschullehrerin Katharina Rawe</p>
+    <p>&copy; 2025 Autismus &amp; ADHS – Erfahrungswissen für Lehrkräfte</p>
+    <p style="margin-top:0.5rem;font-size:0.95rem;">Entwickelt von Grundschullehrerin Katharina Rawe</p>
     <div class="legal">
-        <a href="impressum.html">Impressum</a> | 
-        <a href="datenschutz.html">Datenschutz</a> | 
+        <a href="impressum.html">Impressum</a> |
+        <a href="datenschutz.html">Datenschutz</a> |
         <a href="ueberuns.html">Über Uns</a>
     </div>
 </footer>
 
 <script src="cookies.js"></script>
-
 <script>
-// Smooth Scroll für Quick-Nav
-document.querySelectorAll('.quick-nav-item').forEach(link => {
-    link.addEventListener('click', function(e) {
-        if (this.getAttribute('href').startsWith('#')) {
+document.querySelectorAll(".quick-nav-item").forEach(link => {
+    link.addEventListener("click", function(e) {
+        if (this.getAttribute("href").startsWith("#")) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                const offset = 80;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - offset;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+            const targetEl = document.querySelector(this.getAttribute("href"));
+            if (targetEl) {
+                window.scrollTo({ top: targetEl.getBoundingClientRect().top + window.pageYOffset - 80, behavior: "smooth" });
             }
         }
     });
 });
 </script>
-
 </body>
 </html>
-
-
-
-
-
-
-
