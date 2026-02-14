@@ -238,6 +238,15 @@
             padding: 1.5rem;
             margin: 1.5rem 0;
         }
+        /* === DUAL BUY BUTTONS === */
+.buy-buttons { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; }
+.btn-sub { display: block; font-size: 0.72rem; font-weight: 400; opacity: 0.85; margin-top: 3px; }
+.cta-btn-etsy {
+    background: linear-gradient(135deg, #F56400 0%, #D84A00 100%) !important;
+    color: white !important;
+    box-shadow: 0 8px 24px rgba(245,100,0,0.3) !important;
+}
+.cta-btn-etsy:hover { box-shadow: 0 12px 32px rgba(245,100,0,0.4) !important; }
     </style>
 </head>
 <body>
@@ -439,13 +448,20 @@
             
             <p style="margin-top: 1rem;">Katharina Rawe arbeitet täglich mit Nachteilsausgleichen und Förderplänen und weiß, worauf es in Schulgesprächen ankommt.</p>
             
-            <div style="background: linear-gradient(135deg, var(--color-primary) 0%, #1E5A5C 100%); padding: 2rem; border-radius: 12px; text-align: center; color: white; margin-top: 2rem;">
+<div style="background: linear-gradient(135deg, var(--color-primary) 0%, #1E5A5C 100%); padding: 2rem; border-radius: 12px; text-align: center; color: white; margin-top: 2rem;">
                 <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;">🎯 Gespräche mit der Schule erfolgreich führen</p>
                 <p style="font-size: 2.5rem; font-weight: 700; color: var(--color-accent); margin: 0.5rem 0;">6,99€</p>
                 <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 1.5rem;">18 Seiten • Muster-E-Mails • Checklisten • Praxisbeispiele</p>
-                <a href="https://paulrawe.gumroad.com/l/ltwen" style="display: inline-block; background: var(--color-accent); color: white; padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem;" onmouseover="this.style.background='#F6AD55'" onmouseout="this.style.background='#ED8936'">
-                    🛒 Jetzt kaufen
-                </a>
+                <div class="buy-buttons">
+                    <a href="https://paulrawe.gumroad.com/l/ltwen" class="cta-btn">
+                        ⬇️ Sofort downloaden
+                        <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+                    </a>
+                    <a href="https://www.etsy.com/de/listing/4455727316/" class="cta-btn cta-btn-etsy" target="_blank" rel="noopener">
+                        🛍️ Im Etsy Shop kaufen
+                        <span class="btn-sub">mit Käuferschutz · Etsy</span>
+                    </a>
+                </div>
             </div>
         </div>
         
