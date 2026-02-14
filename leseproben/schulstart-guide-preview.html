@@ -232,6 +232,15 @@
         .footer a:hover { text-decoration: underline; }
         ul { margin-left: 1.5rem; }
         li { margin-bottom: 0.7rem; }
+        /* === DUAL BUY BUTTONS === */
+.buy-buttons { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; }
+.btn-sub { display: block; font-size: 0.72rem; font-weight: 400; opacity: 0.85; margin-top: 3px; }
+.cta-btn-etsy {
+    background: linear-gradient(135deg, #F56400 0%, #D84A00 100%) !important;
+    color: white !important;
+    box-shadow: 0 8px 24px rgba(245,100,0,0.3) !important;
+}
+.cta-btn-etsy:hover { box-shadow: 0 12px 32px rgba(245,100,0,0.4) !important; }
     </style>
 </head>
 <body>
@@ -453,13 +462,20 @@
             
             <p style="margin-top: 1rem;">Dieser Guide vereint professionelles Wissen mit persönlicher Erfahrung und bietet Ihnen einen strukturierten Weg durch den Schulstart.</p>
             
-            <div style="background: linear-gradient(135deg, var(--color-primary) 0%, #234745 100%); padding: 2rem; border-radius: 12px; text-align: center; color: white; margin-top: 2rem;">
+<div style="background: linear-gradient(135deg, var(--color-primary) 0%, #234745 100%); padding: 2rem; border-radius: 12px; text-align: center; color: white; margin-top: 2rem;">
                 <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;">🎯 Schulstart-Guide VOLLVERSION</p>
                 <p style="font-size: 2.5rem; font-weight: 700; color: var(--color-accent); margin: 0.5rem 0;">12,99€</p>
                 <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 1.5rem;">Einmalzahlung • Sofortiger Download • Lebenslanger Zugriff</p>
-                <a href="https://paulrawe.gumroad.com/l/autismus-schulstart-guide" style="display: inline-block; background: var(--color-accent); color: #2C2C2C; padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem;" onmouseover="this.style.background='#E4B584'" onmouseout="this.style.background='#D4A574'">
-                    🛒 Jetzt Vollversion kaufen
-                </a>
+                <div class="buy-buttons">
+                    <a href="https://paulrawe.gumroad.com/l/autismus-schulstart-guide" class="cta-btn">
+                        ⬇️ Sofort downloaden
+                        <span class="btn-sub">ohne Anmeldung · Gumroad</span>
+                    </a>
+                    <a href="https://www.etsy.com/de/listing/4455678765/" class="cta-btn cta-btn-etsy" target="_blank" rel="noopener">
+                        🛍️ Im Etsy Shop kaufen
+                        <span class="btn-sub">mit Käuferschutz · Etsy</span>
+                    </a>
+                </div>
                 <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 1rem;">✨ Von Katharina Rawe, Lehrerin & betroffene Mutter</p>
             </div>
         </div>
