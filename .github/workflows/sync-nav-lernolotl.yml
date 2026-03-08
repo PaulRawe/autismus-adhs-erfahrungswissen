@@ -1,0 +1,77 @@
+name: Sync Lernolotl Nav Link
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  sync-nav:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Sync Lernolotl nav entry in all subpages
+        run: |
+          # Der korrekte Nav-Eintrag (wie auf der Index-Seite)
+          CORRECT='<li><a href="#ressourcen"><img src="/lernolotl-reading.png" alt="Der Lernolotl" style="width: 28px; height: 28px; border-radius: 50%; vertical-align: middle;"> Der Lernolotl</a></li>'
+
+          # Alle HTML-Dateien finden, AUSSER index.html im Root
+          find . -name "*.html" ! -name "index.html" ! -path "./node_modules/*" | while read file; do
+
+            # Prüfen ob die Datei einen Nav-Ressourcen-Link enthält
+            if grep -q 'href="#ressourcen"' "$file" || grep -q 'href=".*#ressourcen"' "$file"; then
+
+              echo "Processing: $file"
+
+              python3 - "$file" "$CORRECT" <<'EOF'
+          import sys
+          import re
+
+          filepath = sys.argv[1]
+          correct_entry = sys.argv[2]
+
+          with open(filepath, 'r', encoding='utf-8') as f:
+              content = f.read()
+
+          # Muster: jeder <li>...</li> Block der einen Link zu #ressourcen enthält
+          # (auch verschachtelte oder falsch formatierte Einträge)
+          pattern = r'<li>(?:<li>)?<a[^>]*href="[^"]*#ressourcen"[^>]*>.*?</a>(?:</li>)?</li>'
+
+          new_content = re.sub(pattern, correct_entry, content, flags=re.DOTALL)
+
+          # Fallback: falls der href relativ ist (z.B. "../index.html#ressourcen")
+          pattern2 = r'<li>(?:<li>)?<a[^>]*href="[^"]*ressourcen[^"]*"[^>]*>[^<]*(?:Empfehlungen|Lernolotl|ressourcen)[^<]*</a>(?:</li>)?</li>'
+          new_content = re.sub(pattern2, correct_entry, new_content, flags=re.DOTALL | re.IGNORECASE)
+
+          if new_content != content:
+              with open(filepath, 'w', encoding='utf-8') as f:
+                  f.write(new_content)
+              print(f"  ✅ Updated: {filepath}")
+          else:
+              print(f"  ⏭️  No change needed: {filepath}")
+          EOF
+
+            fi
+          done
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            git diff --name-only
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: sync Lernolotl nav entry across all subpages"
+          git push
