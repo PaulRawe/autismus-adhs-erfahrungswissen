@@ -16,13 +16,13 @@ jobs:
       - name: Sync Lernolotl nav entry in all subpages
         run: |
           # Der korrekte Nav-Eintrag (wie auf der Index-Seite)
-          CORRECT='<li><a href="#ressourcen"><img src="/lernolotl-reading.png" alt="Der Lernolotl" style="width: 28px; height: 28px; border-radius: 50%; vertical-align: middle;"> Der Lernolotl</a></li>'
+          CORRECT='<li><a href="https://www.lernolotl.de"><img src="/lernolotl-reading.png" alt="Der Lernolotl" style="width: 28px; height: 28px; border-radius: 50%; vertical-align: middle;"> Der Lernolotl</a></li>'
 
           # Alle HTML-Dateien finden, AUSSER index.html im Root
           find . -name "*.html" ! -name "index.html" ! -path "./node_modules/*" | while read file; do
 
             # Prüfen ob die Datei einen Nav-Ressourcen-Link enthält
-            if grep -q 'href="#ressourcen"' "$file" || grep -q 'href=".*#ressourcen"' "$file"; then
+            if grep -q 'href="#ressourcen"' "$file" || grep -q 'href=".*#ressourcen"' "$file" || grep -q 'href="https://www.lernolotl.de"' "$file" || grep -qiE '>Empfehlungen<|>Der Lernolotl<' "$file"; then
 
               echo "Processing: $file"
 
