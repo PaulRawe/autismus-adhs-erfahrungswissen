@@ -1,0 +1,112 @@
+name: Inject Lernolotl Banner
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  inject-banner:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Inject Lernolotl banner into all HTML files
+        run: |
+          python3 << 'EOF'
+          import os
+          import re
+
+          BANNER_MARKER = '<!-- lernolotl-banner -->'
+
+          BANNER_TEMPLATE = '''<!-- lernolotl-banner -->
+          <div style="
+            background: linear-gradient(135deg, #e8f5e9 0%, #f0f9f0 100%);
+            border: 1px solid #c8e6c9;
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            margin: 2rem auto;
+            max-width: 700px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+          " onclick="window.location.href='LERNOLOTL_URL'" style="cursor:pointer;">
+            <img src="ICON_PATH" alt="Der Lernolotl" style="width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;">
+            <div>
+              <div style="font-weight: bold; color: #2e7d32; font-size: 1rem; margin-bottom: 0.2rem;">
+                🌿 Geschichten für Kinder wie Sam
+              </div>
+              <div style="font-size: 0.92rem; color: #444;">
+                Kostenlos lesen – ehrlich, pädagogisch begleitet, aus dem echten Alltag. <a href="LERNOLOTL_URL" style="color: #2e7d32; font-weight: bold;">Zum Lernolotl →</a>
+              </div>
+            </div>
+          </div>'''
+
+          LERNOLOTL_URL = 'https://www.lernolotl.de/lernolotl/lernolotls-welt.html'
+
+          def get_icon_path(filepath):
+              """Calculate relative path to lernolotl-reading.png based on file depth."""
+              # Count directory depth relative to repo root
+              parts = filepath.replace('\\', '/').split('/')
+              depth = len(parts) - 1  # subtract filename
+              if depth == 0:
+                  return '/lernolotl-reading.png'
+              else:
+                  return '../' * depth + 'lernolotl-reading.png'
+
+          def inject_banner(filepath):
+              with open(filepath, 'r', encoding='utf-8') as f:
+                  content = f.read()
+
+              # Skip if banner already injected
+              if BANNER_MARKER in content:
+                  print(f'  SKIP (already has banner): {filepath}')
+                  return False
+
+              # Skip lernolotl.de files - banner only for autismus site
+              if 'lernolotl' in filepath.lower() and 'autismus' not in filepath.lower():
+                  print(f'  SKIP (lernolotl site): {filepath}')
+                  return False
+
+              icon_path = get_icon_path(filepath)
+              banner = BANNER_TEMPLATE.replace('ICON_PATH', icon_path).replace('LERNOLOTL_URL', LERNOLOTL_URL)
+
+              # Inject before </footer>
+              if '</footer>' in content:
+                  new_content = content.replace('</footer>', banner + '\n</footer>', 1)
+                  with open(filepath, 'w', encoding='utf-8') as f:
+                      f.write(new_content)
+                  print(f'  OK: {filepath}')
+                  return True
+              else:
+                  print(f'  SKIP (no </footer> found): {filepath}')
+                  return False
+
+          # Walk all HTML files
+          count = 0
+          for root, dirs, files in os.walk('.'):
+              # Skip hidden dirs like .git
+              dirs[:] = [d for d in dirs if not d.startswith('.')]
+              for filename in files:
+                  if filename.endswith('.html'):
+                      filepath = os.path.join(root, filename).lstrip('./')
+                      result = inject_banner(os.path.join(root, filename))
+                      if result:
+                          count += 1
+
+          print(f'\nDone. Banner injected into {count} files.')
+          EOF
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "chore: inject Lernolotl banner into autismus pages"
+          git push
