@@ -62,7 +62,7 @@ Füge in deiner Navigation einen Link zum Finder hinzu.
 
 ### Schritt 4: Call-to-Action auf der Hauptseite (optional)
 
-Füge einen Call-to-Action auf deiner Startseite hinzu, z.B. nach dem "Ich bin Sam" Abschnitt:
+Füge einen Call-to-Action auf deiner Startseite hinzu, z.B. nach dem "Ich bin Finn" Abschnitt:
 
 ```html
 <div style="background: linear-gradient(135deg, #4a7c59, #6b9d7a); 
