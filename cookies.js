@@ -189,7 +189,7 @@
         <a href="${pathToDownloads}" class="sticky-btn primary" aria-label="Unsere erprobten Alltagshelfer ansehen">
             <span class="sticky-btn-icon">📚</span>
             <span class="sticky-btn-text">
-                <strong>Sams Helfer</strong>
+                <strong>Finns Helfer</strong>
                 <small>Bewährte Alltagshilfen</small>
             </span>
         </a>
