@@ -58,12 +58,18 @@
         }
     }
     
-    // Google AdSense laden
+    // Google AdSense laden - NUR nach ausdrücklicher Einwilligung.
+    // Das Script darf nicht fest im HTML stehen, sonst wird es vor der
+    // Einwilligung geladen (§ 25 Abs. 1 TDDDG).
     function loadAdSense(enabled) {
-        if (enabled) {
-            // AdSense ist bereits im HTML eingebunden
-            // Hier könnten zusätzliche Marketing-Scripte geladen werden
-        }
+        if (!enabled) return;
+        if (document.querySelector('script[data-adsense]')) return;
+        const script = document.createElement('script');
+        script.setAttribute('data-adsense', '1');
+        script.async = true;
+        script.crossOrigin = 'anonymous';
+        script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2592825084333368';
+        document.head.appendChild(script);
     }
     
     // Banner anzeigen/verstecken
